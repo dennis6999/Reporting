@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Operations Report - July 30, 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-dark: #0f172a;
+            --accent: #059669;
+            --accent-light: #ecfdf5;
+            --golf-green: #15803d;
+            --golf-bg: #f0fdf4;
+            --farm-amber: #d97706;
+            --farm-bg: #fffbeb;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-300: #cbd5e1;
+            --slate-600: #475569;
+            --slate-700: #334155;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --radius-md: 12px;
+            --radius-lg: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f4f6f9;
+            color: var(--slate-800);
+            line-height: 1.6;
+            padding: 40px 20px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            border: 1px solid var(--slate-200);
+        }
+
+        /* Header Styling */
+        header {
+            background: #0f172a !important;
+            color: #ffffff !important;
+            padding: 44px 40px;
+            position: relative;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #15803d !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .badge-date {
+            background: rgba(255, 255, 255, 0.18) !important;
+            backdrop-filter: blur(8px);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: #ffffff !important;
+        }
+
+        .report-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #93c5fd !important;
+            font-weight: 700;
+        }
+
+        header h1 {
+            font-size: 2.3rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+            color: #ffffff !important;
+        }
+
+        header p.subtitle {
+            color: #cbd5e1 !important;
+            font-size: 1.05rem;
+            font-weight: 400;
+        }
+
+        /* KPI Dashboard Bar */
+        .kpi-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            padding: 24px 40px;
+            background-color: var(--slate-50);
+            border-bottom: 1px solid var(--slate-200);
+        }
+
+        .kpi-card {
+            background: #ffffff;
+            padding: 16px 20px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--slate-200);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .kpi-card .label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--slate-600);
+            letter-spacing: 0.5px;
+        }
+
+        .kpi-card .value {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--slate-900);
+            margin-top: 4px;
+        }
+
+        .kpi-card .subtext {
+            font-size: 0.8rem;
+            color: var(--slate-600);
+            margin-top: 2px;
+        }
+
+        /* Main Content Layout */
+        .main-content {
+            padding: 36px 40px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 14px;
+            border-bottom: 2px solid var(--slate-200);
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--slate-900);
+        }
+
+        .section-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: #ffffff !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .icon-golf {
+            background-color: var(--golf-green) !important;
+        }
+
+        .icon-farm {
+            background-color: var(--farm-amber) !important;
+        }
+
+        .supervisor-badge {
+            background-color: var(--slate-100) !important;
+            color: var(--slate-700) !important;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--slate-200);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .supervisor-badge span {
+            color: var(--primary) !important;
+            font-weight: 700;
+        }
+
+        /* Card Elements */
+        .card {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--slate-200);
+            padding: 22px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .card-header {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--slate-900);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Activity List */
+        .activity-list {
+            list-style: none;
+        }
+
+        .activity-list li {
+            position: relative;
+            padding-left: 22px;
+            margin-bottom: 10px;
+            color: var(--slate-700);
+        }
+
+        .activity-list li::before {
+            content: '•';
+            position: absolute;
+            left: 6px;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .data-table th, .data-table td {
+            padding: 10px 14px;
+            text-align: left;
+            border-bottom: 1px solid var(--slate-200);
+        }
+
+        .data-table th {
+            background-color: var(--slate-100) !important;
+            font-weight: 700;
+            color: var(--slate-800) !important;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .data-table td {
+            font-size: 0.92rem;
+            color: var(--slate-700);
+        }
+
+        /* Image Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+            margin-top: 16px;
+        }
+
+        .gallery-item {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--slate-200);
+            background: #ffffff;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-caption {
+            padding: 12px 14px;
+            background: #ffffff;
+        }
+
+        .gallery-caption h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--slate-900);
+            margin-bottom: 2px;
+        }
+
+        .gallery-caption p {
+            font-size: 0.82rem;
+            color: var(--slate-600);
+        }
+
+        /* Alert Box */
+        .alert-box {
+            background-color: #fef2f2 !important;
+            border-left: 4px solid #ef4444 !important;
+            padding: 14px 18px;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin-top: 14px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .alert-box h4 {
+            color: #991b1b !important;
+            font-size: 0.92rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .alert-box p {
+            color: #7f1d1d !important;
+            font-size: 0.875rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--slate-50) !important;
+            padding: 28px 40px;
+            border-top: 1px solid var(--slate-200);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .signature-block {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .signature-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--primary) !important;
+            color: #ffffff !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.05rem;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .signature-details h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--slate-900);
+        }
+
+        .signature-details p {
+            font-size: 0.82rem;
+            color: var(--slate-600);
+        }
+
+        .status-stamp {
+            background: #dcfce7 !important;
+            color: #166534 !important;
+            border: 1px solid #bbf7d0;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        /* Optimized Print CSS for precise 4-page layout */
+        @media print {
+            @page {
+                size: A4;
+                margin: 8mm 10mm;
+            }
+            body {
+                background-color: #ffffff;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                border: none;
+                border-radius: 0;
+                max-width: 100%;
+                overflow: visible !important;
+            }
+            header {
+                padding: 20px 20px !important;
+                border-radius: 10px;
+            }
+            header h1 {
+                font-size: 1.9rem !important;
+            }
+            .kpi-bar {
+                padding: 12px 0;
+                background: transparent !important;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 8px;
+            }
+            .kpi-card {
+                padding: 8px 10px;
+                page-break-inside: avoid;
+            }
+            .kpi-card .value {
+                font-size: 1.15rem;
+            }
+            .main-content {
+                padding: 14px 0;
+            }
+            .card {
+                margin-bottom: 14px;
+                padding: 14px 16px;
+            }
+            .data-table th, .data-table td {
+                padding: 6px 10px;
+                font-size: 0.85rem;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            .gallery-item {
+                page-break-inside: avoid;
+            }
+            .gallery-item img {
+                height: 155px;
+            }
+            .gallery-caption {
+                padding: 8px 10px;
+            }
+            .gallery-caption h4 {
+                font-size: 0.85rem;
+            }
+            .gallery-caption p {
+                font-size: 0.78rem;
+            }
+            .section-header {
+                page-break-after: avoid;
+                margin-bottom: 12px;
+                padding-bottom: 8px;
+            }
+            footer {
+                page-break-inside: avoid;
+                padding: 14px 18px !important;
+                border-radius: 10px;
+                margin-top: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <span class="report-tag">Operational Progress Report</span>
+            <span class="badge-date">📅 July 30, 2026</span>
+        </div>
+        <h1>Daily Operations & Project Summary</h1>
+        <p class="subtitle">Comprehensive overview of site development, livestock care, and facility maintenance.</p>
+    </header>
+
+    <!-- KPI Summary Bar -->
+    <div class="kpi-bar">
+        <div class="kpi-card">
+            <div class="label">Golf Project Deliveries</div>
+            <div class="value">36 Items</div>
+            <div class="subtext">Pipes, Conduits & Connectors</div>
+        </div>
+        <div class="kpi-card">
+            <div class="label">Daily Milk Production</div>
+            <div class="value">5.0 kg</div>
+            <div class="subtext">Morning: 2kg | Evening: 3kg</div>
+        </div>
+        <div class="kpi-card">
+            <div class="label">Animal Feed Stock</div>
+            <div class="value">80 kg</div>
+            <div class="subtext">Joymax, Salt & Mineral Sup.</div>
+        </div>
+        <div class="kpi-card">
+            <div class="label">Canine Care Status</div>
+            <div class="value">Monitored</div>
+            <div class="subtext">Coby resting / protective cone</div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <!-- SECTION 1: GOLF PROJECT -->
+        <section id="golf-project" style="margin-bottom: 28px;">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon icon-golf">⛳</div>
+                    <div>
+                        <h2>1. Golf Project (Mucheru World of Golf)</h2>
+                        <p style="font-size: 0.88rem; color: var(--slate-600);">Ground prep, soil layering, and material delivery updates</p>
+                    </div>
+                </div>
+                <div class="supervisor-badge">
+                    Overseen by: <span>Ken</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span>🏗️</span> Key Earthwork & Foundation Progress
+                </div>
+                <ul class="activity-list">
+                    <li><strong>Base Compacting:</strong> Systematic compacting of base stones completed to establish a firm structural sub-foundation.</li>
+                    <li><strong>Red Soil Leveling:</strong> Fine grading and precision leveling of imported red soil across the designated area.</li>
+                    <li><strong>Moisture Barrier Installation:</strong> Heavy-duty polythene sheet lining laid seamlessly over the leveled surface prior to sub-layering.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span>📦</span> Material Deliveries & Inventory Verification
+                </div>
+                <p style="font-size: 0.88rem; color: var(--slate-600); margin-bottom: 10px;">All incoming plumbing and electrical conduit supplies were received, counted, and safely stored on site.</p>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Item Description</th>
+                            <th>Quantity Received</th>
+                            <th>Category / Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>PVC Pipes</strong></td>
+                            <td>26 units</td>
+                            <td>Drainage & Irrigation lines</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Red Soil</strong></td>
+                            <td>6 per green</td>
+                            <td>Total 12</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pipe & Conduit Connectors</strong></td>
+                            <td>10 units</td>
+                            <td>Joint fittings & adaptors</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Polythene Paper Rolls</strong></td>
+                            <td>Full supply batch</td>
+                            <td>Underlayment moisture barrier</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Golf Project Photo Gallery -->
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--slate-900); margin-bottom: 10px; margin-top: 16px;">📷 Site Work & Materials Visual Documentation</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="Compacting,levelling, polythene.jpeg" alt="Stone Compacting and Polythene Paper Installation">
+                    <div class="gallery-caption">
+                        <h4>Ground Preparation & Polythene Layer</h4>
+                        <p>Stone compacting, soil leveling, and polythene membrane installation.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Red Soil.jpeg" alt="Red Soil Leveling">
+                    <div class="gallery-caption">
+                        <h4>Red Soil Placement</h4>
+                        <p>Red soil delivered, spread, and leveled across the site area.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="PVC pipes.jpeg" alt="PVC Pipes Delivery">
+                    <div class="gallery-caption">
+                        <h4>PVC Pipe Delivery (26 Units)</h4>
+                        <p>Plumbing and drainage pipes received and sorted.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Connectors.jpeg" alt="Connectors Delivery">
+                    <div class="gallery-caption">
+                        <h4>Fittings & Connectors (10 Units)</h4>
+                        <p>Pipeline connectors and joint fittings checked into stock.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: CHAKA FARMS -->
+        <section id="chaka-farms">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon icon-farm">🐐</div>
+                    <div>
+                        <h2>2. Farm Activities (Chaka Farms)</h2>
+                        <p style="font-size: 0.88rem; color: var(--slate-600);">Dairy production, livestock nutrition, utilities, and canine unit management</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dairy Operations -->
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <div class="card-header" style="margin-bottom: 0;">
+                        <span>🥛</span> Dairy & Feeding Management
+                    </div>
+                    <div class="supervisor-badge">
+                        Overseen by: <span>Kamandau</span>
+                    </div>
+                </div>
+                <ul class="activity-list">
+                    <li><strong>Pen Hygiene:</strong> Complete sweeping and sanitation of the goat shelter prior to morning milking routines.</li>
+                    <li><strong>Milk Production Summary:</strong>
+                        <ul style="margin-left: 18px; margin-top: 4px; margin-bottom: 6px;">
+                            <li><strong>Morning Yield:</strong> 2.0 kg</li>
+                            <li><strong>Evening Yield:</strong> 3.0 kg</li>
+                            <li><strong style="color: var(--accent);">Total Daily Milk Collected: 5.0 kg</strong></li>
+                        </ul>
+                    </li>
+                    <li><strong>Feed Supplies & Nutrition Replenishment:</strong>
+                        <ul style="margin-left: 18px; margin-top: 4px;">
+                            <li>Purchased <strong>Joymax Animal Feed:</strong> 70 kg</li>
+                            <li>Additional <strong>Malt Madini Supplement:</strong> 5 kg</li>
+                            <li>Additional <strong>Magadi Salt Mineral Block:</strong> 5 kg</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Vehicle Care & Water Distribution -->
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <div class="card-header" style="margin-bottom: 0;">
+                        <span>🚘</span> Vehicle Care & Water Distribution
+                    </div>
+                    <div class="supervisor-badge">
+                        Overseen by: <span>Kinoti</span>
+                    </div>
+                </div>
+                <ul class="activity-list">
+                    <li><strong>Vehicle Maintenance:</strong> Washing the Boss's car to maintain cleanliness and upkeep.</li>
+                    <li><strong>Water Distribution:</strong> Checking on and monitoring water distribution across the site.</li>
+                </ul>
+            </div>
+
+            <!-- Utilities & Lawn Sprinklers -->
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <div class="card-header" style="margin-bottom: 0;">
+                        <span>☀️</span> Solar Cleanliness & Lawn Irrigation
+                    </div>
+                    <div class="supervisor-badge">
+                        Overseen by: <span>Kinoti & Willy</span>
+                    </div>
+                </div>
+                <ul class="activity-list">
+                    <li><strong>Solar Array Maintenance:</strong> Cleaned all solar panel surfaces to ensure optimal solar efficiency and power generation.</li>
+                    <li><strong>Irrigation Setup:</strong> Positioned and calibrated lawn sprinklers across the compound grass to maintain turf hydration.</li>
+                </ul>
+            </div>
+
+            <!-- Canine Unit Check-up -->
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <div class="card-header" style="margin-bottom: 0;">
+                        <span>🐕</span> Canine Health & Training Update
+                    </div>
+                    <div class="supervisor-badge">
+                        Overseen by: <span>Willy</span>
+                    </div>
+                </div>
+                <ul class="activity-list">
+                    <li><strong>Kennel Sanitation:</strong> Standard cleaning of dog kennels, followed by thorough drying of water puddles and floor surfaces.</li>
+                    <li><strong>Exercise & Routines:</strong> Scheduled walking exercise carried out for the security and companion dogs.</li>
+                    <li><strong>Behavioral Training:</strong> Practiced "PAW" commands, kennel etiquette, structure, and general obedience drills.</li>
+                </ul>
+
+                <div class="alert-box">
+                    <h4>⚠️ Veterinary Care Notice: Canine "Coby"</h4>
+                    <p>During routine health check, minor skin soreness was observed on Coby. To prevent aggravation or irritation, Coby has been temporarily rested from active training sessions and fitted with a protective Elizabethan cone to prevent licking the affected area.</p>
+                </div>
+
+                <!-- Canine Photo Gallery -->
+                <h3 style="font-size: 1rem; font-weight: 700; color: var(--slate-900); margin-bottom: 10px; margin-top: 16px;">📷 Canine Health Inspection Photos</h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="Soreness_1.jpeg" alt="Coby Health Assessment 1">
+                        <div class="gallery-caption">
+                            <h4>Health Assessment Photo 1</h4>
+                            <p>Initial inspection of sore area on Coby.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Soreness_2.jpeg" alt="Coby Health Assessment 2">
+                        <div class="gallery-caption">
+                            <h4>Health Assessment Photo 2</h4>
+                            <p>Close-up view of skin observation for treatment.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Soreness_3.jpeg" alt="Coby Health Assessment 3">
+                        <div class="gallery-caption">
+                            <h4>Protective Cone Care</h4>
+                            <p>Coby fitted with protective cone and resting comfortably.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- Footer / Authorization -->
+    <footer>
+        <div class="signature-block">
+            <div class="signature-avatar">DN</div>
+            <div class="signature-details">
+                <h3>Compiled by Dennis Ndirangu</h3>
+            </div>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>

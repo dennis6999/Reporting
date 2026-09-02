@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Operations Report - August 21, 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-dark: #0f172a;
+            --accent: #059669;
+            --accent-light: #ecfdf5;
+            --golf-green: #15803d;
+            --farm-amber: #d97706;
+            --residence-purple: #6d28d9;
+            --cottage-teal: #0d9488;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-300: #cbd5e1;
+            --slate-600: #475569;
+            --slate-700: #334155;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --radius-md: 12px;
+            --radius-lg: 16px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f4f6f9;
+            color: var(--slate-800);
+            line-height: 1.65;
+            font-size: 1.02rem;
+            padding: 40px 20px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            border: 1px solid var(--slate-200);
+        }
+
+        header {
+            background: #0f172a !important;
+            color: #ffffff !important;
+            padding: 46px 44px;
+            position: relative;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .badge-date {
+            background: rgba(255,255,255,0.18) !important;
+            padding: 7px 18px;
+            border-radius: 20px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(255,255,255,0.25);
+            color: #ffffff !important;
+        }
+        .report-tag {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #86efac !important;
+            font-weight: 700;
+        }
+        header h1 {
+            font-size: 2.35rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            color: #ffffff !important;
+        }
+        header p.subtitle {
+            color: #cbd5e1 !important;
+            font-size: 1.08rem;
+            font-weight: 400;
+            line-height: 1.55;
+        }
+
+        .kpi-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            padding: 26px 44px;
+            background-color: var(--slate-50);
+            border-bottom: 1px solid var(--slate-200);
+        }
+        .kpi-card {
+            background: #ffffff;
+            padding: 18px 22px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--slate-200);
+            box-shadow: var(--shadow-sm);
+        }
+        .kpi-card .label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--slate-600);
+            letter-spacing: 0.5px;
+        }
+        .kpi-card .value {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--slate-900);
+            margin-top: 4px;
+        }
+        .kpi-card .subtext {
+            font-size: 0.86rem;
+            color: var(--slate-600);
+            margin-top: 2px;
+        }
+
+        .main-content { padding: 38px 44px; }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--slate-200);
+            margin-bottom: 26px;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .section-title h2 {
+            font-size: 1.55rem;
+            font-weight: 800;
+            color: var(--slate-900);
+        }
+        .section-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+            color: #ffffff !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .icon-golf { background-color: var(--golf-green) !important; }
+        .icon-farm { background-color: var(--farm-amber) !important; }
+        .icon-residence { background-color: var(--residence-purple) !important; }
+        .icon-cottage { background-color: var(--cottage-teal) !important; }
+
+        .supervisor-badge {
+            background-color: var(--slate-100) !important;
+            color: var(--slate-700) !important;
+            padding: 7px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid var(--slate-200);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .supervisor-badge span {
+            color: var(--primary) !important;
+            font-weight: 700;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--slate-200);
+            padding: 24px 28px;
+            margin-bottom: 26px;
+            box-shadow: var(--shadow-sm);
+        }
+        .card-header {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--slate-900);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .activity-list { list-style: none; }
+        .activity-list li {
+            position: relative;
+            padding-left: 26px;
+            margin-bottom: 12px;
+            color: var(--slate-700);
+            font-size: 0.98rem;
+            line-height: 1.6;
+        }
+        .activity-list li::before {
+            content: '•';
+            position: absolute;
+            left: 6px;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.35rem;
+        }
+
+        .equipment-table, .milk-table, .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            font-size: 0.95rem;
+        }
+        .equipment-table th, .equipment-table td,
+        .milk-table th, .milk-table td,
+        .data-table th, .data-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border: 1px solid var(--slate-200);
+        }
+        .equipment-table th, .milk-table th, .data-table th {
+            background-color: var(--slate-100) !important;
+            font-weight: 700;
+            color: var(--slate-800);
+            font-size: 0.88rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .equipment-table td, .milk-table td, .data-table td {
+            color: var(--slate-700);
+            font-weight: 500;
+        }
+        .equipment-table tfoot td {
+            background-color: var(--slate-100) !important;
+            font-weight: 800;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .milk-table .total-cell {
+            font-weight: 800;
+            color: var(--golf-green) !important;
+            font-size: 1.08rem;
+            text-align: center;
+        }
+
+        /* Responsive Photo Gallery Cards */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 22px;
+            margin-top: 18px;
+        }
+        .gallery-item {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--slate-200);
+            background: #ffffff;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .gallery-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 255px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+        .gallery-caption {
+            padding: 16px 18px;
+            background: #ffffff;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .gallery-caption h4 {
+            font-size: 0.98rem;
+            font-weight: 700;
+            color: var(--slate-900);
+            margin-bottom: 5px;
+        }
+        .gallery-caption p {
+            font-size: 0.88rem;
+            color: var(--slate-600);
+            line-height: 1.48;
+        }
+
+        /* Video Container & Direct Clickable Links */
+        .video-container {
+            margin-top: 12px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--slate-200);
+            background: #000000;
+        }
+        .video-container video, .video-container iframe {
+            width: 100%;
+            max-height: 380px;
+            display: block;
+            border: none;
+        }
+        .video-caption {
+            padding: 14px 18px;
+            background: var(--slate-900);
+        }
+        .video-caption a {
+            color: #93c5fd;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.94rem;
+            display: block;
+            transition: color 0.2s ease;
+        }
+        .video-caption a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 16px;
+            margin-top: 12px;
+        }
+
+        .success-box {
+            background-color: #ecfdf5 !important;
+            border-left: 4px solid #10b981 !important;
+            padding: 15px 20px;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin-top: 16px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .success-box h4 { color: #065f46 !important; font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+        .success-box p { color: #064e3b !important; font-size: 0.92rem; }
+
+        .info-box {
+            background-color: #eff6ff !important;
+            border-left: 4px solid #3b82f6 !important;
+            padding: 15px 20px;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin-top: 16px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .info-box h4 { color: #1e40af !important; font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+        .info-box p { color: #1e3a8a !important; font-size: 0.92rem; }
+
+        .warning-box {
+            background-color: #fef2f2 !important;
+            border-left: 4px solid #ef4444 !important;
+            padding: 15px 20px;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin-top: 16px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .warning-box h4 { color: #991b1b !important; font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+        .warning-box p { color: #7f1d1d !important; font-size: 0.92rem; }
+
+        .section-divider {
+            height: 1px;
+            background: var(--slate-200);
+            margin: 38px 0;
+        }
+
+        footer {
+            background-color: var(--slate-50) !important;
+            padding: 30px 44px;
+            border-top: 1px solid var(--slate-200);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .signature-block { display: flex; align-items: center; gap: 14px; }
+        .signature-avatar {
+            width: 46px; height: 46px;
+            border-radius: 50%;
+            background: var(--primary) !important;
+            color: #ffffff !important;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 1.1rem;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .signature-details h3 { font-size: 1.1rem; font-weight: 700; color: var(--slate-900); }
+        .signature-details p { font-size: 0.88rem; color: var(--slate-600); }
+
+        /* ========================================================================= */
+        /* PRINT STYLING RULES (OPTIMIZED FOR CLEAN A4 FLOW & ZERO BLANK VIDEO BOXES) */
+        /* ========================================================================= */
+        @media print {
+            @page { 
+                size: A4; 
+                margin: 8mm 10mm; 
+            }
+            
+            body { 
+                background-color: #ffffff !important; 
+                padding: 0 !important; 
+                font-size: 0.95rem !important;
+            }
+            
+            .container { 
+                box-shadow: none !important; 
+                border: none !important; 
+                border-radius: 0 !important; 
+                max-width: 100% !important; 
+                overflow: visible !important; 
+            }
+            
+            header { 
+                padding: 20px 22px !important; 
+                border-radius: 8px !important; 
+            }
+            
+            header h1 { 
+                font-size: 1.95rem !important; 
+                margin-bottom: 4px !important;
+            }
+            
+            header p.subtitle { 
+                font-size: 0.94rem !important; 
+                line-height: 1.4 !important; 
+            }
+            
+            .kpi-bar { 
+                padding: 12px 0 !important; 
+                background: transparent !important; 
+                grid-template-columns: repeat(4, 1fr) !important; 
+                gap: 8px !important; 
+                border-bottom: 1px solid #e2e8f0 !important;
+            }
+            
+            .kpi-card { 
+                padding: 10px 12px !important; 
+                page-break-inside: avoid !important; 
+                break-inside: avoid !important;
+            }
+            
+            .kpi-card .label { font-size: 0.78rem !important; }
+            .kpi-card .value { font-size: 1.18rem !important; }
+            .kpi-card .subtext { font-size: 0.8rem !important; }
+            
+            .main-content { 
+                padding: 16px 0 !important; 
+            }
+            
+            .section-header { 
+                page-break-after: avoid !important; 
+                break-after: avoid !important; 
+                page-break-inside: avoid !important; 
+                break-inside: avoid !important; 
+                margin-top: 16px !important; 
+                margin-bottom: 12px !important; 
+                padding-bottom: 8px !important; 
+            }
+            
+            .section-title h2 { font-size: 1.4rem !important; }
+            
+            .card { 
+                margin-bottom: 16px !important; 
+                padding: 16px 18px !important; 
+                page-break-inside: auto !important; 
+                break-inside: auto !important; 
+                border: 1px solid #e2e8f0 !important;
+                box-shadow: none !important;
+            }
+            
+            .card-header { 
+                font-size: 1.1rem !important; 
+                margin-bottom: 10px !important;
+                page-break-after: avoid !important;
+                break-after: avoid !important;
+            }
+            
+            .activity-list li { 
+                margin-bottom: 7px !important; 
+                font-size: 0.92rem !important; 
+                line-height: 1.5 !important;
+            }
+            
+            .equipment-table, .milk-table, .data-table { 
+                margin-top: 10px !important; 
+                page-break-inside: avoid !important; 
+                break-inside: avoid !important; 
+            }
+            
+            .equipment-table th, .equipment-table td,
+            .milk-table th, .milk-table td,
+            .data-table th, .data-table td { 
+                padding: 9px 12px !important; 
+                font-size: 0.88rem !important; 
+            }
+            
+            .gallery-grid { 
+                grid-template-columns: repeat(2, 1fr) !important; 
+                gap: 12px !important; 
+            }
+            
+            .gallery-item { 
+                page-break-inside: avoid !important; 
+                break-inside: avoid !important; 
+                box-shadow: none !important; 
+            }
+            
+            .gallery-item img { 
+                height: 160px !important; 
+            }
+            
+            .gallery-caption { 
+                padding: 9px 12px !important; 
+            }
+            
+            .gallery-caption h4 { font-size: 0.9rem !important; }
+            .gallery-caption p { font-size: 0.82rem !important; }
+            
+            /* Print Video Links: Direct clickable link cards, media frames hidden */
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 10px !important;
+                margin-top: 8px !important;
+            }
+            
+            .video-container video, .video-container iframe { display: none !important; }
+            .video-container { 
+                display: block !important; 
+                background: transparent !important; 
+                border: none !important; 
+                margin-top: 0 !important; 
+                page-break-inside: avoid !important; 
+                break-inside: avoid !important; 
+            }
+            
+            .video-caption {
+                background: #f1f5f9 !important;
+                border: 1px solid #cbd5e1 !important;
+                border-radius: 6px !important;
+                padding: 9px 14px !important;
+                display: block !important;
+            }
+            
+            .video-caption a {
+                color: #1e40af !important;
+                font-weight: 700 !important;
+                font-size: 0.88rem !important;
+                text-decoration: none !important;
+                display: block !important;
+            }
+            
+            .section-divider {
+                margin: 18px 0 !important;
+            }
+            
+            .success-box, .info-box, .warning-box {
+                padding: 11px 15px !important;
+                margin-top: 10px !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+            
+            footer {
+                padding: 16px 20px !important;
+                margin-top: 14px !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-top">
+            <span class="report-tag">Operational Progress Report</span>
+            <span class="badge-date">📅 Friday, August 21, 2026</span>
+        </div>
+        <h1>Daily Operations Progress Report</h1>
+        <p class="subtitle">Comprehensive multi-site tracking across Mucheru World of Golf, Chaka Farms, Kabete Residence, and Amani Cottage</p>
+    </header>
+
+    <!-- KPI Summary Bar -->
+    <div class="kpi-bar">
+        <div class="kpi-card">
+            <div class="label">Earthmoving & Machinery</div>
+            <div class="value">KES 151,645</div>
+            <div class="subtext">35 Haulage Trips | 15.3 hrs Equipment</div>
+        </div>
+        <div class="kpi-card">
+            <div class="label">Daily Milk Yield</div>
+            <div class="value">8.0 Litres</div>
+            <div class="subtext">Morning: 5.0 L | Evening: 3.0 L</div>
+        </div>
+        <div class="kpi-card">
+            <div class="label">Key Accomplishments</div>
+            <div class="value">Tank Stairs & Gutters</div>
+            <div class="subtext">Glassroom Gutters & Stairs Complete</div>
+        </div>
+        <div class="kpi-card">
+            <div class="label">Active Sites Tracked</div>
+            <div class="value">4 Sites</div>
+            <div class="subtext">Golf • Farm • Residence • Cottage</div>
+        </div>
+    </div>
+
+    <!-- Main Content Body -->
+    <div class="main-content">
+
+        <!-- ========================================================================= -->
+        <!-- 1. MUCHERU WORLD OF GOLF -->
+        <!-- ========================================================================= -->
+        <section id="golf">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon icon-golf">⛳</div>
+                    <h2>Mucheru World of Golf</h2>
+                </div>
+                <div class="supervisor-badge">
+                    Overseen by: <span>Mr. Gichuhi &amp; Ken</span>
+                </div>
+            </div>
+
+            <!-- Activities Summary Card -->
+            <div class="card">
+                <div class="card-header">
+                    <span>🚜 Earthmoving, Dam 2 Deepening &amp; Course Shaping Operations</span>
+                </div>
+                <ul class="activity-list">
+                    <li><strong>Dam No. 2 Deepening:</strong> Deep excavation operations inside the Dam 2 reservoir basin to expand total water retention capacity. Extracted murram was systematically loaded onto tippers and hauled to a central stockpile location near the clubhouse.</li>
+                    <li><strong>Tee Box Leveling (Tee Box No. 6 &amp; 8):</strong> Intensive grading and precision surface leveling conducted across Tee Box 6 and Tee Box 8 to ensure optimal compaction and teeing ground profile.</li>
+                    <li><strong>Fairway &amp; Uneven Ground Leveling:</strong> Front loader grading and soil distribution across uneven fairway terrain to establish consistent ground contours.</li>
+                    <li><strong>Greens Clearance (Greens 14, 15 &amp; 16):</strong> Manual ground clearance crew cleared brush, grass stubble, and loose topsoil across Greens 14, 15, and 16, fully preparing them for surveyor marking and profile setting.</li>
+                </ul>
+
+                <!-- Equipment & Haulage Table -->
+                <table class="equipment-table">
+                    <thead>
+                        <tr>
+                            <th>Equipment / Activity</th>
+                            <th>Duration / Quantity</th>
+                            <th>Unit Rate (KES)</th>
+                            <th>Total Cost (KES)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Excavator (Dam 2 Deep Excavation &amp; Murram Loading)</td>
+                            <td>8 hrs 30 mins</td>
+                            <td>8,500 / hr</td>
+                            <td>72,250</td>
+                        </tr>
+                        <tr>
+                            <td>Front Loader (Tee Box Leveling &amp; Soil Grading)</td>
+                            <td>6 hrs 50 mins</td>
+                            <td>6,500 / hr</td>
+                            <td>44,395</td>
+                        </tr>
+                        <tr>
+                            <td>Tipper Haulage Trips (Murram to Clubhouse Location)</td>
+                            <td>35 Trips</td>
+                            <td>1,000 / trip</td>
+                            <td>35,000</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" style="text-align: right;">Total Machinery &amp; Haulage Cost:</td>
+                            <td style="color: var(--golf-green);">KES 151,645</td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <div class="success-box">
+                    <h4>Milestone Progress Note</h4>
+                    <p>Dam 2 excavation achieved substantial basin depth with high-volume murram reclamation. Tee boxes 6 &amp; 8 and greens 14–16 are now advanced to final grading and marking stages.</p>
+                </div>
+            </div>
+
+            <!-- Video Section with Direct Drive Links & YouTube Embed -->
+            <div class="card">
+                <div class="card-header">
+                    <span>🎥 Video Documentation &mdash; Dam Excavation &amp; Course Works</span>
+                </div>
+                <div class="video-grid">
+                    <div class="video-container">
+                        <video controls preload="metadata">
+                            <source src="Dam 2 deepening.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-caption">
+                            <a href="https://drive.google.com/file/d/1QnDihK8Ktkc4NYARECI9GzokXM4JMLzF/view?usp=drive_link" target="_blank">🎥 Video Log 1: Dam 2 Deepening Operations</a>
+                        </div>
+                    </div>
+                    <div class="video-container">
+                        <video controls preload="metadata">
+                            <source src="Dam 2 deepening_01.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-caption">
+                            <a href="https://drive.google.com/file/d/1IsQ2uMqtS_eTl9iOmGYz3cM7fvBT-m71/view?usp=drive_link" target="_blank">🎥 Video Log 2: Dam 2 Deepening &amp; Excavator Earthmoving</a>
+                        </div>
+                    </div>
+                    <div class="video-container">
+                        <video controls preload="metadata">
+                            <source src="Deepening dam 2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-caption">
+                            <a href="https://drive.google.com/file/d/19r1LB_DPEStoyYhsUTAuCgwDXYfVE4Nz/view?usp=drive_link" target="_blank">🎥 Video Log 3: Deepening Dam 2 Basin Profile</a>
+                        </div>
+                    </div>
+                    <div class="video-container">
+                        <video controls preload="metadata">
+                            <source src="Dam 3 complete.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-caption">
+                            <a href="https://drive.google.com/file/d/1C_F4E2-NSxML51mJ8N28YB7aowTz-fdx/view?usp=drive_link" target="_blank">🎥 Video Log 4: Dam 3 Complete Overview</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- YouTube Embed Card -->
+                <div class="video-container" style="margin-top: 16px;">
+                    <iframe src="https://www.youtube.com/embed/J7pr5F7uQDo" title="Dam 2 Deepening Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="height: 380px;"></iframe>
+                    <div class="video-caption">
+                        <a href="https://youtu.be/J7pr5F7uQDo?si=fMTH2bZLweQPkMCB" target="_blank">🎥 YouTube: Dam 2 Deepening &amp; Machinery Earthmoving Operations</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photo Gallery Grid -->
+            <div class="card">
+                <div class="card-header">
+                    <span>📸 Photographic Evidence &mdash; Mucheru World of Golf</span>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="DJI_0062.JPG" alt="Dam 2 Deepening Aerial Overview" loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Dam 2 Basin &amp; Haulage Aerial Overview</h4>
+                            <p>Drone perspective showing the excavator loading murram onto the tipper while the loader grades the basin floor.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Dam 2 deepening and teebox aerial view.JPG" alt="Dam 2 and Tee Box Panoramic View" loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Dam 2 &amp; Tee Box Panoramic Overview</h4>
+                            <p>Wide high-altitude capture showing Dam 2 basin deepening in tandem with adjacent green and tee box grading.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="DJI_0065.JPG" alt="Tee Box & Fairway Aerial Contours" loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Tee Box &amp; Fairway Aerial Contours</h4>
+                            <p>Aerial view highlighting the graded tee box zone, precision leveling lines, and fairway transitions.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Teebox aerial.JPG" alt="Aerial View of Leveled Tee Box" loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Leveled Tee Box Zone Aerial View</h4>
+                            <p>Overhead view illustrating earthmoving progress, finished soil leveling, and adjacent course features.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Dam 2.jpeg" alt="Dam 2 Basin Earthmoving" loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Dam 2 Basin Earthmoving</h4>
+                            <p>Ground-level perspective of the loader operating inside the deepening Dam 2 retention basin.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="WhatsApp Image 2026-08-21 at 18.30.28.jpeg" alt="Front Loader Soil Leveling" loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Front Loader Ground Leveling</h4>
+                            <p>Front loader actively pushing and leveling mounded earth across uneven sections of the grounds.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Levelling teebox 6.jpeg" alt="Backhoe Leveling Tee Box 6" loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Backhoe Grading Tee Box 6</h4>
+                            <p>Heavy machinery actively sculpting and flattening the elevated surface for Tee Box 6.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Teebox levelling.jpeg" alt="Tee Box Leveling In Progress" loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Tee Box Leveling In Progress</h4>
+                            <p>Site supervisor guiding machinery operator along the graded tee box perimeter.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Teebox Levelled.jpeg" alt="Completed Tee Box Leveling" loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Completed Tee Box Leveling Surface</h4>
+                            <p>Finished compaction and uniform leveling across the newly prepared tee box platform.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Teebox levelled_01.jpeg" alt="Leveled Ground Looking Down Corridor" loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Tee Box Alignment &amp; Uniformity</h4>
+                            <p>Longitudinal ground perspective showing smooth grading along the tee box corridor.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Clearing green ready for marking.jpeg" alt="Manual Clearing of Greens" loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Manual Clearance of Greens 14, 15 &amp; 16</h4>
+                            <p>Ground crew utilizing hoes and shovels to clear surface vegetation and stones before marking.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Green clearance ready for marking.jpeg" alt="Greens Ready for Marking" loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Greens Surface Prepared for Marking</h4>
+                            <p>Laborers moving wheelbarrows and finalizing clean soil prep across greens ready for surveyor layout.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- ========================================================================= -->
+        <!-- 2. CHAKA FARMS -->
+        <!-- ========================================================================= -->
+        <section id="farm">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon icon-farm">🌾</div>
+                    <h2>Chaka Farms</h2>
+                </div>
+                <div class="supervisor-badge">
+                    Supervisors: <span>Kamandau • Willy • Kinoti • Margaret &amp; Monica</span>
+                </div>
+            </div>
+
+            <!-- Dairy Milking & Livestock Production -->
+            <div class="card">
+                <div class="card-header">
+                    <span>🥛 Dairy Production, Milking Logs &amp; Nutrition</span>
+                </div>
+                <p style="color: var(--slate-600); margin-bottom: 12px;">Overseen by <strong>Kamandau</strong>:</p>
+                <table class="milk-table">
+                    <thead>
+                        <tr>
+                            <th>Session</th>
+                            <th>Morning Yield</th>
+                            <th>Evening Yield</th>
+                            <th>Total Daily Yield</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dairy Milking Yield</td>
+                            <td>5.0 Litres</td>
+                            <td>3.0 Litres</td>
+                            <td class="total-cell">8.0 Litres</td>
+                        </tr>
+                        <tr>
+                            <td>Goat Kids Milk Ration</td>
+                            <td>0.5 Litres</td>
+                            <td>0.5 Litres</td>
+                            <td style="font-weight: 700; text-align: center; color: var(--slate-800);">1.0 Litre</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="warning-box">
+                    <h4>⚠️ Poultry Incident Alert</h4>
+                    <p><strong>Missing Livestock:</strong> 1 cock (rooster) was reported missing during the daily count. An investigation is underway to establish whether the loss was caused by intrusion/theft or predator wildlife attack.</p>
+                </div>
+            </div>
+
+            <!-- Canine Unit Care & Training -->
+            <div class="card">
+                <div class="card-header">
+                    <span>🐕 Canine Unit Care, Training &amp; Manners Protocol</span>
+                </div>
+                <p style="color: var(--slate-600); margin-bottom: 12px;">Overseen by <strong>Willy</strong> (Training conducted by Willy &amp; Mwangi):</p>
+                <ul class="activity-list">
+                    <li><strong>Manners &amp; Command Training:</strong> Kennel manners and the <em>"Paw"</em> command were successfully practiced and reinforced during structured training sessions.</li>
+                    <li><strong>Off-Leash Morning Exercise:</strong> Canine unit conducted morning off-leash field walking and agility runs to promote fitness and environmental exposure.</li>
+                    <li><strong>Patience &amp; Obedience Routines:</strong> Dogs demonstrated high discipline, patience, and immediate responsiveness following all verbal handler commands.</li>
+                </ul>
+
+                <!-- Canine Videos with Direct Drive Links -->
+                <div class="video-grid">
+                    <div class="video-container">
+                        <video controls preload="metadata">
+                            <source src="Walking off leash.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-caption">
+                            <a href="https://drive.google.com/file/d/1cH7NIhRoV7EjrEgiJQcsMyFHtsJ1d8mZ/view?usp=drive_link" target="_blank">🎥 Canine Video 1: Walking Off-Leash Morning Routine</a>
+                        </div>
+                    </div>
+                    <div class="video-container">
+                        <video controls preload="metadata">
+                            <source src="Patience and obedience.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-caption">
+                            <a href="https://drive.google.com/file/d/1pwKj_KrcWoMdquvtWK_pn_YsYOt1fv1i/view?usp=drive_link" target="_blank">🎥 Canine Video 2: Patience, Obedience &amp; Handler Commands</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agronomy, Fodder Logistics & Compound Maintenance -->
+            <div class="card">
+                <div class="card-header">
+                    <span>🌱 Fodder Logistics, Horticulture &amp; Compound Upkeep</span>
+                </div>
+                <p style="color: var(--slate-600); margin-bottom: 12px;">Overseen by <strong>Kinoti</strong>, <strong>Margaret &amp; Monica</strong>:</p>
+                <ul class="activity-list">
+                    <li><strong>Maize Stalks Fodder Transfer:</strong> Harvested dry maize stalks were collected and transported from farm cultivation fields directly to the livestock feeding area for supplementary fodder.</li>
+                    <li><strong>Horticulture &amp; Flower Potting:</strong> Fresh ornamental flowers transplanted from paper seedling pots into decorative flower vases positioned near the main farmhouse entrance.</li>
+                    <li><strong>Farm Compound Cleanliness:</strong> Ongoing sweeping, yard sanitation, and grounds upkeep managed diligently by Margaret and Monica.</li>
+                </ul>
+
+                <div class="gallery-grid" style="margin-top: 18px;">
+                    <div class="gallery-item">
+                        <img src="Maize stalks.jpeg" alt="Transfer of Maize Stalks Fodder" loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Fodder Transfer to Livestock Area</h4>
+                            <p>Kinoti overseeing freshly harvested maize stalks stacked and prepared for livestock feed delivery.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Flowers put in vase.jpeg" alt="Ornamental Flowers in Vases" loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Ornamental Flower Vases</h4>
+                            <p>Vibrant potted geraniums and blooms arranged in rustic stone vases enhancing the farmhouse lawn.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="WhatsApp Image 2026-08-21 at 15.55.34.jpeg" alt="Lawn Flower Arrangements" loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Main House Garden Beautification</h4>
+                            <p>Watered flower arrangements positioned on stone display plinths across the well-manicured lawn.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- ========================================================================= -->
+        <!-- 3. KABETE RESIDENCE -->
+        <!-- ========================================================================= -->
+        <section id="residence">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon icon-residence">🏡</div>
+                    <h2>Kabete Residence</h2>
+                </div>
+                <div class="supervisor-badge">
+                    Overseen by: <span>Njoki</span>
+                </div>
+            </div>
+
+            <!-- Masonry, Painting, Gutters & Pet Care -->
+            <div class="card">
+                <div class="card-header">
+                    <span>🔨 Structural Masonry, Tank Stand Painting &amp; Gutter Installation</span>
+                </div>
+                <ul class="activity-list">
+                    <li><strong>Main House Storage Tank Stairs:</strong> Final masonry rendering and plastering completed on the concrete access stairs leading to the main water storage tank slab.</li>
+                    <li><strong>Water Storage Tank Stand Painting:</strong> Protective anti-rust primer and black finish paint applied across the elevated structural steel tank tower.</li>
+                    <li><strong>Glassroom Gutter Installation:</strong> PVC rainwater harvesting gutters and brackets fully measured, aligned, and installed along the glassroom roof fascia.</li>
+                    <li><strong>Ajabu Kennel Repair:</strong> Structural maintenance and metal framing repair completed on Ajabu the Golden Retriever's outdoor kennel enclosure.</li>
+                    <li><strong>Resident Pets Care:</strong> Ajabu's regular feeding and attentive dinner feeding for resident cats.</li>
+                </ul>
+
+                <div class="success-box">
+                    <h4>Key Accomplishments Complete</h4>
+                    <p>Storage tank access stairs are 100% complete and fully plastered. Water tank steel stand painting and glassroom gutter installation were successfully executed.</p>
+                </div>
+
+                <div class="gallery-grid" style="margin-top: 20px;">
+                    <div class="gallery-item">
+                        <img src="Finishing of the main house tank slab stairs.jpeg" alt="Tank Slab Stairs Plastering" loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Finishing Tank Slab Access Stairs</h4>
+                            <p>Mason applying smooth cement plastering across the newly formed concrete steps leading to the tank platform.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Storage tank stairs complete.jpeg" alt="Storage Tank Stairs Complete" loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Storage Tank Stairs Completed</h4>
+                            <p>Final troweling and completed masonry finish on the storage tank staircase flanked by green foliage.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Paint works for storage tank stand.jpeg" alt="Storage Tank Stand Painting" loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Storage Tank Stand Paint Works</h4>
+                            <p>Painter in protective coveralls coating the elevated steel support frame underneath the water tank.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="WhatsApp Image 2026-08-21 at 18.45.46.jpeg" alt="Tank Stand Painting High Angle" loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>High-Angle Tank Frame Painting</h4>
+                            <p>Detailed view of anti-corrosion black coating applied to upper structural braces and tank platform.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Gutters installation at glassroom.jpeg" alt="Glassroom Gutter Installation" loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Glassroom Gutter Installation</h4>
+                            <p>Carpentry and plumbing technicians mounting rainwater collection gutters onto the glassroom canopy.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="WhatsApp Image 2026-08-21 .jpeg" alt="Fascia Guttering Fitment" loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Fascia &amp; Gutter Alignment</h4>
+                            <p>Workers securing gutter channel joints along the perimeter rafters of the glassroom pergola roof.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Ajabu kennel repair.jpeg" alt="Ajabu Kennel Repair" loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Ajabu Kennel Structural Repair</h4>
+                            <p>Welding and frame alignment completed on Ajabu's wire mesh and steel kennel enclosure.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Ajabu.jpeg" alt="Ajabu the Golden Retriever" loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Ajabu at Mealtime</h4>
+                            <p>Ajabu enjoying his nutritious daily feed on the clean veranda tile floor.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Cats having dinner.jpeg" alt="Resident Cats Dinner" loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Resident Cats Dinner Time</h4>
+                            <p>Resident cats feeding together from clean bowls in the evening sunlight at Kabete Residence.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- ========================================================================= -->
+        <!-- 4. AMANI COTTAGE -->
+        <!-- ========================================================================= -->
+        <section id="cottage">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon icon-cottage">🏡</div>
+                    <h2>Amani Cottage</h2>
+                </div>
+                <div class="supervisor-badge">
+                    Supervisors: <span>Edwin &amp; Housekeeping Team</span>
+                </div>
+            </div>
+
+            <!-- Grounds, Housekeeping & Balcony Cleaning -->
+            <div class="card">
+                <div class="card-header">
+                    <span>🧹 Grounds Sweeping, Two Balconies Deep Clean &amp; Irrigation</span>
+                </div>
+                <ul class="activity-list">
+                    <li><strong>Compound Sweeping:</strong> Comprehensive yard sweeping and leaf raking across the entire cottage front and back grounds.</li>
+                    <li><strong>Two Balconies Scrubbing &amp; Deep Clean:</strong> Both balconies washed, scrubbed with detergent, and rinsed clean including outdoor patio flagstones.</li>
+                    <li><strong>Lawn Irrigation:</strong> Sprinkler irrigation set up and operated across the cottage front lawn and tree lines to ensure turf hydration.</li>
+                    <li><strong>Outside Downstairs Toilets &amp; Drainage Sanitation:</strong> Deep cleaning, scrubbing, and sanitizing of downstairs exterior toilet facilities and adjacent stone drainage trenches.</li>
+                </ul>
+
+                <div class="gallery-grid" style="margin-top: 20px;">
+                    <div class="gallery-item">
+                        <img src="Ready to sweep compound(Amani cottage).jpeg" alt="Ready to Sweep Compound" loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Yard Sweeping &amp; Debris Raking</h4>
+                            <p>Grounds rake and collection piles prepared for full cottage compound sweeping.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Irrigating the lawn.jpeg" alt="Irrigating Cottage Lawn" loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Lawn Sprinkler Irrigation</h4>
+                            <p>Active sprinkler misting and watering lush turf under cottage mature shade trees.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Amani cottage_01.jpeg" alt="Balcony Floor Washing" loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Balcony No. 1 Detergent Scrubbing</h4>
+                            <p>Soap foam and brush scrubbing of exterior natural stone balcony patio outside sliding doors.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Amani cottage_02.jpeg" alt="Second Balcony Cleaned" loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Balcony No. 2 Cleaning &amp; Setup</h4>
+                            <p>Washed flagstone balcony porch, stepladder, bucket, and spotless log cabin exterior.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Amani C.jpeg" alt="Exterior Timber & Window Maintenance" loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Exterior Timber &amp; Window Care</h4>
+                            <p>Stepladder positioning along cottage timber wall and chimney stonework for elevated cleaning.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Amani.jpeg" alt="Downstairs Patio & Drainage Scrubbing" loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Downstairs Patio &amp; Trench Washing</h4>
+                            <p>Detergent wash of outside downstairs toilet threshold and perimeter drainage inlet.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Amani cottage.jpeg" alt="Clean Exterior Grates & Drainage" loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Drainage Grates &amp; Flagstone Patio</h4>
+                            <p>Pristine washed drainage channel grates and clean flagstone patio following deep cleaning.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer Signature Block -->
+    <footer>
+        <div class="signature-block">
+            <div class="signature-avatar">DN</div>
+            <div class="signature-details">
+                <h3>Compiled by Dennis</h3>
+            </div>
+        </div>
+        <div style="font-size: 0.85rem; color: var(--slate-600);">
+            Published: Friday, August 21, 2026 &bull; Daily Operations
+        </div>
+    </footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+# Video Media (hosted & streamed via Google Drive per SOP)
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+
+# WhatsApp Bridge Credentials & State (Sensitive private keys)
+whatsapp-bridge/auth_info_baileys/
+auth_info_baileys/
+
+# Dependencies & Package Managers
+**/node_modules/
+node_modules/
+package-lock.json
+
+# Separate Project Repositories
+guest-flow/
+
+# Environment variables & secrets
+.env
+.env.*
+*.env
+*.pem
+*.key
+
+# Temporary files & Office lock files
+~$*.xlsx
+~$*.xls
+~$*.docx
+*.tmp
+
+# Operating System Caches
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Log files
+*.log
+npm-debug.log*

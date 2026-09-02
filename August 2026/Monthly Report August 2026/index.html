@@ -1,0 +1,1798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Operations Summary Report — August 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --primary-light: #1e293b;
+            --accent-blue: #0066cc;
+            --golf-green: #15803d;
+            --golf-green-dark: #14532d;
+            --golf-green-light: #f0fdf4;
+            --golf-green-border: #bbf7d0;
+            --farm-amber: #d97706;
+            --farm-amber-dark: #b45309;
+            --farm-amber-light: #fffbeb;
+            --farm-amber-border: #fde68a;
+            --residence-purple: #6d28d9;
+            --residence-purple-dark: #5b21b6;
+            --residence-purple-light: #f5f3ff;
+            --residence-purple-border: #ddd6fe;
+            --cottage-teal: #0d9488;
+            --cottage-teal-dark: #0f766e;
+            --cottage-teal-light: #f0fdfa;
+            --cottage-teal-border: #99f6e4;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-300: #cbd5e1;
+            --slate-400: #94a3b8;
+            --slate-500: #64748b;
+            --slate-600: #475569;
+            --slate-700: #334155;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+            --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f1f5f9;
+            color: var(--slate-800);
+            line-height: 1.65;
+            font-size: 15.5px;
+            padding: 40px 20px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.06), 0 8px 12px -6px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+            border: 1px solid var(--slate-200);
+        }
+
+        /* ── COVER HEADER ── */
+        .cover-header {
+            background: #0f172a !important;
+            color: #ffffff !important;
+            padding: 48px 52px 42px;
+            position: relative;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-eyebrow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .report-kicker {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #4ade80 !important;
+            font-weight: 800;
+        }
+
+        .date-badge {
+            background: rgba(255, 255, 255, 0.15) !important;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 7px 18px;
+            border-radius: 9999px;
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #ffffff !important;
+            letter-spacing: 0.3px;
+        }
+
+        .cover-header h1 {
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: -0.7px;
+            margin-bottom: 12px;
+            color: #ffffff !important;
+            line-height: 1.22;
+        }
+
+        .cover-header p.lead {
+            color: #cbd5e1 !important;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.65;
+            max-width: 980px;
+        }
+
+        .meta-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-top: 28px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .meta-cell .meta-label {
+            font-size: 11.5px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: #94a3b8;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .meta-cell .meta-val {
+            font-size: 14.5px;
+            color: #f8fafc;
+            font-weight: 700;
+        }
+
+        /* ── EXECUTIVE OVERVIEW BLOCK (PAGE 1) ── */
+        .exec-overview-section {
+            padding: 36px 52px;
+            background: #ffffff;
+            border-bottom: 1px solid var(--slate-200);
+        }
+
+        .exec-overview-title {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 800;
+            color: var(--slate-500);
+            margin-bottom: 14px;
+        }
+
+        .exec-overview-text {
+            font-size: 15.5px;
+            line-height: 1.7;
+            color: var(--slate-700);
+            margin-bottom: 24px;
+        }
+
+        /* ── METRIC GRID (3x2 Balanced Architecture) ── */
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .metric-card {
+            background: var(--slate-50);
+            border: 1px solid var(--slate-200);
+            border-radius: 12px;
+            padding: 20px 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .metric-card .metric-label {
+            font-size: 12px;
+            font-weight: 750;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--slate-500);
+            margin-bottom: 8px;
+        }
+
+        .metric-card .metric-number {
+            font-size: 27px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--slate-900);
+            margin-bottom: 6px;
+            line-height: 1.1;
+        }
+
+        .metric-card .metric-number.green { color: var(--golf-green); }
+        .metric-card .metric-number.amber { color: var(--farm-amber); }
+        .metric-card .metric-number.purple { color: var(--residence-purple); }
+        .metric-card .metric-number.teal { color: var(--cottage-teal); }
+
+        .metric-card .metric-detail {
+            font-size: 13px;
+            color: var(--slate-600);
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* ── REPORT CONTENT WRAPPER ── */
+        .content-body {
+            padding: 42px 52px;
+        }
+
+        /* ── SITE SECTION STYLING ── */
+        .site-block {
+            margin-bottom: 42px;
+        }
+
+        .site-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding-bottom: 14px;
+            border-bottom: 2px solid var(--slate-200);
+            margin-bottom: 26px;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .site-header.golf { border-bottom-color: var(--golf-green); }
+        .site-header.farm { border-bottom-color: var(--farm-amber); }
+        .site-header.residence { border-bottom-color: var(--residence-purple); }
+        .site-header.cottage { border-bottom-color: var(--cottage-teal); }
+
+        .site-title-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .site-kicker {
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .site-header.golf .site-kicker { color: var(--golf-green); }
+        .site-header.farm .site-kicker { color: var(--farm-amber); }
+        .site-header.residence .site-kicker { color: var(--residence-purple); }
+        .site-header.cottage .site-kicker { color: var(--cottage-teal); }
+
+        .site-title-wrap h2 {
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: -0.4px;
+            color: var(--slate-900);
+        }
+
+        .site-supervisor {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--slate-600);
+            background: var(--slate-100);
+            padding: 7px 16px;
+            border-radius: 9999px;
+            border: 1px solid var(--slate-200);
+        }
+
+        .site-supervisor span {
+            color: var(--slate-900);
+            font-weight: 700;
+        }
+
+        /* ── SECTION EDITORIAL CARDS ── */
+        .editorial-card {
+            background: #ffffff;
+            border: 1px solid var(--slate-200);
+            border-radius: 14px;
+            padding: 26px 30px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .site-overview-card {
+            padding: 32px 36px;
+            margin-bottom: 28px;
+        }
+
+        .site-overview-card .card-heading {
+            font-size: 18.5px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .site-overview-card .editorial-text {
+            font-size: 15.5px;
+            line-height: 1.72;
+            margin-bottom: 18px;
+        }
+
+        .site-overview-card .highlight-list li {
+            font-size: 15px;
+            line-height: 1.68;
+            margin-bottom: 14px;
+            padding-left: 26px;
+        }
+
+        .site-overview-card .callout-box {
+            padding: 20px 24px;
+            margin-top: 22px;
+        }
+
+        .site-overview-card .callout-box h4 {
+            font-size: 15px;
+            margin-bottom: 6px;
+        }
+
+        .site-overview-card .callout-box p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .table-card {
+            padding: 24px 28px;
+            margin-bottom: 24px;
+        }
+
+        .card-heading {
+            font-size: 17px;
+            font-weight: 750;
+            color: var(--slate-900);
+            margin-bottom: 14px;
+        }
+
+        .editorial-text {
+            font-size: 15px;
+            color: var(--slate-700);
+            line-height: 1.68;
+            margin-bottom: 16px;
+        }
+
+        /* ── BULLETED HIGHLIGHT LISTS ── */
+        .highlight-list {
+            list-style: none;
+            margin: 12px 0 8px;
+        }
+
+        .highlight-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 14px;
+            font-size: 14.5px;
+            line-height: 1.65;
+            color: var(--slate-700);
+        }
+
+        .highlight-list li::before {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 9px;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: var(--slate-400);
+        }
+
+        .highlight-list.golf li::before { background-color: var(--golf-green); }
+        .highlight-list.farm li::before { background-color: var(--farm-amber); }
+        .highlight-list.residence li::before { background-color: var(--residence-purple); }
+        .highlight-list.cottage li::before { background-color: var(--cottage-teal); }
+
+        .highlight-list li strong {
+            color: var(--slate-900);
+            font-weight: 750;
+        }
+
+        /* ── HIGHLIGHT CALLOUT BOXES ── */
+        .callout-box {
+            padding: 18px 22px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 4px solid var(--slate-400);
+            background-color: var(--slate-50);
+        }
+
+        .callout-box.golf {
+            border-left-color: var(--golf-green);
+            background-color: var(--golf-green-light);
+        }
+
+        .callout-box.farm {
+            border-left-color: var(--farm-amber);
+            background-color: var(--farm-amber-light);
+        }
+
+        .callout-box.residence {
+            border-left-color: var(--residence-purple);
+            background-color: var(--residence-purple-light);
+        }
+
+        .callout-box.cottage {
+            border-left-color: var(--cottage-teal);
+            background-color: var(--cottage-teal-light);
+        }
+
+        .callout-box h4 {
+            font-size: 14.5px;
+            font-weight: 750;
+            margin-bottom: 6px;
+        }
+
+        .callout-box.golf h4 { color: var(--golf-green-dark); }
+        .callout-box.farm h4 { color: var(--farm-amber-dark); }
+        .callout-box.residence h4 { color: var(--residence-purple-dark); }
+        .callout-box.cottage h4 { color: var(--cottage-teal-dark); }
+
+        .callout-box p {
+            font-size: 13.5px;
+            color: var(--slate-700);
+            line-height: 1.58;
+        }
+
+        /* ── EXECUTIVE DATA TABLES ── */
+        .table-wrap {
+            width: 100%;
+            overflow-x: auto;
+            margin: 12px 0 6px;
+            border-radius: 10px;
+            border: 1px solid var(--slate-200);
+        }
+
+        .exec-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13.5px;
+            text-align: left;
+        }
+
+        .exec-table th {
+            background-color: var(--slate-100) !important;
+            color: var(--slate-800);
+            font-weight: 750;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            padding: 11px 14px;
+            border-bottom: 1px solid var(--slate-300);
+        }
+
+        .exec-table td {
+            padding: 10px 14px;
+            color: var(--slate-700);
+            border-bottom: 1px solid var(--slate-200);
+            line-height: 1.45;
+        }
+
+        .exec-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .exec-table tbody tr:hover {
+            background-color: #f8fafc;
+        }
+
+        .exec-table tfoot td {
+            background-color: #f1f5f9 !important;
+            font-weight: 750;
+            color: var(--slate-900);
+            border-top: 2px solid var(--slate-300);
+            padding: 11px 14px;
+            font-size: 13.5px;
+        }
+
+        .exec-table .grand-total-row td {
+            background-color: #0f172a !important;
+            color: #ffffff !important;
+            font-weight: 800;
+            font-size: 14px;
+            border: none;
+            padding: 13px 15px;
+        }
+
+        .exec-table .align-right { text-align: right; }
+        .exec-table .align-center { text-align: center; }
+
+        .exec-table .num-bold {
+            font-weight: 750;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .status-tag {
+            font-size: 11.5px;
+            font-weight: 750;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--slate-600);
+        }
+
+        .status-tag.complete { color: var(--golf-green); }
+        .status-tag.active { color: var(--accent-blue); }
+
+        /* ── PHOTOGRAPHY GALLERIES ── */
+        .photo-section-title {
+            font-size: 13px;
+            font-weight: 750;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--slate-500);
+            margin: 24px 0 14px;
+        }
+
+        .gallery-2col {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 8px;
+        }
+
+        .gallery-3col {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 8px;
+        }
+
+        .photo-card {
+            background: #ffffff;
+            border: 1px solid var(--slate-200);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-subtle);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            background-color: var(--slate-100);
+        }
+
+        .photo-card-info {
+            padding: 12px 14px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .photo-card-info h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--slate-900);
+            margin-bottom: 4px;
+            line-height: 1.35;
+        }
+
+        .photo-card-info p {
+            font-size: 12.5px;
+            color: var(--slate-600);
+            line-height: 1.45;
+        }
+
+        /* ── FOOTER SIGNATURE BLOCK ── */
+        .report-footer {
+            padding: 24px 36px;
+            background-color: var(--slate-50);
+            border: 1px solid var(--slate-200);
+            border-radius: 12px;
+            margin-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .signature-group {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .signature-mark {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 18px;
+        }
+
+        .signature-meta h3 {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--slate-900);
+            margin-bottom: 2px;
+        }
+
+        .signature-meta p {
+            font-size: 13px;
+            color: var(--slate-500);
+        }
+
+        .footer-badge {
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--slate-600);
+            background: #ffffff;
+            padding: 6px 14px;
+            border-radius: 9999px;
+            border: 1px solid var(--slate-200);
+        }
+
+        /* ═════════════════════════════════════════════════════════════════════════ */
+        /* PRINT & PDF ENGINE STYLING (A4 OPTIMIZED — BENCHMARKED TO DAILY REPORTS) */
+        /* ═════════════════════════════════════════════════════════════════════════ */
+        @media print {
+            @page {
+                size: A4;
+                margin: 8mm 10mm;
+            }
+
+            body {
+                background-color: #ffffff !important;
+                padding: 0 !important;
+                font-size: 14px !important;
+                line-height: 1.55 !important;
+                color: #1e293b !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .container {
+                box-shadow: none !important;
+                border: none !important;
+                max-width: 100% !important;
+                border-radius: 0 !important;
+            }
+
+            .cover-header {
+                padding: 34px 38px 28px !important;
+                background: #0f172a !important;
+                border-radius: 8px !important;
+            }
+
+            .cover-header h1 {
+                font-size: 28px !important;
+                line-height: 1.2 !important;
+                margin-bottom: 8px !important;
+            }
+
+            .cover-header p.lead {
+                font-size: 14.2px !important;
+                line-height: 1.55 !important;
+            }
+
+            .meta-strip {
+                margin-top: 20px !important;
+                padding-top: 16px !important;
+                gap: 14px !important;
+            }
+
+            .meta-cell .meta-label { font-size: 10.5px !important; }
+            .meta-cell .meta-val { font-size: 13px !important; }
+
+            .exec-overview-section {
+                padding: 26px 38px !important;
+            }
+
+            .exec-overview-title {
+                font-size: 12px !important;
+                margin-bottom: 10px !important;
+            }
+
+            .exec-overview-text {
+                font-size: 14px !important;
+                line-height: 1.6 !important;
+                margin-bottom: 20px !important;
+            }
+
+            .metric-grid {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 12px !important;
+            }
+
+            .metric-card {
+                padding: 15px 16px !important;
+                border: 1px solid #cbd5e1 !important;
+                background: #f8fafc !important;
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            .metric-card .metric-label { font-size: 10.8px !important; }
+            .metric-card .metric-number { font-size: 23px !important; }
+            .metric-card .metric-detail { font-size: 12px !important; line-height: 1.35 !important; }
+
+            .content-body {
+                padding: 22px 28px !important;
+            }
+
+            /* Clean Page Break Rules */
+            .page-break-cover {
+                page-break-after: always !important;
+                break-after: page !important;
+            }
+
+            .site-block {
+                margin-bottom: 0 !important;
+                page-break-before: always !important;
+                break-before: page !important;
+            }
+
+            .site-header {
+                padding-bottom: 10px !important;
+                margin-bottom: 16px !important;
+                break-after: avoid !important;
+                page-break-after: avoid !important;
+            }
+
+            .site-title-wrap h2 { font-size: 22px !important; }
+            .site-kicker { font-size: 11px !important; }
+            .site-supervisor { font-size: 12px !important; padding: 5px 12px !important; }
+
+            .editorial-card {
+                padding: 18px 22px !important;
+                margin-bottom: 16px !important;
+                border: 1px solid #cbd5e1 !important;
+                box-shadow: none !important;
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            /* Dedicated styling for site overview narrative cards across ALL sections */
+            .site-overview-card {
+                padding: 26px 30px !important;
+                margin-bottom: 0 !important;
+                border-radius: 12px !important;
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            .site-overview-card .card-heading {
+                font-size: 17.5px !important;
+                margin-bottom: 14px !important;
+                font-weight: 800 !important;
+            }
+
+            .site-overview-card .editorial-text {
+                font-size: 14.5px !important;
+                line-height: 1.65 !important;
+                margin-bottom: 16px !important;
+            }
+
+            .site-overview-card .highlight-list {
+                margin: 14px 0 8px !important;
+            }
+
+            .site-overview-card .highlight-list li {
+                font-size: 13.8px !important;
+                margin-bottom: 13px !important;
+                line-height: 1.62 !important;
+                padding-left: 24px !important;
+            }
+
+            .site-overview-card .highlight-list li::before {
+                top: 8px !important;
+                width: 6.5px !important;
+                height: 6.5px !important;
+                left: 5px !important;
+            }
+
+            .site-overview-card .callout-box {
+                padding: 16px 20px !important;
+                margin-top: 18px !important;
+                border-radius: 8px !important;
+            }
+
+            .site-overview-card .callout-box h4 {
+                font-size: 14.5px !important;
+                margin-bottom: 5px !important;
+                font-weight: 800 !important;
+            }
+
+            .site-overview-card .callout-box p {
+                font-size: 13.2px !important;
+                line-height: 1.55 !important;
+            }
+
+            /* Dedicated styling for data table cards */
+            .table-card {
+                padding: 22px 26px !important;
+                margin-bottom: 16px !important;
+                border: 1px solid #cbd5e1 !important;
+                box-shadow: none !important;
+                border-radius: 12px !important;
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            /* Mucheru Golf has 2 tables co-located on Page 3 */
+            #mucheru-golf .table-card {
+                padding: 16px 20px !important;
+                margin-bottom: 12px !important;
+            }
+
+            #mucheru-golf .table-card .card-heading {
+                font-size: 14.5px !important;
+                font-weight: 750 !important;
+                margin-bottom: 6px !important;
+            }
+
+            #mucheru-golf .table-card .editorial-text {
+                font-size: 12.2px !important;
+                line-height: 1.4 !important;
+                margin-bottom: 6px !important;
+            }
+
+            #mucheru-golf .exec-table th {
+                font-size: 10.5px !important;
+                padding: 6.5px 9px !important;
+            }
+
+            #mucheru-golf .exec-table td {
+                font-size: 11.2px !important;
+                padding: 6.5px 9px !important;
+                line-height: 1.32 !important;
+            }
+
+            #mucheru-golf .exec-table tfoot td {
+                font-size: 11.2px !important;
+                padding: 7px 9px !important;
+            }
+
+            #mucheru-golf .exec-table .grand-total-row td {
+                font-size: 12px !important;
+                padding: 8px 10px !important;
+            }
+
+            /* Standalone tables (Chaka Farms & Kabete Residence) */
+            #chaka-farms .table-card,
+            #kabete-residence .table-card {
+                padding: 32px 36px !important;
+                border-radius: 14px !important;
+            }
+
+            #chaka-farms .table-card .card-heading,
+            #kabete-residence .table-card .card-heading {
+                font-size: 18px !important;
+                font-weight: 800 !important;
+                margin-bottom: 12px !important;
+            }
+
+            #chaka-farms .table-card .editorial-text,
+            #kabete-residence .table-card .editorial-text {
+                font-size: 14.5px !important;
+                line-height: 1.62 !important;
+                margin-bottom: 16px !important;
+            }
+
+            #chaka-farms .exec-table th,
+            #kabete-residence .exec-table th {
+                font-size: 11.8px !important;
+                padding: 13px 16px !important;
+            }
+
+            #chaka-farms .exec-table td,
+            #kabete-residence .exec-table td {
+                font-size: 12.8px !important;
+                padding: 13px 16px !important;
+                line-height: 1.48 !important;
+            }
+
+            #chaka-farms .exec-table tfoot td {
+                font-size: 13.2px !important;
+                padding: 14px 16px !important;
+            }
+
+            #chaka-farms .table-card p.footnote {
+                font-size: 12px !important;
+                line-height: 1.5 !important;
+                margin-top: 12px !important;
+            }
+
+            /* Amani Cottage Narrative Card (Page 11) */
+            #amani-cottage .site-overview-card {
+                padding: 32px 36px !important;
+            }
+
+            #amani-cottage .site-overview-card .highlight-list li {
+                margin-bottom: 16px !important;
+                font-size: 14.2px !important;
+                line-height: 1.65 !important;
+            }
+
+            #amani-cottage .site-overview-card .callout-box {
+                padding: 18px 22px !important;
+                margin-top: 20px !important;
+            }
+
+            .card-heading {
+                font-size: 15.5px !important;
+                margin-bottom: 10px !important;
+                font-weight: 750 !important;
+            }
+
+            .editorial-text {
+                font-size: 13.5px !important;
+                line-height: 1.58 !important;
+                margin-bottom: 12px !important;
+            }
+
+            .highlight-list {
+                margin: 10px 0 6px !important;
+            }
+
+            .highlight-list li {
+                font-size: 13.2px !important;
+                margin-bottom: 10px !important;
+                line-height: 1.58 !important;
+                padding-left: 22px !important;
+            }
+
+            .highlight-list li::before {
+                top: 8px !important;
+                width: 6px !important;
+                height: 6px !important;
+                left: 5px !important;
+            }
+
+            .callout-box {
+                padding: 14px 18px !important;
+                margin-top: 14px !important;
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            .callout-box h4 { font-size: 13.5px !important; margin-bottom: 4px !important; font-weight: 750 !important; }
+            .callout-box p { font-size: 12.5px !important; line-height: 1.5 !important; }
+
+            /* Remove scrollbars in print tables */
+            .table-wrap {
+                margin: 8px 0 4px !important;
+                border: 1px solid #cbd5e1 !important;
+                overflow: visible !important;
+                width: 100% !important;
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            .exec-table {
+                width: 100% !important;
+                table-layout: auto !important;
+            }
+
+            .exec-table th {
+                background-color: #f1f5f9 !important;
+                font-weight: 750 !important;
+            }
+
+            .exec-table tfoot td {
+                background-color: #f1f5f9 !important;
+                font-weight: 750 !important;
+            }
+
+            .exec-table .grand-total-row td {
+                background-color: #0f172a !important;
+                color: #ffffff !important;
+            }
+
+            .page-break-section {
+                page-break-after: always !important;
+                break-after: page !important;
+            }
+
+            .photo-section-title {
+                font-size: 13px !important;
+                font-weight: 750 !important;
+                letter-spacing: 0.05em !important;
+                text-transform: uppercase !important;
+                color: #475569 !important;
+                margin-bottom: 14px !important;
+                margin-top: 6px !important;
+                break-after: avoid !important;
+                page-break-after: avoid !important;
+            }
+
+            .gallery-2col, .gallery-3col {
+                display: grid !important;
+                gap: 14px !important;
+                margin-top: 6px !important;
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            .gallery-2col {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            .gallery-3col {
+                grid-template-columns: repeat(3, 1fr) !important;
+            }
+
+            .photo-card {
+                border: 1px solid #cbd5e1 !important;
+                border-radius: 10px !important;
+                overflow: hidden !important;
+                background: #ffffff !important;
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            .gallery-2col .photo-card img {
+                height: 175px !important;
+                width: 100% !important;
+                object-fit: cover !important;
+            }
+
+            .gallery-3col .photo-card img {
+                height: 195px !important;
+                width: 100% !important;
+                object-fit: cover !important;
+            }
+
+            .photo-card-info {
+                padding: 12px 15px !important;
+            }
+
+            .photo-card-info h4 {
+                font-size: 13.5px !important;
+                font-weight: 750 !important;
+                margin-bottom: 4px !important;
+                color: #0f172a !important;
+            }
+
+            .photo-card-info p {
+                font-size: 12px !important;
+                line-height: 1.42 !important;
+                color: #475569 !important;
+            }
+
+            .report-footer {
+                margin-top: 24px !important;
+                padding: 20px 26px !important;
+                border-radius: 12px !important;
+                background: #f8fafc !important;
+                border: 1px solid #cbd5e1 !important;
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            .signature-mark {
+                width: 46px !important;
+                height: 46px !important;
+                font-size: 19px !important;
+            }
+
+            .signature-meta h3 {
+                font-size: 16.5px !important;
+            }
+
+            .signature-meta p {
+                font-size: 12.5px !important;
+            }
+
+            .footer-badge {
+                font-size: 11.5px !important;
+                padding: 6px 14px !important;
+            }
+
+            /* Mandatory: Hide video player in PDF */
+            .video-media-wrapper video, video { display: none !important; }
+
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ═════════════════════════════════════════════════════════════════════════ -->
+    <!-- SECTION 1: COVER & EXECUTIVE METRIC DASHBOARD (PAGE 1)                    -->
+    <!-- ═════════════════════════════════════════════════════════════════════════ -->
+    <header class="cover-header">
+        <div class="header-eyebrow">
+            <span class="report-kicker">Operations Audit &amp; Performance Review</span>
+            <span class="date-badge">August 1 – 31, 2026</span>
+        </div>
+        <h1>Monthly Operations Summary Report</h1>
+        <p class="lead">Consolidated executive review spanning civil construction, heavy equipment deployment, agricultural livestock production, canine unit operations, estate restoration, and grounds maintenance across all four operational project sites.</p>
+        
+        <div class="meta-strip">
+            <div class="meta-cell">
+                <div class="meta-label">Audit Period</div>
+                <div class="meta-val">Full Month (31 Days)</div>
+            </div>
+            <div class="meta-cell">
+                <div class="meta-label">Reporting Compliance</div>
+                <div class="meta-val">31 of 31 Reports (100%)</div>
+            </div>
+            <div class="meta-cell">
+                <div class="meta-label">Active Project Sites</div>
+                <div class="meta-val">4 Supervised Locations</div>
+            </div>
+            <div class="meta-cell">
+                <div class="meta-label">Operational Status</div>
+                <div class="meta-val">Consolidated &amp; Audited</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Executive Narrative Summary (Page 1 Cover) -->
+    <section class="exec-overview-section">
+        <div class="exec-overview-title">Executive Operations Synthesis</div>
+        <p class="exec-overview-text">
+            During August 2026, operations across all four sites maintained 100% reporting continuity. At <strong>Mucheru World of Golf</strong>, construction accelerated with mass earthmoving, the delivery of 3 major water reservoir basins (Dams 1, 2 &amp; 3), 842 tipper haulage trips, course contouring across 14+ teeboxes, and specialized herringbone drainage installations. <strong>Chaka Farms</strong> achieved rigorous dairy production tracking with nearly 200 Litres harvested in Litres-only metrics, comprehensive livestock biosecurity for 124+ animals, and intensive canine unit discipline. <strong>Kabete Residence</strong> completed the full restoration and multi-coat painting of the main estate house roof and auxiliary outbuildings, alongside outdoor fireplace civil excavations. <strong>Amani Cottage</strong> sustained manicured lawn presentation through CAN fertilization and sprinkler irrigation regimes.
+        </p>
+
+        <!-- Balanced 3x2 Metric Grid -->
+        <div class="metric-grid">
+            <div class="metric-card">
+                <div class="metric-label">Reporting Continuity</div>
+                <div class="metric-number">31 / 31</div>
+                <div class="metric-detail">100% daily operations coverage filed and audited</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Gross Milk Harvest</div>
+                <div class="metric-number amber">199.60 L</div>
+                <div class="metric-detail">6.44 L/day herd average strictly tracked in Litres</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Heavy Equipment Run</div>
+                <div class="metric-number green">261.82 Hrs</div>
+                <div class="metric-detail">Excavator (123.10h) + Backhoe Loader (138.72h)</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Earthmoving Haulage</div>
+                <div class="metric-number green">842 Trips</div>
+                <div class="metric-detail">Excavated murram transferred to plateaus and teeboxes</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Machinery &amp; Haulage Total</div>
+                <div class="metric-number">KES 2.79M</div>
+                <div class="metric-detail">Heavy plant (KES 1.95M) + tipper haulage (KES 842k)</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Key Structural Milestones</div>
+                <div class="metric-number purple">3 Dams • 4 Sites</div>
+                <div class="metric-detail">Dams 1 &amp; 3 completed, 100% roof painting finished</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page Break between Executive Cover and Detailed Site Sections -->
+    <div class="page-break-cover"></div>
+
+    <!-- ═════════════════════════════════════════════════════════════════════════ -->
+    <!-- SECTION 2: MUCHERU WORLD OF GOLF                                          -->
+    <!-- ═════════════════════════════════════════════════════════════════════════ -->
+    <div class="content-body">
+        
+        <section id="mucheru-golf" class="site-block">
+            <div class="site-header golf">
+                <div class="site-title-wrap">
+                    <span class="site-kicker">Civil Engineering &amp; Earthmoving</span>
+                    <h2>1. Mucheru World of Golf</h2>
+                </div>
+                <div class="site-supervisor">
+                    Supervised by: <span>Ken, Mr. Gichuhi, Kinoti &amp; Kamandau</span>
+                </div>
+            </div>
+
+            <!-- Page 2: Narrative Overview & Milestones -->
+            <div class="editorial-card site-overview-card">
+                <div class="card-heading">
+                    <span>Monthly Earthworks &amp; Course Architecture Transformation</span>
+                </div>
+                <p class="editorial-text">
+                    August was a transformational phase for Mucheru World of Golf, highlighted by the strategic delivery of major water harvesting reservoirs, continuous heavy machinery operations, and advanced green engineering:
+                </p>
+                <ul class="highlight-list golf">
+                    <li><strong>Water Reservoir Campaign (Dams 1, 2 &amp; 3):</strong> Successfully excavated <strong>Dam 1</strong> (groundbreaking Aug 7, 100% completed Aug 10), continuous deepening and murram extraction at <strong>Dam 2</strong>, and full groundbreaking through 100% completion of <strong>Dam 3</strong> (Aug 16–20). Cleared residual murram deposits from Dam 1 basin at month-end to maximize water retention.</li>
+                    <li><strong>Mass Tipper Earthmoving Haulage:</strong> Coordinated <strong>842 tipper lorry loads</strong> of excavated murram fill, building up the proposed clubhouse plateau, access roadbeds, and course contours.</li>
+                    <li><strong>Course Contouring &amp; Teebox Grading (14+ Teeboxes):</strong> Graded, leveled, and compacted teebox platforms across the course including Teeboxes No. 1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, and 18. Constructed a brand-new elevated plateau for Green No. 7 teebox.</li>
+                    <li><strong>Greens Sub-Base Engineering &amp; Drainage:</strong> Installed sub-surface PVC drainage piping networks across Greens 1, 2, 3, 4, 9, and 14. Completed topsoil rotavation and ploughing on Green No. 10 using the farm tractor, followed by geometric chalk surveying and full herringbone trench excavation. Adjusted rear putting contours on Green No. 9.</li>
+                    <li><strong>Masterplan Surveying &amp; Perimeter Landscaping:</strong> Architect Kevin Njoroge conducted clubhouse footprint setting and reference pegging. Excavated tree-planting holes along the boundary perimeter for landscaping.</li>
+                </ul>
+
+                <div class="callout-box golf">
+                    <h4>Site Milestone Summary: 3 Water Reservoirs Delivered &amp; Advanced Course Contouring</h4>
+                    <p>Complete excavation of Dams 1 &amp; 3, deepening of Dam 2, 842 tipper loads of earth fill relocated, 14+ teeboxes leveled, and advanced herringbone drainage networks cut on Greens 1–4 and Green 10.</p>
+                </div>
+            </div>
+
+            <!-- Page Break to Page 3: Golf Equipment & Materials Spread -->
+            <div class="page-break-section"></div>
+
+            <!-- Heavy Machinery & Haulage Financial Ledger -->
+            <div class="editorial-card table-card">
+                <div class="card-heading">
+                    <span>Heavy Equipment &amp; Haulage Financial Ledger (August 1–31, 2026)</span>
+                </div>
+                <p class="editorial-text">
+                    Consolidated machinery operational deployment, hourly billing rates, and haulage logistics across August. In strict accordance with site equipment rules, the Front Loader and Backhoe refer to the single on-site Backhoe Loader asset and are fully consolidated under a single entry:
+                </p>
+
+                <div class="table-wrap">
+                    <table class="exec-table">
+                        <thead>
+                            <tr>
+                                <th>Equipment / Haulage Asset</th>
+                                <th>Primary Operational Scope</th>
+                                <th class="align-center">Active Period</th>
+                                <th class="align-right">Hours / Trips</th>
+                                <th class="align-right">Billing Rate</th>
+                                <th class="align-right">Total Cost (KES)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Sunward SWE210 Tracked Hydraulic Excavator</strong></td>
+                                <td>Dams 1, 2 &amp; 3 deep basin cutting, murram excavation, embankment shaping &amp; tipper loading</td>
+                                <td class="align-center">Aug 7–21</td>
+                                <td class="align-right num-bold">123.10 hrs</td>
+                                <td class="align-right">KES 8,500 / hr</td>
+                                <td class="align-right num-bold">KES 1,046,350.00</td>
+                            </tr>
+                            <tr>
+                                <td><strong>XGMA Backhoe Loader</strong> <span style="font-size: 11px; color: var(--slate-500);">(Consolidated Front Loader &amp; Backhoe)</span></td>
+                                <td>Dam 1 &amp; 2 basin leveling, teebox grading (Tees 1–18), Green 5, 7, 8, 9 &amp; 17 shaping, palm tree holes, road clearing</td>
+                                <td class="align-center">Aug 13–31</td>
+                                <td class="align-right num-bold">138.72 hrs</td>
+                                <td class="align-right">KES 6,500 / hr</td>
+                                <td class="align-right num-bold">KES 901,751.67</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tipper Lorry Earthmoving Haulage</strong></td>
+                                <td>Transport of excavated murram from dam basins to clubhouse zone, roadbeds &amp; elevated teeboxes</td>
+                                <td class="align-center">Aug 7–21</td>
+                                <td class="align-right num-bold">842 Trips</td>
+                                <td class="align-right">KES 1,000 / trip</td>
+                                <td class="align-right num-bold">KES 842,000.00</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Site Agricultural Tractor &amp; Trailer</strong> <span style="font-size: 11px; color: var(--slate-500);">(Kinoti)</span></td>
+                                <td>Green 10 rotavating &amp; ploughing, internal trailer haulage (15+ trips), palm tree soil staging</td>
+                                <td class="align-center">Full Month</td>
+                                <td class="align-right">Internal Asset</td>
+                                <td class="align-right">Farm Asset</td>
+                                <td class="align-right" style="color: var(--slate-500);">Internal Ops</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3"><strong>Direct Heavy Plant Subtotal (Excavator + Backhoe Loader)</strong></td>
+                                <td class="align-right num-bold" style="color: var(--golf-green);">261.82 Hours</td>
+                                <td class="align-right">-</td>
+                                <td class="align-right num-bold" style="color: var(--golf-green);">KES 1,948,101.67</td>
+                            </tr>
+                            <tr class="grand-total-row">
+                                <td colspan="3">CUMULATIVE AUGUST EARTHMOVING &amp; HAULAGE TOTAL</td>
+                                <td class="align-right num-bold">261.82h + 842 Trips</td>
+                                <td class="align-right">-</td>
+                                <td class="align-right num-bold" style="color: #4ade80 !important;">KES 2,790,101.67</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Material Deliveries & Inflows Log -->
+            <div class="editorial-card table-card">
+                <div class="card-heading">
+                    <span>Material Deliveries &amp; Construction Inflows Summary</span>
+                </div>
+                <div class="table-wrap">
+                    <table class="exec-table">
+                        <thead>
+                            <tr>
+                                <th>Material Type</th>
+                                <th>Delivery Volume / Specification</th>
+                                <th>Placement Location &amp; Structural Application</th>
+                                <th class="align-center">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Hardcore Quarry Stones</strong></td>
+                                <td>Multiple commercial tipper loads (15+ tons/load)</td>
+                                <td>Green 1, 3, 4, 9, and 14 base reinforcement and sub-grade stabilization</td>
+                                <td class="align-center status-tag complete">Utilized</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pumice Volcanic Rock</strong></td>
+                                <td>Multiple full lorry loads</td>
+                                <td>Greens drainage sub-layering and water filtration beds</td>
+                                <td class="align-center status-tag complete">Utilized</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ballast Stone</strong></td>
+                                <td>Tipper loads (graded aggregates)</td>
+                                <td>Sub-base drainage layering over hardcore and around PVC pipe trenches</td>
+                                <td class="align-center status-tag complete">Utilized</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Clean Construction Sand</strong></td>
+                                <td>Multiple tipper lorry deliveries</td>
+                                <td>Greens rootzone mix staging and pipe bedding backfill</td>
+                                <td class="align-center status-tag active">Staged / Laid</td>
+                            </tr>
+                            <tr>
+                                <td><strong>High-Grade Red Topsoil</strong></td>
+                                <td>Heavy tipper loads</td>
+                                <td>Tee box profiling, Green 10 conditioning, and fairways contour smoothing</td>
+                                <td class="align-center status-tag complete">Graded</td>
+                            </tr>
+                            <tr>
+                                <td><strong>PVC Irrigation &amp; Drainage Pipes</strong></td>
+                                <td>Full bundled delivery (pipes, fittings, sprinklers)</td>
+                                <td>Herringbone subsurface drainage on Greens 1–4, 9, 10 &amp; course irrigation</td>
+                                <td class="align-center status-tag complete">Installed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Page Break to Page 4: Golf Photo Gallery -->
+            <div class="page-break-section"></div>
+
+            <div class="photo-section-title">Photographic Documentation — Mucheru World of Golf</div>
+            <div class="gallery-2col">
+                <div class="photo-card">
+                    <img src="golf_clubhouse_marking.jpg" alt="Architect Kevin Njoroge marking out clubhouse footprint">
+                    <div class="photo-card-info">
+                        <h4>Clubhouse Dimensional Layout Survey</h4>
+                        <p>Architect Kevin Njoroge surveying and pegging out the clubhouse footprint alignment on August 1st.</p>
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <img src="golf_dam3_groundbreaking.jpg" alt="Excavator digging Dam 3 basin">
+                    <div class="photo-card-info">
+                        <h4>Dam 3 Reservoir Basin Groundbreaking</h4>
+                        <p>Tracked Hydraulic Excavator cutting into deep strata to establish the Dam 3 water reservoir (Aug 16).</p>
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <img src="golf_green10_tractor_ploughing.jpg" alt="Site tractor rotavating Green 10">
+                    <div class="photo-card-info">
+                        <h4>Green No. 10 Agricultural Rotavation &amp; Ploughing</h4>
+                        <p>Site tractor conditioning and pulverizing topsoil across Green No. 10 with the rotavator attachment (Aug 24).</p>
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <img src="golf_green10_grid_aerial.jpg" alt="Drone aerial view of Green 10 drainage grid">
+                    <div class="photo-card-info">
+                        <h4>Green No. 10 Drainage Grid (Drone Aerial)</h4>
+                        <p>High-resolution drone perspective showing surveyed chalk grid lines and excavated herringbone trenches (Aug 31).</p>
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <img src="golf_teebox7_aerial.jpg" alt="Drone aerial view of Green 7 teebox">
+                    <div class="photo-card-info">
+                        <h4>Green No. 7 Elevated Teebox Plateau</h4>
+                        <p>Drone overview of the newly graded, raised teebox platform built adjacent to the boundary road (Aug 31).</p>
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <img src="golf_greens_hardcore_laying.jpg" alt="Workers laying hardcore rocks on greens">
+                    <div class="photo-card-info">
+                        <h4>Greens Hardcore Sub-Base Placement</h4>
+                        <p>Labor crew hand-arranging hardcore foundation stone across green profiles to ensure structural stability.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═════════════════════════════════════════════════════════════════════════ -->
+        <!-- SECTION 3: CHAKA FARMS                                                    -->
+        <!-- ═════════════════════════════════════════════════════════════════════════ -->
+        <section id="chaka-farms" class="site-block">
+            <div class="site-header farm">
+                <div class="site-title-wrap">
+                    <span class="site-kicker">Dairy Production, Livestock &amp; Canine Care</span>
+                    <h2>2. Chaka Farms</h2>
+                </div>
+                <div class="site-supervisor">
+                    Milking: <span>Kamandau</span> • Canine Unit: <span>Willy &amp; Mwangi</span> • Grounds: <span>Monica &amp; Margaret</span>
+                </div>
+            </div>
+
+            <!-- Narrative Overview & Milestones -->
+            <div class="editorial-card site-overview-card">
+                <div class="card-heading">
+                    <span>Dairy Operations, Livestock Husbandry &amp; Canine Care</span>
+                </div>
+                <p class="editorial-text">
+                    Chaka Farms maintained high operational consistency throughout August, sustaining reliable daily milk production, exemplary animal welfare, specialized canine unit discipline, and complete compound maintenance:
+                </p>
+                <ul class="highlight-list farm">
+                    <li><strong>Dairy Herd Production (199.60 Litres Total):</strong> Maintained regular twice-daily milking routines with <strong>122.60 Litres</strong> harvested during morning sessions and <strong>79.00 Litres</strong> during evening sessions, averaging <strong>6.44 Litres/day</strong>.</li>
+                    <li><strong>Strict Ration Accounting &amp; Net Inventory:</strong> Rigorously recorded all daily milk allocations drawn from production, including goat kids nursery rations (14.0L total) and authorized staff allocations (Gladys 3.5L, Maasai 4.5L), leaving a verified net farm inventory balance of <strong>177.60 Litres</strong>.</li>
+                    <li><strong>Livestock Census &amp; Herd Healthcare:</strong> Monitored and cared for a healthy livestock population comprising 124+ heads across dairy cattle, Dorper sheep, goats, goat kids, and geese. Executed regular acaricide tick spraying, cow shed sanitization, and hoof care.</li>
+                    <li><strong>Canine Unit Discipline &amp; Infrastructure Upgrades:</strong> Willy and Mwangi led daily kennel stall washing, scrubbing, and sanitization; dog bathing and coat grooming; cooked balanced nutritional canine meals; conducted structured on-leash walking drills, manners commands, and off-leash field runs with livestock socialization. Guided Coby through progressive rest, medical care, and rehabilitation, and completed metal gate fitting for the main entrance kennel.</li>
+                    <li><strong>Farm Grounds &amp; Plumbing Upkeep:</strong> Executed paddock rain hose irrigation; repaired and unblocked farm drainage channels, sinks, and washing bays; and maintained living quarters cleanliness through Monica and Margaret.</li>
+                </ul>
+
+                <div class="callout-box farm">
+                    <h4>Livestock &amp; Dairy Summary: 199.6L Gross Harvested &amp; 100% Herd Health Maintained</h4>
+                    <p>Consistent dairy output across 31 days with strict litre-based accounting, flawless canine unit health and obedience protocols, and comprehensive farm infrastructure cleanliness.</p>
+                </div>
+            </div>
+
+            <!-- Page Break to Chaka Dairy Milking Table -->
+            <div class="page-break-section"></div>
+
+            <!-- Monthly Dairy Milking Yield & Allocation Ledger -->
+            <div class="editorial-card table-card">
+                <div class="card-heading">
+                    <span>Monthly Dairy Milking Yield &amp; Allocation Ledger (August 1–31, 2026)</span>
+                </div>
+                <p class="editorial-text">
+                    Consolidated production breakdown strictly recorded in Litres (L), documenting gross milking output, deducted nursery/staff rations, and net farm inventory balances:
+                </p>
+
+                <div class="table-wrap">
+                    <table class="exec-table">
+                        <thead>
+                            <tr>
+                                <th>Production Period</th>
+                                <th class="align-center">Active Days</th>
+                                <th class="align-right">Morn (L)</th>
+                                <th class="align-right">Eve (L)</th>
+                                <th class="align-right">Gross (L)</th>
+                                <th class="align-right">Rations (L)</th>
+                                <th class="align-right">Net Balance (L)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Week 1 (Aug 1 – Aug 7)</strong></td>
+                                <td class="align-center">7 Days</td>
+                                <td class="align-right">25.0 L</td>
+                                <td class="align-right">18.0 L</td>
+                                <td class="align-right num-bold">43.0 L</td>
+                                <td class="align-right" style="color: var(--slate-500);">- 0.0 L*</td>
+                                <td class="align-right num-bold">43.0 L</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Week 2 (Aug 8 – Aug 14)</strong></td>
+                                <td class="align-center">7 Days</td>
+                                <td class="align-right">26.0 L</td>
+                                <td class="align-right">19.0 L</td>
+                                <td class="align-right num-bold">45.0 L</td>
+                                <td class="align-right" style="color: var(--slate-500);">- 0.0 L*</td>
+                                <td class="align-right num-bold">45.0 L</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Week 3 (Aug 15 – Aug 21)</strong></td>
+                                <td class="align-center">7 Days</td>
+                                <td class="align-right">27.0 L</td>
+                                <td class="align-right">15.0 L</td>
+                                <td class="align-right num-bold">42.0 L</td>
+                                <td class="align-right" style="color: #dc2626;">- 2.0 L</td>
+                                <td class="align-right num-bold">40.0 L</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Week 4 &amp; Month-End (Aug 22 – Aug 31)</strong></td>
+                                <td class="align-center">10 Days</td>
+                                <td class="align-right">44.6 L</td>
+                                <td class="align-right">25.0 L</td>
+                                <td class="align-right num-bold">69.6 L</td>
+                                <td class="align-right" style="color: #dc2626;">- 20.0 L</td>
+                                <td class="align-right num-bold">49.6 L</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2"><strong>MONTHLY CUMULATIVE DAIRY TOTALS</strong></td>
+                                <td class="align-right num-bold">122.60 L</td>
+                                <td class="align-right num-bold">79.00 L</td>
+                                <td class="align-right num-bold" style="color: var(--farm-amber); font-size: 13.5px;">199.60 L</td>
+                                <td class="align-right num-bold" style="color: #dc2626; font-size: 13.5px;">- 22.00 L</td>
+                                <td class="align-right num-bold" style="color: var(--golf-green); font-size: 14.5px;">177.60 L</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <p style="font-size: 11.5px; color: var(--slate-500); margin-top: 8px;">*Note: Detailed ration deduction itemization was formally integrated into daily data tables from mid-August onward. Total deductions include 14.0L Goat Kids Rations, 3.5L Gladys, and 4.5L Maasai.</p>
+            </div>
+
+            <!-- Page Break to Chaka Photo Gallery -->
+            <div class="page-break-section"></div>
+
+            <div class="photo-section-title">Photographic Documentation — Chaka Farms Operations</div>
+            <div class="gallery-2col">
+                <div class="photo-card">
+                    <img src="farm_dairy_cow_thabu.jpg" alt="Dairy cow Thabu feeding in stall">
+                    <div class="photo-card-info">
+                        <h4>Dairy Herd Nutrition &amp; Welfare</h4>
+                        <p>Daily feeding, supplemental mineral lick nutrition, and health monitoring for the dairy cow herd.</p>
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <img src="farm_cattle_spraying.jpg" alt="Cattle spraying routine in pen">
+                    <div class="photo-card-info">
+                        <h4>Cattle Tick Spraying Routine</h4>
+                        <p>Regular acaricide spray application to safeguard herd biosecurity and prevent tick-borne vectors.</p>
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <img src="farm_goat_kids.jpg" alt="Healthy goat kids in nursery">
+                    <div class="photo-card-info">
+                        <h4>Goat Kids Nursery Flock</h4>
+                        <p>Thriving goat kids receiving dedicated daily milk rations (1.0L/day) in the secured nursery shed.</p>
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <img src="farm_dorper_sheep.jpg" alt="Dorper sheep grazing in paddock">
+                    <div class="photo-card-info">
+                        <h4>Dorper Sheep Flock Management</h4>
+                        <p>Healthy Dorper sheep flock grazing across rain-hose irrigated pastures under Kamandau's supervision.</p>
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <img src="farm_canine_grooming.jpg" alt="Dog grooming and bathing">
+                    <div class="photo-card-info">
+                        <h4>Canine Unit Bathing &amp; Coat Care</h4>
+                        <p>Weekly medicated bathing, coat grooming, and hygiene sanitation for the farm's security dogs.</p>
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <img src="farm_canine_exercise.jpg" alt="Dog kennel gate fabrication and installation">
+                    <div class="photo-card-info">
+                        <h4>Security Dog Kennel Gate Fitting</h4>
+                        <p>Structural metal mesh fabrication and gate fitting for the perimeter security dog kennel stall.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═════════════════════════════════════════════════════════════════════════ -->
+        <!-- SECTION 4: KABETE RESIDENCE                                               -->
+        <!-- ═════════════════════════════════════════════════════════════════════════ -->
+        <section id="kabete-residence" class="site-block">
+            <div class="site-header residence">
+                <div class="site-title-wrap">
+                    <span class="site-kicker">Estate Renovation, Civil Works &amp; Pet Care</span>
+                    <h2>3. Kabete Residence</h2>
+                </div>
+                <div class="site-supervisor">
+                    Supervised by: <span>Njoki</span>
+                </div>
+            </div>
+
+            <!-- Narrative Overview & Milestones -->
+            <div class="editorial-card site-overview-card">
+                <div class="card-heading">
+                    <span>Structural Refurbishment, Civil Excavations &amp; Domestic Pets</span>
+                </div>
+                <p class="editorial-text">
+                    Kabete Residence achieved major milestone completions across structural preservation, civil excavation, interior storage fitting, and domestic animal care under Njoki's leadership:
+                </p>
+                <ul class="highlight-list residence">
+                    <li><strong>Main House Roof Painting (100% Complete):</strong> Successfully executed thorough surface pressure-washing, wire-brush descaling, crack priming, and multi-coat protective weather-resistant tile painting across the entire main house roof profile.</li>
+                    <li><strong>Outbuilding &amp; Canopy Paintworks (100% Complete):</strong> Completed full structural painting and protective coating on the carport parking canopy, generator house roof tiles, lawnmower storage shed, and entrance sentry post.</li>
+                    <li><strong>Outdoor Fireplace Foundation Excavation:</strong> Conducted extensive manual excavation, cutting away the vertical red earth embankment using pickaxes and jembes to widen the structural footing for the outdoor fireplace, while clearing and sorting salvaged masonry stone blocks along the perimeter retaining wall.</li>
+                    <li><strong>Main Water Storage Tank Foundation Slab:</strong> Prepared, tied rebar reinforcement, and washed the heavy-duty concrete foundation slab for the main estate water storage tank installation.</li>
+                    <li><strong>Cold Room Custom Shelving Fit-Out:</strong> Assembled, fitted, and wall-anchored heavy-duty laminated wooden side shelving units and brackets inside the cold room to expand food storage capacity.</li>
+                    <li><strong>Resident Domestic Pets Care:</strong> Provided daily attentive care, balanced evening meals, grooming, and companionship for <strong>Ajabu the Golden Retriever</strong> and resident cats (<strong>Reo, Mocha &amp; Aiko</strong>).</li>
+                </ul>
+
+                <div class="callout-box residence">
+                    <h4>Major Milestone: 100% Roof Renovation Complete &amp; Fireplace Footing Widened</h4>
+                    <p>Flawless execution of estate-wide roof tile painting across the main house and auxiliary buildings, significant excavation headway on the outdoor fireplace footing, and cold room cabinetry installed.</p>
+                </div>
+            </div>
+
+            <!-- Page Break to Kabete Renovation Table -->
+            <div class="page-break-section"></div>
+
+            <!-- Renovation Milestones Table -->
+            <div class="editorial-card table-card">
+                <div class="card-heading">
+                    <span>Renovation &amp; Civil Works Milestone Scorecard</span>
+                </div>
+                <div class="table-wrap">
+                    <table class="exec-table">
+                        <thead>
+                            <tr>
+                                <th>Project Workstream</th>
+                                <th>Operational Scope &amp; Deliverables</th>
+                                <th>Execution Period</th>
+                                <th class="align-center">Completion Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Main House Roof Tiles Painting</strong></td>
+                                <td>Pressure washing, fungal treatment, priming &amp; multi-coat protective acrylic paint application</td>
+                                <td>Early – Mid Aug</td>
+                                <td class="align-center status-tag complete">100% Completed</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Carport Canopy Structure</strong></td>
+                                <td>Steel frame wire-brushing, anti-rust primer &amp; glossy structural topcoat painting</td>
+                                <td>Mid August</td>
+                                <td class="align-center status-tag complete">100% Completed</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Generator &amp; Mower House Roof</strong></td>
+                                <td>Roof tile pressure wash, tile realignment, and weather-seal coat application</td>
+                                <td>Mid August</td>
+                                <td class="align-center status-tag complete">100% Completed</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Main Water Tank Concrete Slab</strong></td>
+                                <td>Rebar steel grid tying, concrete slab casting, chemical cure &amp; pressure wash</td>
+                                <td>Mid August</td>
+                                <td class="align-center status-tag complete">100% Completed</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Outdoor Fireplace Civil Excavation</strong></td>
+                                <td>Vertical earth bank cutback, foundation footing widening &amp; masonry rubble clearance</td>
+                                <td>Late August</td>
+                                <td class="align-center status-tag active">Footing Widened</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cold Room Custom Side Shelves</strong></td>
+                                <td>Wall-mounted bracket anchoring and laminated wooden shelving panels installation</td>
+                                <td>Late August</td>
+                                <td class="align-center status-tag complete">100% Installed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Page Break to Page 8: Kabete Photo Gallery -->
+            <div class="page-break-section"></div>
+
+            <div class="photo-section-title">Photographic Documentation — Kabete Residence Operations</div>
+            <div class="gallery-2col">
+                <div class="photo-card">
+                    <img src="residence_main_house_roof_done.jpg" alt="Completed roof tile painting on main house">
+                    <div class="photo-card-info">
+                        <h4>Main House Roof Tile Painting (100%)</h4>
+                        <p>Completed multi-coat weather-resistant roof tile painting showcasing flawless finish and color uniformity.</p>
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <img src="residence_carport_paintworks_complete.jpg" alt="Carport canopy paintwork complete">
+                    <div class="photo-card-info">
+                        <h4>Carport Canopy Protective Coating</h4>
+                        <p>Fully refurbished and repainted structural steel carport canopy and entrance parking pergola.</p>
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <img src="residence_generator_house_roof.jpg" alt="Generator house roof tiles painted">
+                    <div class="photo-card-info">
+                        <h4>Generator &amp; Mower Shed Roof</h4>
+                        <p>Cleanly painted roof tiles on auxiliary generator house matching main residence aesthetic.</p>
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <img src="residence_fireplace_bank_excavation.jpg" alt="Excavation widening fireplace foundation">
+                    <div class="photo-card-info">
+                        <h4>Fireplace Footing Bank Excavation</h4>
+                        <p>Manual pickaxe earthwork cutting back vertical red clay bank to widen outdoor fireplace foundation.</p>
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <img src="residence_cold_room_shelves.jpg" alt="Cold room side shelving installed">
+                    <div class="photo-card-info">
+                        <h4>Cold Room Shelving Fit-Out</h4>
+                        <p>Carpenter assembling and anchoring custom laminated wooden storage shelving inside cold room.</p>
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <img src="residence_ajabu_golden_retriever.jpg" alt="Ajabu the Golden Retriever having dinner">
+                    <div class="photo-card-info">
+                        <h4>Resident Pets — Ajabu Having Dinner</h4>
+                        <p>Ajabu the Golden Retriever enjoying his evening meal on the corridor under Njoki's attentive care.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═════════════════════════════════════════════════════════════════════════ -->
+        <!-- SECTION 5: AMANI COTTAGE & FORMAL SIGN-OFF (PAGE 9)                       -->
+        <!-- ═════════════════════════════════════════════════════════════════════════ -->
+        <section id="amani-cottage" class="site-block">
+            <div class="site-header cottage">
+                <div class="site-title-wrap">
+                    <span class="site-kicker">Grounds Care, Turf Nutrition &amp; Hospitality</span>
+                    <h2>4. Amani Cottage</h2>
+                </div>
+                <div class="site-supervisor">
+                    Supervised by: <span>Edwin</span> &amp; Domestic Housekeeper
+                </div>
+            </div>
+
+            <!-- Narrative Overview -->
+            <div class="editorial-card site-overview-card">
+                <div class="card-heading">
+                    <span>Landscape Enrichment, Sprinkler Irrigation &amp; Housekeeping</span>
+                </div>
+                <p class="editorial-text">
+                    Amani Cottage maintained pristine exterior grounds presentation and high interior housekeeping standards across the full month of August:
+                </p>
+                <ul class="highlight-list cottage">
+                    <li><strong>CAN Turf Grass Fertilization:</strong> Evenly applied Calcium Ammonium Nitrate (CAN) granular fertilizer across the front lawns to stimulate vigorous, dense root growth and maintain vibrant emerald turf coloration.</li>
+                    <li><strong>Rotary Sprinkler &amp; Hose Line Irrigation:</strong> Deployed portable elevated rotary sprinklers and hose lines across front lawns, landscaped flower beds, and shaded woodland perimeters, adapting run-times to optimize soil hydration.</li>
+                    <li><strong>Garden Cleanup &amp; Woodland Litter Collection:</strong> Conducted thorough daily litter sweeping, clearing fallen branches, leaf litter, and gravel debris along natural stone walkways and driveway boundaries.</li>
+                    <li><strong>Two-Story Comprehensive Housekeeping:</strong> Maintained cleanliness across all upstairs and downstairs living suites, completing surface dusting, tile mopping, bathroom sanitization, fresh linen changes, and guest bed preparation.</li>
+                </ul>
+
+                <div class="callout-box cottage">
+                    <h4>Grounds &amp; Interior Summary: Lush Lawns &amp; Pristine Cottage Presentation</h4>
+                    <p>Optimal lawn vigor sustained through targeted CAN fertilization and sprinkler irrigation, paired with continuous two-story housekeeping and linen care.</p>
+                </div>
+            </div>
+
+            <!-- Page Break to Amani Cottage Photo Gallery & Sign-Off -->
+            <div class="page-break-section"></div>
+
+            <!-- Curated Photo Gallery: Amani Cottage (3-Column Layout) -->
+            <div class="photo-section-title">Photographic Documentation — Amani Cottage Grounds Care</div>
+            <div class="gallery-3col">
+                <div class="photo-card">
+                    <img src="cottage_lawn_irrigation.jpg" alt="Sprinkler irrigating lawn at Amani Cottage">
+                    <div class="photo-card-info">
+                        <h4>Front Lawn Irrigation</h4>
+                        <p>Rotary sprinkler delivering mist irrigation across the front lawn perimeter.</p>
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <img src="cottage_woodland_lawn.jpg" alt="Lush hydrated lawn grass">
+                    <div class="photo-card-info">
+                        <h4>Hydrated Turf Grounds</h4>
+                        <p>Vibrant emerald green turf condition achieved through CAN fertilizer and watering.</p>
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <img src="cottage_walkway_hose.jpg" alt="Garden hose routed across stone path">
+                    <div class="photo-card-info">
+                        <h4>Irrigation Line Route</h4>
+                        <p>Garden hose line routed across stone stepping pathway to supply lawn sprinklers.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FOOTER SIGNATURE BLOCK (Integrated seamlessly on Page 9) -->
+            <footer class="report-footer">
+                <div class="signature-group">
+                    <div class="signature-mark">D</div>
+                    <div class="signature-meta">
+                        <h3>Compiled by Dennis</h3>
+                        <p>Monthly Operations Summary Report • August 1 – 31, 2026</p>
+                    </div>
+                </div>
+                <div>
+                    <span class="footer-badge">Status: Audited, Consolidated &amp; Signed</span>
+                </div>
+            </footer>
+        </section>
+
+    </div>
+
+</div>
+
+</body>
+</html>

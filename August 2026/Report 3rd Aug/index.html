@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Operations Report - August 3, 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-dark: #0f172a;
+            --accent: #059669;
+            --accent-light: #ecfdf5;
+            --golf-green: #15803d;
+            --farm-amber: #d97706;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-300: #cbd5e1;
+            --slate-600: #475569;
+            --slate-700: #334155;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --radius-md: 12px;
+            --radius-lg: 16px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f4f6f9;
+            color: var(--slate-800);
+            line-height: 1.6;
+            padding: 40px 20px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            border: 1px solid var(--slate-200);
+        }
+
+        header {
+            background: #0f172a !important;
+            color: #ffffff !important;
+            padding: 44px 40px;
+            position: relative;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 4px;
+            background: #15803d !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .badge-date {
+            background: rgba(255,255,255,0.18) !important;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(255,255,255,0.25);
+            color: #ffffff !important;
+        }
+        .report-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #93c5fd !important;
+            font-weight: 700;
+        }
+        header h1 {
+            font-size: 2.3rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+            color: #ffffff !important;
+        }
+        header p.subtitle {
+            color: #cbd5e1 !important;
+            font-size: 1.05rem;
+            font-weight: 400;
+        }
+
+        .kpi-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            padding: 24px 40px;
+            background-color: var(--slate-50);
+            border-bottom: 1px solid var(--slate-200);
+        }
+        .kpi-card {
+            background: #ffffff;
+            padding: 16px 20px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--slate-200);
+            box-shadow: var(--shadow-sm);
+        }
+        .kpi-card .label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--slate-600);
+            letter-spacing: 0.5px;
+        }
+        .kpi-card .value {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--slate-900);
+            margin-top: 4px;
+        }
+        .kpi-card .subtext {
+            font-size: 0.8rem;
+            color: var(--slate-600);
+            margin-top: 2px;
+        }
+
+        .main-content { padding: 36px 40px; }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 14px;
+            border-bottom: 2px solid var(--slate-200);
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .section-title h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--slate-900);
+        }
+        .section-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: #ffffff !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .icon-golf { background-color: var(--golf-green) !important; }
+        .icon-farm { background-color: var(--farm-amber) !important; }
+
+        .supervisor-badge {
+            background-color: var(--slate-100) !important;
+            color: var(--slate-700) !important;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--slate-200);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .supervisor-badge span {
+            color: var(--primary) !important;
+            font-weight: 700;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--slate-200);
+            padding: 22px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-sm);
+        }
+        .card-header {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--slate-900);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .activity-list { list-style: none; }
+        .activity-list li {
+            position: relative;
+            padding-left: 22px;
+            margin-bottom: 10px;
+            color: var(--slate-700);
+        }
+        .activity-list li::before {
+            content: '•';
+            position: absolute;
+            left: 6px;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+            margin-top: 16px;
+        }
+        .gallery-item {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--slate-200);
+            background: #ffffff;
+            box-shadow: var(--shadow-sm);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        .gallery-caption {
+            padding: 12px 14px;
+            background: #ffffff;
+        }
+        .gallery-caption h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--slate-900);
+            margin-bottom: 2px;
+        }
+        .gallery-caption p {
+            font-size: 0.82rem;
+            color: var(--slate-600);
+        }
+
+        .alert-box {
+            background-color: #fef2f2 !important;
+            border-left: 4px solid #ef4444 !important;
+            padding: 14px 18px;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin-top: 14px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .alert-box h4 { color: #991b1b !important; font-size: 0.92rem; font-weight: 700; margin-bottom: 4px; }
+        .alert-box p { color: #7f1d1d !important; font-size: 0.875rem; }
+
+        .info-box {
+            background-color: #eff6ff !important;
+            border-left: 4px solid #3b82f6 !important;
+            padding: 14px 18px;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin-top: 14px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .info-box h4 { color: #1e40af !important; font-size: 0.92rem; font-weight: 700; margin-bottom: 4px; }
+        .info-box p { color: #1e3a8a !important; font-size: 0.875rem; }
+
+        footer {
+            background-color: var(--slate-50) !important;
+            padding: 28px 40px;
+            border-top: 1px solid var(--slate-200);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .signature-block { display: flex; align-items: center; gap: 14px; }
+        .signature-avatar {
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            background: var(--primary) !important;
+            color: #ffffff !important;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 1.05rem;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .signature-details h3 { font-size: 1rem; font-weight: 700; color: var(--slate-900); }
+
+        @media print {
+            @page { size: A4; margin: 8mm 10mm; }
+            body { background-color: #ffffff; padding: 0; }
+            .container { box-shadow: none; border: none; border-radius: 0; max-width: 100%; overflow: visible !important; }
+            header { padding: 20px 20px !important; border-radius: 10px; }
+            header h1 { font-size: 1.9rem !important; }
+            .kpi-bar { padding: 12px 0; background: transparent !important; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+            .kpi-card { padding: 8px 10px; page-break-inside: avoid; }
+            .kpi-card .value { font-size: 1.15rem; }
+            .main-content { padding: 14px 0; }
+            .card { margin-bottom: 14px; padding: 14px 16px; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .gallery-item { page-break-inside: avoid; }
+            .gallery-item img { height: 155px; }
+            .gallery-caption { padding: 8px 10px; }
+            .gallery-caption h4 { font-size: 0.85rem; }
+            .gallery-caption p { font-size: 0.78rem; }
+            .section-header { page-break-after: avoid; margin-bottom: 12px; padding-bottom: 8px; }
+            footer { page-break-inside: avoid; padding: 14px 18px !important; border-radius: 10px; margin-top: 14px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="header-top">
+            <span class="report-tag">Operational Progress Report</span>
+            <span class="badge-date">📅 August 3, 2026</span>
+        </div>
+        <h1>Daily Operations & Project Summary</h1>
+        <p class="subtitle">Comprehensive overview of site development, livestock care, and facility maintenance.</p>
+    </header>
+
+    <!-- KPI Summary Bar -->
+    <div class="kpi-bar">
+        <div class="kpi-card">
+            <div class="label">Golf Project</div>
+            <div class="value">Greens 3, 5 & 7</div>
+            <div class="subtext">Topsoil stripping & weeding</div>
+        </div>
+        <div class="kpi-card">
+            <div class="label">Daily Milk Production</div>
+            <div class="value">6.0 Litres</div>
+            <div class="subtext">Morning: 3.5L | Evening: 2.5L</div>
+        </div>
+        <div class="kpi-card">
+            <div class="label">Canine Training</div>
+            <div class="value">Coby Returned</div>
+            <div class="subtext">Spin & sit commands learned</div>
+        </div>
+        <div class="kpi-card">
+            <div class="label">Site Upkeep</div>
+            <div class="value">Plumbing & Manure</div>
+            <div class="subtext">Burst pipe fixed & tractor transport</div>
+        </div>
+    </div>
+
+    <div class="main-content">
+
+        <!-- SECTION 1: GOLF PROJECT -->
+        <section id="golf-project" style="margin-bottom: 28px;">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon icon-golf">⛳</div>
+                    <div>
+                        <h2>1. Golf Project (Mucheru World of Golf)</h2>
+                        <p style="font-size: 0.88rem; color: var(--slate-600);">Topsoil stripping on Green 3, earthmoving, and green weeding</p>
+                    </div>
+                </div>
+                <div class="supervisor-badge">
+                    Overseen by: <span>Ken</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span>🏗️</span> Green Construction & Earthworks
+                </div>
+                <ul class="activity-list">
+                    <li><strong>Topsoil Stripping (Green No. 3):</strong> Topsoil stripping operations were actively executed on Green No. 3 to prepare the sub-base layer.</li>
+                    <li><strong>Earthmoving & Topsoil Transport:</strong> Stripped topsoil from Green No. 3 was moved and stockpiled at the designated site location.</li>
+                    <li><strong>Greens Weeding:</strong> Comprehensive weeding and maintenance were carried out across <strong>Green No. 5</strong> and <strong>Green No. 7</strong> to maintain clean turf conditions.</li>
+                </ul>
+            </div>
+
+            <!-- Golf Project Photo Gallery -->
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--slate-900); margin-bottom: 10px; margin-top: 16px;">📷 Golf Project Visual Documentation</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="Topsoil stripping.jpeg" alt="Topsoil Stripping Green 3">
+                    <div class="gallery-caption">
+                        <h4>Topsoil Stripping — Green No. 3</h4>
+                        <p>Stripping topsoil layer on Green 3.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Moving of the stripped top soil.jpeg" alt="Moving Stripped Topsoil">
+                    <div class="gallery-caption">
+                        <h4>Moving Stripped Topsoil</h4>
+                        <p>Transporting and stockpiling topsoil.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Weeding green 5 & 7.jpeg" alt="Weeding Green 5 & 7">
+                    <div class="gallery-caption">
+                        <h4>Weeding — Greens 5 & 7</h4>
+                        <p>Weeding operations on Green 5 and Green 7.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Weeding 01.jpeg" alt="Weeding Progress Detail">
+                    <div class="gallery-caption">
+                        <h4>Weeding Operations (Detail)</h4>
+                        <p>Manual weeding to maintain clean turf beds.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: CHAKA FARMS -->
+        <section id="chaka-farms">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon icon-farm">🐐</div>
+                    <div>
+                        <h2>2. Farm Activities & Infrastructure (Chaka Farms)</h2>
+                        <p style="font-size: 0.88rem; color: var(--slate-600);">Dairy, plumbing repairs, manure transport, irrigation equipment, and canine unit</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Milking -->
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <div class="card-header" style="margin-bottom: 0;">
+                        <span>🥛</span> Dairy Production
+                    </div>
+                    <div class="supervisor-badge">
+                        Overseen by: <span>Kamandau</span>
+                    </div>
+                </div>
+                <ul class="activity-list">
+                    <li><strong>Milk Production Summary:</strong>
+                        <ul style="margin-left: 18px; margin-top: 4px; margin-bottom: 6px;">
+                            <li><strong>Morning Yield:</strong> 3.5 litres</li>
+                            <li><strong>Evening Yield:</strong> 2.5 litres</li>
+                            <li><strong style="color: var(--accent);">Total Daily Milk Collected: 6.0 litres</strong></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Plumbing Maintenance -->
+            <div class="card" style="margin-top: 24px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <div class="card-header" style="margin-bottom: 0;">
+                        <span>🔧</span> Plumbing Maintenance & Repairs
+                    </div>
+                    <div class="supervisor-badge">
+                        Overseen by: <span>Ken</span>
+                    </div>
+                </div>
+                <ul class="activity-list">
+                    <li><strong>Office Washrooms Plumbing Repair:</strong> Plumbing repair works were conducted on the washrooms adjacent to the main office as well as the supply pipe network behind the facility to resolve a burst pipe issue and restore full water service.</li>
+                </ul>
+            </div>
+
+            <!-- Plumbing Gallery -->
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--slate-900); margin-bottom: 10px; margin-top: 16px;">📷 Plumbing Repair Visual Documentation</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="Burst Pipe.jpeg" alt="Burst Pipe Identified">
+                    <div class="gallery-caption">
+                        <h4>Burst Pipe Identified</h4>
+                        <p>Locating the damaged water pipe behind washrooms.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Fixing burst pipe.jpeg" alt="Fixing Burst Pipe">
+                    <div class="gallery-caption">
+                        <h4>Fixing Burst Pipe</h4>
+                        <p>Ongoing plumbing repair and pipe replacement.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Burst pipe fixed.jpeg" alt="Burst Pipe Fixed">
+                    <div class="gallery-caption">
+                        <h4>Burst Pipe Repair Complete</h4>
+                        <p>Plumbing repair completed and water flow restored.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Manure Logistics -->
+            <div class="card" style="margin-top: 24px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <div class="card-header" style="margin-bottom: 0;">
+                        <span>🚜</span> Manure Logistics & Shamba Enhancement
+                    </div>
+                    <div class="supervisor-badge">
+                        Overseen by: <span>Ken</span>
+                    </div>
+                </div>
+                <ul class="activity-list">
+                    <li><strong>Manure Transport:</strong> Accumulated organic manure was cleared from the livestock shelter, loaded onto the tractor, and transported directly to the shamba for soil enrichment.</li>
+                </ul>
+            </div>
+
+            <!-- Manure Gallery -->
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--slate-900); margin-bottom: 10px; margin-top: 16px;">📷 Manure Transport Visual Documentation</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="Loading manure.jpeg" alt="Loading Manure">
+                    <div class="gallery-caption">
+                        <h4>Loading Manure</h4>
+                        <p>Loading manure from the livestock shelter.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Trucktor moving manure.jpeg" alt="Tractor Moving Manure">
+                    <div class="gallery-caption">
+                        <h4>Tractor Transporting Manure</h4>
+                        <p>Moving loaded manure across the farm to the shamba.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Unloading manure onto the shamba.jpeg" alt="Unloading Manure onto Shamba">
+                    <div class="gallery-caption">
+                        <h4>Unloading onto Shamba (1)</h4>
+                        <p>Distributing organic manure across shamba soil.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Unloading manure onto the shamba_01.jpeg" alt="Unloading Manure onto Shamba Detail">
+                    <div class="gallery-caption">
+                        <h4>Unloading onto Shamba (2)</h4>
+                        <p>Spread completed for crop soil fertilization.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Irrigation Deliveries -->
+            <div class="card" style="margin-top: 24px;">
+                <div class="card-header">
+                    <span>💧</span> Deliveries & Irrigation Equipment
+                </div>
+                <ul class="activity-list">
+                    <li><strong>Rain Hose Pipes Received:</strong> <strong>4 rain hose pipes</strong> were delivered to the site to enhance perimeter fence line irrigation and turf hydration.</li>
+                </ul>
+            </div>
+
+            <!-- Rain Hose Pipe Photo -->
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="Rain hose pipe.jpeg" alt="Rain Hose Pipes Received">
+                    <div class="gallery-caption">
+                        <h4>Rain Hose Pipes (4 Coils)</h4>
+                        <p>Irrigation rain hose pipes delivered for perimeter watering.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Canine Unit -->
+            <div class="card" style="margin-top: 24px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <div class="card-header" style="margin-bottom: 0;">
+                        <span>🐕</span> Canine Health & Training Update
+                    </div>
+                    <div class="supervisor-badge">
+                        Overseen by: <span>Willy</span>
+                    </div>
+                </div>
+                <ul class="activity-list">
+                    <li><strong>Health Inspection & Sanitation:</strong> Daily health check conducted; all kennels cleaned and filled with clean drinking water.</li>
+                    <li><strong>Socialization & Off-Leash Walking:</strong> Dogs were taken for off-leash walking together with the goat herd as they grazed and browsed in the field.</li>
+                    <li><strong>Obedience & Follow Drills:</strong> The dogs performed exceptionally well during following and obedience exercises.</li>
+                    <li><strong>New Skill Acquisition:</strong> Dogs successfully learned and executed <strong>spin</strong> and <strong>sit</strong> commands during today's training session.</li>
+                </ul>
+
+                <div class="alert-box">
+                    <h4>⚠️ Canine Health & Recovery Notes</h4>
+                    <p><strong>Coby:</strong> Has fully recovered from previous soreness and has <strong>returned to active training</strong> with the team!</p>
+                    <p style="margin-top: 6px;"><strong>Logan:</strong> Ate his protective cone overnight. He remains under close observation and wound care treatment.</p>
+                </div>
+
+                <div class="info-box" style="margin-top: 14px;">
+                    <h4>📹 Recorded Training Video Footage</h4>
+                    <p>Training session video clips recorded today:</p>
+                    <ul style="margin-top: 8px; margin-left: 18px; list-style: none;">
+                        <li style="margin-bottom: 6px;">🎬 <a href="https://drive.google.com/file/d/18y0TvDX18eRuhua1YlbrePoxGImYcCNW/view?usp=sharing" target="_blank" style="color: #1e40af; font-weight: 600; text-decoration: underline;">Spin & Sit Commands — Session 1</a></li>
+                        <li style="margin-bottom: 6px;">🎬 <a href="https://drive.google.com/file/d/1b7qJ4qC_W34O2OTmsGwhJQpuYB-oAsM5/view?usp=sharing" target="_blank" style="color: #1e40af; font-weight: 600; text-decoration: underline;">Spin & Sit Commands — Session 2</a></li>
+                        <li style="margin-bottom: 6px;">🎬 <a href="https://drive.google.com/file/d/1sMGSN2DY0C_o8s0tbSJRLljNCDl3hv6A/view?usp=sharing" target="_blank" style="color: #1e40af; font-weight: 600; text-decoration: underline;">Spin & Sit Commands — Session 3</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Logan Ate Cone Photo -->
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--slate-900); margin-bottom: 10px; margin-top: 16px;">📷 Canine Health Documentation</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="Logan ate cone.jpeg" alt="Logan Protective Cone Inspection">
+                    <div class="gallery-caption">
+                        <h4>Logan — Protective Cone Update</h4>
+                        <p>Logan damaged his cone overnight; monitored closely for wound protection.</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- SECTION 3: STRATEGIC ENGAGEMENTS & PARTNERSHIPS -->
+        <section id="strategic-engagements" style="margin-top: 28px;">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon" style="background-color: #0284c7 !important;">🏛️</div>
+                    <div>
+                        <h2>3. Strategic Engagements & Institutional Partnerships</h2>
+                        <p style="font-size: 0.88rem; color: var(--slate-600);">High-level institutional outreach and collaboration discussions</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span>🎓</span> Courtesy Visit to Dedan Kimathi University of Technology (DeKUT)
+                </div>
+                <ul class="activity-list">
+                    <li><strong>Institutional Outreach:</strong> A formal courtesy visit was conducted to <strong>Dedan Kimathi University of Technology (DeKUT)</strong> to explore strategic collaboration opportunities between the University, <strong>Mucheru World of Golf</strong>, and <strong>Chaka Farms</strong>.</li>
+                    <li><strong>Delegation:</strong> The visit was led by <strong>Mr. Mucheru (Boss)</strong> and <strong>Dennis Ndirangu</strong>.</li>
+                    <li><strong>Strategic Objectives:</strong> Discussions focused on strengthening university-industry collaboration to provide practical learning opportunities, develop locally designed technologies, enhance the golfing experience, and drive joint research, commercialization, and innovation partnerships.</li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="signature-block">
+            <div class="signature-avatar">DN</div>
+            <div class="signature-details">
+                <h3>Compiled by Dennis Ndirangu</h3>
+            </div>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>

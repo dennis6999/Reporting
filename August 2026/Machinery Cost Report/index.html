@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heavy Machinery & Haulage Financial Audit — Mucheru World of Golf (7th–20th August 2026)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --primary-light: #1e293b;
+            --golf-green: #15803d;
+            --golf-green-dark: #14532d;
+            --golf-green-light: #f0fdf4;
+            --golf-green-border: #bbf7d0;
+            --accent-blue: #0284c7;
+            --accent-blue-light: #f0f9ff;
+            --accent-blue-border: #bae6fd;
+            --amber-600: #d97706;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-300: #cbd5e1;
+            --slate-400: #94a3b8;
+            --slate-500: #64748b;
+            --slate-600: #475569;
+            --slate-700: #334155;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+            --warning-bg: #fffbeb;
+            --warning-border: #fde68a;
+            --warning-text: #92400e;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f1f5f9;
+            color: var(--slate-800);
+            line-height: 1.45;
+            font-size: 12.5px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .document-wrapper {
+            max-width: 860px;
+            margin: 20px auto;
+            background: #ffffff;
+            border: 1px solid var(--slate-200);
+            border-radius: 8px;
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        /* ── HEADER ── */
+        .report-header {
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 28px 32px 24px;
+            border-bottom: 3px solid var(--golf-green);
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 14px;
+            gap: 16px;
+        }
+
+        .brand-title {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            color: #94a3b8;
+            margin-bottom: 3px;
+        }
+
+        .main-title {
+            font-size: 1.45rem;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+            color: #ffffff;
+            line-height: 1.25;
+        }
+
+        .doc-badge {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 6px;
+            padding: 5px 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            text-align: right;
+            white-space: nowrap;
+            line-height: 1.35;
+        }
+
+        .header-meta-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .meta-col {
+            font-size: 0.72rem;
+        }
+
+        .meta-col .meta-label {
+            color: #94a3b8;
+            font-size: 0.63rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .meta-col .meta-val {
+            color: #f8fafc;
+            font-weight: 700;
+        }
+
+        /* ── EXECUTIVE SUMMARY STRIP ── */
+        .executive-summary-strip {
+            background: var(--slate-50);
+            border-bottom: 1px solid var(--slate-200);
+            padding: 16px 32px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+        }
+
+        .stat-card {
+            border-right: 1px solid var(--slate-200);
+            padding-right: 10px;
+        }
+
+        .stat-card:last-child {
+            border-right: none;
+            padding-right: 0;
+        }
+
+        .stat-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            font-weight: 700;
+            color: var(--slate-500);
+            margin-bottom: 2px;
+        }
+
+        .stat-number {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--slate-900);
+            letter-spacing: -0.3px;
+        }
+
+        .stat-number.green {
+            color: var(--golf-green);
+        }
+
+        .stat-sub {
+            font-size: 0.68rem;
+            color: var(--slate-500);
+            margin-top: 2px;
+        }
+
+        /* ── REPORT CONTENT ── */
+        .report-content {
+            padding: 24px 32px;
+        }
+
+        .section-block {
+            margin-bottom: 28px;
+        }
+
+        .section-title-wrap {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            border-bottom: 2px solid var(--slate-200);
+            padding-bottom: 5px;
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: var(--slate-900);
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+
+        .section-note {
+            font-size: 0.7rem;
+            color: var(--slate-500);
+            font-weight: 500;
+        }
+
+        /* ── TABLE STYLING ── */
+        .table-responsive {
+            width: 100%;
+            overflow-x: visible;
+        }
+
+        .audit-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.77rem;
+            table-layout: fixed;
+        }
+
+        .audit-table th, 
+        .audit-table td {
+            padding: 6.5px 8px;
+            vertical-align: middle;
+            border-bottom: 1px solid var(--slate-200);
+        }
+
+        .audit-table th {
+            background-color: var(--slate-100);
+            color: var(--slate-700);
+            font-weight: 700;
+            font-size: 0.66rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-top: 1px solid var(--slate-300);
+            border-bottom: 1px solid var(--slate-300);
+            line-height: 1.25;
+        }
+
+        .audit-table tbody tr:nth-child(even) {
+            background-color: #fafbfd;
+        }
+
+        .audit-table tbody tr:hover {
+            background-color: #f1f5f9;
+        }
+
+        .audit-table .col-date { width: 13%; font-weight: 700; color: var(--slate-900); }
+        .audit-table .col-scope { width: 23%; font-size: 0.72rem; color: var(--slate-600); line-height: 1.25; }
+        .audit-table .col-exc-h { width: 10%; text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+        .audit-table .col-exc-c { width: 13%; text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+        .audit-table .col-bh-h { width: 10%; text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+        .audit-table .col-bh-c { width: 13%; text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+        .audit-table .col-trips { width: 9%; text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; color: var(--amber-600); }
+        .audit-table .col-total { width: 16%; text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; color: var(--slate-900); }
+
+        .tag-pill {
+            display: inline-block;
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 1px 4px;
+            border-radius: 3px;
+            margin-left: 2px;
+            vertical-align: text-top;
+        }
+
+        .tag-pill.green { background: #dcfce7; color: #166534; }
+        .tag-pill.amber { background: #fef3c7; color: #92400e; }
+        .tag-pill.red { background: #fee2e2; color: #991b1b; }
+
+        .audit-table tfoot .subtotal-row td {
+            background-color: var(--slate-100);
+            font-weight: 800;
+            font-size: 0.76rem;
+            color: var(--slate-900);
+            border-top: 2px solid var(--slate-300);
+            border-bottom: 1px solid var(--slate-300);
+        }
+
+        .audit-table tfoot .grand-total-row td {
+            background-color: var(--primary);
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 0.84rem;
+            border: none;
+            padding: 8px 10px;
+        }
+
+        .audit-table tfoot .grand-total-row td.amount {
+            color: #4ade80;
+            font-size: 0.94rem;
+            text-align: right;
+        }
+
+        /* ── SECTION 2: FULL-WIDTH ROW CARDS ── */
+        .machine-rows-container {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 10px;
+        }
+
+        .machine-row-card {
+            border: 1px solid var(--slate-200);
+            border-radius: 8px;
+            background: #ffffff;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+
+        .machine-row-card.excavator { border-left: 4px solid var(--accent-blue); }
+        .machine-row-card.backhoe { border-left: 4px solid var(--golf-green); }
+        .machine-row-card.haulage { border-left: 4px solid var(--amber-600); }
+
+        .row-card-header {
+            background: var(--slate-50);
+            padding: 10px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--slate-200);
+        }
+
+        .row-card-title-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .row-card-title {
+            font-weight: 800;
+            font-size: 0.88rem;
+            color: var(--slate-900);
+        }
+
+        .row-card-rate-pill {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--slate-700);
+            background: #ffffff;
+            border: 1px solid var(--slate-300);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .row-card-status-badge {
+            font-size: 0.68rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .row-card-status-badge.green { background: #dcfce7; color: #166534; }
+        .row-card-status-badge.amber { background: #fef3c7; color: #92400e; }
+
+        .row-card-body {
+            padding: 12px 16px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1.2fr;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .row-metric-block {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .row-metric-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 700;
+            color: var(--slate-500);
+        }
+
+        .row-metric-value {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: var(--slate-900);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .row-metric-sub {
+            font-size: 0.68rem;
+            color: var(--slate-500);
+        }
+
+        .row-metric-cost {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--golf-green);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .row-metric-cost.amber {
+            color: var(--amber-600);
+        }
+
+        .row-card-scope {
+            grid-column: 1 / -1;
+            background: var(--slate-50);
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 0.72rem;
+            color: var(--slate-600);
+            line-height: 1.4;
+            border: 1px solid var(--slate-100);
+            margin-top: 4px;
+        }
+
+        .row-card-scope strong {
+            color: var(--slate-800);
+        }
+
+        /* ── METHODOLOGY & AUDIT NOTES ── */
+        .notes-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 14px;
+            font-size: 0.73rem;
+            line-height: 1.45;
+        }
+
+        .note-card {
+            background: var(--slate-50);
+            border: 1px solid var(--slate-200);
+            border-radius: 6px;
+            padding: 12px 14px;
+        }
+
+        .note-card h4 {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--slate-900);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .note-card ul {
+            padding-left: 14px;
+            color: var(--slate-600);
+        }
+
+        .note-card ul li { margin-bottom: 4px; }
+        .note-card ul li:last-child { margin-bottom: 0; }
+
+        .alert-box {
+            background: var(--warning-bg);
+            border: 1px solid var(--warning-border);
+            border-radius: 6px;
+            padding: 10px 12px;
+            color: var(--warning-text);
+            font-size: 0.7rem;
+            line-height: 1.4;
+        }
+
+        /* ── SIGN-OFF BLOCK ── */
+        .signoff-section {
+            margin-top: 20px;
+            padding-top: 12px;
+            border-top: 1px solid var(--slate-200);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            font-size: 0.72rem;
+        }
+
+        .signoff-meta {
+            color: var(--slate-500);
+            line-height: 1.35;
+        }
+
+        .signoff-sig { text-align: right; }
+        .sig-name { font-weight: 800; color: var(--slate-900); font-size: 0.8rem; }
+        .sig-role { color: var(--slate-600); font-size: 0.7rem; font-weight: 600; }
+
+        /* ── PRINT & PDF STYLES ── */
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 8mm 8mm 8mm 8mm;
+            }
+
+            body {
+                background: #ffffff !important;
+                color: #000000 !important;
+                font-size: 10.5px !important;
+                line-height: 1.3 !important;
+            }
+
+            .document-wrapper {
+                max-width: 100% !important;
+                width: 100% !important;
+                margin: 0 !important;
+                border: none !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+            }
+
+            .report-header {
+                padding: 16px 18px 12px !important;
+                background-color: #0f172a !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .main-title { font-size: 1.25rem !important; }
+
+            .executive-summary-strip {
+                padding: 10px 18px !important;
+                background-color: #f8fafc !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .report-content { padding: 14px 18px !important; }
+
+            .section-block {
+                margin-bottom: 14px !important;
+                page-break-inside: avoid !important;
+            }
+
+            .audit-table th {
+                background-color: #f1f5f9 !important;
+                font-size: 8.8px !important;
+                padding: 4.5px 5px !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .audit-table td {
+                font-size: 9.2px !important;
+                padding: 4px 5px !important;
+            }
+
+            .audit-table tfoot .grand-total-row td {
+                background-color: #0f172a !important;
+                color: #ffffff !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .machine-row-card {
+                page-break-inside: avoid !important;
+            }
+
+            .notes-grid { page-break-inside: avoid !important; }
+            .signoff-section {
+                page-break-inside: avoid !important;
+                margin-top: 10px !important;
+                padding-top: 8px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="document-wrapper">
+
+    <!-- ═══════════════════════ 1. HEADER ═══════════════════════ -->
+    <header class="report-header">
+        <div class="header-top">
+            <div>
+                <div class="brand-title">Mucheru World of Golf &bull; Project Operations</div>
+                <h1 class="main-title">Heavy Machinery &amp; Earth Haulage Financial Audit</h1>
+            </div>
+            <div class="doc-badge">
+                AUDIT REF: <strong>MWG-MCH-2026-08B</strong><br>
+                DATE: <strong>21st August 2026</strong>
+            </div>
+        </div>
+
+        <div class="header-meta-grid">
+            <div class="meta-col">
+                <div class="meta-label">Audit Period</div>
+                <div class="meta-val">7th – 20th August 2026</div>
+            </div>
+            <div class="meta-col">
+                <div class="meta-label">Operating Days</div>
+                <div class="meta-val">14 Consecutive Days</div>
+            </div>
+            <div class="meta-col">
+                <div class="meta-label">Primary Scope</div>
+                <div class="meta-val">Dams 1, 2, 3 Excavation &amp; Earthmoving</div>
+            </div>
+            <div class="meta-col">
+                <div class="meta-label">Audited By</div>
+                <div class="meta-val">Dennis Ndirangu</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ═══════════════════════ 2. KPI STRIP ═══════════════════════ -->
+    <section class="executive-summary-strip">
+        <div class="stat-card">
+            <div class="stat-label">Total Machinery Spend</div>
+            <div class="stat-number green">KES 1,298,392</div>
+            <div class="stat-sub">Excavator + Backhoe</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Total Machine Hours</div>
+            <div class="stat-number">164.5 hrs</div>
+            <div class="stat-sub">114h 36m Exc. + 49h 53m Backhoe</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Total Tipper Trips</div>
+            <div class="stat-number" style="color: var(--amber-600);">807 Trips</div>
+            <div class="stat-sub">KES 807,000 (@ KES 1,000/trip)</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Combined Cumulative Cost</div>
+            <div class="stat-number">KES 2,105,392</div>
+            <div class="stat-sub">Machinery + Haulage Trips</div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════ 3. MAIN CONTENT ═══════════════════════ -->
+    <main class="report-content">
+
+        <!-- ── SECTION A: DAILY BREAKDOWN TABLE ── -->
+        <section class="section-block">
+            <div class="section-title-wrap">
+                <h2 class="section-title">1. Daily Machine Operating Hours, Trips &amp; Cost Ledger</h2>
+                <span class="section-note">Excavator @ KES 8,500/hr &bull; Backhoe @ KES 6,500/hr &bull; Tippers @ KES 1,000/trip</span>
+            </div>
+
+            <div class="table-responsive">
+                <table class="audit-table">
+                    <thead>
+                        <tr>
+                            <th class="col-date">Date</th>
+                            <th class="col-scope">Primary Operational Scope</th>
+                            <th class="col-exc-h">Excavator Run</th>
+                            <th class="col-exc-c">Excavator Cost (KES)</th>
+                            <th class="col-bh-h">Backhoe Run</th>
+                            <th class="col-bh-c">Backhoe Cost (KES)</th>
+                            <th class="col-trips">Tipper Trips</th>
+                            <th class="col-total">Machinery Cost (KES)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background-color: #f0fdf4;">
+                            <td class="col-date">07 Aug 2026 <span class="tag-pill green">Dam 1 Start</span></td>
+                            <td class="col-scope">Dam 1 groundbreaking kickoff (9:00 AM) &amp; initial excavation</td>
+                            <td class="col-exc-h">9h 00m</td>
+                            <td class="col-exc-c">76,500.00</td>
+                            <td class="col-bh-h">—</td>
+                            <td class="col-bh-c">—</td>
+                            <td class="col-trips">32</td>
+                            <td class="col-total">76,500.00</td>
+                        </tr>
+                        <tr>
+                            <td class="col-date">08 Aug 2026</td>
+                            <td class="col-scope">Dam excavation resumed (2:00 PM) upon truck arrival</td>
+                            <td class="col-exc-h">2h 30m</td>
+                            <td class="col-exc-c">21,250.00</td>
+                            <td class="col-bh-h">—</td>
+                            <td class="col-bh-c">—</td>
+                            <td class="col-trips">19</td>
+                            <td class="col-total">21,250.00</td>
+                        </tr>
+                        <tr>
+                            <td class="col-date">09 Aug 2026</td>
+                            <td class="col-scope">Dam 1 excavation (~80%) &amp; Tee boxes 1, 11–15 haulage</td>
+                            <td class="col-exc-h">9h 30m</td>
+                            <td class="col-exc-c">80,750.00</td>
+                            <td class="col-bh-h">—</td>
+                            <td class="col-bh-c">—</td>
+                            <td class="col-trips">56</td>
+                            <td class="col-total">80,750.00</td>
+                        </tr>
+                        <tr>
+                            <td class="col-date">10 Aug 2026 <span class="tag-pill green">Dam 1 Done</span></td>
+                            <td class="col-scope">Dam 1 excavation completion (100%) &amp; Tee box transport</td>
+                            <td class="col-exc-h">9h 00m</td>
+                            <td class="col-exc-c">76,500.00</td>
+                            <td class="col-bh-h">—</td>
+                            <td class="col-bh-c">—</td>
+                            <td class="col-trips">54</td>
+                            <td class="col-total">76,500.00</td>
+                        </tr>
+                        <tr>
+                            <td class="col-date">11 Aug 2026</td>
+                            <td class="col-scope">Dam wall shaping &amp; murram level deep excavation</td>
+                            <td class="col-exc-h">8h 45m</td>
+                            <td class="col-exc-c">74,375.00</td>
+                            <td class="col-bh-h">—</td>
+                            <td class="col-bh-c">—</td>
+                            <td class="col-trips">48</td>
+                            <td class="col-total">74,375.00</td>
+                        </tr>
+                        <tr style="background-color: #f0fdf4;">
+                            <td class="col-date">12 Aug 2026 <span class="tag-pill green">Dam 2 Start</span></td>
+                            <td class="col-scope">Dam 2 excavation commencement &amp; tipper loading</td>
+                            <td class="col-exc-h">9h 30m</td>
+                            <td class="col-exc-c">80,750.00</td>
+                            <td class="col-bh-h">—</td>
+                            <td class="col-bh-c">—</td>
+                            <td class="col-trips">77</td>
+                            <td class="col-total">80,750.00</td>
+                        </tr>
+                        <tr style="background-color: #f0fdf4;">
+                            <td class="col-date">13 Aug 2026 <span class="tag-pill green">Backhoe In</span></td>
+                            <td class="col-scope">Dam 2 excavation &amp; clubhouse soil trial / Dam 1 levelling</td>
+                            <td class="col-exc-h">9h 51m</td>
+                            <td class="col-exc-c">83,725.00</td>
+                            <td class="col-bh-h">6h 53m</td>
+                            <td class="col-bh-c">44,791.67</td>
+                            <td class="col-trips">82</td>
+                            <td class="col-total">128,516.67</td>
+                        </tr>
+                        <tr>
+                            <td class="col-date">14 Aug 2026</td>
+                            <td class="col-scope">Dam 2 deepening (Round 2) &amp; Dam 1 wall smoothening</td>
+                            <td class="col-exc-h">9h 30m</td>
+                            <td class="col-exc-c">80,750.00</td>
+                            <td class="col-bh-h">8h 10m</td>
+                            <td class="col-bh-c">53,083.33</td>
+                            <td class="col-trips">75</td>
+                            <td class="col-total">133,833.33</td>
+                        </tr>
+                        <tr>
+                            <td class="col-date">15 Aug 2026</td>
+                            <td class="col-scope">Dam 2 murram deepening &amp; Tee Box 5 levelling</td>
+                            <td class="col-exc-h">6h 30m</td>
+                            <td class="col-exc-c">55,250.00</td>
+                            <td class="col-bh-h">4h 30m</td>
+                            <td class="col-bh-c">29,250.00</td>
+                            <td class="col-trips">26</td>
+                            <td class="col-total">84,500.00</td>
+                        </tr>
+                        <tr style="background-color: #f0fdf4;">
+                            <td class="col-date">16 Aug 2026 <span class="tag-pill green">Dam 3 Start</span></td>
+                            <td class="col-scope">Dam 3 groundbreaking kickoff &amp; old access roads grading</td>
+                            <td class="col-exc-h">7h 00m</td>
+                            <td class="col-exc-c">59,500.00</td>
+                            <td class="col-bh-h">7h 00m</td>
+                            <td class="col-bh-c">45,500.00</td>
+                            <td class="col-trips">65</td>
+                            <td class="col-total">105,000.00</td>
+                        </tr>
+                        <tr>
+                            <td class="col-date">17 Aug 2026 <span class="tag-pill red">Loader Idle</span></td>
+                            <td class="col-scope">Dam 3 deep basin cutting (Front Loader non-operational)</td>
+                            <td class="col-exc-h">9h 00m</td>
+                            <td class="col-exc-c">76,500.00</td>
+                            <td class="col-bh-h">0h 00m</td>
+                            <td class="col-bh-c">0.00</td>
+                            <td class="col-trips">75</td>
+                            <td class="col-total">76,500.00</td>
+                        </tr>
+                        <tr>
+                            <td class="col-date">18 Aug 2026</td>
+                            <td class="col-scope">Dam 3 excavation &amp; Tee Box 16 / green profile grading</td>
+                            <td class="col-exc-h">8h 30m</td>
+                            <td class="col-exc-c">72,250.00</td>
+                            <td class="col-bh-h">7h 20m</td>
+                            <td class="col-bh-c">47,666.67</td>
+                            <td class="col-trips">79</td>
+                            <td class="col-total">119,916.67</td>
+                        </tr>
+                        <tr>
+                            <td class="col-date">19 Aug 2026</td>
+                            <td class="col-scope">Dam 3 excavation &amp; Dam 2 basin shaping / Tee Box 9</td>
+                            <td class="col-exc-h">7h 00m</td>
+                            <td class="col-exc-c">59,500.00</td>
+                            <td class="col-bh-h">8h 00m</td>
+                            <td class="col-bh-c">52,000.00</td>
+                            <td class="col-trips">72</td>
+                            <td class="col-total">111,500.00</td>
+                        </tr>
+                        <tr style="background-color: #f0fdf4;">
+                            <td class="col-date">20 Aug 2026 <span class="tag-pill green">Dam 3 Done</span></td>
+                            <td class="col-scope">Dam 3 completion (100%), Dam 2 deepening &amp; Tee Box 7</td>
+                            <td class="col-exc-h">9h 00m</td>
+                            <td class="col-exc-c">76,500.00</td>
+                            <td class="col-bh-h">8h 00m</td>
+                            <td class="col-bh-c">52,000.00</td>
+                            <td class="col-trips">47</td>
+                            <td class="col-total">128,500.00</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="subtotal-row">
+                            <td colspan="2">TOTAL RUN, TRIPS &amp; SUB-COSTS</td>
+                            <td class="col-exc-h">114h 36m</td>
+                            <td class="col-exc-c">974,100.00</td>
+                            <td class="col-bh-h">49h 53m</td>
+                            <td class="col-bh-c">324,291.67</td>
+                            <td class="col-trips">807</td>
+                            <td class="col-total">—</td>
+                        </tr>
+                        <tr class="grand-total-row">
+                            <td colspan="5">CUMULATIVE MACHINERY COST (14 DAYS)</td>
+                            <td colspan="3" class="amount">KES 1,298,391.67</td>
+                        </tr>
+                        <tr style="background-color: #1e293b; color: #e2e8f0; font-size: 0.78rem; font-weight: 700;">
+                            <td colspan="5" style="padding: 6px 10px;">+ TIPPER EARTHMOVING HAULAGE (807 TRIPS @ KES 1,000/TRIP)</td>
+                            <td colspan="3" style="text-align: right; color: #fde047; padding: 6px 10px; font-weight: 800;">KES 807,000.00</td>
+                        </tr>
+                        <tr style="background-color: #022c22; color: #ffffff; font-size: 0.86rem; font-weight: 800;">
+                            <td colspan="5" style="padding: 8px 10px;">GRAND TOTAL EXPENDITURE (MACHINERY + HAULAGE TRIPS)</td>
+                            <td colspan="3" style="text-align: right; color: #4ade80; padding: 8px 10px; font-size: 0.96rem;">KES 2,105,391.67</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <!-- ── SECTION B: MACHINE & HAULAGE PERFORMANCE SUMMARY (ROWS) ── -->
+        <section class="section-block">
+            <div class="section-title-wrap">
+                <h2 class="section-title">2. Machine &amp; Haulage Operations Summary</h2>
+                <span class="section-note">Operational metrics by asset category (14-day campaign)</span>
+            </div>
+
+            <div class="machine-rows-container">
+                
+                <!-- ROW 1: EXCAVATOR -->
+                <div class="machine-row-card excavator">
+                    <div class="row-card-header">
+                        <div class="row-card-title-group">
+                            <span class="row-card-title">🔵 Sunward SWE210 Hydraulic Tracked Excavator</span>
+                            <span class="row-card-rate-pill">Rate: KES 8,500 / hr</span>
+                        </div>
+                        <span class="row-card-status-badge green">100% Active (14 of 14 Days)</span>
+                    </div>
+                    <div class="row-card-body">
+                        <div class="row-metric-block">
+                            <span class="row-metric-label">Operational Run</span>
+                            <span class="row-metric-value">114h 36m</span>
+                            <span class="row-metric-sub">114.60 decimal hours</span>
+                        </div>
+                        <div class="row-metric-block">
+                            <span class="row-metric-label">Daily Average</span>
+                            <span class="row-metric-value">8h 11m / day</span>
+                            <span class="row-metric-sub">Across 14 operating days</span>
+                        </div>
+                        <div class="row-metric-block">
+                            <span class="row-metric-label">Peak Daily Shift</span>
+                            <span class="row-metric-value">9h 51m</span>
+                            <span class="row-metric-sub">13th Aug (KES 83,725.00)</span>
+                        </div>
+                        <div class="row-metric-block" style="text-align: right;">
+                            <span class="row-metric-label">Total Subtotal Cost</span>
+                            <span class="row-metric-cost">KES 974,100.00</span>
+                            <span class="row-metric-sub">75.0% of machinery spend</span>
+                        </div>
+                        <div class="row-card-scope">
+                            <strong>Primary Scope &amp; Milestones:</strong> Full excavation of Dam 1 (100% complete 10th Aug); Dam 2 initial excavation &amp; Round 2 deepening; Dam 3 complete groundbreaking and basin excavation (100% complete 20th Aug); heavy murram bedrock cutting and continuous tipper loading.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ROW 2: BACKHOE / FRONT LOADER -->
+                <div class="machine-row-card backhoe">
+                    <div class="row-card-header">
+                        <div class="row-card-title-group">
+                            <span class="row-card-title">🟢 XGMA 765N Front Loader / Backhoe</span>
+                            <span class="row-card-rate-pill">Rate: KES 6,500 / hr</span>
+                        </div>
+                        <span class="row-card-status-badge green">7 Active Days (Arrived 13th Aug)</span>
+                    </div>
+                    <div class="row-card-body">
+                        <div class="row-metric-block">
+                            <span class="row-metric-label">Operational Run</span>
+                            <span class="row-metric-value">49h 53m</span>
+                            <span class="row-metric-sub">49.88 decimal hours</span>
+                        </div>
+                        <div class="row-metric-block">
+                            <span class="row-metric-label">Daily Average (Active)</span>
+                            <span class="row-metric-value">7h 08m / day</span>
+                            <span class="row-metric-sub">Across 7 working shifts</span>
+                        </div>
+                        <div class="row-metric-block">
+                            <span class="row-metric-label">Equipment Status Log</span>
+                            <span class="row-metric-value">1 Day Idle</span>
+                            <span class="row-metric-sub">17th Aug (Non-operational)</span>
+                        </div>
+                        <div class="row-metric-block" style="text-align: right;">
+                            <span class="row-metric-label">Total Subtotal Cost</span>
+                            <span class="row-metric-cost">KES 324,291.67</span>
+                            <span class="row-metric-sub">25.0% of machinery spend</span>
+                        </div>
+                        <div class="row-card-scope">
+                            <strong>Primary Scope &amp; Milestones:</strong> Embankment wall smoothening on Dam 1; basin floor grading &amp; perimeter profiling on Dam 2; clubhouse foundation trial pit digging; mechanical levelling of Tee Boxes 5, 7, 9, 16; old golf road and fairway corridor grading.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ROW 3: TIPPER HAULAGE -->
+                <div class="machine-row-card haulage">
+                    <div class="row-card-header">
+                        <div class="row-card-title-group">
+                            <span class="row-card-title">🚛 Tipper Earthmoving Haulage Fleet</span>
+                            <span class="row-card-rate-pill">Rate: KES 1,000 / trip</span>
+                        </div>
+                        <span class="row-card-status-badge amber">14 of 14 Days Active</span>
+                    </div>
+                    <div class="row-card-body">
+                        <div class="row-metric-block">
+                            <span class="row-metric-label">Total Haulage Volume</span>
+                            <span class="row-metric-value">807 Trips</span>
+                            <span class="row-metric-sub">Excavated earth &amp; topsoil</span>
+                        </div>
+                        <div class="row-metric-block">
+                            <span class="row-metric-label">Daily Average</span>
+                            <span class="row-metric-value">57.6 Trips / day</span>
+                            <span class="row-metric-sub">Across 14 operating days</span>
+                        </div>
+                        <div class="row-metric-block">
+                            <span class="row-metric-label">Peak Daily Haul</span>
+                            <span class="row-metric-value">82 Trips</span>
+                            <span class="row-metric-sub">13th Aug (KES 82,000.00)</span>
+                        </div>
+                        <div class="row-metric-block" style="text-align: right;">
+                            <span class="row-metric-label">Total Haulage Cost</span>
+                            <span class="row-metric-cost amber">KES 807,000.00</span>
+                            <span class="row-metric-sub">38.3% of combined spend</span>
+                        </div>
+                        <div class="row-card-scope">
+                            <strong>Primary Scope &amp; Milestones:</strong> Transport of stripped topsoil, excavated spoil, and dense murram from Dams 1, 2, and 3 directly to golf tee boxes, fairway contour zones, and designated course-wide damping stockpiles.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ── SECTION C: METHODOLOGY & AUDIT ASSUMPTIONS ── -->
+        <section class="section-block">
+            <div class="section-title-wrap">
+                <h2 class="section-title">3. Accounting Methodology &amp; Audit Notes</h2>
+                <span class="section-note">Contractual verification standards</span>
+            </div>
+
+            <div class="notes-grid">
+                <div class="note-card">
+                    <h4>Billing &amp; Computation Standards</h4>
+                    <ul>
+                        <li><strong>Fixed Rates:</strong> Hourly rates of KES 8,500/hr (Excavator), KES 6,500/hr (Backhoe/Loader), and KES 1,000/trip (Tipper haulage) applied uniformly across the entire 14-day operational window.</li>
+                        <li><strong>Proportional Billing:</strong> Partial hours computed precisely to decimal minutes (e.g. 2h 30m = 2.50h; 8h 45m = 8.75h; 9h 51m = 9.85h; 8h 10m = 8.1667h).</li>
+                        <li><strong>Ground Data Verification:</strong> Verified against certified field logs and daily operations records overseen by site management.</li>
+                    </ul>
+                </div>
+
+                <div class="note-card" style="background: #ffffff;">
+                    <h4>Campaign Milestones Summary</h4>
+                    <div class="alert-box">
+                        <strong>Completed Objectives (7th–20th Aug):</strong><br>
+                        &bull; <strong>Dam 1:</strong> 100% Excavated &amp; wall profiled.<br>
+                        &bull; <strong>Dam 2:</strong> 100% Excavated &amp; deepened (Round 2).<br>
+                        &bull; <strong>Dam 3:</strong> 100% Excavation completed (20th Aug).<br>
+                        &bull; <strong>Tee Boxes:</strong> Graded &amp; levelled (Nos. 5, 7, 9, 15, 16, 17, 18).
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── SIGN-OFF BLOCK ── -->
+        <div class="signoff-section">
+            <div class="signoff-meta">
+                <strong>Mucheru World of Golf Infrastructure &amp; Earthmoving Account</strong><br>
+                Reporting Archive &bull; Operations &amp; Earthmoving Audit Series
+            </div>
+            <div class="signoff-sig">
+                <div class="sig-name">Dennis Ndirangu</div>
+                <div class="sig-role">Operations &amp; Reporting Management</div>
+            </div>
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>

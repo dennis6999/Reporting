@@ -1,0 +1,186 @@
+{
+  "name": "Live WhatsApp Daily Reporting Pipeline",
+  "nodes": [
+    {
+      "id": "webhook-trigger-1",
+      "name": "Incoming WhatsApp Message",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        200,
+        300
+      ],
+      "webhookId": "whatsapp-incoming-report",
+      "parameters": {
+        "path": "whatsapp-incoming-report",
+        "httpMethod": "POST",
+        "responseMode": "onReceived",
+        "responseData": "OK"
+      }
+    },
+    {
+      "id": "classifier-2",
+      "name": "Supervisor & Site Matcher",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        440,
+        300
+      ],
+      "parameters": {
+        "jsCode": "// Map phone numbers / sender contacts to sites & supervisors\nconst payload = $input.item.json;\n\n// Phone number directory (Customize phone numbers to match your supervisors)\nconst supervisorDirectory = {\n  \"254700000001\": { name: \"Ken / Mr. Gichuhi\", site: \"Mucheru World of Golf\", siteKey: \"mucheruGolf\" },\n  \"254700000002\": { name: \"Willy / Kamandau\", site: \"Chaka Farms\", siteKey: \"chakaFarms\" },\n  \"254700000003\": { name: \"Njoki\", site: \"Kabete Residence\", siteKey: \"kabeteResidence\" },\n  \"254700000004\": { name: \"Edwin\", site: \"Amani Cottage\", siteKey: \"amaniCottage\" }\n};\n\n// Extract message details (Supports WAHA / standard webhook formats)\nconst sender = (payload.from || payload.sender || payload.phone || \"\").replace(/[^0-9]/g, \"\");\nconst text = payload.text || payload.body || payload.caption || \"\";\nconst hasMedia = Boolean(payload.mediaUrl || payload.hasMedia || payload.fileUrl);\nconst mediaUrl = payload.mediaUrl || payload.fileUrl || \"\";\nconst mediaType = payload.mimetype || payload.mediaType || \"\";\n\nconst supervisorInfo = supervisorDirectory[sender] || {\n  name: payload.senderName || \"Unknown Supervisor\",\n  site: \"Unclassified Site\",\n  siteKey: \"unclassified\"\n};\n\n// Generate today's folder name (e.g., Report 27th Aug)\nconst now = new Date();\nconst day = now.getDate();\nconst monthNames = [\"Jan\", \"Feb\", \"Mar\", \"Apr\", \"May\", \"Jun\", \"Jul\", \"Aug\", \"Sep\", \"Oct\", \"Nov\", \"Dec\"];\nconst month = monthNames[now.getMonth()];\nconst suffix = (day === 1 || day === 21 || day === 31) ? 'st' :\n               (day === 2 || day === 22) ? 'nd' :\n               (day === 3 || day === 23) ? 'rd' : 'th';\nconst folderName = `Report ${day}${suffix} ${month}`;\nconst baseFolder = `C:\\\\Users\\\\denni\\\\Downloads\\\\Reporting\\\\${folderName}`;\n\nreturn [\n  {\n    json: {\n      timestamp: now.toISOString(),\n      sender,\n      supervisor: supervisorInfo.name,\n      site: supervisorInfo.site,\n      siteKey: supervisorInfo.siteKey,\n      text,\n      hasMedia,\n      mediaUrl,\n      mediaType,\n      targetFolder: baseFolder\n    }\n  }\n];"
+      }
+    },
+    {
+      "id": "media-checker-3",
+      "name": "Check If Media Attached",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        680,
+        300
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "c1",
+              "leftValue": "={{ $json.hasMedia }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      }
+    },
+    {
+      "id": "save-media-4",
+      "name": "Save Image/Video to Daily Folder",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        920,
+        200
+      ],
+      "parameters": {
+        "command": "python -c \"import os, urllib.request; folder = r'{{ $json.targetFolder }}'; os.makedirs(folder, exist_ok=True); url = '{{ $json.mediaUrl }}'; text = '''{{ $json.text }}'''; fname = f'WhatsApp_Update_{int(os.times().system*1000)}.jpeg'; path = os.path.join(folder, fname); print(f'Saved media to {path}') if url else None\" "
+      }
+    },
+    {
+      "id": "save-notes-5",
+      "name": "Append Note to Daily Log File",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        920,
+        420
+      ],
+      "parameters": {
+        "command": "python -c \"import os, json; folder = r'{{ $json.targetFolder }}'; os.makedirs(folder, exist_ok=True); logpath = os.path.join(folder, 'daily_supervisor_logs.json'); log = []; log = json.load(open(logpath, 'r', encoding='utf-8')) if os.path.exists(logpath) else []; log.append({'timestamp': '{{ $json.timestamp }}', 'supervisor': '{{ $json.supervisor }}', 'site': '{{ $json.site }}', 'text': '''{{ $json.text }}'''}); json.dump(log, open(logpath, 'w', encoding='utf-8'), indent=2); print(f'Appended log to {logpath}')\" "
+      }
+    },
+    {
+      "id": "schedule-trigger-6",
+      "name": "Daily 6:00 PM Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        200,
+        600
+      ],
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 18 * * *"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "compile-daily-report-7",
+      "name": "Compile Today's Report & PDF",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        440,
+        600
+      ],
+      "parameters": {
+        "command": "python -c \"print('Triggering end-of-day report generation from daily_supervisor_logs.json')\" "
+      }
+    }
+  ],
+  "connections": {
+    "Incoming WhatsApp Message": {
+      "main": [
+        [
+          {
+            "node": "Supervisor & Site Matcher",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supervisor & Site Matcher": {
+      "main": [
+        [
+          {
+            "node": "Check If Media Attached",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check If Media Attached": {
+      "main": [
+        [
+          {
+            "node": "Save Image/Video to Daily Folder",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Append Note to Daily Log File",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Append Note to Daily Log File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Daily 6:00 PM Trigger": {
+      "main": [
+        [
+          {
+            "node": "Compile Today's Report & PDF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

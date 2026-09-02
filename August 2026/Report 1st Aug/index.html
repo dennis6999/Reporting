@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Operations Report - August 1, 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-dark: #0f172a;
+            --accent: #059669;
+            --accent-light: #ecfdf5;
+            --golf-green: #15803d;
+            --golf-bg: #f0fdf4;
+            --farm-amber: #d97706;
+            --farm-bg: #fffbeb;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-300: #cbd5e1;
+            --slate-600: #475569;
+            --slate-700: #334155;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --radius-md: 12px;
+            --radius-lg: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f4f6f9;
+            color: var(--slate-800);
+            line-height: 1.6;
+            padding: 40px 20px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            border: 1px solid var(--slate-200);
+        }
+
+        /* Header Styling */
+        header {
+            background: #0f172a !important;
+            color: #ffffff !important;
+            padding: 44px 40px;
+            position: relative;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #15803d !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .badge-date {
+            background: rgba(255, 255, 255, 0.18) !important;
+            backdrop-filter: blur(8px);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: #ffffff !important;
+        }
+
+        .report-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #93c5fd !important;
+            font-weight: 700;
+        }
+
+        header h1 {
+            font-size: 2.3rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+            color: #ffffff !important;
+        }
+
+        header p.subtitle {
+            color: #cbd5e1 !important;
+            font-size: 1.05rem;
+            font-weight: 400;
+        }
+
+        /* KPI Dashboard Bar */
+        .kpi-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            padding: 24px 40px;
+            background-color: var(--slate-50);
+            border-bottom: 1px solid var(--slate-200);
+        }
+
+        .kpi-card {
+            background: #ffffff;
+            padding: 16px 20px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--slate-200);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .kpi-card .label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--slate-600);
+            letter-spacing: 0.5px;
+        }
+
+        .kpi-card .value {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--slate-900);
+            margin-top: 4px;
+        }
+
+        .kpi-card .subtext {
+            font-size: 0.8rem;
+            color: var(--slate-600);
+            margin-top: 2px;
+        }
+
+        /* Main Content Layout */
+        .main-content {
+            padding: 36px 40px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 14px;
+            border-bottom: 2px solid var(--slate-200);
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--slate-900);
+        }
+
+        .section-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: #ffffff !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .icon-golf {
+            background-color: var(--golf-green) !important;
+        }
+
+        .icon-farm {
+            background-color: var(--farm-amber) !important;
+        }
+
+        .supervisor-badge {
+            background-color: var(--slate-100) !important;
+            color: var(--slate-700) !important;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--slate-200);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .supervisor-badge span {
+            color: var(--primary) !important;
+            font-weight: 700;
+        }
+
+        /* Card Elements */
+        .card {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--slate-200);
+            padding: 22px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .card-header {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--slate-900);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Activity List */
+        .activity-list {
+            list-style: none;
+        }
+
+        .activity-list li {
+            position: relative;
+            padding-left: 22px;
+            margin-bottom: 10px;
+            color: var(--slate-700);
+        }
+
+        .activity-list li::before {
+            content: '•';
+            position: absolute;
+            left: 6px;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .data-table th, .data-table td {
+            padding: 10px 14px;
+            text-align: left;
+            border-bottom: 1px solid var(--slate-200);
+        }
+
+        .data-table th {
+            background-color: var(--slate-100) !important;
+            font-weight: 700;
+            color: var(--slate-800) !important;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .data-table td {
+            font-size: 0.92rem;
+            color: var(--slate-700);
+        }
+
+        /* Image Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+            margin-top: 16px;
+        }
+
+        .gallery-item {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--slate-200);
+            background: #ffffff;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-caption {
+            padding: 12px 14px;
+            background: #ffffff;
+        }
+
+        .gallery-caption h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--slate-900);
+            margin-bottom: 2px;
+        }
+
+        .gallery-caption p {
+            font-size: 0.82rem;
+            color: var(--slate-600);
+        }
+
+        /* Alert Box */
+        .alert-box {
+            background-color: #fef2f2 !important;
+            border-left: 4px solid #ef4444 !important;
+            padding: 14px 18px;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin-top: 14px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .alert-box h4 {
+            color: #991b1b !important;
+            font-size: 0.92rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .alert-box p {
+            color: #7f1d1d !important;
+            font-size: 0.875rem;
+        }
+
+        /* Info Box */
+        .info-box {
+            background-color: #eff6ff !important;
+            border-left: 4px solid #3b82f6 !important;
+            padding: 14px 18px;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin-top: 14px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .info-box h4 {
+            color: #1e40af !important;
+            font-size: 0.92rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .info-box p {
+            color: #1e3a8a !important;
+            font-size: 0.875rem;
+        }
+
+        /* Video placeholder */
+        .video-note {
+            background-color: var(--slate-50) !important;
+            border: 1px dashed var(--slate-300);
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            text-align: center;
+            color: var(--slate-600);
+            font-size: 0.9rem;
+            margin-top: 12px;
+        }
+
+        .video-note strong {
+            color: var(--slate-800);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--slate-50) !important;
+            padding: 28px 40px;
+            border-top: 1px solid var(--slate-200);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .signature-block {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .signature-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--primary) !important;
+            color: #ffffff !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.05rem;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .signature-details h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--slate-900);
+        }
+
+        /* Optimized Print CSS */
+        @media print {
+            @page {
+                size: A4;
+                margin: 8mm 10mm;
+            }
+            body {
+                background-color: #ffffff;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                border: none;
+                border-radius: 0;
+                max-width: 100%;
+                overflow: visible !important;
+            }
+            header {
+                padding: 20px 20px !important;
+                border-radius: 10px;
+            }
+            header h1 {
+                font-size: 1.9rem !important;
+            }
+            .kpi-bar {
+                padding: 12px 0;
+                background: transparent !important;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 8px;
+            }
+            .kpi-card {
+                padding: 8px 10px;
+                page-break-inside: avoid;
+            }
+            .kpi-card .value {
+                font-size: 1.15rem;
+            }
+            .main-content {
+                padding: 14px 0;
+            }
+            .card {
+                margin-bottom: 14px;
+                padding: 14px 16px;
+            }
+            .data-table th, .data-table td {
+                padding: 6px 10px;
+                font-size: 0.85rem;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            .gallery-item {
+                page-break-inside: avoid;
+            }
+            .gallery-item img {
+                height: 155px;
+            }
+            .gallery-caption {
+                padding: 8px 10px;
+            }
+            .gallery-caption h4 {
+                font-size: 0.85rem;
+            }
+            .gallery-caption p {
+                font-size: 0.78rem;
+            }
+            .section-header {
+                page-break-after: avoid;
+                margin-bottom: 12px;
+                padding-bottom: 8px;
+            }
+            footer {
+                page-break-inside: avoid;
+                padding: 14px 18px !important;
+                border-radius: 10px;
+                margin-top: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <span class="report-tag">Operational Progress Report</span>
+            <span class="badge-date">📅 August 1, 2026</span>
+        </div>
+        <h1>Daily Operations & Project Summary</h1>
+        <p class="subtitle">Comprehensive overview of site development, livestock care, and facility maintenance.</p>
+    </header>
+
+    <!-- KPI Summary Bar -->
+    <div class="kpi-bar">
+        <div class="kpi-card">
+            <div class="label">Golf Project</div>
+            <div class="value">10 Workers</div>
+            <div class="subtext">Green 9 & Green 4</div>
+        </div>
+        <div class="kpi-card">
+            <div class="label">Daily Milk Production</div>
+            <div class="value">7.5 Litres</div>
+            <div class="subtext">Morning: 4.5L | Evening: 3L</div>
+        </div>
+        <div class="kpi-card">
+            <div class="label">Total Livestock</div>
+            <div class="value">124 Head</div>
+            <div class="subtext">All healthy</div>
+        </div>
+        <div class="kpi-card">
+            <div class="label">Canine Care: Coby</div>
+            <div class="value">Resting</div>
+            <div class="subtext">Still recovering – no training</div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <!-- SECTION 1: GOLF PROJECT -->
+        <section id="golf-project" style="margin-bottom: 28px;">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon icon-golf">⛳</div>
+                    <div>
+                        <h2>1. Golf Project (Mucheru World of Golf)</h2>
+                        <p style="font-size: 0.88rem; color: var(--slate-600);">Construction, deliveries, site visits, and architectural marking</p>
+                    </div>
+                </div>
+                <div class="supervisor-badge">
+                    Overseen by: <span>Ken</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span>🏗️</span> Construction & Groundwork Progress
+                </div>
+                <p style="font-size: 0.88rem; color: var(--slate-600); margin-bottom: 10px;">All activities were carried out with <strong>10 workers</strong> across <strong>Green 9</strong> and <strong>Green 4</strong>.</p>
+                <ul class="activity-list">
+                    <li><strong>Levelling Hardcore:</strong> The hardcore base was carefully leveled to ensure a uniform and stable foundation across the green construction area.</li>
+                    <li><strong>Installing PVC Pipes:</strong> PVC drainage and irrigation pipes were measured, cut, and installed according to the site layout plan.</li>
+                    <li><strong>Applying Ballast:</strong> A layer of ballast was applied over the prepared surface to strengthen the sub-base and improve drainage performance.</li>
+                    <li><strong>Sand Delivery:</strong> A sand truck delivery arrived on site. The sand was received and offloaded for upcoming construction and layering works.</li>
+                    <li><strong>Pumice Delivery:</strong> One full lorry of pumice was delivered to the site for use in upcoming green layering.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span>📐</span> Site Visit & Architectural Works
+                </div>
+                <ul class="activity-list">
+                    <li><strong>Site Visit:</strong> <strong>Joe Kamau</strong> and <strong>Caroline</strong> visited the project site during the day to review progress and provide guidance.</li>
+                    <li><strong>Clubhouse Marking:</strong> Architect <strong>Kevin Njoroge</strong> attended the site and marked out the clubhouse location and dimensions as per the approved plans.</li>
+                </ul>
+            </div>
+
+            <!-- Clubhouse Marking Photo Gallery -->
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--slate-900); margin-bottom: 10px; margin-top: 16px;">📷 Clubhouse Marking by Architect Kevin Njoroge</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="Clubhouse marking_01.jpeg" alt="Clubhouse Marking 1">
+                    <div class="gallery-caption">
+                        <h4>Clubhouse Marking (1)</h4>
+                        <p>Marking out the clubhouse location on site.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Clubhouse marking_02.jpeg" alt="Clubhouse Marking 2">
+                    <div class="gallery-caption">
+                        <h4>Clubhouse Marking (2)</h4>
+                        <p>Measuring and setting out clubhouse dimensions.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Clubhouse marking_03.jpeg" alt="Clubhouse Marking 3">
+                    <div class="gallery-caption">
+                        <h4>Clubhouse Marking (3)</h4>
+                        <p>Reference points established for structural layout.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Clubhouse marking_04.jpeg" alt="Clubhouse Marking 4">
+                    <div class="gallery-caption">
+                        <h4>Clubhouse Marking (4)</h4>
+                        <p>Dimensional alignment verified on site.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Clubhouse marking_05.jpeg" alt="Clubhouse Marking 5">
+                    <div class="gallery-caption">
+                        <h4>Clubhouse Marking (5)</h4>
+                        <p>Final boundary markers placed for the clubhouse footprint.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Golf Project Photo Gallery -->
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--slate-900); margin-bottom: 10px; margin-top: 16px;">📷 Site Work Visual Documentation</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="Levelling Hardcore.jpeg" alt="Levelling Hardcore">
+                    <div class="gallery-caption">
+                        <h4>Levelling Hardcore</h4>
+                        <p>Hardcore base leveled for a uniform foundation.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Installing PVC pipe.jpeg" alt="Installing PVC Pipe">
+                    <div class="gallery-caption">
+                        <h4>PVC Pipe Installation</h4>
+                        <p>Drainage and irrigation piping laid across the site.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Installing PVC pipe_01.jpeg" alt="Installing PVC Pipe Detail 1">
+                    <div class="gallery-caption">
+                        <h4>PVC Pipe Installation (Detail)</h4>
+                        <p>Close-up of pipe fitting and alignment work.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Installing PVC pipe_02.jpeg" alt="Installing PVC Pipe Detail 2">
+                    <div class="gallery-caption">
+                        <h4>PVC Pipe Installation (Progress)</h4>
+                        <p>Additional pipe sections connected and secured.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Applying Ballast.jpeg" alt="Applying Ballast">
+                    <div class="gallery-caption">
+                        <h4>Ballast Application</h4>
+                        <p>Ballast layer applied to reinforce the sub-base.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Sand Truck Delivery.jpeg" alt="Sand Truck Delivery">
+                    <div class="gallery-caption">
+                        <h4>Sand Truck Delivery</h4>
+                        <p>Sand delivery received and offloaded on site.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="1 Lorry Delivery of Pumice.jpeg" alt="Pumice Delivery">
+                    <div class="gallery-caption">
+                        <h4>Pumice Delivery (1 Lorry)</h4>
+                        <p>Full lorry of pumice received for green layering works.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box" style="margin-top: 16px;">
+                <h4>📹 Sand Delivery Video</h4>
+                <p>A video of the sand truck delivery was recorded:</p>
+                <ul style="margin-top: 8px; margin-left: 18px; list-style: none;">
+                    <li>🎬 <a href="https://drive.google.com/file/d/10h-Q2BnoXbrvncYzhA3xtF70eAnhR4cd/view?usp=sharing" target="_blank" style="color: #1e40af; font-weight: 600; text-decoration: underline;">Sand Truck Delivery Video</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION 2: CHAKA FARMS -->
+        <section id="chaka-farms">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon icon-farm">🐐</div>
+                    <div>
+                        <h2>2. Farm Activities (Chaka Farms)</h2>
+                        <p style="font-size: 0.88rem; color: var(--slate-600);">Dairy production, facility upkeep, and canine unit management</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dairy & Farm Operations -->
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <div class="card-header" style="margin-bottom: 0;">
+                        <span>🥛</span> Dairy & Farm Maintenance
+                    </div>
+                    <div class="supervisor-badge">
+                        Overseen by: <span>Kamandau</span>
+                    </div>
+                </div>
+                <ul class="activity-list">
+                    <li><strong>Milk Production Summary:</strong>
+                        <ul style="margin-left: 18px; margin-top: 4px; margin-bottom: 6px;">
+                            <li><strong>Morning Yield:</strong> 4.5 litres</li>
+                            <li><strong>Evening Yield:</strong> 3.0 litres</li>
+                            <li><strong style="color: var(--accent);">Total Daily Milk Collected: 7.5 litres</strong></li>
+                        </ul>
+                    </li>
+                    <li><strong>Cow Pen Cleaning:</strong> General cleaning of the cow pen was completed to maintain a hygienic environment for the livestock.</li>
+                    <li><strong>Palm Tree Irrigation:</strong> Watering of the palm trees across the compound was carried out to support healthy growth.</li>
+                    <li><strong>Cattle Spraying:</strong> All cattle were sprayed as part of routine pest and parasite control measures.</li>
+                </ul>
+            </div>
+
+            <!-- Farm Photo Gallery -->
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--slate-900); margin-bottom: 10px; margin-top: 16px;">📷 Farm Activities Visual Documentation</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="Cleaning the cow pen.jpeg" alt="Cleaning the Cow Pen">
+                    <div class="gallery-caption">
+                        <h4>Cow Pen Cleaning</h4>
+                        <p>General cleaning completed for a hygienic livestock environment.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Watering palm trees.jpeg" alt="Watering Palm Trees">
+                    <div class="gallery-caption">
+                        <h4>Watering Palm Trees</h4>
+                        <p>Compound palm trees irrigated for healthy growth.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Cattle Spraying.jpeg" alt="Cattle Spraying">
+                    <div class="gallery-caption">
+                        <h4>Cattle Spraying</h4>
+                        <p>Routine pest and parasite control spraying completed.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Canine Unit -->
+            <div class="card" style="margin-top: 24px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <div class="card-header" style="margin-bottom: 0;">
+                        <span>🐕</span> Canine Health & Training Update
+                    </div>
+                    <div class="supervisor-badge">
+                        Overseen by: <span>Willy</span>
+                    </div>
+                </div>
+                <ul class="activity-list">
+                    <li><strong>Kennel Sanitation:</strong> Kennels were thoroughly cleaned and the dogs were provided with fresh, clean water.</li>
+                    <li><strong>Dog Health Check-up:</strong> Routine health inspection was carried out on all dogs.</li>
+                    <li><strong>Off-Leash Walking:</strong> Dogs were walked off-leash together with the goats. The session went well overall, though <strong>Zara</strong> requires additional practice to improve her behaviour during group walks.</li>
+                    <li><strong>Obedience & Commands:</strong> All dogs demonstrated good obedience and patience during command drills.</li>
+                    <li><strong>No Jumping Drill:</strong> The "no jumping" exercise was practised successfully.</li>
+                </ul>
+
+                <div class="alert-box">
+                    <h4>⚠️ Recovery Update: Canine "Coby"</h4>
+                    <p>Coby has not yet fully recovered from the soreness identified earlier. As a precaution, no training was conducted on him today. He continues to rest and is being closely monitored.</p>
+                </div>
+
+                <div class="info-box" style="margin-top: 12px;">
+                    <h4>📹 Training Video Footage</h4>
+                    <p>Two training session videos were recorded during today's session:</p>
+                    <ul style="margin-top: 8px; margin-left: 18px; list-style: none;">
+                        <li style="margin-bottom: 6px;">🎬 <a href="https://drive.google.com/file/d/1tLIC0a-SNIAtDsVWNGi5fh8O9jhJvEGP/view?usp=sharing" target="_blank" style="color: #1e40af; font-weight: 600; text-decoration: underline;">Dog Training Session 1</a></li>
+                        <li>🎬 <a href="https://drive.google.com/file/d/11bVVdyIpcLxtvHD97Ygk1FpNxsOznl6G/view?usp=sharing" target="_blank" style="color: #1e40af; font-weight: 600; text-decoration: underline;">Dog Training Session 2</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- SECTION 3: LIVESTOCK HEADCOUNT -->
+        <section id="livestock" style="margin-top: 28px;">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon" style="background-color: #7c3aed !important;">🐄</div>
+                    <div>
+                        <h2>3. Livestock Headcount & Health Status</h2>
+                        <p style="font-size: 0.88rem; color: var(--slate-600);">Full census of all farm animals — all livestock confirmed healthy</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span>📋</span> Current Livestock Census
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Animal</th>
+                            <th>Count</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Cows</strong></td>
+                            <td>8</td>
+                            <td>All healthy</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Calves</strong></td>
+                            <td>5</td>
+                            <td>All healthy</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Goats</strong></td>
+                            <td>86</td>
+                            <td>All healthy</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Goat Kids</strong></td>
+                            <td>12</td>
+                            <td>All healthy</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Doper Sheep</strong></td>
+                            <td>9</td>
+                            <td>All healthy</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Geese</strong></td>
+                            <td>2</td>
+                            <td>1 laying on 5 eggs</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Chicken (Cocks)</strong></td>
+                            <td>2</td>
+                            <td>All healthy</td>
+                        </tr>
+                        <tr style="background-color: var(--slate-100) !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;">
+                            <td><strong style="font-size: 0.95rem;">Total Livestock</strong></td>
+                            <td><strong style="font-size: 0.95rem;">124</strong></td>
+                            <td><strong style="color: var(--accent);">All healthy</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box" style="margin-top: 16px;">
+                    <h4>🤰 Expecting Animals</h4>
+                    <ul style="margin-top: 6px; margin-left: 18px; list-style: none;">
+                        <li>🐄 <strong>Expecting Cows:</strong> 1 — <strong>Thabu</strong></li>
+                        <li>🐐 <strong>Expecting Goats:</strong> None</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--slate-900); margin-bottom: 10px; margin-top: 16px;">📷 Livestock Visual Documentation</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="Number of Cows.jpeg" alt="Cows">
+                    <div class="gallery-caption">
+                        <h4>Cows (8)</h4>
+                        <p>All cows accounted for and in good health.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Number of Calfs.jpeg" alt="Calves">
+                    <div class="gallery-caption">
+                        <h4>Calves (5)</h4>
+                        <p>All calves healthy and thriving.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Number of Goats.jpeg" alt="Goats">
+                    <div class="gallery-caption">
+                        <h4>Goats (86)</h4>
+                        <p>Full goat herd accounted for.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Number of Goat Kids.jpeg" alt="Goat Kids">
+                    <div class="gallery-caption">
+                        <h4>Goat Kids (12)</h4>
+                        <p>All goat kids healthy and active.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Number of Doper sheep.jpeg" alt="Doper Sheep">
+                    <div class="gallery-caption">
+                        <h4>Doper Sheep (9)</h4>
+                        <p>All doper sheep in good condition.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Number of Geese.jpeg" alt="Geese">
+                    <div class="gallery-caption">
+                        <h4>Geese (2)</h4>
+                        <p>One goose currently laying on 5 eggs.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Expecting cow (Thabu).jpeg" alt="Expecting Cow Thabu">
+                    <div class="gallery-caption">
+                        <h4>Expecting Cow — Thabu</h4>
+                        <p>Thabu is the sole expecting cow on the farm.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: MEETING REFERENCE -->
+        <section id="meeting" style="margin-top: 28px;">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon" style="background-color: #0369a1 !important;">📝</div>
+                    <div>
+                        <h2>4. Meeting Report — July 30, 2026</h2>
+                        <p style="font-size: 0.88rem; color: var(--slate-600);">Reference to prior operations meeting held on site</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span>📄</span> Meeting Summary
+                </div>
+                <p style="color: var(--slate-700); margin-bottom: 12px;">A meeting was held on <strong>July 30, 2026</strong> to review ongoing operations, project milestones, and upcoming priorities across Mucheru World of Golf and Chaka Farms.</p>
+                <p style="color: var(--slate-600); font-size: 0.9rem; margin-bottom: 12px;">No photographs were taken during the meeting. However, full meeting minutes have been documented and are available for review via the link below.</p>
+                <div class="info-box">
+                    <h4>📎 Meeting Minutes Document</h4>
+                    <ul style="margin-top: 8px; margin-left: 18px; list-style: none;">
+                        <li>📄 <a href="https://docs.google.com/document/d/1hpgLIJ_Lev7BfQPjDe_UcoC-e9MG3gR_cWAnlXWbItg/edit?usp=sharing" target="_blank" style="color: #1e40af; font-weight: 600; text-decoration: underline;">View Meeting Minutes — July 30, 2026</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer / Authorization -->
+    <footer>
+        <div class="signature-block">
+            <div class="signature-avatar">DN</div>
+            <div class="signature-details">
+                <h3>Compiled by Dennis Ndirangu</h3>
+            </div>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>
