@@ -51,6 +51,10 @@ flowchart TD
    - Include a concise title (`<h4>`) and descriptive caption (`<p>`) detailing the observed equipment, progress stage, terrain, and operational details.
 8. **Kabete Residence Personnel Rule (Njoki):**
    - **Njoki is NOT a supervisor.** She oversees daily operations and communicates/shares field updates on what has been accomplished. Never label her as a "supervisor" or write "under the supervision of Njoki".
+9. **No Image Grouping Rule (Continuous Straight Photo Flow):**
+   - **Stop putting images into groups.** Never divide photos into separate thematic cards, sub-groups, or multiple fragmented cards with distinct sub-headings (e.g., do not split Golf photos into "Fairway Clearing" vs "Green Foundation", or Kabete photos into "Structural Works" vs "Fireplace Excavation").
+   - All photographic field evidence for each project site must be housed inside **one single continuous photo gallery card** titled `📸 Photographic Field Evidence — [Site Name]`.
+   - All verified photos within that gallery must simply follow each other straight in the 2-column grid.
 
 ---
 
@@ -137,8 +141,9 @@ Executive reports MUST maintain generous breathing room, large readable fonts, a
    - Each site's primary narrative card must have its own dedicated full page (`padding: 26px 30px`, body text `14.5px–15.5px`, line height `1.65–1.72`, bullets `13.8px–14.5px` with `13px–16px` margins). Fills ~75–85% of the page.
 2. **Dedicated Full-Page Data Tables**:
    - Multi-row or complex data tables must be placed on their own dedicated page with generous cell padding (`12px–16px`) and readable font sizes (`12.5px–13px`).
-3. **Dedicated Photo Galleries (Strictly 2 Columns)**:
+3. **Dedicated Photo Galleries (Strictly 2 Columns & Continuous Straight Flow)**:
    - Field photos MUST ALWAYS display in a spacious **2-column grid** (`repeat(2, 1fr)`) with uncompressed image heights (`175px–195px`). Never compress photos into 3 columns.
+   - **Continuous Flow (No Image Grouping):** Stop putting images into groups or multiple fragmented cards. All photos for each location must follow each other straight in a single continuous photo gallery card.
 4. **Natural Page Count (Zero Artificial Compression)**:
    - Reports must expand naturally to whatever page count is required (e.g., 14, 16, 18, 20+ pages). Readability, generous breathing room, and executive aesthetic excellence always take precedence over any arbitrary page target.
 

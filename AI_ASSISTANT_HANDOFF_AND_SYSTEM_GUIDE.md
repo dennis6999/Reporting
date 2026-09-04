@@ -54,6 +54,9 @@ The objective of this system is to **fully automate the ingestion, AI visual ins
    * Total Billing = Operational Hours $\times$ Hourly Rate (e.g. $9.0\text{ hrs} \times \text{KES } 6,500 = \mathbf{\text{KES } 58,500}$).
 3. **Footer Signature**:
    * Official signature block: `<h3>Compiled by Dennis</h3>`.
+4. **Photo Galleries (No Image Grouping / Continuous Straight Flow)**:
+   * Stop putting images into groups or multiple fragmented cards with thematic headings.
+   * All verified site photos must follow each other straight in a single continuous photo gallery card per project site in a 2-column grid.
 
 ---
 

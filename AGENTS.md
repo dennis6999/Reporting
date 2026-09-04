@@ -57,6 +57,11 @@ The reporting workflow covers four primary sites. Ensure tasks, updates, and ass
    - Provide clear, factual titles (`<h4>`) and descriptive visual captions (`<p>`).
    - Describe specific visual evidence (e.g., equipment model, terrain condition, progress stage, materials depicted, animal behavior).
 
+4. **No Image Grouping Rule (Continuous Straight Photo Flow)**
+   - **Stop putting images into groups.** AI assistants MUST NEVER divide a site's photos into separate thematic cards, sub-groups, or multiple fragmented gallery cards with custom thematic headings (e.g., dividing photos into distinct cards like "Fairway Clearing" vs "Green Foundation", or "Structural Works" vs "Fireplace Excavation").
+   - All photographic field evidence for a given project site must be presented in **one single continuous photo gallery card** titled `📸 Photographic Field Evidence — [Site Name]`.
+   - Within this unified gallery card, all verified site images must follow each other straight, flowing sequentially one after another in the standard 2-column grid layout (`grid-template-columns: repeat(2, 1fr)`).
+
 ---
 
 ## 4. HTML Structure & Design System
@@ -181,9 +186,10 @@ AI assistants must NEVER compress font sizes, shrink line heights, tighten bulle
 3. **Dedicated Spread for Canine Unit & Compound Maintenance**:
    - The Chaka Farms Canine Unit Care, Training & Routine Log and Compound Cleanliness Log MUST be given their own dedicated, spacious spread with individual supervisor badges (Willy for Canine, Margaret & Monica for Compound).
 
-4. **High-Impact Photo Galleries (Strictly 2 Columns)**:
+4. **High-Impact Photo Galleries (Strictly 2 Columns & Continuous Flow)**:
    - Photo galleries MUST ALWAYS display in a **spacious 2-column grid** (`grid-template-columns: repeat(2, 1fr)`).
    - NEVER compress images into 3 columns or create a 3-column class (`gallery-grid-3col`).
+   - **Continuous Straight Flow (No Grouping):** Do NOT group images or split them across multiple cards with thematic sub-headings. All photos for a project site must follow each other straight in a single continuous gallery card.
    - Photo image height: `175px–185px`, object-fit `cover`.
    - Info block padding: `11px 14px`, titles `13.5px`, captions `12px` (line-height `1.4`).
 
