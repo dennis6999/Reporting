@@ -29,6 +29,7 @@ guest-flow/
 ~$*.xls
 ~$*.docx
 *.tmp
+scratch*
 
 # Operating System Caches
 Thumbs.db
