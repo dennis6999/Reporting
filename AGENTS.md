@@ -13,6 +13,22 @@ The reporting workflow covers four primary sites. Ensure tasks, updates, and ass
    - **Heavy Equipment Rule:** The **Front Loader** and **Backhoe** refer to the same vehicle on site (**Backhoe Loader**). NEVER list them as two distinct machines or create duplicate rows in the machinery log. Always consolidate its operational hours and billing under a single Backhoe Loader entry (e.g., 8.0 hrs @ 6,500/hr = KES 52,000).
    - **Supervisors:** Ken, Mr. Gichuhi, Kinoti, Kamandau.
    - **Visual Theme:** Golf Green (`#15803d`).
+   - **Mandatory Daily Greens & Teeboxes Status Ledger Rule (Effective From September 16th, 2026 Onwards):**
+     - Every daily report from September 16th onwards MUST include the comprehensive **Course Engineering & Agronomy Status Audit** ledger modeled strictly on `September 2026/Course Status Greens and Tees/Mucheru_Golf_Greens_and_Tees_Status_Report.pdf` (and its reference implementation in `September 2026/Course Status Greens and Tees/index.html`).
+     - **Required Structure:**
+       1. **Putting Greens Status Table (Greens 1 – 18):** Columns: `Green` (`col-id`), `Current Technical & Agronomic State` (`col-status`), and `Milestone Status` (`col-tag`). Use color-coded badge classes (`.tag-ready`, `.tag-sand`, `.tag-trenched`, `.tag-neutral`, `.tag-pending`).
+       2. **Championship Teeboxes Status Table (Tees 1 – 18):** Columns: `Teebox` (`col-id`), `Current Technical & Earthwork State` (`col-status`), and `Platform Status` (`col-tag`). Use color-coded badge classes (`.tag-ready`, `.tag-trenched`, `.tag-neutral`).
+       3. **Operations Synthesis Callout:** A dedicated summary card (`.summary-card`) synthesizing total course completion rates (e.g., % of greens trenched, sub-base pumice coverage, teebox alignment).
+     - **Day-to-Day Incremental State Continuity Rule:**
+       - **Only update what changed:** On each reporting day, update solely the technical description, milestone tag, and date marker (e.g., `(Sep 16)`) for the specific greens and teeboxes that underwent construction, trenching, earthwork, or shaping on that day.
+       - **Unchanged Greens and Tees:** If there was no work or change on certain greens or tees on that day, **leave their description and status tag exactly as they were on the preceding day's report**. Continuity is strictly preserved day-to-day from the preceding daily report's ledger.
+     - **Visual Indicator for Changed Greens & Tees (`.row-changed` & `.badge-today`):**
+       - To make daily changes instantly identifiable while maintaining executive subtlety:
+         1. Apply the class `class="row-changed"` to the table row (`<tr>`) of any green or tee modified on that reporting day.
+         2. The first cell (`td:first-child`) receives a subtle 3.5px solid golf-green left accent border (`border-left: 3.5px solid #15803d;`) and an ultra-soft tinted row background (`#f0fdf4`).
+         3. Place a compact green micro-badge next to the ID: `<span class="badge-today">Today</span>` (e.g., `<td class="col-id">Green 1 <span class="badge-today">Today</span></td>`).
+         4. Unchanged rows remain neutral with standard styling and no badge.
+
 
 2. **Chaka Farms**
    - **Activities:** Livestock & dairy production (milking yield logs: morning/evening), canine unit care (kennel sanitation, dog bathing & grooming, manners training, afternoon off-leash walking, goat socialization), farm plumbing maintenance (unblocking drainage, sink repairs), paddock rain hose irrigation, compound & garden cleanliness.
@@ -75,6 +91,7 @@ Every report must be crafted with high aesthetic standards:
 - **KPI Summary Bar:** Top section highlighting 3–4 key metrics (e.g., Dam Haulage Trips, Milk Yield in Litres, Key Accomplishments, Active Site Count).
 - **Section Badges:** Display supervisor names (`Overseen by: [Name]`) prominently on each card/section.
 - **Data Tables:** Use structured HTML tables for quantitative logs (e.g., Dairy Milking Yield tables in Litres, Material Delivery breakdowns).
+- **Course Engineering & Agronomy Status Tables (`.status-table`):** Structured 3-column audit tables for 18 Putting Greens and 18 Championship Teeboxes under Mucheru World of Golf. Features subtle borders (`#e2e8f0`), alternating row shading (`#fafbfd`), fixed-width ID and tag columns (`col-id`, `col-tag`), and standardized color-coded status badges (`.tag-ready`, `.tag-sand`, `.tag-trenched`, `.tag-neutral`, `.tag-pending`). Accompanied by a `.summary-card` synthesizing course-wide progress.
 - **Key Accomplishment Highlight Callouts:** Use green callout boxes (`.success-box`) to celebrate key accomplishments and completed objectives (e.g., 100% main house roof painting complete).
 - **Responsive Photo Galleries:** Display images in a grid layout (`grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))`).
 - **Video Cards & Action Buttons:** Present each video in a dedicated `.video-card` component with an embedded 16:9 `<video>` element for browser playback, descriptive title and summary, and an elegant styled action button linking directly to Google Drive (`.video-drive-btn`). Never group multiple unrelated videos inside a single video player or stack raw hyperlink text.
@@ -134,6 +151,15 @@ When converting HTML reports to PDF using headless Edge/Chrome, you **MUST** inc
     .container { box-shadow: none; border: none; max-width: 100%; }
     .gallery-grid, .video-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .gallery-item img { height: 155px; }
+
+    /* 5. STATUS TABLES & CHANGED ROW INDICATORS */
+    .status-table tr.row-changed { background-color: #f0fdf4 !important; }
+    .status-table tr.row-changed td:first-child { border-left: 3.5px solid #15803d !important; font-weight: 800; }
+    .badge-today {
+        display: inline-block; font-size: 8px !important; font-weight: 700 !important;
+        text-transform: uppercase; color: #15803d !important; background-color: #dcfce7 !important;
+        border: 1px solid #86efac !important; padding: 1px 5px !important; border-radius: 8px; margin-left: 5px;
+    }
 }
 ```
 
@@ -183,17 +209,28 @@ AI assistants must NEVER compress font sizes, shrink line heights, tighten bulle
      - Cell padding: `8px 12px` (print).
      - Ensure tables and accompanying clarification callouts fit completely on their dedicated page without spilling callouts onto blank overflow pages.
 
-3. **Dedicated Spread for Canine Unit & Compound Maintenance**:
+3. **Dedicated Spreads for Greens & Teeboxes Status Ledgers (From September 16th, 2026 Onwards)**:
+   - The 18-hole **Putting Greens Status (Greens 1 – 18)** table MUST occupy its own dedicated full page in print.
+   - The 18-hole **Championship Teeboxes Status (Tees 1 – 18)** table alongside the **Operations Synthesis** callout card MUST occupy its own dedicated full page in print.
+   - **Print CSS Standards for Status Tables:**
+     - `@media print` table font-size: `9.8px`, cell padding: `4px 8px` (line-height: `1.32`).
+     - ID column width: `70px`, Tag column width: `150px`, Tag badge font size: `8.5px` (`padding: 1px 5px`).
+     - Table rows: `page-break-inside: avoid !important; break-inside: avoid !important;`.
+     - Operations Synthesis summary card: padding `9px 12px`, font size `9.5px` (line height `1.35`).
+     - Both 18-row tables must fit cleanly, comfortably, and entirely onto their respective single A4 pages without awkward multi-page spilling or compression.
+
+4. **Dedicated Spread for Canine Unit & Compound Maintenance**:
    - The Chaka Farms Canine Unit Care, Training & Routine Log and Compound Cleanliness Log MUST be given their own dedicated, spacious spread with individual supervisor badges (Willy for Canine, Margaret & Monica for Compound).
 
-4. **High-Impact Photo Galleries (Strictly 2 Columns & Continuous Flow)**:
+5. **High-Impact Photo Galleries (Strictly 2 Columns & Continuous Flow)**:
    - Photo galleries MUST ALWAYS display in a **spacious 2-column grid** (`grid-template-columns: repeat(2, 1fr)`).
    - NEVER compress images into 3 columns or create a 3-column class (`gallery-grid-3col`).
    - **Continuous Straight Flow (No Grouping):** Do NOT group images or split them across multiple cards with thematic sub-headings. All photos for a project site must follow each other straight in a single continuous gallery card.
    - Photo image height: `175px–185px`, object-fit `cover`.
    - Info block padding: `11px 14px`, titles `13.5px`, captions `12px` (line-height `1.4`).
 
-5. **Page Count Integrity (Zero Artificial Compression)**:
+6. **Page Count Integrity (Zero Artificial Compression)**:
    - There is NO arbitrary page limit. Never sacrifice visual comfort, font sizes, line heights, or image layout to meet an arbitrary page count.
    - If a daily or monthly report requires 14, 16, 18, 20+ pages to breathe properly and maintain executive presentation, let it span that full length naturally.
+
 

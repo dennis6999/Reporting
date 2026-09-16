@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mucheru World of Golf — Greens and Tees Operations Status Report</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --primary-light: #1e293b;
+            --secondary: #334155;
+            --muted: #64748b;
+            --border: #e2e8f0;
+            --border-light: #f1f5f9;
+            --bg-page: #ffffff;
+            --bg-subtle: #f8fafc;
+            --accent-green: #14532d;
+            --accent-green-bg: #f0fdf4;
+            --accent-green-border: #bbf7d0;
+            --accent-amber: #78350f;
+            --accent-amber-bg: #fffbeb;
+            --accent-amber-border: #fde68a;
+            --accent-blue: #1e40af;
+            --accent-blue-bg: #eff6ff;
+            --accent-blue-border: #bfdbfe;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f1f5f9;
+            color: var(--secondary);
+            line-height: 1.5;
+            font-size: 13px;
+        }
+
+        .document-container {
+            max-width: 960px;
+            margin: 24px auto;
+            background: var(--bg-page);
+        }
+
+        /* ── PAGE LAYOUT ── */
+        .page {
+            width: 100%;
+            background: #ffffff;
+            padding: 36px 42px;
+            position: relative;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border);
+            margin-bottom: 24px;
+        }
+
+        .page-break {
+            page-break-after: always;
+            break-after: page;
+        }
+
+        /* ── HEADER ── */
+        .header {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 18px;
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .header-title-block h1 {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        .header-title-block p {
+            font-size: 12.5px;
+            color: var(--muted);
+            font-weight: 500;
+            margin-top: 4px;
+        }
+
+        .header-meta {
+            text-align: right;
+            font-size: 11.5px;
+            color: var(--muted);
+        }
+
+        .header-meta .meta-project {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 12.5px;
+        }
+
+        .header-meta .meta-date {
+            margin-top: 2px;
+        }
+
+        /* ── SECTION TITLES ── */
+        .section-header {
+            margin-bottom: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .section-note {
+            font-size: 11px;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        /* ── STRUCTURED TABLES ── */
+        .status-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+            font-size: 11.8px;
+        }
+
+        .status-table thead {
+            background-color: var(--bg-subtle);
+        }
+
+        .status-table th {
+            padding: 9px 14px;
+            text-align: left;
+            font-size: 10.5px;
+            font-weight: 700;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .status-table td {
+            padding: 8.5px 14px;
+            vertical-align: top;
+            border-bottom: 1px solid var(--border-light);
+            line-height: 1.45;
+        }
+
+        .status-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .status-table tbody tr:nth-child(even) {
+            background-color: #fafbfd;
+        }
+
+        .col-id {
+            width: 80px;
+            font-weight: 700;
+            color: var(--primary);
+            white-space: nowrap;
+        }
+
+        .col-status {
+            color: var(--secondary);
+        }
+
+        .col-tag {
+            width: 175px;
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        /* ── REFINED LABELS ── */
+        .tag {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 7px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .tag-ready {
+            color: var(--accent-green);
+            background: var(--accent-green-bg);
+            border: 1px solid var(--accent-green-border);
+        }
+
+        .tag-sand {
+            color: var(--accent-amber);
+            background: var(--accent-amber-bg);
+            border: 1px solid var(--accent-amber-border);
+        }
+
+        .tag-trenched {
+            color: var(--accent-blue);
+            background: var(--accent-blue-bg);
+            border: 1px solid var(--accent-blue-border);
+        }
+
+        .tag-neutral {
+            color: var(--secondary);
+            background: var(--bg-subtle);
+            border: 1px solid var(--border);
+        }
+
+        .tag-pending {
+            color: #991b1b;
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+        }
+
+        /* ── SUMMARY TEXT BOX (PAGE 2) ── */
+        .summary-card {
+            background: var(--bg-subtle);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 16px 20px;
+            margin-top: 20px;
+            margin-bottom: 24px;
+        }
+
+        .summary-card h4 {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+
+        .summary-card p {
+            font-size: 11.5px;
+            color: var(--secondary);
+            line-height: 1.5;
+        }
+
+        /* ── FOOTER ── */
+        .report-footer {
+            border-top: 1px solid var(--border);
+            padding-top: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-left {
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        .footer-right h3 {
+            font-size: 12.5px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.01em;
+        }
+
+        /* ── PRINT MEDIA SPECIFICATION (EXACTLY 2 PAGES) ── */
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 8mm 12mm 8mm 12mm;
+            }
+
+            body {
+                background: #ffffff !important;
+                padding: 0 !important;
+            }
+
+            .document-container {
+                max-width: 100% !important;
+                margin: 0 !important;
+                box-shadow: none !important;
+                border: none !important;
+            }
+
+            .page {
+                box-shadow: none !important;
+                border: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                height: auto !important;
+                min-height: auto !important;
+            }
+
+            .page-1 {
+                page-break-after: always !important;
+                break-after: page !important;
+            }
+
+            .page-2 {
+                page-break-before: auto !important;
+                break-before: auto !important;
+            }
+
+            .header {
+                padding-bottom: 8px !important;
+                margin-bottom: 10px !important;
+                border-bottom-width: 1.5px !important;
+            }
+
+            .header-title-block h1 {
+                font-size: 17px !important;
+            }
+
+            .header-title-block p {
+                font-size: 11px !important;
+            }
+
+            .section-header {
+                margin-bottom: 8px !important;
+                padding-bottom: 5px !important;
+            }
+
+            .section-title {
+                font-size: 12.5px !important;
+            }
+
+            .status-table {
+                font-size: 9.8px !important;
+            }
+
+            .status-table th {
+                padding: 5px 8px !important;
+                font-size: 9px !important;
+            }
+
+            .status-table td {
+                padding: 4px 8px !important;
+                font-size: 9.6px !important;
+                line-height: 1.32 !important;
+            }
+
+            .status-table tr {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            .col-id {
+                width: 70px !important;
+            }
+
+            .col-tag {
+                width: 150px !important;
+            }
+
+            .tag {
+                font-size: 8.5px !important;
+                padding: 1px 5px !important;
+            }
+
+            .summary-card {
+                padding: 9px 12px !important;
+                margin-top: 10px !important;
+                margin-bottom: 10px !important;
+            }
+
+            .summary-card h4 {
+                font-size: 10.5px !important;
+                margin-bottom: 3px !important;
+            }
+
+            .summary-card p {
+                font-size: 9.5px !important;
+                line-height: 1.35 !important;
+            }
+
+            .report-footer {
+                padding-top: 8px !important;
+            }
+
+            .report-footer .footer-left {
+                font-size: 9.5px !important;
+            }
+
+            .report-footer .footer-right h3 {
+                font-size: 11px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="document-container">
+
+    <!-- ========================================================================= -->
+    <!-- PAGE 1: PUTTING GREENS STATUS (1 - 18)                                    -->
+    <!-- ========================================================================= -->
+    <section class="page page-1">
+        
+        <header class="header">
+            <div class="header-title-block">
+                <h1>Mucheru World of Golf</h1>
+                <p>Course Engineering &amp; Agronomy Status Audit — Greens &amp; Teeboxes</p>
+            </div>
+            <div class="header-meta">
+                <div class="meta-project">Executive Operations Ledger</div>
+                <div class="meta-date">Date: September 15, 2026</div>
+            </div>
+        </header>
+
+        <div class="section-header">
+            <div class="section-title">Putting Greens Status (Greens 1 – 18)</div>
+            <div class="section-note">Subgrade Drainage &bull; Foundation Matrix &bull; Soil Profiling</div>
+        </div>
+
+        <table class="status-table">
+            <thead>
+                <tr>
+                    <th class="col-id">Green</th>
+                    <th class="col-status">Current Technical &amp; Agronomic State</th>
+                    <th class="col-tag">Milestone Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-id">Green 1</td>
+                    <td class="col-status">Red volcanic loam spread; volcanic pumice aggregate applied and leveled; subgrade drainage trenches excavated (Sep 15).</td>
+                    <td class="col-tag"><span class="tag tag-trenched">Trenched &amp; Pumice Leveled</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Green 2</td>
+                    <td class="col-status">Red volcanic loam spread; volcanic pumice aggregate applied and leveled; subgrade drainage trenches excavated (Sep 15).</td>
+                    <td class="col-tag"><span class="tag tag-trenched">Trenched &amp; Pumice Leveled</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Green 3</td>
+                    <td class="col-status">Red volcanic loam spread; volcanic pumice applied and leveled; subgrade drainage trenches excavated (Sep 15); fairway 4 approach leveled.</td>
+                    <td class="col-tag"><span class="tag tag-trenched">Trenched &amp; Pumice Leveled</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Green 4</td>
+                    <td class="col-status">Red volcanic loam spread; volcanic pumice applied and leveled; subgrade drainage trenches excavated (Sep 15); fairway playing corridor cleared.</td>
+                    <td class="col-tag"><span class="tag tag-trenched">Trenched &amp; Pumice Leveled</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Green 5</td>
+                    <td class="col-status">Ready. Fully established mature championship putting green turfgrass under active pop-up sprinkler irrigation conditioning.</td>
+                    <td class="col-tag"><span class="tag tag-ready">Ready &bull; Established Turf</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Green 6</td>
+                    <td class="col-status">Riversand added and leveled during initial construction stages; red volcanic loam spread; subgrade drainage trenches excavated (Sep 15); perimeter containment berm shaped.</td>
+                    <td class="col-tag"><span class="tag tag-sand">Riversand Leveled</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Green 7</td>
+                    <td class="col-status">Subgrade layout and internal grade contours staked and marked with white lime boundary grid; prepared for foundation excavation.</td>
+                    <td class="col-tag"><span class="tag tag-neutral">Staked &amp; Layout Marked</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Green 8</td>
+                    <td class="col-status">Riversand applied during earlier phases but remains unleveled; red volcanic loam spread; subgrade drainage trenches excavated (Sep 15); surrounding slopes graded.</td>
+                    <td class="col-tag"><span class="tag tag-sand">Riversand Unleveled</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Green 9</td>
+                    <td class="col-status">Architectural shaping completed; red volcanic loam spread; volcanic pumice applied and graded; subgrade drainage trenches excavated (Sep 15).</td>
+                    <td class="col-tag"><span class="tag tag-trenched">Trenched &amp; Pumice Graded</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Green 10</td>
+                    <td class="col-status">Hardcore foundation fractured; perforated PVC drainage lines net-wrapped; red volcanic loam spread; volcanic pumice applied and leveled; drainage trench cut (Sep 14).</td>
+                    <td class="col-tag"><span class="tag tag-trenched">Pumice Leveled &amp; Trenched</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Green 11</td>
+                    <td class="col-status">Hardcore sub-base stabilized; separation membrane placed; red volcanic loam spread; volcanic pumice aggregate spread and leveled; subgrade drainage trenches excavated.</td>
+                    <td class="col-tag"><span class="tag tag-trenched">Trenched &amp; Pumice Leveled</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Green 12</td>
+                    <td class="col-status">Hardcore stone foundation packed; separation membrane placed; red volcanic loam spread; volcanic pumice aggregate spread and leveled; subgrade drainage trenches excavated.</td>
+                    <td class="col-tag"><span class="tag tag-trenched">Trenched &amp; Pumice Leveled</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Green 13</td>
+                    <td class="col-status">Hardcore rock fractured; red volcanic loam spread; volcanic pumice leveled; subgrade drainage trenches excavated (Sep 14).</td>
+                    <td class="col-tag"><span class="tag tag-trenched">Trenched &amp; Pumice Leveled</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Green 14</td>
+                    <td class="col-status">Hardcore base and moisture-barrier membrane installed; red volcanic loam spread; volcanic pumice sub-base graded; sole remaining green on course awaiting drainage trench excavation.</td>
+                    <td class="col-tag"><span class="tag tag-pending">Awaiting Final Trenching</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Green 15</td>
+                    <td class="col-status">Hardcore rock fractured; separation membrane installed; red volcanic loam spread; volcanic pumice graded; subgrade drainage trenches excavated (Sep 14).</td>
+                    <td class="col-tag"><span class="tag tag-trenched">Trenched &amp; Pumice Graded</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Green 16</td>
+                    <td class="col-status">Hardcore foundation bed fractured and packed; separation membrane installed; red volcanic loam spread; volcanic pumice graded; subgrade drainage trenches excavated (Sep 14).</td>
+                    <td class="col-tag"><span class="tag tag-trenched">Trenched &amp; Pumice Graded</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Green 17</td>
+                    <td class="col-status">Hardcore rock grid packed; red volcanic loam spread; separation membrane installed; volcanic pumice graded; subgrade drainage trenches excavated (Sep 14).</td>
+                    <td class="col-tag"><span class="tag tag-trenched">Trenched &amp; Pumice Graded</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Green 18</td>
+                    <td class="col-status">Hardcore rock fractured; red volcanic loam spread across foundation and collars; volcanic pumice aggregate leveled; subgrade drainage trenches excavated (Sep 15).</td>
+                    <td class="col-tag"><span class="tag tag-trenched">Trenched &amp; Pumice Leveled</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="report-footer" style="margin-top: 18px;">
+            <div class="footer-left">Mucheru World of Golf &bull; Operations Status Report &bull; Page 1 of 2</div>
+            <div class="footer-right"><span>Section 1: Putting Greens</span></div>
+        </div>
+
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- PAGE 2: CHAMPIONSHIP TEEBOXES STATUS (1 - 18)                             -->
+    <!-- ========================================================================= -->
+    <section class="page page-2">
+        
+        <header class="header">
+            <div class="header-title-block">
+                <h1>Mucheru World of Golf</h1>
+                <p>Course Engineering &amp; Agronomy Status Audit — Greens &amp; Teeboxes</p>
+            </div>
+            <div class="header-meta">
+                <div class="meta-project">Executive Operations Ledger</div>
+                <div class="meta-date">Date: September 15, 2026</div>
+            </div>
+        </header>
+
+        <div class="section-header">
+            <div class="section-title">Championship Teeboxes Status (Tees 1 – 18)</div>
+            <div class="section-note">Playing Platforms &bull; Graded Elevations &bull; Surrounds</div>
+        </div>
+
+        <table class="status-table">
+            <thead>
+                <tr>
+                    <th class="col-id">Teebox</th>
+                    <th class="col-status">Current Technical &amp; Earthwork State</th>
+                    <th class="col-tag">Platform Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-id">Tee 1</td>
+                    <td class="col-status">Platform leveled, graded, and compacted with mass murram fill during course bulk earthmoving.</td>
+                    <td class="col-tag"><span class="tag tag-neutral">Platform Leveled</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Tee 2</td>
+                    <td class="col-status">Foundation fill dumped and platform rough-leveled using 8 tipper truckloads of structural fill.</td>
+                    <td class="col-tag"><span class="tag tag-neutral">Fill Placed &amp; Leveled</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Tee 3</td>
+                    <td class="col-status">Foundation fill dumped and platform rough-leveled using 8 tipper truckloads of structural fill.</td>
+                    <td class="col-tag"><span class="tag tag-neutral">Fill Placed &amp; Leveled</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Tee 4</td>
+                    <td class="col-status">Championship launch platform precision-graded and leveled to design elevation.</td>
+                    <td class="col-tag"><span class="tag tag-neutral">Precision Leveled</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Tee 5</td>
+                    <td class="col-status">Playing platform leveled, compacted, and adjusted to align with fairway playing corridor.</td>
+                    <td class="col-tag"><span class="tag tag-neutral">Platform Compacted</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Tee 6</td>
+                    <td class="col-status">Precision leveling and compaction completed along the boundary tree corridor.</td>
+                    <td class="col-tag"><span class="tag tag-neutral">Platform Leveled</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Tee 7</td>
+                    <td class="col-status">Finalized. Elevated plateau leveled, compacted, and reinforced with a perimeter protective earth berm along fence line.</td>
+                    <td class="col-tag"><span class="tag tag-ready">Finalized &bull; Berm Complete</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Tee 8</td>
+                    <td class="col-status">Graded, leveled, and contour-adjusted to match fairway transitions and surrounds.</td>
+                    <td class="col-tag"><span class="tag tag-neutral">Contour Adjusted</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Tee 9</td>
+                    <td class="col-status">Playing platform leveled and surrounding perimeter ground graded (Sep 1).</td>
+                    <td class="col-tag"><span class="tag tag-neutral">Platform Leveled</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Tee 10</td>
+                    <td class="col-status">Graded and compacted platform serving the start of the back-nine playing corridor.</td>
+                    <td class="col-tag"><span class="tag tag-neutral">Platform Compacted</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Tee 11</td>
+                    <td class="col-status">Rough shaping, elevation grading, and Backhoe subsoil leveling completed (Sep 7).</td>
+                    <td class="col-tag"><span class="tag tag-neutral">Shaped &amp; Graded</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Tee 12</td>
+                    <td class="col-status">Dual platforms established: primary championship tee resized; new forward Ladies' Tee platform constructed (Sep 5).</td>
+                    <td class="col-tag"><span class="tag tag-ready">Dual Platforms Complete</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Tee 13</td>
+                    <td class="col-status">Rough shaping, elevation grading, and Backhoe subsoil leveling completed (Sep 7).</td>
+                    <td class="col-tag"><span class="tag tag-neutral">Shaped &amp; Graded</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Tee 14</td>
+                    <td class="col-status">Protected platform: heavy earthen soil barrier embankment constructed along the boundary fence line (Sep 2).</td>
+                    <td class="col-tag"><span class="tag tag-ready">Barrier Berm Formed</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Tee 15</td>
+                    <td class="col-status">Leveled platform and primary irrigation tie-in zone; main HDPE waterline laid along boundary trench from gate to Tee 15 (Sep 15).</td>
+                    <td class="col-tag"><span class="tag tag-trenched">Irrigation Mainline Node</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Tee 16</td>
+                    <td class="col-status">Platform leveled, filled, and surface contours profiled.</td>
+                    <td class="col-tag"><span class="tag tag-neutral">Profile Graded</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Tee 17</td>
+                    <td class="col-status">Playing platform precision-leveled, filled, and compacted.</td>
+                    <td class="col-tag"><span class="tag tag-neutral">Precision Leveled</span></td>
+                </tr>
+                <tr>
+                    <td class="col-id">Tee 18</td>
+                    <td class="col-status">Championship tee platform leveled; perimeter approach cleared and graded (Sep 1).</td>
+                    <td class="col-tag"><span class="tag tag-neutral">Platform Leveled</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="summary-card">
+            <h4>Operations Synthesis</h4>
+            <p>Subgrade drainage trenching is executed across 17 of 18 championship putting greens (94.4% network completion), leaving only Green 14 for final trench cut. Volcanic pumice sub-base aggregate has been spread and leveled across active complexes, with red volcanic loam distributed across all greens (excluding Green 7 in layout stage and Green 5 in mature turf). All 18 championship teebox platforms are graded, stabilized, and aligned with fairway corridors.</p>
+        </div>
+
+        <footer class="report-footer">
+            <div class="footer-left">Mucheru World of Golf &bull; Operations Status Report &bull; Page 2 of 2</div>
+            <div class="footer-right">
+                <h3>Compiled by Dennis</h3>
+            </div>
+        </footer>
+
+    </section>
+
+</div>
+
+</body>
+</html>

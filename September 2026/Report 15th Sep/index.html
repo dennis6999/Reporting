@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Operations Report — Tuesday, 15th September 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-dark: #0f172a;
+            --accent: #059669;
+            --accent-light: #ecfdf5;
+            --golf-green: #15803d;
+            --golf-green-light: #f0fdf4;
+            --farm-amber: #d97706;
+            --farm-amber-light: #fffbeb;
+            --residence-purple: #6d28d9;
+            --residence-purple-light: #f5f3ff;
+            --cottage-teal: #0d9488;
+            --cottage-teal-light: #f0fdfa;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-300: #cbd5e1;
+            --slate-400: #94a3b8;
+            --slate-600: #475569;
+            --slate-700: #334155;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --radius-md: 12px;
+            --radius-lg: 16px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f4f6f9;
+            color: var(--slate-800);
+            line-height: 1.72;
+            font-size: 1.04rem;
+            padding: 40px 20px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            border: 1px solid var(--slate-200);
+        }
+
+        /* Header Block */
+        header {
+            background: #0f172a !important;
+            color: #ffffff !important;
+            padding: 46px 44px;
+            position: relative;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .badge-date {
+            background: rgba(255,255,255,0.18) !important;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.94rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(255,255,255,0.25);
+            color: #ffffff !important;
+        }
+        .report-tag {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #86efac !important;
+            font-weight: 700;
+        }
+        header h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            color: #ffffff !important;
+        }
+        header p.subtitle {
+            color: #cbd5e1 !important;
+            font-size: 1.05rem;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        /* Executive KPI Summary Bar */
+        .kpi-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            padding: 26px 44px;
+            background-color: var(--slate-50);
+            border-bottom: 1px solid var(--slate-200);
+        }
+        .kpi-card {
+            background: #ffffff;
+            padding: 20px 24px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--slate-200);
+            box-shadow: var(--shadow-sm);
+        }
+        .kpi-card .label {
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--slate-600);
+            letter-spacing: 0.5px;
+        }
+        .kpi-card .value {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--slate-900);
+            margin-top: 4px;
+        }
+        .kpi-card .subtext {
+            font-size: 0.88rem;
+            color: var(--slate-600);
+            margin-top: 2px;
+        }
+
+        /* Executive Cover Overview Card */
+        .cover-overview-container {
+            padding: 28px 44px 0 44px;
+        }
+        .cover-overview-card {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--slate-200);
+            padding: 30px 34px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .main-content { padding: 38px 44px; }
+
+        /* Section Headers */
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--slate-200);
+            margin-bottom: 26px;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .section-title h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--slate-900);
+        }
+        .section-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: #ffffff !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .icon-golf { background-color: var(--golf-green) !important; }
+        .icon-farm { background-color: var(--farm-amber) !important; }
+        .icon-residence { background-color: var(--residence-purple) !important; }
+        .icon-cottage { background-color: var(--cottage-teal) !important; }
+
+        .supervisor-badges-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .supervisor-badge {
+            background-color: var(--slate-100) !important;
+            color: var(--slate-700) !important;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            border: 1px solid var(--slate-200);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .supervisor-badge span {
+            color: var(--primary) !important;
+            font-weight: 700;
+        }
+
+        /* Standard Cards — Generous & Uncompressed */
+        .card {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--slate-200);
+            padding: 34px 38px;
+            margin-bottom: 28px;
+            box-shadow: var(--shadow-sm);
+        }
+        .card-header, .card-heading {
+            font-size: 1.28rem;
+            font-weight: 800;
+            color: var(--slate-900);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .editorial-text {
+            font-size: 1.04rem;
+            color: var(--slate-700);
+            line-height: 1.72;
+            margin-bottom: 18px;
+        }
+
+        .highlight-list { list-style: none; }
+        .highlight-list li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 15px;
+            color: var(--slate-700);
+            font-size: 1rem;
+            line-height: 1.68;
+        }
+        .highlight-list li::before {
+            content: '•';
+            position: absolute;
+            left: 6px;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.45rem;
+        }
+        .highlight-list li strong {
+            color: var(--slate-900);
+            font-weight: 700;
+        }
+
+        /* Tables */
+        .data-table, .milk-table, .supplies-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 18px;
+            font-size: 0.96rem;
+        }
+        .data-table th, .data-table td,
+        .milk-table th, .milk-table td,
+        .supplies-table th, .supplies-table td {
+            padding: 14px 18px;
+            text-align: left;
+            border: 1px solid var(--slate-200);
+        }
+        .data-table th, .milk-table th, .supplies-table th {
+            background-color: var(--slate-100) !important;
+            font-weight: 700;
+            color: var(--slate-800);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .data-table td, .milk-table td, .supplies-table td {
+            color: var(--slate-700);
+            font-weight: 500;
+        }
+        .data-table tfoot td, .milk-table tfoot td, .supplies-table tfoot td {
+            background-color: var(--slate-100) !important;
+            font-weight: 800;
+            color: var(--slate-900);
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .milk-table .total-cell {
+            font-weight: 800;
+            color: var(--golf-green) !important;
+            font-size: 1.08rem;
+            text-align: center;
+        }
+        .milk-table .deduction-cell {
+            font-weight: 700;
+            color: #b91c1c !important;
+            text-align: center;
+        }
+        .milk-table .balance-cell {
+            font-weight: 800;
+            color: var(--primary) !important;
+            font-size: 1.08rem;
+            text-align: center;
+        }
+
+        /* Photo Gallery Grid - Strictly 2 Columns Straight Flow (Rule 3 & 7) */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+            margin-top: 20px;
+        }
+        .gallery-item {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--slate-200);
+            background: #ffffff;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .gallery-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+        .gallery-caption {
+            padding: 16px 18px;
+            background: #ffffff;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .gallery-caption h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--slate-900);
+            margin-bottom: 5px;
+        }
+        .gallery-caption p {
+            font-size: 0.9rem;
+            color: var(--slate-600);
+            line-height: 1.5;
+        }
+
+        /* Callout Boxes */
+        .success-box {
+            background-color: #ecfdf5 !important;
+            border-left: 4px solid #10b981 !important;
+            padding: 18px 22px;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin-top: 18px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .success-box h4 { color: #065f46 !important; font-size: 1.02rem; font-weight: 700; margin-bottom: 5px; }
+        .success-box p { color: #064e3b !important; font-size: 0.94rem; line-height: 1.55; }
+
+        .info-box {
+            background-color: #eff6ff !important;
+            border-left: 4px solid #3b82f6 !important;
+            padding: 18px 22px;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin-top: 18px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .info-box h4 { color: #1e40af !important; font-size: 1.02rem; font-weight: 700; margin-bottom: 5px; }
+        .info-box p { color: #1e3a8a !important; font-size: 0.94rem; line-height: 1.55; }
+
+        .amber-box {
+            background-color: #fffbeb !important;
+            border-left: 4px solid #f59e0b !important;
+            padding: 18px 22px;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin-top: 18px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .amber-box h4 { color: #92400e !important; font-size: 1.02rem; font-weight: 700; margin-bottom: 5px; }
+        .amber-box p { color: #78350f !important; font-size: 0.94rem; line-height: 1.55; }
+
+        /* Video Cards */
+        .video-card {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--slate-200);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 28px;
+        }
+        .video-media-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #000;
+        }
+        .video-media-wrapper iframe, .video-media-wrapper video {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+        .video-card-body {
+            padding: 22px 26px;
+        }
+        .video-card-info h4 {
+            font-size: 1.12rem;
+            font-weight: 700;
+            color: var(--slate-900);
+            margin-bottom: 8px;
+        }
+        .video-card-info p {
+            font-size: 0.94rem;
+            color: var(--slate-600);
+            line-height: 1.55;
+            margin-bottom: 14px;
+        }
+        .video-drive-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--golf-green) !important;
+            color: #ffffff !important;
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-size: 0.92rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background 0.2s ease, transform 0.15s ease;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .video-drive-btn:hover {
+            background: #166534 !important;
+            transform: translateY(-1px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--slate-50) !important;
+            padding: 28px 44px;
+            border-top: 1px solid var(--slate-200);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .signature-block { display: flex; align-items: center; gap: 14px; }
+        .signature-avatar {
+            width: 46px; height: 46px;
+            border-radius: 50%;
+            background: var(--primary) !important;
+            color: #ffffff !important;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 1.1rem;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .signature-details h3 { font-size: 1.08rem; font-weight: 700; color: var(--slate-900); }
+
+        /* Helpers for page breaking in print */
+        .page-break-before {
+            page-break-before: always;
+            break-before: page;
+        }
+
+        /* ========================================================================= */
+        /* PRINT STYLING RULES — STRICT COMPLIANCE WITH AGENTS.MD SECTION 5 & 7      */
+        /* ========================================================================= */
+        @media print {
+            @page { 
+                size: A4; 
+                margin: 8mm 10mm; 
+            }
+            
+            body { 
+                background-color: #ffffff !important; 
+                padding: 0 !important; 
+                font-size: 0.98rem !important;
+            }
+            
+            .container { 
+                box-shadow: none !important; 
+                border: none !important; 
+                border-radius: 0 !important; 
+                max-width: 100% !important; 
+                overflow: visible !important; 
+            }
+            
+            header { 
+                padding: 20px 24px !important; 
+                border-radius: 8px !important; 
+            }
+            
+            header h1 { 
+                font-size: 2rem !important; 
+                margin-bottom: 4px !important; 
+            }
+            
+            header p.subtitle { 
+                font-size: 0.92rem !important; 
+                line-height: 1.4 !important; 
+            }
+            
+            .kpi-bar { 
+                padding: 12px 0 !important; 
+                background: transparent !important; 
+                grid-template-columns: repeat(4, 1fr) !important; 
+                gap: 8px !important; 
+                border-bottom: 1px solid #e2e8f0 !important;
+            }
+            
+            .kpi-card { 
+                padding: 8px 10px !important; 
+                border: 1px solid #cbd5e1 !important; 
+                box-shadow: none !important; 
+            }
+            .kpi-card .value { font-size: 1.15rem !important; }
+            .kpi-card .label { font-size: 0.7rem !important; }
+            .kpi-card .subtext { font-size: 0.75rem !important; }
+
+            .cover-overview-container {
+                padding: 0 !important;
+            }
+            
+            .cover-overview-card {
+                padding: 16px 20px !important;
+                margin-top: 12px !important;
+                margin-bottom: 0 !important;
+                border: 1px solid #cbd5e1 !important;
+                box-shadow: none !important;
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+            .cover-overview-card .card-header {
+                font-size: 16px !important;
+                margin-bottom: 8px !important;
+            }
+            .cover-overview-card .editorial-text {
+                font-size: 13.5px !important;
+                line-height: 1.48 !important;
+                margin-bottom: 8px !important;
+            }
+            .cover-overview-card .highlight-list li {
+                font-size: 13px !important;
+                line-height: 1.45 !important;
+                margin-bottom: 6px !important;
+                padding-left: 18px !important;
+            }
+            .cover-overview-card .success-box {
+                padding: 9px 12px !important;
+                margin-top: 8px !important;
+            }
+            .cover-overview-card .success-box h4 {
+                font-size: 0.85rem !important;
+                margin-bottom: 2px !important;
+            }
+            .cover-overview-card .success-box p {
+                font-size: 0.78rem !important;
+                line-height: 1.38 !important;
+            }
+            
+            .main-content { padding: 12px 0 !important; }
+            
+            /* Each main section gets its own dedicated page break */
+            main > section {
+                break-before: page !important;
+                page-break-before: always !important;
+            }
+
+            /* Dedicated Narrative Spread Spacing Rules (Section 7 Anti-Compression) */
+            .card { 
+                padding: 22px 26px !important; 
+                margin-bottom: 16px !important; 
+                border: 1px solid #cbd5e1 !important; 
+                box-shadow: none !important; 
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            .card.gallery-card {
+                break-inside: auto !important;
+                page-break-inside: auto !important;
+            }
+            
+            .card-header, .card-heading { 
+                font-size: 18px !important; 
+                font-weight: 800 !important;
+                margin-bottom: 12px !important; 
+            }
+
+            .editorial-text { 
+                font-size: 15px !important; 
+                line-height: 1.65 !important; 
+                margin-bottom: 14px !important; 
+            }
+
+            .highlight-list li { 
+                font-size: 14px !important; 
+                line-height: 1.6 !important; 
+                margin-bottom: 12px !important; 
+                padding-left: 24px !important; 
+            }
+            
+            .section-header { 
+                margin-bottom: 14px !important; 
+                padding-bottom: 10px !important; 
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+                break-after: avoid !important; 
+                page-break-after: avoid !important; 
+            }
+
+            .supervisor-badge { 
+                font-size: 0.86rem !important; 
+                padding: 5px 14px !important; 
+            }
+            
+            .section-title h2 { font-size: 1.42rem !important; }
+            
+            /* High-Impact Photo Galleries (Strictly 2 Columns, Section 7) */
+            .gallery-grid { 
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important; 
+                gap: 14px !important; 
+            }
+            
+            .gallery-item { 
+                box-shadow: none !important; 
+                border: 1px solid #cbd5e1 !important; 
+                break-inside: avoid !important; 
+                page-break-inside: avoid !important; 
+            }
+            .gallery-item img { 
+                height: 185px !important; 
+                object-fit: cover !important; 
+            }
+            .gallery-caption { 
+                padding: 12px 14px !important; 
+            }
+            .gallery-caption h4 { font-size: 13.8px !important; margin-bottom: 4px !important; }
+            .gallery-caption p { font-size: 12.2px !important; line-height: 1.45 !important; }
+
+            /* Table print styling (Section 7) */
+            .data-table th, .data-table td,
+            .milk-table th, .milk-table td,
+            .supplies-table th, .supplies-table td {
+                padding: 10px 14px !important;
+                font-size: 0.88rem !important;
+            }
+
+            /* HIDE VIDEO PLAYER IN PRINT (MANDATORY PDF RULE) */
+            .video-media-wrapper video, .video-media-wrapper iframe, video, iframe { 
+                display: none !important; 
+            }
+            .video-media-wrapper { 
+                aspect-ratio: auto !important; 
+                height: 38px !important; 
+                background: #f1f5f9 !important; 
+                border-bottom: 1px solid #cbd5e1 !important; 
+                display: flex !important; 
+                align-items: center !important; 
+                padding: 0 14px !important; 
+            }
+            .video-media-wrapper::before { 
+                content: "🎥 Progress Video Recording" !important; 
+                font-size: 0.78rem !important; 
+                font-weight: 700 !important; 
+                color: #334155 !important; 
+                text-transform: uppercase !important; 
+                letter-spacing: 0.5px !important;
+            }
+
+            .success-box, .info-box, .amber-box {
+                padding: 12px 16px !important;
+                margin-top: 12px !important;
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+            .success-box h4, .info-box h4, .amber-box h4 { font-size: 0.92rem !important; }
+            .success-box p, .info-box p, .amber-box p { font-size: 0.86rem !important; line-height: 1.45 !important; }
+
+            .video-card {
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+            .video-card-body {
+                padding: 14px 18px !important;
+            }
+            .video-card-info h4 { font-size: 1rem !important; }
+            .video-card-info p { font-size: 0.86rem !important; }
+
+            footer { 
+                padding: 16px 20px !important; 
+                break-inside: avoid !important; 
+                page-break-inside: avoid !important; 
+            }
+            
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header Block (Page 1 Cover Spread) -->
+    <header>
+        <div class="header-top">
+            <span class="report-tag">Daily Operations Progress Report</span>
+            <span class="badge-date">Tuesday, 15th September 2026</span>
+        </div>
+        <h1>Daily Operations Report</h1>
+        <p class="subtitle">Comprehensive executive progress overview covering championship golf course drainage and irrigation logistics, livestock dairy production, canine socialization protocols, residential demolition clearances, and Amani Cottage grounds irrigation and sweeping.</p>
+    </header>
+
+    <!-- Executive KPI Summary Bar (Page 1) -->
+    <section class="kpi-bar">
+        <div class="kpi-card">
+            <div class="label">Active Operations Sites</div>
+            <div class="value">4 Sites Active</div>
+            <div class="subtext">Mucheru Golf, Chaka Farms, Kabete &amp; Amani Cottage</div>
+        </div>
+        <div class="kpi-card">
+            <div class="label">Championship Greens</div>
+            <div class="value">8 Greens Trenched</div>
+            <div class="subtext">Nos. 1, 2, 3, 4, 6, 8, 9 &amp; 18 (All except 14 done)</div>
+        </div>
+        <div class="kpi-card">
+            <div class="label">Irrigation &amp; Haulage</div>
+            <div class="value">Gate to Tee 15</div>
+            <div class="subtext">HDPE pipes placed in trench + 2 pipe trips + red soil</div>
+        </div>
+        <div class="kpi-card">
+            <div class="label">Dairy Milking Yield</div>
+            <div class="value">4.0 L Gross</div>
+            <div class="subtext">2.0L AM / 2.0L PM | 2.0 L Net Farm Reserve</div>
+        </div>
+    </section>
+
+    <!-- Executive Cover Overview Card (Page 1) -->
+    <div class="cover-overview-container">
+        <div class="card cover-overview-card">
+            <div class="card-header">
+                <span>📋</span> Operations Summary — Tuesday, September 15, 2026
+            </div>
+            <p class="editorial-text">
+                Multi-site operations across four active project domains registered critical milestones in championship golf course subgrade drainage engineering, agricultural logistics, canine unit pasture socialization, residential structural clearance, and cottage grounds care:
+            </p>
+            <ul class="highlight-list">
+                <li><strong>Mucheru World of Golf:</strong> Subgrade drainage trenching advanced aggressively across eight championship putting greens—specifically Greens No. 1, 2, 3, 4, 6, 8, 9, and 18. With these completions, drainage trenching is now fully executed across every single putting green on the course except Green 14. Simultaneously, heavy HDPE irrigation pipeline was strung and placed directly into the linear boundary trench extending continuously from the main gate to the vicinity of Tee 15. Kinoti directed tractor operations using the farm tractor, completing two haulage trips moving pipes from the greenhouse to the golf course and hauling red topsoil from the borrow pit quarry to active course shaping zones.</li>
+                <li><strong>Chaka Farms:</strong> Dairy cow milking operations recorded a total gross yield of 4.0 Litres (strictly recorded in Litres: 2.0L morning / 2.0L evening). Rations deducted directly out of production totaled 2.0 Litres (1.0L for goat kids, 0.5L for Gladys, and 0.5L for Maasai), leaving an audited net farm balance of 2.0 Litres retained in reserve. Willy oversaw off-leash socialization and pasture exercise for Mali, Zara, and Coby alongside grazing goats, while enforcing kennel manners and paw obedience commands. Margaret and Monica executed comprehensive farm compound cleanliness routines.</li>
+                <li><strong>Kabete Residence:</strong> Demolition and ground clearance advanced at the outdoor fireplace terrace. Demolition of the stone masonry gardener store wall adjacent to the cold room was officially brought to 100% completion, opening the lower terrace sub-structure. A commercial lorry delivery of building sand was offloaded, followed by systematic bagging and clearance of sand along the tarmac pavement near the car park to preserve clean driveway access. Bundled cement bags were securely inventoried, and resident pets Ajabu, Reo, Mocha, and Aiko were fed.</li>
+                <li><strong>Amani Cottage:</strong> Grounds and landscape upkeep proceeded under the direct oversight of Edwin. Sprinkler irrigation was operated across front lawn turf and garden borders to deliver optimal moisture saturation, while comprehensive grounds sweeping was carried out across outdoor walkways, verandas, and compound grounds to clear leaf litter and maintain immaculate estate presentation.</li>
+            </ul>
+            <div class="success-box">
+                <h4>Key Operational Highlights</h4>
+                <p>Drainage trenching completed across 8 greens (Greens 1, 2, 3, 4, 6, 8, 9 &amp; 18), bringing the entire golf course green drainage network to near completion (all greens trenched except No. 14); main irrigation line laid from the gate to Tee 15; canine socialization successfully conducted off-leash amongst grazing goats; the gardener store wall demolition at Kabete achieved 100% completion; and full lawn irrigation and grounds sweeping completed at Amani Cottage.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+
+        <!-- ========================================================================= -->
+        <!-- 1. MUCHERU WORLD OF GOLF                                                  -->
+        <!-- ========================================================================= -->
+        <section id="mucheru-golf">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon icon-golf">⛳</div>
+                    <h2>Mucheru World of Golf</h2>
+                </div>
+                <div class="supervisor-badges-wrapper">
+                    <div class="supervisor-badge">
+                        <span>Civil &amp; Green Trenching:</span> Ken
+                    </div>
+                    <div class="supervisor-badge">
+                        <span>Tractor Haulage &amp; Logistics:</span> Kinoti
+                    </div>
+                </div>
+            </div>
+
+            <!-- Narrative Spread Card (Dedicated Full-Page Spread) -->
+            <div class="card">
+                <div class="card-header">
+                    <span>⛳ Putting Green Drainage Excavation, Main Irrigation Placement &amp; Quarry Haulage</span>
+                </div>
+                <p class="editorial-text">
+                    Field civil engineering, agronomic drainage installation, and logistical haulage operations at Mucheru World of Golf achieved massive progress under the leadership of supervisors Ken and Kinoti:
+                </p>
+                <ul class="highlight-list">
+                    <li>
+                        <strong>Course-Wide Drainage Trenching Across Eight Putting Greens (Greens 1, 2, 3, 4, 6, 8, 9 &amp; 18):</strong> Ground excavation crews achieved major momentum, manually excavating deep subgrade drainage channels across eight championship putting greens: Green No. 1, Green No. 2, Green No. 3, Green No. 4, Green No. 6, Green No. 8, Green No. 9, and Green No. 18. Each trench was cut to precise depths through the red soil berm collars to connect subterranean perforated outfall pipes beneath the gravel and volcanic pumice foundation layers directly to outer drainage conduits.
+                    </li>
+                    <li>
+                        <strong>Major Course Milestone — All Green Drainage Trenches Complete Except Green 14:</strong> With eight greens completed today alongside previously excavated complexes, drainage trenching across the entire golf course has reached a definitive milestone. Drainage channels are now fully excavated across every putting green on the course, with only Green No. 14 remaining for final excavation.
+                    </li>
+                    <li>
+                        <strong>Main Irrigation Pipeline Laid in Perimeter Trench (Gate to Tee 15):</strong> Heavy-duty high-density polyethylene (HDPE) main irrigation piping was uncoiled, aligned, and placed directly into the linear utility trench excavated parallel to the perimeter boundary wire mesh fence. The pipeline run extends continuously from the main golf course entrance gate all the way close to Tee 15, establishing the primary water distribution artery for course sprinklers.
+                    </li>
+                    <li>
+                        <strong>Red Topsoil Haulage from Quarry to Golf Site (Kinoti):</strong> Kinoti operated the farm tractor paired with the heavy red tipping trailer to load and haul high-grade red topsoil from the borrow pit quarry directly to the golf course development footprint. Labor crews assisted with manual shovel loading at the quarry cut face to supply fine red soil for green surrounds shaping.
+                    </li>
+                    <li>
+                        <strong>Irrigation Pipe Logistics from Greenhouse (2 Trips by Kinoti):</strong> Utilizing the farm tractor and trailer, Kinoti completed two full logistical round trips transporting bundles and coils of black HDPE irrigation pipe from the farm greenhouse storage facility to active installation sectors across the golf course.
+                    </li>
+                </ul>
+
+                <div class="success-box">
+                    <h4>Key Accomplishments — Mucheru World of Golf</h4>
+                    <p>Subgrade drainage trenches successfully dug across 8 greens (Greens 1, 2, 3, 4, 6, 8, 9 &amp; 18), completing trenching for all putting greens across the course except Green 14; main irrigation pipeline placed in the perimeter trench from the gate to near Tee 15; two tractor loads of irrigation pipes delivered from the greenhouse; and red topsoil hauled from the quarry.</p>
+                </div>
+            </div>
+
+            <!-- Unified Continuous Photo Gallery Card (Rule 3 & 7) -->
+            <div class="card gallery-card page-break-before">
+                <div class="card-header">
+                    <span>📸 Photographic Field Evidence — Mucheru World of Golf</span>
+                </div>
+                <p class="editorial-text" style="font-size: 0.95rem; margin-bottom: 14px;">
+                    Photographic field documentation capturing aerial drone surveys of putting green drainage excavations, ground trench profiling, tractor-trailer pipe logistics, quarry red soil loading, and perimeter pipeline placement.
+                </p>
+
+                <div class="gallery-grid">
+                    <!-- Photo 1: DJI_0437.JPG -->
+                    <div class="gallery-item">
+                        <img src="Drainage%20Trenches%20on%20greens/DJI_0437.JPG" alt="Drone aerial view of putting green drainage trench excavation">
+                        <div class="gallery-caption">
+                            <h4>Putting Green Drainage — Subgrade Excavation</h4>
+                            <p>Aerial drone capture showing workers actively digging the drainage outfall trench connecting into the circular putting green basin through the red soil collar.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 2: DJI_0438.JPG -->
+                    <div class="gallery-item">
+                        <img src="Drainage%20Trenches%20on%20greens/DJI_0438.JPG" alt="Aerial drone perspective of contoured putting green and drainage trench">
+                        <div class="gallery-caption">
+                            <h4>Contoured Putting Green — Drainage Outfall Channel</h4>
+                            <p>High-altitude drone survey of an organic kidney-shaped putting green complex displaying the clean drainage trench cut through the red containment berm.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 3: DJI_0439.JPG -->
+                    <div class="gallery-item">
+                        <img src="Drainage%20Trenches%20on%20greens/DJI_0439.JPG" alt="Overhead orthophoto of putting green pumice base and drainage trench">
+                        <div class="gallery-caption">
+                            <h4>Green Sub-Base — Pumice Layer &amp; Trench Alignment</h4>
+                            <p>Overhead aerial perspective detailing the porous volcanic pumice foundation bed, red soil containment slopes, aggregate staging heaps, and excavated trench line.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 4: DJI_0440.JPG -->
+                    <div class="gallery-item">
+                        <img src="Drainage%20Trenches%20on%20greens/DJI_0440.JPG" alt="Overhead view of putting green complex adjacent to perimeter boundary">
+                        <div class="gallery-caption">
+                            <h4>Perimeter Green Complex — Drainage Trench Cut</h4>
+                            <p>Drone overview of putting green situated alongside the boundary roadway, highlighting the clean linear drainage trench extending from the basin edge.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 5: DJI_0441.JPG -->
+                    <div class="gallery-item">
+                        <img src="Drainage%20Trenches%20on%20greens/DJI_0441.JPG" alt="Aerial drone photograph of layered green foundation and trench cut">
+                        <div class="gallery-caption">
+                            <h4>Foundation Stratification — Trench Outfall Inspection</h4>
+                            <p>High-resolution drone capture illustrating structural foundation layering, stockpiled sand and ballast, and the drainage trench cut out from the green liner.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 6: DJI_0442.JPG -->
+                    <div class="gallery-item">
+                        <img src="Drainage%20Trenches%20on%20greens/DJI_0442.JPG" alt="Aerial view of putting green flanked by acacia woodland">
+                        <div class="gallery-caption">
+                            <h4>Woodland Green Setting — Drainage Trench Invert</h4>
+                            <p>Drone perspective showing the completed subgrade trench cut through red perimeter soil, connecting the gravel-filled green basin to exterior drainage corridors.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 7: DJI_0443.JPG -->
+                    <div class="gallery-item">
+                        <img src="Drainage%20Trenches%20on%20greens/DJI_0443.JPG" alt="High angle perspective across putting green towards course horizon">
+                        <div class="gallery-caption">
+                            <h4>Putting Green Basin — Radial Drainage Trench</h4>
+                            <p>High-angle drone view displaying the circular green's leveled pumice surface and the radial trench excavated through the perimeter retaining berm.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 8: DJI_0444.JPG -->
+                    <div class="gallery-item">
+                        <img src="Drainage%20Trenches%20on%20greens/DJI_0444.JPG" alt="Aerial capture of green sub-base with surrounding aggregate materials">
+                        <div class="gallery-caption">
+                            <h4>Green Foundation Matrix — Outfall Trench Profiling</h4>
+                            <p>Aerial drone photograph highlighting the green's pumice bed, stockpiles of crushed rock aggregate, and the finished linear trench invert.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 9: DJI_0445.JPG -->
+                    <div class="gallery-item">
+                        <img src="Drainage%20Trenches%20on%20greens/DJI_0445.JPG" alt="High-altitude drone survey capturing two putting greens simultaneously">
+                        <div class="gallery-caption">
+                            <h4>Dual Green Complex — Landscape Drainage Survey</h4>
+                            <p>Expansive high-altitude drone capture surveying two distinct putting green complexes simultaneously, featuring connecting fairways and individual drainage trenches.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 10: Drainage trenches dug on green.jpeg -->
+                    <div class="gallery-item">
+                        <img src="Drainage%20trenches%20dug%20on%20green.jpeg" alt="Ground-level perspective of excavated drainage trench leading to green liner">
+                        <div class="gallery-caption">
+                            <h4>Green Basin Outfall — Ground Drainage Detail</h4>
+                            <p>Ground-level close-up showing the excavated subgrade drainage trench connecting directly through the red soil berm to the gravel-covered green basin liner.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 11: Loading red soil from quarry to golf site.jpeg -->
+                    <div class="gallery-item">
+                        <img src="Loading%20red%20soil%20from%20quarry%20to%20golf%20site.jpeg" alt="Farm tractor and trailer loading red soil at quarry borrow pit">
+                        <div class="gallery-caption">
+                            <h4>Borrow Pit Quarry — Red Topsoil Loading</h4>
+                            <p>Kinoti operating the farm tractor with red tipping trailer backed into the soil quarry, with site workers shovel-loading red topsoil for golf course shaping.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 12: Moving the pipes from the greenhouse the the golf site.jpeg -->
+                    <div class="gallery-item">
+                        <img src="Moving%20the%20pipes%20from%20the%20greenhouse%20the%20the%20golf%20site.jpeg" alt="Labor crew offloading HDPE pipes from tractor trailer">
+                        <div class="gallery-caption">
+                            <h4>Course Irrigation Logistics — Pipe Offloading</h4>
+                            <p>Ground crew carefully offloading long bundles of heavy-duty black HDPE irrigation pipes from the tractor trailer onto the course fairways.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 13: Pipes moved from grnhouse  golfsite.jpeg -->
+                    <div class="gallery-item">
+                        <img src="Pipes%20moved%20from%20grnhouse%20%20golfsite.jpeg" alt="Green LIMA tractor and trailer fully loaded with HDPE pipe coils arriving at site">
+                        <div class="gallery-caption">
+                            <h4>Haulage Dispatch — LIMA Tractor &amp; Trailer Delivery</h4>
+                            <p>The green LIMA tractor and trailer fully loaded with coils and straight runs of HDPE pipe arriving at the golf course from the greenhouse, driven by Kinoti.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 14: Pipes placed at the trenches parallel to perimeter fence.jpeg -->
+                    <div class="gallery-item">
+                        <img src="Pipes%20placed%20at%20the%20trenches%20parallel%20to%20perimeter%20fence.jpeg" alt="HDPE pipe strung out inside trench parallel to boundary wire fence">
+                        <div class="gallery-caption">
+                            <h4>Perimeter Utility Trench — Main Pipe Placement</h4>
+                            <p>Continuous black HDPE irrigation pipeline positioned inside the linear excavated trench parallel to the wire mesh boundary fence from the gate toward Tee 15.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box" style="margin-top: 20px;">
+                    <h4>Agronomic Drainage Infrastructure Standard</h4>
+                    <p>Executing precision drainage trenches across Greens 1, 2, 3, 4, 6, 8, 9, and 18 leaves only Green 14 remaining, bringing the entire golf course green subterranean drainage system to 94.4% course completion. Simultaneous placement of main HDPE irrigation piping ensures synchronized civil progression across water distribution and drainage networks.</p>
+                </div>
+            </div>
+
+            <!-- YouTube Progress Video Card -->
+            <div class="video-card page-break-before">
+                <div class="video-media-wrapper">
+                    <iframe src="https://www.youtube.com/embed/DNtb-lY4sMs" title="Mucheru World of Golf — Progress Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-card-body">
+                    <div class="video-card-info">
+                        <h4>🎥 Mucheru World of Golf — Site Progress Video (September 15, 2026)</h4>
+                        <p>Field video recording documenting putting green drainage trenching operations, farm tractor red soil haulage from the quarry borrow pit, and HDPE irrigation pipe delivery and installation along the boundary fence line.</p>
+                    </div>
+                    <a href="https://youtu.be/DNtb-lY4sMs" target="_blank" rel="noopener noreferrer" class="video-drive-btn">▶ Watch on YouTube</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 2. CHAKA FARMS                                                            -->
+        <!-- ========================================================================= -->
+        <section id="chaka-farms" class="page-break-before">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon icon-farm">🚜</div>
+                    <h2>Chaka Farms</h2>
+                </div>
+                <div class="supervisor-badges-wrapper">
+                    <div class="supervisor-badge">
+                        <span>Milking &amp; Livestock:</span> Kamandau
+                    </div>
+                    <div class="supervisor-badge">
+                        <span>Canine Socialization:</span> Willy
+                    </div>
+                    <div class="supervisor-badge">
+                        <span>Compound Grounds:</span> Margaret &amp; Monica
+                    </div>
+                </div>
+            </div>
+
+            <!-- Narrative Spread Card (Dedicated Full-Page Spread) -->
+            <div class="card">
+                <div class="card-header">
+                    <span>🥛 Dairy Milking Production, Canine Socialization &amp; Compound Hygiene</span>
+                </div>
+                <p class="editorial-text">
+                    Operational routines across dairy livestock husbandry, canine pack behavior training, and compound grounds maintenance proceeded systematically at Chaka Farms:
+                </p>
+                <ul class="highlight-list">
+                    <li>
+                        <strong>Dairy Cow Milking Yield (Gross Production):</strong> Kamandau executed the morning and evening milking sessions, recording a cumulative gross production of <strong>4.0 Litres</strong> (strictly in Litres: 2.0L morning yield and 2.0L evening yield).
+                    </li>
+                    <li>
+                        <strong>Rations &amp; Deductions Reconciliation:</strong> An exact total of <strong>2.0 Litres</strong> was disbursed directly out of the gross milking yield for young stock nutrition and personnel allocations:
+                        <ul style="list-style: none; margin-top: 8px; margin-left: 20px;">
+                            <li style="margin-bottom: 6px;">• <strong>Goat Kids Ration:</strong> 1.0 Litre total (0.5L morning ration + 0.5L evening ration for young stock sustenance).</li>
+                            <li style="margin-bottom: 6px;">• <strong>Staff Allocation — Gladys:</strong> 0.5 Litres.</li>
+                            <li style="margin-bottom: 6px;">• <strong>Staff Allocation — Maasai:</strong> 0.5 Litres.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Net Remaining Farm Milk Reserve:</strong> Deducting the 2.0L total disbursements from the 4.0L gross yield left an exact net farm reserve of <strong>2.0 Litres</strong> retained in cold storage.
+                    </li>
+                    <li>
+                        <strong>Canine Unit Socialization &amp; Grazing Exercise (Overseen by Willy):</strong> Willy conducted an advanced off-leash socialization and pasture exercise session for dogs Mali, Zara, and Coby. The canines walked calmly off-leash amongst the farm goat herd while grazing, displaying calm pack behavior without chasing or startling livestock.
+                    </li>
+                    <li>
+                        <strong>Kennel Manners &amp; Paw Command Training (Willy):</strong> Structured obedience routines were reinforced inside the kennels, focusing on patient kennel gate manners during ingress and egress, along with responsive execution of the paw command.
+                    </li>
+                    <li>
+                        <strong>General Compound Cleanliness &amp; Upkeep (Margaret &amp; Monica):</strong> Margaret and Monica performed compound cleanliness routines, sweeping farm access corridors, raking perimeter grounds, and clearing organic debris to maintain sanitary farmstead conditions.
+                    </li>
+                </ul>
+
+                <div class="success-box">
+                    <h4>Key Accomplishments — Chaka Farms</h4>
+                    <p>Dairy cow milking recorded at 4.0 Litres gross with 2.0 Litres disbursed to goat kids and staff, preserving 2.0 Litres in net farm reserve; dogs Mali, Zara, and Coby demonstrated excellent off-leash socialization and manners alongside grazing goats; kennel paw command observed; and compound grounds swept clean.</p>
+                </div>
+            </div>
+
+            <!-- Dedicated Spread for Major Data Tables (Section 7) -->
+            <div class="card page-break-before">
+                <div class="card-header">
+                    <span>📋 Dairy Milking Yield &amp; Allocations Ledger</span>
+                </div>
+                <div class="supervisor-badge" style="margin-bottom: 16px; width: fit-content;">
+                    <span>Milking Recorded by:</span> Kamandau
+                </div>
+                <p class="editorial-text">
+                    Quantitative daily milk production ledger recorded strictly in Litres (L). Rations and allocations represent authorized disbursements drawn directly out of the gross cow milking yield:
+                </p>
+
+                <table class="milk-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 32%;">Item / Description</th>
+                            <th style="width: 14%; text-align: center;">Morning (L)</th>
+                            <th style="width: 14%; text-align: center;">Evening (L)</th>
+                            <th style="width: 14%; text-align: center;">Total (L)</th>
+                            <th style="width: 13%; text-align: center;">Deduction (L)</th>
+                            <th style="width: 13%; text-align: center;">Farm Balance (L)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Cow Milking Yield (Gross Production)</strong></td>
+                            <td style="text-align: center; font-weight: 600;">2.0 L</td>
+                            <td style="text-align: center; font-weight: 600;">2.0 L</td>
+                            <td class="total-cell">4.0 L</td>
+                            <td style="text-align: center; color: var(--slate-400);">—</td>
+                            <td style="text-align: center; font-weight: 600;">4.0 L</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Goat Kids Ration (Young Stock Feed)</strong></td>
+                            <td style="text-align: center;">0.5 L</td>
+                            <td style="text-align: center;">0.5 L</td>
+                            <td style="text-align: center; color: var(--slate-600);">1.0 L</td>
+                            <td class="deduction-cell">- 1.0 L</td>
+                            <td style="text-align: center; color: var(--slate-400);">—</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Staff Allocation — Gladys</strong></td>
+                            <td style="text-align: center; color: var(--slate-400);">—</td>
+                            <td style="text-align: center;">0.5 L</td>
+                            <td style="text-align: center; color: var(--slate-600);">0.5 L</td>
+                            <td class="deduction-cell">- 0.5 L</td>
+                            <td style="text-align: center; color: var(--slate-400);">—</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Staff Allocation — Maasai</strong></td>
+                            <td style="text-align: center; color: var(--slate-400);">—</td>
+                            <td style="text-align: center;">0.5 L</td>
+                            <td style="text-align: center; color: var(--slate-600);">0.5 L</td>
+                            <td class="deduction-cell">- 0.5 L</td>
+                            <td style="text-align: center; color: var(--slate-400);">—</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td><strong>Total Allocations Deducted</strong></td>
+                            <td style="text-align: center; font-weight: 700;">0.5 L</td>
+                            <td style="text-align: center; font-weight: 700;">1.5 L</td>
+                            <td class="deduction-cell" style="font-size: 1.05rem;">- 2.0 L</td>
+                            <td class="deduction-cell">- 2.0 L</td>
+                            <td style="text-align: center; font-size: 0.82rem; color: var(--slate-600);">Disbursed</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Net Remaining Farm Balance</strong></td>
+                            <td style="text-align: center; font-weight: 700; color: var(--primary);">1.5 L</td>
+                            <td style="text-align: center; font-weight: 700; color: var(--primary);">0.5 L</td>
+                            <td class="balance-cell">2.0 L Net</td>
+                            <td style="text-align: center; color: var(--slate-400);">—</td>
+                            <td class="balance-cell">2.0 L</td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <div class="info-box" style="margin-top: 22px;">
+                    <h4>Dairy Production &amp; Disbursement Reconciliation Audit</h4>
+                    <p>Gross production reached <strong>4.0 Litres</strong> (2.0L morning + 2.0L evening). Deductions drawn directly out of the gross volume totaled <strong>2.0 Litres</strong> (1.0L for goat kids across morning and evening feedings, 0.5L for Gladys, and 0.5L for Maasai), leaving an exact audited net farm balance of <strong>2.0 Litres</strong> retained in cold storage.</p>
+                </div>
+            </div>
+
+            <!-- Dedicated Spread for Canine Unit & Compound Maintenance (Section 7) -->
+            <div class="card page-break-before">
+                <div class="card-header">
+                    <span>🐕 Canine Unit Care, Pasture Socialization &amp; Compound Hygiene Log</span>
+                </div>
+                <div class="supervisor-badges-wrapper" style="margin-bottom: 18px;">
+                    <div class="supervisor-badge">
+                        <span>Canine Unit Care:</span> Willy
+                    </div>
+                    <div class="supervisor-badge">
+                        <span>Compound Grounds:</span> Margaret &amp; Monica
+                    </div>
+                </div>
+
+                <p class="editorial-text">
+                    Operational log covering canine socialization protocols, multi-species pasture coexistence, obedience training, and farm compound sanitation:
+                </p>
+
+                <ul class="highlight-list">
+                    <li>
+                        <strong>Off-Leash Multi-Species Socialization (Willy):</strong> Willy escorted dogs Mali, Zara, and Coby into open pasture zones where the farm goat herd was actively grazing. The dogs walked and exercised entirely off-leash, successfully demonstrating calm demeanor, social tolerance, and non-reactive coexistence alongside grazing goats.
+                    </li>
+                    <li>
+                        <strong>Kennel Manners &amp; Gate Control:</strong> Willy reinforced behavioral patience at the kennel gates, requiring dogs to sit quietly before being released for exercise and maintaining order during return transitions.
+                    </li>
+                    <li>
+                        <strong>Paw Command Discipline:</strong> Each dog was taken through command reinforcement drills, with the paw command successfully tested and performed reliably.
+                    </li>
+                    <li>
+                        <strong>General Compound Cleanliness (Margaret &amp; Monica):</strong> Margaret and Monica performed comprehensive cleaning across the residential and farmstead compound, clearing fallen leaves, raking gravel tracks, and maintaining high hygiene standards across all farm quarters.
+                    </li>
+                </ul>
+
+                <div class="success-box">
+                    <h4>Canine Socialization &amp; Farm Harmony</h4>
+                    <p>Mali, Zara, and Coby proved fully non-reactive around livestock during off-leash grazing sessions; kennel manners and paw commands reinforced; and compound cleanliness maintained to high estate standards.</p>
+                </div>
+            </div>
+
+            <!-- Video Documentation Card for Chaka Farms -->
+            <div class="video-card page-break-before">
+                <div class="video-media-wrapper">
+                    <video controls preload="metadata">
+                        <source src="Socializing%20and%20walking%20off%20leash.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-card-body">
+                    <div class="video-card-info">
+                        <h4>🎥 Canine Unit — Off-Leash Socialization &amp; Goat Pasture Exercise</h4>
+                        <p>Field video recording capturing dogs Mali, Zara, and Coby walking calmly off-leash in the open fields, exercising alongside grazing farm goats, and demonstrating disciplined kennel manners under Willy's oversight.</p>
+                    </div>
+                    <a href="https://drive.google.com/file/d/13T49taKMSiOhbKif7ahM7yHfWeEAyaio/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="video-drive-btn" style="background-color: var(--farm-amber) !important;">▶ Watch on Google Drive</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 3. KABETE RESIDENCE                                                       -->
+        <!-- ========================================================================= -->
+        <section id="kabete-residence" class="page-break-before">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon icon-residence">🏡</div>
+                    <h2>Kabete Residence</h2>
+                </div>
+                <div class="supervisor-badge">
+                    Field Updates Shared by: <span>Njoki</span>
+                </div>
+            </div>
+
+            <!-- Narrative Spread Card (Dedicated Full-Page Spread) -->
+            <div class="card">
+                <div class="card-header">
+                    <span>🏗️ Gardener Store Wall Demolition, Sand Offloading &amp; Pet Care</span>
+                </div>
+                <p class="editorial-text">
+                    Civil structural demolition, masonry rubble clearance, aggregate logistics, and residential upkeep advanced smoothly at Kabete Residence, with operations overseen and field updates shared by Njoki:
+                </p>
+                <ul class="highlight-list">
+                    <li>
+                        <strong>100% Completion of Gardener Store Wall Demolition:</strong> Structural demolition of the external stone masonry wall of the gardener store—situated immediately adjacent to the cold room beneath the upper veranda—was brought to full completion. Demolition crews knocked down the full vertical stone wall to ground grade, opening up the entire lower terrace alcove and exposing the reinforced concrete overhead support beam.
+                    </li>
+                    <li>
+                        <strong>Masonry Rubble Clearance &amp; Excavation at Fireplace:</strong> Concurrently, workers executed extensive debris clearing and slope excavation around the outdoor fireplace embankment. Fractured masonry stones, mortar chunks, and excavated soil were broken down, gathered, and staged for reuse as hardcore backfill for the upcoming retaining wall footing.
+                    </li>
+                    <li>
+                        <strong>Commercial Lorry Delivery &amp; Sand Offloading:</strong> A high-capacity commercial Isuzu tipper truck delivered a substantial consignment of clean, graded building sand to the residence. Site crews set up protective wooden barrier boards and offloaded the sand payload adjacent to the access driveway.
+                    </li>
+                    <li>
+                        <strong>Sand Bagging &amp; Tarmac Pavement Clearance:</strong> To preserve clear vehicular circulation and prevent sediment wash into drainage channels, workers bagged offloaded sand into durable polypropylene sacks, transferring them onto plastic ground sheets while sweeping the tarmac pavement near the carport completely clean.
+                    </li>
+                    <li>
+                        <strong>Cement Stock Organization:</strong> Deliveries of 50kg Ndovu Blue Label and Simba cement sacks were neatly stacked and organized within the covered storeroom, keeping materials elevated and protected from moisture.
+                    </li>
+                    <li>
+                        <strong>Domestic Pet Care &amp; Nutrition:</strong> Senior golden retriever Ajabu was nourished with his specialized meal on the shaded tiled patio veranda. Resident felines Reo, Mocha, and Aiko were fed concurrently from their individual stainless-steel dishes indoors.
+                    </li>
+                </ul>
+
+                <div class="success-box">
+                    <h4>Key Accomplishments — Kabete Residence</h4>
+                    <p>Gardener store stone masonry wall demolition brought to 100% completion, fully opening the lower terrace space; extensive rubble sorted and cleared at fireplace; commercial sand cargo safely offloaded, bagged, and cleared from the tarmac driveway; cement bags stacked; and domestic pets well cared for.</p>
+                </div>
+            </div>
+
+            <!-- Unified Continuous Photo Gallery Card (Rule 3 & 7) -->
+            <div class="card gallery-card page-break-before">
+                <div class="card-header">
+                    <span>📸 Photographic Field Evidence — Kabete Residence</span>
+                </div>
+                <p class="editorial-text" style="font-size: 0.95rem; margin-bottom: 14px;">
+                    Visual field records documenting complete gardener store wall demolition, fireplace rubble clearance, sand truck offloading, driveway pavement cleaning, cement warehousing, and resident pets.
+                </p>
+
+                <div class="gallery-grid">
+                    <!-- Photo 1: Demolition of the gardener store wall complete.jpeg -->
+                    <div class="gallery-item">
+                        <img src="Demolition%20of%20the%20gardener%20store%20wall%20complete.jpeg" alt="Demolition of gardener store front wall completed down to ground level">
+                        <div class="gallery-caption">
+                            <h4>Gardener Store — Demolition Complete (100%)</h4>
+                            <p>Front wall of the gardener store adjacent to the cold room completely demolished to foundation level, showing the cleared interior alcove and overhead concrete beam.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 2: Clearance and demolition at fireplace.jpeg -->
+                    <div class="gallery-item">
+                        <img src="Clearance%20and%20demolition%20at%20fireplace.jpeg" alt="Labor crew clearing fractured masonry stones and rubble at fireplace">
+                        <div class="gallery-caption">
+                            <h4>Outdoor Fireplace — Demolition Rubble Clearance</h4>
+                            <p>Civil workers clearing piles of fractured masonry building stone and excavating earth beneath the upper terrace to establish stable retaining wall footing.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 3: Clearance and demolition at fireplace_01.jpeg -->
+                    <div class="gallery-item">
+                        <img src="Clearance%20and%20demolition%20at%20fireplace_01.jpeg" alt="Full team of civil workers actively breaking rubble and excavating slope">
+                        <div class="gallery-caption">
+                            <h4>Sub-Terrace Alcove — Intensive Site Clearance</h4>
+                            <p>Full six-man crew in high-visibility vests breaking down heavy rock debris, sorting salvageable stone blocks, and clearing subsoil across the opened alcove.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 4: Offloading sand from a lorry.jpeg -->
+                    <div class="gallery-item">
+                        <img src="Offloading%20sand%20from%20a%20lorry.jpeg" alt="Commercial truck bed filled with building sand prior to unloading">
+                        <div class="gallery-caption">
+                            <h4>Building Material Delivery — Lorry Sand Cargo</h4>
+                            <p>Close-up view of the commercial tipper truck cargo bed loaded with fine, high-grade construction sand delivered for civil masonry works.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 5: Offloading sand from a lorry_01.jpeg -->
+                    <div class="gallery-item">
+                        <img src="Offloading%20sand%20from%20a%20lorry_01.jpeg" alt="Worker guiding sand discharge from truck side with wooden retaining boards">
+                        <div class="gallery-caption">
+                            <h4>Aggregate Logistics — Truck Side Offloading</h4>
+                            <p>Site worker utilizing protective wooden barrier panels to guide the controlled discharge of building sand from the commercial lorry onto the driveway shoulder.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 6: Clearance of the sand at the tarmac pavement near car parking..jpeg -->
+                    <div class="gallery-item">
+                        <img src="Clearance%20of%20the%20sand%20at%20the%20tarmac%20pavement%20near%20car%20parking..jpeg" alt="Worker bagging offloaded sand into sacks to clear driveway">
+                        <div class="gallery-caption">
+                            <h4>Driveway Pavement — Sand Bagging Operation</h4>
+                            <p>Laborer bagging loose construction sand into sacks to clear the tarmac parking pavement, keeping vehicle driveways clean and unobstructed.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 7: Clearance of the sand at the tarmac pavement near car parking._01.jpeg -->
+                    <div class="gallery-item">
+                        <img src="Clearance%20of%20the%20sand%20at%20the%20tarmac%20pavement%20near%20car%20parking._01.jpeg" alt="Workers bagging and staging sand on tarpaulins along woodland margin">
+                        <div class="gallery-caption">
+                            <h4>Material Staging — Bagging onto Ground Liners</h4>
+                            <p>Workers shoveling and bagging sand onto woven ground tarpaulins along the woodland shoulder, staging materials for upcoming masonry mortar mixing.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 8: Offloading sand from a lorry_02.jpeg -->
+                    <div class="gallery-item">
+                        <img src="Offloading%20sand%20from%20a%20lorry_02.jpeg" alt="Neatly stacked 50kg bags of cement in storeroom">
+                        <div class="gallery-caption">
+                            <h4>Material Warehousing — Cement Sack Stacking</h4>
+                            <p>Neatly stacked pallets of 50kg construction cement sacks organized in the secure storeroom, safely sheltered from weathering and dampness.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 9: Offloading sand from a lorry_03.jpeg -->
+                    <div class="gallery-item">
+                        <img src="Offloading%20sand%20from%20a%20lorry_03.jpeg" alt="Stacked Ndovu Blue Label cement bags in store">
+                        <div class="gallery-caption">
+                            <h4>Store Inventory — Ndovu Blue Label Cement</h4>
+                            <p>Additional vertical stack of Ndovu Blue Label multi-purpose cement bags inventoried and staged for foundation masonry and retaining wall plastering.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 10: Ajabu.jpeg -->
+                    <div class="gallery-item">
+                        <img src="Ajabu.jpeg" alt="Ajabu the Golden Retriever feeding on tiled veranda">
+                        <div class="gallery-caption">
+                            <h4>Domestic Pet Care — Ajabu the Golden Retriever</h4>
+                            <p>Senior golden retriever Ajabu eating his evening meal comfortably from his dedicated feeding dish on the shaded tiled patio veranda.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 11: Aiko Reo Mocha.jpeg -->
+                    <div class="gallery-item">
+                        <img src="Aiko%20Reo%20Mocha.jpeg" alt="Resident cats Reo, Mocha, and Aiko feeding together indoors">
+                        <div class="gallery-caption">
+                            <h4>Resident Felines — Reo, Mocha &amp; Aiko</h4>
+                            <p>Resident cats Reo, Mocha, and Aiko enjoying their nutritional meal peacefully side by side from individual stainless-steel bowls indoors.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box" style="margin-top: 20px;">
+                    <h4>Civil Demolition &amp; Material Management Protocol</h4>
+                    <p>Bringing the gardener store wall demolition to 100% completion clears critical structural headroom and footprint for the new fireplace retaining wall foundation. Prompt bagging and pavement sweeping ensures material conservation while maintaining clean residential vehicular access.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 4. AMANI COTTAGE                                                          -->
+        <!-- ========================================================================= -->
+        <section id="amani-cottage" class="page-break-before">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon icon-cottage">🏡</div>
+                    <h2>Amani Cottage</h2>
+                </div>
+                <div class="supervisor-badge">
+                    <span>Overseen by:</span> Edwin
+                </div>
+            </div>
+
+            <!-- Narrative Spread Card (Dedicated Full-Page Spread) -->
+            <div class="card">
+                <div class="card-header">
+                    <span>🌿 Turf Sprinkler Irrigation &amp; Comprehensive Grounds Sweeping</span>
+                </div>
+                <p class="editorial-text">
+                    Grounds and landscape maintenance routines proceeded at Amani Cottage under the direct supervision of Edwin. Operations focused on maintaining deep turf hydration during dry weather conditions and ensuring pristine compound hygiene across all outdoor living and circulation spaces:
+                </p>
+                <ul class="highlight-list">
+                    <li>
+                        <strong>Turf &amp; Landscape Sprinkler Irrigation (Edwin):</strong> Edwin operated and systematically repositioned the sprinkler irrigation network across the front lawn, peripheral turf areas, and surrounding garden borders. Thorough, deep-root watering was delivered to replenish soil moisture reserves, prevent grass wilting, and promote vibrant green lawn vigor.
+                    </li>
+                    <li>
+                        <strong>Comprehensive Compound Grounds &amp; Pathway Sweeping (Edwin):</strong> Detailed grounds sweeping was executed across the estate compound, covering stone garden pathways, the paved driveway approach, cottage verandas, and lawn perimeters. All dry fallen leaves, wind-blown organic matter, and twigs were cleared and gathered to maintain immaculate exterior presentation.
+                    </li>
+                </ul>
+
+                <div class="success-box">
+                    <h4>Key Accomplishments — Amani Cottage</h4>
+                    <p>Front lawn and landscape borders thoroughly irrigated via sprinkler systems, and comprehensive compound grounds and walkway sweeping completed under Edwin's oversight, maintaining pristine estate standards.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Signature Block (Strict Compliance with AGENTS.md) -->
+    <footer>
+        <div class="signature-block">
+            <div class="signature-avatar">D</div>
+            <div class="signature-details">
+                <h3>Compiled by Dennis</h3>
+            </div>
+        </div>
+        <div class="footer-meta" style="color: var(--slate-600); font-size: 0.88rem;">
+            <span>Daily Operations Report</span> &bull; <span>Tuesday, September 15, 2026</span>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>

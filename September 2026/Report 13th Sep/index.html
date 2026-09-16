@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Operations Report — September 13, 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-dark: #0f172a;
+            --accent: #059669;
+            --accent-light: #ecfdf5;
+            --golf-green: #15803d;
+            --golf-green-light: #f0fdf4;
+            --farm-amber: #d97706;
+            --farm-amber-light: #fffbeb;
+            --residence-purple: #6d28d9;
+            --residence-purple-light: #f5f3ff;
+            --cottage-teal: #0d9488;
+            --cottage-teal-light: #f0fdfa;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-300: #cbd5e1;
+            --slate-400: #94a3b8;
+            --slate-600: #475569;
+            --slate-700: #334155;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --radius-md: 12px;
+            --radius-lg: 16px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f4f6f9;
+            color: var(--slate-800);
+            line-height: 1.72;
+            font-size: 1.04rem;
+            padding: 40px 20px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            border: 1px solid var(--slate-200);
+        }
+
+        /* Header Block */
+        header {
+            background: #0f172a !important;
+            color: #ffffff !important;
+            padding: 46px 44px;
+            position: relative;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .badge-date {
+            background: rgba(255,255,255,0.18) !important;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.94rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(255,255,255,0.25);
+            color: #ffffff !important;
+        }
+        .report-tag {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #86efac !important;
+            font-weight: 700;
+        }
+        header h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            color: #ffffff !important;
+        }
+        header p.subtitle {
+            color: #cbd5e1 !important;
+            font-size: 1.05rem;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        /* Executive KPI Summary Bar */
+        .kpi-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            padding: 26px 44px;
+            background-color: var(--slate-50);
+            border-bottom: 1px solid var(--slate-200);
+        }
+        .kpi-card {
+            background: #ffffff;
+            padding: 20px 24px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--slate-200);
+            box-shadow: var(--shadow-sm);
+        }
+        .kpi-card .label {
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--slate-600);
+            letter-spacing: 0.5px;
+        }
+        .kpi-card .value {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--slate-900);
+            margin-top: 4px;
+        }
+        .kpi-card .subtext {
+            font-size: 0.88rem;
+            color: var(--slate-600);
+            margin-top: 2px;
+        }
+
+        /* Executive Cover Overview Card */
+        .cover-overview-container {
+            padding: 28px 44px 0 44px;
+        }
+        .cover-overview-card {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--slate-200);
+            padding: 30px 34px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .main-content { padding: 38px 44px; }
+
+        /* Section Headers */
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--slate-200);
+            margin-bottom: 26px;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .section-title h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--slate-900);
+        }
+        .section-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: #ffffff !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .icon-golf { background-color: var(--golf-green) !important; }
+        .icon-farm { background-color: var(--farm-amber) !important; }
+        .icon-residence { background-color: var(--residence-purple) !important; }
+        .icon-cottage { background-color: var(--cottage-teal) !important; }
+
+        .supervisor-badge {
+            background-color: var(--slate-100) !important;
+            color: var(--slate-700) !important;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            border: 1px solid var(--slate-200);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .supervisor-badge span {
+            color: var(--primary) !important;
+            font-weight: 700;
+        }
+
+        /* Standard Cards — Generous & Uncompressed */
+        .card {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--slate-200);
+            padding: 34px 38px;
+            margin-bottom: 28px;
+            box-shadow: var(--shadow-sm);
+        }
+        .card-header, .card-heading {
+            font-size: 1.28rem;
+            font-weight: 800;
+            color: var(--slate-900);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .editorial-text {
+            font-size: 1.04rem;
+            color: var(--slate-700);
+            line-height: 1.72;
+            margin-bottom: 18px;
+        }
+
+        .highlight-list { list-style: none; }
+        .highlight-list li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 15px;
+            color: var(--slate-700);
+            font-size: 1rem;
+            line-height: 1.68;
+        }
+        .highlight-list li::before {
+            content: '•';
+            position: absolute;
+            left: 6px;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.45rem;
+        }
+        .highlight-list li strong {
+            color: var(--slate-900);
+            font-weight: 700;
+        }
+
+        /* Tables */
+        .data-table, .milk-table, .equipment-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 18px;
+            font-size: 0.96rem;
+        }
+        .data-table th, .data-table td,
+        .milk-table th, .milk-table td,
+        .equipment-table th, .equipment-table td {
+            padding: 14px 18px;
+            text-align: left;
+            border: 1px solid var(--slate-200);
+        }
+        .data-table th, .milk-table th, .equipment-table th {
+            background-color: var(--slate-100) !important;
+            font-weight: 700;
+            color: var(--slate-800);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .data-table td, .milk-table td, .equipment-table td {
+            color: var(--slate-700);
+            font-weight: 500;
+        }
+        .data-table tfoot td, .milk-table tfoot td, .equipment-table tfoot td {
+            background-color: var(--slate-100) !important;
+            font-weight: 800;
+            color: var(--slate-900);
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .milk-table .total-cell {
+            font-weight: 800;
+            color: var(--golf-green) !important;
+            font-size: 1.08rem;
+            text-align: center;
+        }
+        .milk-table .deduction-cell {
+            font-weight: 700;
+            color: #b91c1c !important;
+            text-align: center;
+        }
+        .milk-table .balance-cell {
+            font-weight: 800;
+            color: var(--primary) !important;
+            font-size: 1.08rem;
+            text-align: center;
+        }
+
+        /* Photo Gallery Grid - Strictly 2 Columns Straight Flow (Rule 3 & 7) */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+            margin-top: 20px;
+        }
+        .gallery-item {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--slate-200);
+            background: #ffffff;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .gallery-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+        .gallery-caption {
+            padding: 16px 18px;
+            background: #ffffff;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .gallery-caption h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--slate-900);
+            margin-bottom: 5px;
+        }
+        .gallery-caption p {
+            font-size: 0.9rem;
+            color: var(--slate-600);
+            line-height: 1.5;
+        }
+
+        /* Video Cards */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 22px;
+            margin-top: 18px;
+        }
+        .video-card {
+            background: #ffffff;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--slate-200);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+        }
+        .video-media-wrapper {
+            position: relative;
+            background: #0f172a;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .video-media-wrapper iframe,
+        .video-media-wrapper video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border: none;
+        }
+        .video-card-body {
+            padding: 18px 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+            background: #ffffff;
+            gap: 14px;
+        }
+        .video-card-info h4 {
+            font-size: 1.02rem;
+            font-weight: 700;
+            color: var(--slate-900);
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .video-card-info p {
+            font-size: 0.9rem;
+            color: var(--slate-600);
+            line-height: 1.5;
+        }
+        .video-drive-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #f8fafc;
+            color: #1e40af;
+            font-size: 0.88rem;
+            font-weight: 700;
+            padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            border: 1px solid #cbd5e1;
+            width: fit-content;
+            transition: all 0.2s ease;
+        }
+        .video-drive-btn:hover {
+            background: #1e40af;
+            color: #ffffff;
+            border-color: #1e40af;
+        }
+
+        /* Callout Boxes */
+        .success-box {
+            background-color: #ecfdf5 !important;
+            border-left: 4px solid #10b981 !important;
+            padding: 18px 22px;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin-top: 18px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .success-box h4 { color: #065f46 !important; font-size: 1.02rem; font-weight: 700; margin-bottom: 5px; }
+        .success-box p { color: #064e3b !important; font-size: 0.94rem; line-height: 1.55; }
+
+        .info-box {
+            background-color: #eff6ff !important;
+            border-left: 4px solid #3b82f6 !important;
+            padding: 18px 22px;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin-top: 18px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .info-box h4 { color: #1e40af !important; font-size: 1.02rem; font-weight: 700; margin-bottom: 5px; }
+        .info-box p { color: #1e3a8a !important; font-size: 0.94rem; line-height: 1.55; }
+
+        .amber-box {
+            background-color: #fffbeb !important;
+            border-left: 4px solid #f59e0b !important;
+            padding: 18px 22px;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin-top: 18px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .amber-box h4 { color: #92400e !important; font-size: 1.02rem; font-weight: 700; margin-bottom: 5px; }
+        .amber-box p { color: #78350f !important; font-size: 0.94rem; line-height: 1.55; }
+
+        /* Footer */
+        footer {
+            background-color: var(--slate-50) !important;
+            padding: 28px 44px;
+            border-top: 1px solid var(--slate-200);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .signature-block { display: flex; align-items: center; gap: 14px; }
+        .signature-avatar {
+            width: 46px; height: 46px;
+            border-radius: 50%;
+            background: var(--primary) !important;
+            color: #ffffff !important;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 1.1rem;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .signature-details h3 { font-size: 1.08rem; font-weight: 700; color: var(--slate-900); }
+
+        /* Helpers for page breaking in print */
+        .page-break-before {
+            page-break-before: always;
+            break-before: page;
+        }
+
+        /* ========================================================================= */
+        /* PRINT STYLING RULES — STRICT COMPLIANCE WITH AGENTS.MD SECTION 5 & 7      */
+        /* ========================================================================= */
+        @media print {
+            @page { 
+                size: A4; 
+                margin: 8mm 10mm; 
+            }
+            
+            body { 
+                background-color: #ffffff !important; 
+                padding: 0 !important; 
+                font-size: 0.98rem !important;
+            }
+            
+            .container { 
+                box-shadow: none !important; 
+                border: none !important; 
+                border-radius: 0 !important; 
+                max-width: 100% !important; 
+                overflow: visible !important; 
+            }
+            
+            header { 
+                padding: 20px 24px !important; 
+                border-radius: 8px !important; 
+            }
+            
+            header h1 { 
+                font-size: 2rem !important; 
+                margin-bottom: 4px !important; 
+            }
+            
+            header p.subtitle { 
+                font-size: 0.92rem !important; 
+                line-height: 1.4 !important; 
+            }
+            
+            .kpi-bar { 
+                padding: 12px 0 !important; 
+                background: transparent !important; 
+                grid-template-columns: repeat(4, 1fr) !important; 
+                gap: 8px !important; 
+                border-bottom: 1px solid #e2e8f0 !important;
+            }
+            
+            .kpi-card { 
+                padding: 8px 10px !important; 
+                border: 1px solid #cbd5e1 !important; 
+                box-shadow: none !important; 
+            }
+            .kpi-card .value { font-size: 1.15rem !important; }
+            .kpi-card .label { font-size: 0.7rem !important; }
+            .kpi-card .subtext { font-size: 0.75rem !important; }
+
+            .cover-overview-container {
+                padding: 0 !important;
+            }
+            
+            .cover-overview-card {
+                padding: 16px 20px !important;
+                margin-top: 12px !important;
+                margin-bottom: 0 !important;
+                border: 1px solid #cbd5e1 !important;
+                box-shadow: none !important;
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+            .cover-overview-card .card-header {
+                font-size: 16px !important;
+                margin-bottom: 8px !important;
+            }
+            .cover-overview-card .editorial-text {
+                font-size: 13.5px !important;
+                line-height: 1.48 !important;
+                margin-bottom: 8px !important;
+            }
+            .cover-overview-card .highlight-list li {
+                font-size: 13px !important;
+                line-height: 1.45 !important;
+                margin-bottom: 6px !important;
+                padding-left: 18px !important;
+            }
+            .cover-overview-card .success-box {
+                padding: 9px 12px !important;
+                margin-top: 8px !important;
+            }
+            .cover-overview-card .success-box h4 {
+                font-size: 0.85rem !important;
+                margin-bottom: 2px !important;
+            }
+            .cover-overview-card .success-box p {
+                font-size: 0.78rem !important;
+                line-height: 1.38 !important;
+            }
+            
+            .main-content { padding: 12px 0 !important; }
+            
+            /* Each main section gets its own dedicated page break */
+            main > section {
+                break-before: page !important;
+                page-break-before: always !important;
+            }
+
+            /* Dedicated Narrative Spread Spacing Rules (Section 7 Anti-Compression) */
+            .card { 
+                padding: 22px 26px !important; 
+                margin-bottom: 16px !important; 
+                border: 1px solid #cbd5e1 !important; 
+                box-shadow: none !important; 
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            .card.gallery-card {
+                break-inside: auto !important;
+                page-break-inside: auto !important;
+            }
+            
+            .card-header, .card-heading { 
+                font-size: 18px !important; 
+                font-weight: 800 !important;
+                margin-bottom: 12px !important; 
+            }
+
+            .editorial-text { 
+                font-size: 15px !important; 
+                line-height: 1.65 !important; 
+                margin-bottom: 14px !important; 
+            }
+
+            .highlight-list li { 
+                font-size: 14px !important; 
+                line-height: 1.6 !important; 
+                margin-bottom: 12px !important; 
+                padding-left: 24px !important; 
+            }
+            
+            .section-header { 
+                margin-bottom: 14px !important; 
+                padding-bottom: 10px !important; 
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+                break-after: avoid !important; 
+                page-break-after: avoid !important; 
+            }
+
+            .supervisor-badge { 
+                font-size: 0.86rem !important; 
+                padding: 5px 14px !important; 
+            }
+            
+            .section-title h2 { font-size: 1.42rem !important; }
+            
+            /* High-Impact Photo Galleries (Strictly 2 Columns, Section 7) */
+            .gallery-grid { 
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important; 
+                gap: 14px !important; 
+            }
+            
+            .gallery-item { 
+                box-shadow: none !important; 
+                border: 1px solid #cbd5e1 !important; 
+                break-inside: avoid !important; 
+                page-break-inside: avoid !important; 
+            }
+            .gallery-item img { 
+                height: 185px !important; 
+                object-fit: cover !important; 
+            }
+            .gallery-caption { 
+                padding: 12px 14px !important; 
+            }
+            .gallery-caption h4 { font-size: 13.8px !important; margin-bottom: 4px !important; }
+            .gallery-caption p { font-size: 12.2px !important; line-height: 1.45 !important; }
+
+            .video-grid {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important; 
+                gap: 14px !important; 
+            }
+
+            /* Table print styling (Section 7) */
+            .data-table th, .data-table td,
+            .milk-table th, .milk-table td,
+            .equipment-table th, .equipment-table td {
+                padding: 10px 14px !important;
+                font-size: 0.88rem !important;
+            }
+
+            /* HIDE VIDEO PLAYER IN PRINT (MANDATORY PDF RULE) */
+            .video-media-wrapper video, .video-media-wrapper iframe, video, iframe { 
+                display: none !important; 
+            }
+            .video-media-wrapper { 
+                aspect-ratio: auto !important; 
+                height: 38px !important; 
+                background: #f1f5f9 !important; 
+                border-bottom: 1px solid #cbd5e1 !important; 
+                display: flex !important; 
+                align-items: center !important; 
+                padding: 0 14px !important; 
+            }
+            .video-media-wrapper::before { 
+                content: "🎥 Progress Video Recording" !important; 
+                font-size: 0.78rem !important; 
+                font-weight: 700 !important; 
+                color: #334155 !important; 
+                text-transform: uppercase !important; 
+                letter-spacing: 0.5px !important;
+            }
+
+            .success-box, .info-box, .amber-box {
+                padding: 12px 16px !important;
+                margin-top: 12px !important;
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+            .success-box h4, .info-box h4, .amber-box h4 { font-size: 0.92rem !important; }
+            .success-box p, .info-box p, .amber-box p { font-size: 0.86rem !important; line-height: 1.45 !important; }
+
+            footer { 
+                padding: 16px 20px !important; 
+                break-inside: avoid !important; 
+                page-break-inside: avoid !important; 
+            }
+            
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header Block (Page 1 Cover Spread) -->
+    <header>
+        <div class="header-top">
+            <span class="report-tag">Daily Operations Progress Report</span>
+            <span class="badge-date">Sunday, 13th September 2026</span>
+        </div>
+        <h1>Daily Operations Report</h1>
+        <p class="subtitle">Executive operations briefing covering volcanic pumice aggregate haulage and surface leveling across Greens No. 14, 15, 16 &amp; 17, and perimeter boundary irrigation system trench excavation at Mucheru World of Golf; daily dairy milking production and allocations reconciliation in Litres at Chaka Farms; and resident pet dietary nutrition cooking, portioning, veranda feeding, and comprehensive kitchen cooker and oven sanitation at Kabete Residence.</p>
+    </header>
+
+    <!-- Executive KPI Summary Bar (Page 1) -->
+    <section class="kpi-bar">
+        <div class="kpi-card">
+            <div class="label">Active Operations Sites</div>
+            <div class="value">3 Sites Active</div>
+            <div class="subtext">Mucheru Golf, Chaka Farms &amp; Kabete Residence</div>
+        </div>
+        <div class="kpi-card">
+            <div class="label">Golf Course Milestones</div>
+            <div class="value">Greens 14, 15, 16 &amp; 17</div>
+            <div class="subtext">Pumice Sub-Base Transfer &amp; Irrigation Trenching</div>
+        </div>
+        <div class="kpi-card">
+            <div class="label">Dairy Milking Yield</div>
+            <div class="value">5.0 L Gross</div>
+            <div class="subtext">2.5L AM / 2.5L PM | 3.0 L Net Farm Reserve</div>
+        </div>
+        <div class="kpi-card">
+            <div class="label">Domestic Pet Care &amp; Facilities</div>
+            <div class="value">4 Animals Fed</div>
+            <div class="subtext">Cooked Food for Ajabu &amp; Cats; Cooker Cleaned</div>
+        </div>
+    </section>
+
+    <!-- Executive Cover Overview Card (Page 1) -->
+    <div class="cover-overview-container">
+        <div class="card cover-overview-card">
+            <div class="card-header">
+                <span>📋</span> Operations Summary — Sunday, September 13, 2026
+            </div>
+            <p class="editorial-text">
+                Operations across all three active properties advanced with high precision, maintaining steady momentum in golf course sub-base construction and utility infrastructure, farmstead dairy milking and reserve auditing, and dedicated domestic pet care and kitchen facility sanitation:
+            </p>
+            <ul class="highlight-list">
+                <li><strong>Mucheru World of Golf:</strong> Ground labor teams actively loaded and transferred volcanic pumice aggregate via wheelbarrows onto Greens 14, 15, 16, and 17, spreading and grading uniform drainage sub-base layers over the containment liners. Concurrently, excavation crews dug continuous perimeter utility trenches alongside the boundary fence to house the course's primary irrigation pipe network.</li>
+                <li><strong>Chaka Farms:</strong> Dairy milking yielded 5.0 Litres gross production, recorded strictly in Litres (2.5L morning / 2.5L evening). Following authorized rations of 1.0 Litre for goat kids, 0.5 Litres for Gladys, and 0.5 Litres for Maasai, an exact net farm reserve of 3.0 Litres was safely retained in storage.</li>
+                <li><strong>Kabete Residence:</strong> Amos the guard prepared a nutritious batch of animal food by rinsing grains and cooking a large pot of rice, subsequently portioning meals for senior retriever Ajabu and resident cats Reo, Mocha, and Aiko. Immediately after feeding, Amos performed deep scrubbing and sanitation of the gas cooker, oven burners, and wash sink.</li>
+            </ul>
+            <div class="success-box">
+                <h4>Key Progress Highlight</h4>
+                <p>Four championship putting green basins (Greens 14, 15, 16 &amp; 17) received volcanic pumice aggregate layers, while linear perimeter trenching progressed smoothly along the boundary line at Mucheru World of Golf.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+
+        <!-- ========================================================================= -->
+        <!-- 1. MUCHERU WORLD OF GOLF                                                  -->
+        <!-- ========================================================================= -->
+        <section id="mucheru-golf">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon icon-golf">⛳</div>
+                    <h2>Mucheru World of Golf</h2>
+                </div>
+                <div class="supervisor-badge">
+                    <span>Overseen by:</span> Ken
+                </div>
+            </div>
+
+            <!-- Narrative Spread Card (Dedicated Full-Page Spread) -->
+            <div class="card">
+                <div class="card-header">
+                    <span>⛳ Putting Green Sub-Base Construction, Pumice Transfer &amp; Irrigation Trench Excavation</span>
+                </div>
+                <p class="editorial-text">
+                    Field operations and civil construction at Mucheru World of Golf progressed systematically under the direct on-site supervision of Ken, focusing on putting green sub-surface drainage preparation and perimeter irrigation infrastructure installation:
+                </p>
+                <ul class="highlight-list">
+                    <li>
+                        <strong>Haulage &amp; Spreading of Volcanic Pumice on Greens No. 14, 15, 16 &amp; 17:</strong> Ground workforce personnel utilized wheelbarrows, shovels, and grading rakes to haul, transfer, and evenly distribute volcanic pumice aggregate across the foundation beds of putting Greens No. 14, 15, 16, and 17. The porous pumice aggregate was spread over the impermeable containment liners and fractured hardcore beds, establishing the essential drainage transition matrix and aeration buffer directly beneath the upcoming rootzone profile.
+                    </li>
+                    <li>
+                        <strong>Manual Excavation of Irrigation System Utility Trenches:</strong> Dedicated trenching labor crews manually excavated continuous linear utility trenches running parallel to the perimeter boundary fence line. Aligned alongside the black fence posts and wire barrier, these trenches are cut to uniform depth and gradient to accommodate main subterranean irrigation water supply pipelines that will service the golf course greens and fairways.
+                    </li>
+                </ul>
+
+                <div class="success-box">
+                    <h4>Key Accomplishments — Mucheru World of Golf</h4>
+                    <p>Volcanic pumice aggregate successfully hauled, transferred, and graded across putting Greens 14, 15, 16, and 17; continuous linear perimeter utility trenches excavated along the course boundary fence corridor for upcoming main irrigation pipeline installation.</p>
+                </div>
+            </div>
+
+            <!-- Unified Continuous Photo Gallery Card (Rule 3 & 7) -->
+            <div class="card gallery-card page-break-before">
+                <div class="card-header">
+                    <span>📸 Photographic Field Evidence — Mucheru World of Golf</span>
+                </div>
+                <p class="editorial-text" style="font-size: 0.95rem; margin-bottom: 14px;">
+                    Photographic documentation capturing irrigation pipeline utility trenching along the perimeter fence line and volcanic pumice aggregate distribution across putting green foundation basins.
+                </p>
+
+                <div class="gallery-grid">
+                    <!-- Photo 1: Perimeter irrigation trench digging -->
+                    <div class="gallery-item">
+                        <img src="Digging%20irrigation%20system%20trenches%20_01.jpeg" alt="Manual excavation of irrigation pipeline trench along perimeter fence line">
+                        <div class="gallery-caption">
+                            <h4>Perimeter Fence Corridor — Irrigation Utility Trenching</h4>
+                            <p>Trenching personnel manually excavating a continuous, clean linear utility trench alongside the black perimeter fence posts to accommodate subterranean irrigation piping.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 2: Linear trench extension -->
+                    <div class="gallery-item">
+                        <img src="Digging%20irrigation%20system%20trenches.jpeg" alt="Linear irrigation trench running parallel to course boundary">
+                        <div class="gallery-caption">
+                            <h4>Boundary Pipeline Route — Linear Trench Excavation</h4>
+                            <p>Extended linear trench alignment cut through the dry fairway perimeter terrain, displaying excavated soil berms and uniform trench depth heading toward the farm buildings.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 3: Pumice transfer to greens -->
+                    <div class="gallery-item">
+                        <img src="transferring%20pumice%20to%20the%20greens.jpeg" alt="Field crew loading wheelbarrows with pumice and transferring onto putting green basin">
+                        <div class="gallery-caption">
+                            <h4>Greens 14, 15, 16 &amp; 17 — Pumice Haulage &amp; Distribution</h4>
+                            <p>Site labor crew actively shoveling volcanic pumice aggregate into wheelbarrows and transferring the material across the putting green foundation for manual grading.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 4: Leveled pumice base layer -->
+                    <div class="gallery-item">
+                        <img src="WhatsApp%20Image%202026-09-14%20at%2008.31.12.jpeg" alt="Putting green basin with uniform volcanic pumice layer leveled over containment liner">
+                        <div class="gallery-caption">
+                            <h4>Putting Green Basin — Completed Pumice Drainage Layer</h4>
+                            <p>Circular putting green basin lined with geotextile membrane displaying a smooth, leveled surface layer of volcanic pumice aggregate surrounded by compacted red soil berms.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box" style="margin-top: 20px;">
+                    <h4>Putting Green Sub-Base Engineering Standards</h4>
+                    <p>The structured layering of fractured hardcore rock foundations, impermeable geotextile liners, and leveled porous volcanic pumice ensures optimal subterranean drainage percolation, perched water table retention, and high rootzone aeration necessary for professional putting surface turfgrass.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 2. CHAKA FARMS                                                            -->
+        <!-- ========================================================================= -->
+        <section id="chaka-farms">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon icon-farm">🚜</div>
+                    <h2>Chaka Farms</h2>
+                </div>
+                <div class="supervisor-badge">
+                    <span>Milking &amp; Livestock:</span> Kamandau
+                </div>
+            </div>
+
+            <!-- Narrative Spread Card (Dedicated Full-Page Spread) -->
+            <div class="card">
+                <div class="card-header">
+                    <span>🥛 Daily Dairy Milking Production, Rations Accounting &amp; Farm Reserve Audit</span>
+                </div>
+                <p class="editorial-text">
+                    Dairy livestock operations, milking hygiene routines, and quantitative yield reconciliation were conducted under the direct supervision of Kamandau:
+                </p>
+                <ul class="highlight-list">
+                    <li>
+                        <strong>Dairy Cow Milking Yield (Gross Production):</strong> Morning and evening milking sessions yielded a combined gross volume of <strong>5.0 Litres</strong>, recorded strictly in Litres (2.5L collected during the morning session and 2.5L collected during the evening session).
+                    </li>
+                    <li>
+                        <strong>Rations &amp; Allocations Reconciliation:</strong> Authorized disbursements drawn out of the total gross milk production totaled <strong>2.0 Litres</strong>, comprising:
+                        <ul style="list-style: none; margin-top: 8px; margin-left: 20px;">
+                            <li style="margin-bottom: 6px;">• <strong>Goat Kids Ration:</strong> 1.0 Litre total (0.5L morning ration + 0.5L evening ration for young stock nutrition).</li>
+                            <li style="margin-bottom: 6px;">• <strong>Staff Allocation — Gladys:</strong> 0.5 Litres.</li>
+                            <li style="margin-bottom: 6px;">• <strong>Staff Allocation — Maasai:</strong> 0.5 Litres.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Net Remaining Farm Milk Reserve:</strong> After deducting all authorized nutritional and staff disbursements from the 5.0L gross production, the remaining balance retained in farm reserve stood at exactly <strong>3.0 Litres</strong> (2.0L morning reserve balance + 1.0L evening reserve balance).
+                    </li>
+                </ul>
+
+                <div class="success-box">
+                    <h4>Key Accomplishments — Chaka Farms</h4>
+                    <p>Gross dairy cow milking output recorded at 5.0 Litres (2.5L morning / 2.5L evening); complete reconciliation of 2.0 Litres in goat kid rations and staff allocations executed; leaving an audited net farm balance of 3.0 Litres stored in reserve.</p>
+                </div>
+            </div>
+
+            <!-- Dairy Milking Yield Ledger Card (Dedicated Spread - Section 7) -->
+            <div class="card page-break-before">
+                <div class="card-header">
+                    <span>📋 Dairy Milking Yield &amp; Allocations Ledger</span>
+                </div>
+                <div class="supervisor-badge" style="margin-bottom: 16px; width: fit-content;">
+                    <span>Overseen by:</span> Kamandau
+                </div>
+                <p class="editorial-text">
+                    Quantitative daily milk production ledger recorded strictly in Litres (L). In accordance with reporting rules, rations and allocations represent disbursements drawn directly out of the gross milking yield:
+                </p>
+
+                <table class="milk-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 32%;">Item / Description</th>
+                            <th style="width: 14%; text-align: center;">Morning (L)</th>
+                            <th style="width: 14%; text-align: center;">Evening (L)</th>
+                            <th style="width: 14%; text-align: center;">Total (L)</th>
+                            <th style="width: 13%; text-align: center;">Deduction (L)</th>
+                            <th style="width: 13%; text-align: center;">Farm Balance (L)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Cow Milking Yield (Gross Production)</strong></td>
+                            <td style="text-align: center; font-weight: 600;">2.5 L</td>
+                            <td style="text-align: center; font-weight: 600;">2.5 L</td>
+                            <td class="total-cell">5.0 L</td>
+                            <td style="text-align: center; color: var(--slate-400);">—</td>
+                            <td style="text-align: center; font-weight: 600;">5.0 L</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Goat Kids Ration (Young Stock Feed)</strong></td>
+                            <td style="text-align: center;">0.5 L</td>
+                            <td style="text-align: center;">0.5 L</td>
+                            <td style="text-align: center; color: var(--slate-600);">1.0 L</td>
+                            <td class="deduction-cell">- 1.0 L</td>
+                            <td style="text-align: center; color: var(--slate-400);">—</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Staff Allocation — Gladys</strong></td>
+                            <td style="text-align: center; color: var(--slate-400);">—</td>
+                            <td style="text-align: center;">0.5 L</td>
+                            <td style="text-align: center; color: var(--slate-600);">0.5 L</td>
+                            <td class="deduction-cell">- 0.5 L</td>
+                            <td style="text-align: center; color: var(--slate-400);">—</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Staff Allocation — Maasai</strong></td>
+                            <td style="text-align: center; color: var(--slate-400);">—</td>
+                            <td style="text-align: center;">0.5 L</td>
+                            <td style="text-align: center; color: var(--slate-600);">0.5 L</td>
+                            <td class="deduction-cell">- 0.5 L</td>
+                            <td style="text-align: center; color: var(--slate-400);">—</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td><strong>Total Allocations Deducted</strong></td>
+                            <td style="text-align: center; font-weight: 700;">0.5 L</td>
+                            <td style="text-align: center; font-weight: 700;">1.5 L</td>
+                            <td class="deduction-cell" style="font-size: 1.05rem;">- 2.0 L</td>
+                            <td class="deduction-cell">- 2.0 L</td>
+                            <td style="text-align: center; font-size: 0.82rem; color: var(--slate-600);">Disbursed</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Net Remaining Farm Balance</strong></td>
+                            <td style="text-align: center; font-weight: 700; color: var(--primary);">2.0 L</td>
+                            <td style="text-align: center; font-weight: 700; color: var(--primary);">1.0 L</td>
+                            <td class="balance-cell">3.0 L Net</td>
+                            <td style="text-align: center; color: var(--slate-400);">—</td>
+                            <td class="balance-cell">3.0 L</td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <div class="info-box">
+                    <h4>Production &amp; Allocation Reconciliation Audit</h4>
+                    <p>Total gross dairy milk production stood firmly at <strong>5.0 Litres</strong> (2.5L morning + 2.5L evening). Authorized disbursements drawn out of yield included <strong>1.0 Litre</strong> for goat kids (0.5L morning + 0.5L evening), <strong>0.5 Litres</strong> for Gladys, and <strong>0.5 Litres</strong> for Maasai. Total deductions equaled <strong>2.0 Litres</strong>, preserving an exact audited net farm balance of <strong>3.0 Litres</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 3. KABETE RESIDENCE                                                       -->
+        <!-- ========================================================================= -->
+        <section id="kabete-residence" class="page-break-before">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon icon-residence">🏡</div>
+                    <h2>Kabete Residence</h2>
+                </div>
+                <div class="supervisor-badge">
+                    Field Updates Shared by: <span>Njoki</span>
+                </div>
+            </div>
+
+            <!-- Narrative Spread Card (Dedicated Full-Page Spread) -->
+            <div class="card">
+                <div class="card-header">
+                    <span>🍲 Domestic Pet Dietary Preparation, Feeding Routines &amp; Kitchen Sanitation</span>
+                </div>
+                <p class="editorial-text">
+                    Domestic pet wellness care, custom animal meal cooking, and kitchen appliance sanitation at Kabete Residence were executed by Amos the guard, with operational updates shared by Njoki:
+                </p>
+                <ul class="highlight-list">
+                    <li>
+                        <strong>Pet Meal Preparation by Amos:</strong> Amos measured, rinsed, and cooked whole rice grains inside a large stainless steel cooking pot on the gas stovetop, preparing a nutritious, easily digestible carbohydrate base for the resident animals.
+                    </li>
+                    <li>
+                        <strong>Individual Dietary Portioning &amp; Serving:</strong> Once cooked, the warm rice was portioned into four designated feeding bowls and enriched with meat and protein rations:
+                        <ul style="list-style: none; margin-top: 8px; margin-left: 20px;">
+                            <li style="margin-bottom: 6px;">• <strong>Ajabu the Senior Golden Retriever:</strong> Served a hearty portion in his large white plastic bowl on the shaded veranda, which he consumed with enthusiasm.</li>
+                            <li style="margin-bottom: 6px;">• <strong>Resident Cats (Reo, Mocha &amp; Aiko):</strong> Served their individualized rations in three matching stainless steel dishes, feeding harmoniously alongside one another on the clean tiled floor.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Comprehensive Stovetop, Oven &amp; Sink Sanitation:</strong> Immediately following meal preparation and feeding, Amos conducted a thorough cleaning and degreasing of the kitchen cooking station. The stainless steel gas cooker burners, burner caps, trivet grates, and surrounding oven surfaces were scrubbed and wiped spotless, and the stainless steel wash sink was washed, cleared of food remnants, and dried clean.
+                    </li>
+                </ul>
+
+                <div class="success-box">
+                    <h4>Key Accomplishments — Kabete Residence</h4>
+                    <p>Fresh wholesome meal prepared, cooked, and portioned for senior retriever Ajabu and resident cats Reo, Mocha, and Aiko; veranda and floor feeding completed calmly; comprehensive deep cleaning and degreasing of the gas cooker, oven unit, and wash sink executed by Amos.</p>
+                </div>
+            </div>
+
+            <!-- Unified Continuous Photo Gallery Card (Rule 3 & 7) -->
+            <div class="card gallery-card page-break-before">
+                <div class="card-header">
+                    <span>📸 Photographic Field Evidence — Kabete Residence</span>
+                </div>
+                <p class="editorial-text" style="font-size: 0.95rem; margin-bottom: 14px;">
+                    Photographic documentation illustrating animal dietary preparation, cooked meal pots, individual portioning dishes, pet feeding, and kitchen appliance sanitization.
+                </p>
+
+                <div class="gallery-grid">
+                    <!-- Photo 1: Uncooked rice in pot -->
+                    <div class="gallery-item">
+                        <img src="Uncooked%20rice%20fo%20dogs%20ready%20for%20cooking.jpeg" alt="Uncooked rice grains measured and rinsed in pot within kitchen sink">
+                        <div class="gallery-caption">
+                            <h4>Meal Preparation — Rinsing Rice Grains</h4>
+                            <p>Measured rice grains prepped and rinsed inside a large stainless steel pot in the wash sink prior to boiling on the gas cooker.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 2: Cooked rice pot -->
+                    <div class="gallery-item">
+                        <img src="Dog%20food%20rice%20cooked.jpeg" alt="Pot of freshly cooked fluffy rice for animal meals">
+                        <div class="gallery-caption">
+                            <h4>Pet Nutrition — Freshly Cooked Rice Pot</h4>
+                            <p>Large cooking pot filled with freshly steamed, fluffy rice prepared on the stove by Amos as the wholesome base for the pets' daily diet.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 3: Four feeding bowls prepared -->
+                    <div class="gallery-item">
+                        <img src="Dog%20and%20cats%20food.jpeg" alt="Four feeding bowls arranged with rice topped with protein ration for dog and cats">
+                        <div class="gallery-caption">
+                            <h4>Portioning Station — Animal Dietary Bowls</h4>
+                            <p>Four individual meal bowls prepared on the counter: Ajabu's large white bowl alongside three stainless steel dishes for cats Reo, Mocha, and Aiko, all topped with protein.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 4: Ajabu eating on veranda -->
+                    <div class="gallery-item">
+                        <img src="Ajabu%20eating.jpeg" alt="Ajabu the senior Golden Retriever eating cooked meal from bowl on tiled veranda">
+                        <div class="gallery-caption">
+                            <h4>Veranda Feeding — Ajabu the Retriever</h4>
+                            <p>Ajabu enjoying his freshly prepared meal from his dedicated feeding bowl on the tiled veranda at Kabete Residence.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 5: Reo, Mocha, and Aiko eating -->
+                    <div class="gallery-item">
+                        <img src="Reo%20mocha%20and%20Aiko.jpeg" alt="Resident cats Reo, Mocha, and Aiko eating simultaneously from three stainless steel bowls">
+                        <div class="gallery-caption">
+                            <h4>Feline Feeding — Reo, Mocha &amp; Aiko</h4>
+                            <p>Resident cats Reo, Mocha, and Aiko eating simultaneously from their individual stainless steel bowls placed along the tiled floor.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 6: Cleaned gas cooker and oven -->
+                    <div class="gallery-item">
+                        <img src="Cleaned%20up%20the%20oven%20and%20also%20the%20cooker.jpeg" alt="Cleaned and wiped stainless steel gas cooker burners and oven cooktop">
+                        <div class="gallery-caption">
+                            <h4>Kitchen Sanitation — Stovetop &amp; Cooker Cleaned</h4>
+                            <p>Stainless steel gas cooker burners, grates, and surrounding cooktop surfaces thoroughly degreased, scrubbed, and wiped clean after cooking.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 7: Cleaned sink -->
+                    <div class="gallery-item">
+                        <img src="Cleaned%20up.jpeg" alt="Kitchen stainless steel sink thoroughly washed, scrubbed, and dried clean">
+                        <div class="gallery-caption">
+                            <h4>Facility Cleanliness — Wash Sink Scrubbed</h4>
+                            <p>Kitchen preparation sink thoroughly washed, cleared of debris, and dried spotless, maintaining high domestic hygiene standards.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box" style="margin-top: 20px;">
+                    <h4>Resident Animal Nutrition &amp; Hygiene Standards</h4>
+                    <p>Meals are prepared fresh daily using whole carbohydrates and protein supplements to support the health and vitality of senior canine Ajabu and resident felines Reo, Mocha, and Aiko, accompanied by strict post-cooking sanitation of all food prep surfaces.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Signature Block (Strict Compliance with AGENTS.md) -->
+    <footer>
+        <div class="signature-block">
+            <div class="signature-avatar">D</div>
+            <div class="signature-details">
+                <h3>Compiled by Dennis</h3>
+            </div>
+        </div>
+        <div class="footer-meta" style="color: var(--slate-600); font-size: 0.88rem;">
+            <span>Daily Operations Report</span> &bull; <span>Sunday, September 13, 2026</span>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>

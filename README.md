@@ -51,6 +51,7 @@ Reporting/
 
 * **Milk Measurement**: Dairy cow yields are recorded strictly in **Litres (L)**, never kilograms. Deductions (rations for goat kids, staff) are subtracted from gross yield.
 * **Machinery Consolidation**: Front Loader and Backhoe refer to the same vehicle (**Backhoe Loader**); operational hours and billing are consolidated without duplicate entries.
+* **Daily Greens & Teeboxes Status Ledger (From Sep 16th)**: Daily reports include the 18-hole Putting Greens (1–18) and Championship Teeboxes (1–18) status tables. Only update items worked on during that day; untouched greens and tees remain exactly as recorded on the previous day.
 * **Factual Grounding**: Reports strictly reflect verified supervisor updates and media assets without assumed or hallucinated tasks.
 * **Video Media**: Videos are hosted and linked directly via Google Drive action buttons in report cards.
 

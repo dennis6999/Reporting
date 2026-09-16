@@ -22,7 +22,7 @@ flowchart TD
 
 | Site Location | Key Activities & Scope | Key Personnel / Supervisors | Color Token |
 | :--- | :--- | :--- | :--- |
-| **Mucheru World of Golf** | Dam excavation (Dam 1 & 2), soil haulage/dumping, green material delivery (hardcore, red soil, ballast), green sub-base laying, irrigation piping, entrance gates, fence asset transfers. | Ken, Mr. Gichuhi, Kinoti, Kamandau | `#15803d` (Golf Green) |
+| **Mucheru World of Golf** | Dam excavation (Dam 1 & 2), soil haulage/dumping, green material delivery (hardcore, red soil, ballast), green sub-base laying, irrigation piping, entrance gates, fence asset transfers, and daily 18-hole Putting Greens (Greens 1–18) & Championship Teeboxes (Tees 1–18) status ledger (effective Sep 16th onwards). | Ken, Mr. Gichuhi, Kinoti, Kamandau | `#15803d` (Golf Green) |
 | **Chaka Farms** | Dairy production (morning/evening milking logs strictly in **Litres**), canine unit (kennels cleaning, dog bathing/grooming, manners, off-leash walking), plumbing repairs, paddock rain hose irrigation, compound maintenance. | Willy, Kamandau, Margaret & Monica | `#d97706` (Farm Amber) |
 | **Kabete Residence** | Roof tile painting (main house, generator store, carpark canopy), fireplace clearance excavation, water tank slab rebar, cold room ventilation, veranda clearance, domestic pet care (**Ajabu** dog & resident cats). | Operations Overseen & Shared by: Njoki *(Not a site supervisor)* | `#6d28d9` (Residence Purple) |
 | **Amani Cottage** | Front lawn CAN fertilizer application, rotary sprinkler irrigation, grounds litter collection, interior housekeeping (dusting, room arrangement). | Edwin, Housekeeper | `#0d9488` (Cottage Teal) |
@@ -55,6 +55,14 @@ flowchart TD
    - **Stop putting images into groups.** Never divide photos into separate thematic cards, sub-groups, or multiple fragmented cards with distinct sub-headings (e.g., do not split Golf photos into "Fairway Clearing" vs "Green Foundation", or Kabete photos into "Structural Works" vs "Fireplace Excavation").
    - All photographic field evidence for each project site must be housed inside **one single continuous photo gallery card** titled `📸 Photographic Field Evidence — [Site Name]`.
    - All verified photos within that gallery must simply follow each other straight in the 2-column grid.
+10. **Daily Greens & Teeboxes Status Audit Rule (Effective From 16th September 2026 Onwards):**
+    - Daily operations reports must include the complete 18-hole **Putting Greens Status (Greens 1–18)** and **Championship Teeboxes Status (Tees 1–18)** status tables, plus the **Operations Synthesis** summary box, as modeled in `September 2026/Course Status Greens and Tees/Mucheru_Golf_Greens_and_Tees_Status_Report.pdf`.
+    - **Day-to-Day State Tracking Rule:** Only update the greens and tees that underwent active work on that specific day (updating technical status, badge tag, and date marker e.g. `(Sep 16)`). If there was no work on certain greens or tees on that day, **leave them exactly as they were recorded on the previous day's report** without altering them. Continuous state tracking flows forward day-to-day.
+    - **Subtle Visual Indicator for Changed Items (`.row-changed` & `.badge-today`):**
+      - Any green or teebox modified on that day must have `class="row-changed"` on its table row (`<tr>`).
+      - This adds a subtle 3.5px solid golf-green left accent border (`border-left: 3.5px solid #15803d;`) to the first cell (`td:first-child`) and a very soft green row background tint (`#f0fdf4`).
+      - The ID cell includes an elegant micro-pill badge: `<span class="badge-today">Today</span>` (e.g., `<td class="col-id">Green 1 <span class="badge-today">Today</span></td>`).
+      - Unchanged rows retain standard clean styling without badges or border accents.
 
 ---
 
@@ -64,6 +72,7 @@ flowchart TD
 - **KPI Summary Bar:** Grid bar displaying 3–4 high-impact metrics (e.g., Dam Haulage Trips, Milk Yield in Litres, Roof Completion Percentage, Active Site Count).
 - **Supervisor Badges:** Highlight key personnel on every card (`Overseen by: [Supervisor Name]`).
 - **Data Tables:** HTML tables for quantitative data (e.g., Milking Yield logs in Litres with Morning/Evening/Total, Material Delivery allocation breakdowns).
+- **Course Engineering & Agronomy Status Tables (`.status-table`):** Standardized 3-column audit tables for 18 Putting Greens and 18 Championship Teeboxes. Uses alternating row shading, fixed ID and Tag column widths, and color-coded status badges (`.tag-ready`, `.tag-sand`, `.tag-trenched`, `.tag-neutral`, `.tag-pending`), alongside an Operations Synthesis summary card (`.summary-card`).
 - **Key Accomplishment Highlight Callouts:** Green boxes (`.success-box`) to showcase key accomplishments and completed objectives (e.g., `🎯 Key Accomplishment: Main House Roof Painting Complete`).
 - **Photo Galleries:** Responsive grid layout with image cards containing captions.
 - **Video Cards & Direct Drive Links:** Present each video in a dedicated `.video-card` component with an embedded `<video>` player, title, concise description, and an elegant styled button linking directly to Google Drive (`.video-drive-btn`). Never group multiple unrelated videos into one player.
@@ -112,6 +121,25 @@ flowchart TD
     .container { box-shadow: none; border: none; max-width: 100%; }
     .gallery-grid, .video-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .gallery-item img { height: 155px; }
+
+    /* Status tables print optimization */
+    .status-table { font-size: 9.8px !important; }
+    .status-table th { padding: 5px 8px !important; font-size: 9px !important; }
+    .status-table td { padding: 4px 8px !important; font-size: 9.6px !important; line-height: 1.32 !important; }
+    .status-table tr { page-break-inside: avoid !important; break-inside: avoid !important; }
+    .status-table tr.row-changed { background-color: #f0fdf4 !important; }
+    .status-table tr.row-changed td:first-child { border-left: 3.5px solid #15803d !important; font-weight: 800; }
+    .badge-today {
+        display: inline-block; font-size: 8px !important; font-weight: 700 !important;
+        text-transform: uppercase; color: #15803d !important; background-color: #dcfce7 !important;
+        border: 1px solid #86efac !important; padding: 1px 5px !important; border-radius: 8px; margin-left: 5px;
+    }
+    .col-id { width: 70px !important; }
+    .col-tag { width: 150px !important; }
+    .tag { font-size: 8.5px !important; padding: 1px 5px !important; }
+    .summary-card { padding: 9px 12px !important; margin-top: 10px !important; margin-bottom: 10px !important; }
+    .summary-card h4 { font-size: 10.5px !important; margin-bottom: 3px !important; }
+    .summary-card p { font-size: 9.5px !important; line-height: 1.35 !important; }
 }
 ```
 
@@ -125,6 +153,7 @@ python -c "import subprocess; subprocess.run(['C:\\Program Files (x86)\\Microsof
 - [x] All images visually verified and correctly captioned.
 - [x] Dairy yield (strictly recorded in Litres) and material delivery tables accurate.
 - [x] Heavy plant equipment consolidated as Backhoe Loader without duplicate entries.
+- [x] Daily Putting Greens (1–18) and Championship Teeboxes (1–18) status audit ledger included and updated from previous day (reports from Sep 16th onwards).
 - [x] All reported tasks strictly grounded in provided field updates (no hallucinated tasks).
 - [x] Headless Edge PDF generated cleanly without errors.
 - [x] PDF file size verified (5 MB – 40 MB).
@@ -141,9 +170,14 @@ Executive reports MUST maintain generous breathing room, large readable fonts, a
    - Each site's primary narrative card must have its own dedicated full page (`padding: 26px 30px`, body text `14.5px–15.5px`, line height `1.65–1.72`, bullets `13.8px–14.5px` with `13px–16px` margins). Fills ~75–85% of the page.
 2. **Dedicated Full-Page Data Tables**:
    - Multi-row or complex data tables must be placed on their own dedicated page with generous cell padding (`12px–16px`) and readable font sizes (`12.5px–13px`).
-3. **Dedicated Photo Galleries (Strictly 2 Columns & Continuous Straight Flow)**:
+3. **Dedicated Spreads for Greens & Teeboxes Status Ledgers (From Sep 16th Onwards)**:
+   - The 18-hole **Putting Greens Status (Greens 1 – 18)** table must occupy its own dedicated full page in print.
+   - The 18-hole **Championship Teeboxes Status (Tees 1 – 18)** table alongside the **Operations Synthesis** summary box must occupy its own dedicated full page in print.
+   - Print font size ~`9.8px`, padding ~`4px 8px`, ensuring clean 1-page fit per 18-row table without spilling or overflow.
+4. **Dedicated Photo Galleries (Strictly 2 Columns & Continuous Straight Flow)**:
    - Field photos MUST ALWAYS display in a spacious **2-column grid** (`repeat(2, 1fr)`) with uncompressed image heights (`175px–195px`). Never compress photos into 3 columns.
    - **Continuous Flow (No Image Grouping):** Stop putting images into groups or multiple fragmented cards. All photos for each location must follow each other straight in a single continuous photo gallery card.
-4. **Natural Page Count (Zero Artificial Compression)**:
+5. **Natural Page Count (Zero Artificial Compression)**:
    - Reports must expand naturally to whatever page count is required (e.g., 14, 16, 18, 20+ pages). Readability, generous breathing room, and executive aesthetic excellence always take precedence over any arbitrary page target.
+
 
