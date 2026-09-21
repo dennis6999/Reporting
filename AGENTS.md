@@ -152,14 +152,41 @@ When converting HTML reports to PDF using headless Edge/Chrome, you **MUST** inc
     .gallery-grid, .video-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .gallery-item img { height: 155px; }
 
-    /* 5. STATUS TABLES & CHANGED ROW INDICATORS */
+    /* 5. STATUS TABLES & CHANGED ROW INDICATORS (ANTI-COMPRESSION SIZING) */
+    .status-table { width: 100% !important; }
+    .status-table tr { page-break-inside: avoid !important; break-inside: avoid !important; }
     .status-table tr.row-changed { background-color: #f0fdf4 !important; }
     .status-table tr.row-changed td:first-child { border-left: 3.5px solid #15803d !important; font-weight: 800; }
     .badge-today {
-        display: inline-block; font-size: 8px !important; font-weight: 700 !important;
+        display: inline-block; font-size: 7.5px !important; font-weight: 700 !important;
         text-transform: uppercase; color: #15803d !important; background-color: #dcfce7 !important;
-        border: 1px solid #86efac !important; padding: 1px 5px !important; border-radius: 8px; margin-left: 5px;
+        border: 1px solid #86efac !important; padding: 0.5px 4px !important; border-radius: 6px; margin-left: 4px;
     }
+
+    /* Dedicated Putting Greens Card (#greens-ledger-card) */
+    #greens-ledger-card { padding: 14px 18px !important; margin-bottom: 0 !important; break-inside: avoid !important; page-break-inside: avoid !important; }
+    #greens-ledger-card .card-header { font-size: 15.5px !important; margin-bottom: 6px !important; }
+    #greens-ledger-card .editorial-text { font-size: 12.5px !important; line-height: 1.4 !important; margin-bottom: 6px !important; }
+    #greens-ledger-card .status-table { font-size: 9.4px !important; }
+    #greens-ledger-card .status-table th { padding: 4.5px 8px !important; font-size: 9px !important; }
+    #greens-ledger-card .status-table td { padding: 4.2px 8px !important; font-size: 9.4px !important; line-height: 1.3 !important; }
+    #greens-ledger-card .col-id { width: 74px !important; }
+    #greens-ledger-card .col-tag { width: 160px !important; }
+    #greens-ledger-card .tag { font-size: 8.2px !important; padding: 1.2px 4.5px !important; }
+
+    /* Dedicated Championship Teeboxes Card (#tees-ledger-card) */
+    #tees-ledger-card { padding: 16px 20px !important; margin-bottom: 0 !important; break-inside: avoid !important; page-break-inside: avoid !important; }
+    #tees-ledger-card .card-header { font-size: 16px !important; margin-bottom: 8px !important; }
+    #tees-ledger-card .editorial-text { font-size: 12.5px !important; line-height: 1.4 !important; margin-bottom: 8px !important; }
+    #tees-ledger-card .status-table { font-size: 9.6px !important; }
+    #tees-ledger-card .status-table th { padding: 5px 8px !important; font-size: 9.2px !important; }
+    #tees-ledger-card .status-table td { padding: 4.5px 8px !important; font-size: 9.6px !important; line-height: 1.32 !important; }
+    #tees-ledger-card .col-id { width: 72px !important; }
+    #tees-ledger-card .col-tag { width: 155px !important; }
+    #tees-ledger-card .tag { font-size: 8.2px !important; padding: 1.2px 4.5px !important; }
+    #tees-ledger-card .summary-card { padding: 9px 12px !important; margin-top: 8px !important; margin-bottom: 0 !important; }
+    #tees-ledger-card .summary-card h4 { font-size: 10.5px !important; margin-bottom: 2px !important; }
+    #tees-ledger-card .summary-card p { font-size: 9.5px !important; line-height: 1.35 !important; }
 }
 ```
 
@@ -209,15 +236,24 @@ AI assistants must NEVER compress font sizes, shrink line heights, tighten bulle
      - Cell padding: `8px 12px` (print).
      - Ensure tables and accompanying clarification callouts fit completely on their dedicated page without spilling callouts onto blank overflow pages.
 
-3. **Dedicated Spreads for Greens & Teeboxes Status Ledgers (From September 16th, 2026 Onwards)**:
-   - The 18-hole **Putting Greens Status (Greens 1 – 18)** table MUST occupy its own dedicated full page in print.
-   - The 18-hole **Championship Teeboxes Status (Tees 1 – 18)** table alongside the **Operations Synthesis** callout card MUST occupy its own dedicated full page in print.
-   - **Print CSS Standards for Status Tables:**
-     - `@media print` table font-size: `9.8px`, cell padding: `4px 8px` (line-height: `1.32`).
-     - ID column width: `70px`, Tag column width: `150px`, Tag badge font size: `8.5px` (`padding: 1px 5px`).
-     - Table rows: `page-break-inside: avoid !important; break-inside: avoid !important;`.
-     - Operations Synthesis summary card: padding `9px 12px`, font size `9.5px` (line height `1.35`).
-     - Both 18-row tables must fit cleanly, comfortably, and entirely onto their respective single A4 pages without awkward multi-page spilling or compression.
+3. **Dedicated Spreads for Greens & Teeboxes Status Ledgers (Anti-Compression & Page-Fitting Rule)**:
+   - The 18-hole **Putting Greens Status (Greens 1 – 18)** table MUST occupy its own dedicated full page in print (`id="greens-ledger-card"`).
+   - The 18-hole **Championship Teeboxes Status (Tees 1 – 18)** table alongside the **Operations Synthesis** callout card MUST occupy its own dedicated full page in print (`id="tees-ledger-card"`).
+   - **Anti-Compression & Page-Fitting Standards to Avoid Excess Bottom Whitespace:**
+     - NEVER over-compress the status tables (e.g., cell padding below `4px`, font sizes below `9px`, or line-heights below `1.25`) as this leaves an awkward, empty white void covering the bottom half of the A4 page.
+     - Conversely, do NOT make the typography too large so that the 18 rows spill over onto a second page.
+     - **Exact Balanced Standards for `#greens-ledger-card`:**
+       - Cell padding: `4.2px 8px !important;`, font-size: `9.4px !important;`, line-height: `1.3 !important;`.
+       - Header cell padding: `4.5px 8px !important;`, font-size: `9px !important;`.
+       - Card padding: `14px 18px !important;`, header font-size: `15.5px !important;`, editorial text: `12.5px !important;` (line-height: `1.4 !important;`).
+       - Tag width: `160px !important;`, ID width: `74px !important;`, tag font-size: `8.2px !important;`.
+     - **Exact Balanced Standards for `#tees-ledger-card`:**
+       - Cell padding: `4.5px 8px !important;`, font-size: `9.6px !important;`, line-height: `1.32 !important;`.
+       - Header cell padding: `5px 8px !important;`, font-size: `9.2px !important;`.
+       - Card padding: `16px 20px !important;`, header font-size: `16px !important;`, editorial text: `12.5px !important;` (line-height: `1.4 !important;`).
+       - Operations Synthesis summary card: padding `9px 12px !important;`, font-size: `9.5px !important;` (line-height: `1.35 !important;`).
+       - Tag width: `155px !important;`, ID width: `72px !important;`, tag font-size: `8.2px !important;`.
+     - Both 18-row tables must fit cleanly, comfortably, and entirely onto their respective single A4 pages, filling the page naturally without awkward multi-page spilling or excessive bottom whitespace.
 
 4. **Dedicated Spread for Canine Unit & Compound Maintenance**:
    - The Chaka Farms Canine Unit Care, Training & Routine Log and Compound Cleanliness Log MUST be given their own dedicated, spacious spread with individual supervisor badges (Willy for Canine, Margaret & Monica for Compound).
