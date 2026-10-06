@@ -36,7 +36,7 @@ The objective of this system is to **fully automate the ingestion, AI visual ins
 | Project Site | Primary Supervisors | Key Operations & Assets | Ground Truth Rules |
 | :--- | :--- | :--- | :--- |
 | ⛳ **Mucheru World of Golf** | **Ken & Mgr Gichuhi** *(Kinoti)* | • Championship Greens (Nos. 10, 11, 14, 15, 16)<br>• Teeboxes (Nos. 4, 18)<br>• Earthmoving, spoil spreading, drainage trenches<br>• Hardcore rock deliveries from Kiganjo quarry<br>• Honi river property, stilt cabin structural assessment | • **Merge Ken & Mgr Gichuhi**: Both report on Golf; their updates must be merged into one cohesive section.<br>• **Deduplication**: Never repeat tasks or double-count hours.<br>• **Property Walk**: Property walk with Prof Ciira (DeKUT) was conducted by **Mr. Joe**, not Dennis. |
-| 🚜 **Chaka Farms** | **Willy, Kamandau & Kinoti** | • Dairy cow herd production<br>• Farm canine unit (kennel manners, paddock grazing)<br>• Goat herd socialization<br>• Poultry/Goose egg hatchery<br>• Farm plumbing & compound Wi-Fi AP | • **Dairy Milk Yield**: MUST ALWAYS be formatted strictly in **Litres (L)**, NEVER in kg.<br>• **Calculation**: $\text{Gross} = \text{Morning} + \text{Evening}$; $\text{Deductions} = \text{Kids} + \text{Gladys}$; $\text{Net} = \text{Gross} - \text{Deductions}$.<br>• **Canine Unit**: Farm working dogs belong here. |
+| 🚜 **Chaka Farms** | **Willy, Kamandau & Kinoti** | • Dairy cow herd production<br>• Farm canine unit (kennel manners, paddock grazing)<br>• Goat herd socialization<br>• Poultry/Goose egg hatchery<br>• Farm plumbing & compound Wi-Fi AP | • **Dairy Milk Yield**: MUST ALWAYS be formatted strictly in **Litres (L)**, NEVER in kg.<br>• **Reconciliation Formula**: $\text{Commercial Sold} = \text{Morning Sold} + \text{Evening Sold}$; $\text{Allocations} = \text{Kids} + \text{Gladys} + \text{Maasai}$; $\text{Total Gross Yield} = \text{Commercial Sold} + \text{Allocations}$.<br>• **Canine Unit**: Farm working dogs belong here. |
 | 🏡 **Kabete Residence** | **Maggie Njoki** *(Oversees operations & shares updates; not a site supervisor)* | • Outdoor sunken fireplace deep excavation<br>• Stormwater river drainage masonry<br>• Cold room heavy-duty steel shelving<br>• Pergola terrace scrubbing & lounge furniture<br>• Kitchen mahogany cooker plinth<br>• Water storage tank anti-corrosion painting | • **Domestic Pets**: Ajabu dog and cats belong strictly to Kabete Residence, NOT Chaka Farms.<br>• **Role**: Njoki oversees daily operations and shares updates; she is NOT a supervisor. |
 | 🌿 **Amani Cottage** | **Edwin** | • Front lawn oscillating sprinkler irrigation<br>• Selective weed killer herbicide spraying<br>• Two-story interior dusting & housekeeping | • Keep reporting clean and concise. |
 
@@ -44,10 +44,10 @@ The objective of this system is to **fully automate the ingestion, AI visual ins
 
 ## 🧮 3. Standard Operating Procedure (SOP) Math & Rules
 
-1. **Dairy Cow Milking Production**:
-   * **Gross Yield** = Morning Yield + Evening Yield (e.g. $5.5\text{L} + 2.0\text{L} = 7.5\text{L}$).
-   * **Deductions** = Goat Kids Ration ($1.0\text{L}$) + Gladys Allocation ($0.5\text{L}$) = $1.5\text{L}$.
-   * **Net Available Farm Balance** = $\text{Gross} - \text{Deductions} = 6.0\text{L Net Available}$.
+1. **Dairy Cow Milking Production & Sales Reconciliation**:
+   * **Commercial Milk Sold** = Morning Sold + Evening Sold (e.g. $2.5\text{L} + 2.5\text{L} = 5.0\text{L Sold}$).
+   * **Internal Farm Allocations** = Goat Kids Ration ($1.0\text{L}$) + Gladys Allocation ($0.5\text{L}$) + Maasai Allocation ($0.5\text{L}$) = $2.0\text{L}$.
+   * **Total Gross Cow Production** = $\text{Commercial Sold} + \text{Internal Allocations}$ (e.g. $5.0\text{L} + 2.0\text{L} = \mathbf{7.0\text{L Gross Harvest}}$).
    * **Unit Rule**: Strictly Litres (L).
 2. **Heavy Machinery Billing**:
    * Consolidate all earthmoving and tipper loading under **Backhoe Loader (XGMA)**.
@@ -57,6 +57,9 @@ The objective of this system is to **fully automate the ingestion, AI visual ins
 4. **Photo Galleries (No Image Grouping / Continuous Straight Flow)**:
    * Stop putting images into groups or multiple fragmented cards with thematic headings.
    * All verified site photos must follow each other straight in a single continuous photo gallery card per project site in a 2-column grid.
+5. **Direct HTML Authoring (No Python Generator Scripts)**:
+   * `index.html` is the sole source of truth. Always create and edit `index.html` directly using native file tools (`write_to_file` and `replace_file_content`).
+   * NEVER write Python or Node generator scripts to assemble or modify `index.html`. Python is strictly reserved for the headless Edge PDF compilation command and read-only pre/post-flight checks.
 
 ---
 

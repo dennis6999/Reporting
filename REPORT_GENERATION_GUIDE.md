@@ -39,24 +39,37 @@ flowchart TD
    - Place images into their exact corresponding card component and gallery.
 3. **Pet Ownership Rule:**
    - Domestic pets (**Ajabu the Golden Retriever** and **resident cats Aiko/Reo**) belong to **Kabete Residence**, NOT Chaka Farms.
-4. **Milk Units & Production vs. Allocation Rule:**
-   - Dairy milk yield MUST ALWAYS be formatted in **Litres** (e.g., `8.0 Litres`, `Morning: 5.5L | Evening: 2.5L`), **NEVER** in Kilograms (KG/kg).
-   - **Dairy Cow Milk Yield** is the **Total Gross Milk Production**.
-   - **Allocations & Rations** (e.g., Goat Kids Ration, Gladys Allocation, Maasai Allocation, staff rations) are **deductions drawn from this total yield**, NOT additions. Never sum allocations with cow yield to fabricate a higher total. The total milk produced is strictly the gross cow yield, and deductions are subtracted to show net remaining farm balance.
+4. **Milk Units & Reconciliation Rule (Effective October 1st, 2026 Onwards):**
+   - Dairy milk yield MUST ALWAYS be formatted in **Litres** (e.g., `7.0 Litres`, `Morning: 2.5L | Evening: 2.5L`), **NEVER** in Kilograms (KG/kg).
+   - **Commercial Sales Ground Truth:** The morning and evening numbers recorded by Kamandau in field logs represent the milk **sold/dispatched** for commercial sale (`Commercial Sales`).
+   - **Internal Farm Allocations:** Routine disbursements (Goat Kids Ration [1.0L], Gladys [0.5L], Maasai [0.5L]) are shared on-farm in addition to commercial sales.
+   - **Total Gross Cow Milk Production Formula:**
+     $$\text{Total Gross Milk Harvested} = \text{Morning Sold} + \text{Evening Sold} + \text{Internal Farm Allocations}$$
+     *(Example: 2.5L morning sold + 2.5L evening sold + 2.0L internal allocations = **7.0L Gross Cow Production**).*
+   - **Ledger Presentation:** Daily dairy tables must clearly present Commercial Sales Dispatches, Internal Farm Allocations, and Total Gross Milk Harvested (fully balanced with zero discrepancy).
 5. **Heavy Plant Rule (Backhoe Loader):**
    - The **Front Loader** and **Backhoe** refer to the same physical machine (**Backhoe Loader** / XGMA 765N). Consolidate all earthmoving/loading hours under a single Backhoe Loader entry. Never split them into separate machines or create duplicate billing rows.
-6. **Strict Grounding & Anti-Hallucination:**
+6. **Strict Grounding & Simple Plain Language:**
    - AI assistants MUST NEVER assume, invent, or add unmentioned routine tasks (e.g. unstated shed cleaning, garden sweeping). Only report explicitly provided updates, verified media, and factual logs.
+   - **Simple Vocabulary Rule (No Heavy Technical Terms):** Keep vocabulary simple, direct, and straightforward across narratives, tables, and photo captions. Strictly avoid unnecessary heavy technical jargon (e.g., use "red soil spread around greens to level the ground" instead of "red loam topsoil application to contour aprons and feather green complexes into playing corridors").
 7. **Rich Visual Captions:**
-   - Include a concise title (`<h4>`) and descriptive caption (`<p>`) detailing the observed equipment, progress stage, terrain, and operational details.
+   - Include a concise title (`<h4>`) and descriptive caption (`<p>`) detailing the observed equipment, progress stage, terrain, and operational details in clear, simple language.
 8. **Kabete Residence Personnel Rule (Njoki):**
    - **Njoki is NOT a supervisor.** She oversees daily operations and communicates/shares field updates on what has been accomplished. Never label her as a "supervisor" or write "under the supervision of Njoki".
 9. **No Image Grouping Rule (Continuous Straight Photo Flow):**
    - **Stop putting images into groups.** Never divide photos into separate thematic cards, sub-groups, or multiple fragmented cards with distinct sub-headings (e.g., do not split Golf photos into "Fairway Clearing" vs "Green Foundation", or Kabete photos into "Structural Works" vs "Fireplace Excavation").
    - All photographic field evidence for each project site must be housed inside **one single continuous photo gallery card** titled `📸 Photographic Field Evidence — [Site Name]`.
    - All verified photos within that gallery must simply follow each other straight in the 2-column grid.
-10. **Daily Greens & Teeboxes Status Audit Rule (Effective From 16th September 2026 Onwards):**
+10. **Minimal Cropping Rule for Images in Cards (Preserve Main Subject):**
+    - When placing images in cards, there must be **minimal cropping** of the image.
+    - Images fail to serve their purpose if the main subject (workers, heavy plant equipment, pets, structural masonry, gates, roofs) is cropped off.
+    - Always display card images so the entire photograph is visible without slicing off the subject. Use `object-fit: contain; background-color: #f8fafc;` (or flexible containers) so photos are never cropped aggressively.
+11. **Daily Greens & Teeboxes Status Audit Rule (Effective From 16th September 2026 Onwards):**
     - Daily operations reports must include the complete 18-hole **Putting Greens Status (Greens 1–18)** and **Championship Teeboxes Status (Tees 1–18)** status tables, plus the **Operations Synthesis** summary box, as modeled in `September 2026/Course Status Greens and Tees/Mucheru_Golf_Greens_and_Tees_Status_Report.pdf`.
+    - **Latest Activity & Single Date Only Rule (Putting Greens):**
+      - In the `Current Technical & Agronomic State` column, **only state what was done last**.
+      - **NEVER** give status for more than 1 previous date or accumulate historical progression lists.
+      - Use **just the latest date** a green was worked on (e.g., `Surplus red soil spread around outer surrounds and leveled (Sep 30)`).
     - **Day-to-Day State Tracking Rule:** Only update the greens and tees that underwent active work on that specific day (updating technical status, badge tag, and date marker e.g. `(Sep 16)`). If there was no work on certain greens or tees on that day, **leave them exactly as they were recorded on the previous day's report** without altering them. Continuous state tracking flows forward day-to-day.
     - **Subtle Visual Indicator for Changed Items (`.row-changed` & `.badge-today`):**
       - Any green or teebox modified on that day must have `class="row-changed"` on its table row (`<tr>`).
@@ -76,6 +89,7 @@ flowchart TD
 - **Key Accomplishment Highlight Callouts:** Green boxes (`.success-box`) to showcase key accomplishments and completed objectives (e.g., `🎯 Key Accomplishment: Main House Roof Painting Complete`).
 - **Photo Galleries:** Responsive grid layout with image cards containing captions.
 - **Video Cards & Direct Drive Links:** Present each video in a dedicated `.video-card` component with an embedded `<video>` player, title, concise description, and an elegant styled button linking directly to Google Drive (`.video-drive-btn`). Never group multiple unrelated videos into one player.
+- **Single Source of Truth (Direct Authoring):** AI assistants must ALWAYS create, edit, and maintain `index.html` directly using native file tools (`write_to_file`, `replace_file_content`). NEVER write separate Python or Node generator scripts to assemble or update HTML reports.
 - **Footer Signature:** Every report MUST always conclude with: `<h3>Compiled by Dennis</h3>`. Do NOT add or invent unmentioned job titles or subtitles.
 
 ---
@@ -120,7 +134,7 @@ flowchart TD
     body { background-color: #ffffff; padding: 0; }
     .container { box-shadow: none; border: none; max-width: 100%; }
     .gallery-grid, .video-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-    .gallery-item img { height: 155px; }
+    .gallery-item img { height: 165px; object-fit: contain; background-color: #f8fafc; }
 
     /* Status tables print optimization */
     .status-table { font-size: 9.8px !important; }
@@ -174,9 +188,10 @@ Executive reports MUST maintain generous breathing room, large readable fonts, a
    - The 18-hole **Putting Greens Status (Greens 1 – 18)** table must occupy its own dedicated full page in print.
    - The 18-hole **Championship Teeboxes Status (Tees 1 – 18)** table alongside the **Operations Synthesis** summary box must occupy its own dedicated full page in print.
    - Print font size ~`9.8px`, padding ~`4px 8px`, ensuring clean 1-page fit per 18-row table without spilling or overflow.
-4. **Dedicated Photo Galleries (Strictly 2 Columns & Continuous Straight Flow)**:
-   - Field photos MUST ALWAYS display in a spacious **2-column grid** (`repeat(2, 1fr)`) with uncompressed image heights (`175px–195px`). Never compress photos into 3 columns.
+4. **Dedicated Photo Galleries (Strictly 2 Columns, Continuous Flow & Minimal Cropping)**:
+   - Field photos MUST ALWAYS display in a spacious **2-column grid** (`repeat(2, 1fr)`). Never compress photos into 3 columns.
    - **Continuous Flow (No Image Grouping):** Stop putting images into groups or multiple fragmented cards. All photos for each location must follow each other straight in a single continuous photo gallery card.
+   - **Minimal Cropping Standard:** Use `object-fit: contain; background-color: #f8fafc;` with generous height (`200px–260px`, print: `165px`) so the complete photo and its main subject (workers, machinery, pets, construction elements) are 100% visible and uncropped.
 5. **Natural Page Count (Zero Artificial Compression)**:
    - Reports must expand naturally to whatever page count is required (e.g., 14, 16, 18, 20+ pages). Readability, generous breathing room, and executive aesthetic excellence always take precedence over any arbitrary page target.
 

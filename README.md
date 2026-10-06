@@ -49,9 +49,11 @@ Reporting/
 
 ## 📜 Key SOP Guidelines
 
-* **Milk Measurement**: Dairy cow yields are recorded strictly in **Litres (L)**, never kilograms. Deductions (rations for goat kids, staff) are subtracted from gross yield.
+* **Milk Accounting**: Dairy milk is recorded strictly in **Litres (L)**, never kilograms. Kamandau's morning/evening tallies represent commercial milk sold, and internal farm allocations (goat kids, staff) are added to sales to establish the true total gross cow yield ($\text{Total Harvest} = \text{Milk Sold} + \text{Internal Allocations}$).
 * **Machinery Consolidation**: Front Loader and Backhoe refer to the same vehicle (**Backhoe Loader**); operational hours and billing are consolidated without duplicate entries.
-* **Daily Greens & Teeboxes Status Ledger (From Sep 16th)**: Daily reports include the 18-hole Putting Greens (1–18) and Championship Teeboxes (1–18) status tables. Only update items worked on during that day; untouched greens and tees remain exactly as recorded on the previous day.
+* **Daily Greens & Teeboxes Status Ledger (From Sep 16th)**: Daily reports include the 18-hole Putting Greens (1–18) and Championship Teeboxes (1–18) status tables. Only update items worked on during that day, stating **only what was done last with just the single latest date** (never listing more than 1 previous date). Untouched greens and tees remain exactly as recorded on the previous day.
+* **Minimal Image Cropping**: Card images must have minimal cropping (`object-fit: contain; background: #f8fafc;`) so the main subject (workers, heavy plant, animals, structures) is never cut off.
+* **Simple Vocabulary**: Reports must strictly use clear, simple English without unnecessary heavy technical terms or jargon.
 * **Factual Grounding**: Reports strictly reflect verified supervisor updates and media assets without assumed or hallucinated tasks.
 * **Video Media**: Videos are hosted and linked directly via Google Drive action buttons in report cards.
 

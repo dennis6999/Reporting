@@ -22,6 +22,13 @@ The reporting workflow covers four primary sites. Ensure tasks, updates, and ass
      - **Day-to-Day Incremental State Continuity Rule:**
        - **Only update what changed:** On each reporting day, update solely the technical description, milestone tag, and date marker (e.g., `(Sep 16)`) for the specific greens and teeboxes that underwent construction, trenching, earthwork, or shaping on that day.
        - **Unchanged Greens and Tees:** If there was no work or change on certain greens or tees on that day, **leave their description and status tag exactly as they were on the preceding day's report**. Continuity is strictly preserved day-to-day from the preceding daily report's ledger.
+     - **Latest Activity & Single Date Rule (Putting Greens Status Audit):**
+       - In the `Current Technical & Agronomic State` column, **only state what was done last**.
+       - **NEVER** give status for more than 1 previous date or accumulate historical progression lists.
+       - Use **just the latest date** a green was worked on (e.g., `Surplus red soil spread around outer surrounds and leveled (Sep 30)`).
+     - **Simple Vocabulary Rule (No Heavy Technical Terms):**
+       - Keep vocabulary simple, direct, and straightforward.
+       - Strictly avoid unnecessary use of heavy technical jargon (e.g., replace "agronomic profile feathering" or "fractured hardcore foundation matrix" with clear, simple terms like "red soil spread to level surrounds").
      - **Visual Indicator for Changed Greens & Tees (`.row-changed` & `.badge-today`):**
        - To make daily changes instantly identifiable while maintaining executive subtlety:
          1. Apply the class `class="row-changed"` to the table row (`<tr>`) of any green or tee modified on that reporting day.
@@ -32,10 +39,17 @@ The reporting workflow covers four primary sites. Ensure tasks, updates, and ass
 
 2. **Chaka Farms**
    - **Activities:** Livestock & dairy production (milking yield logs: morning/evening), canine unit care (kennel sanitation, dog bathing & grooming, manners training, afternoon off-leash walking, goat socialization), farm plumbing maintenance (unblocking drainage, sink repairs), paddock rain hose irrigation, compound & garden cleanliness.
-   - **Milk Units & Production vs. Allocation Rule:**
-     - Milk yield units MUST ALWAYS be recorded and displayed in **Litres** (or 'L'), NEVER in Kilograms (KG/kg).
-     - **Dairy Cow Milk Yield** represents the **Total Gross Milk Production** (e.g., 5.5L morning + 2.5L evening = 8.0L Total).
-     - **Rations & Allocations (Goat Kids Ration, Gladys, Maasai, staff):** These are **deductions/disbursements drawn OUT OF the total milk yield**, NOT additions to it. NEVER add allocations/rations to the cow milk yield to create a higher total. Clearly distinguish Gross Production, Total Allocations Deducted, and Net Remaining Farm Balance.
+   - **Milk Units & Reconciliation Rule (Effective October 1st, 2026 Onwards):**
+     - **Units:** Milk volume MUST ALWAYS be recorded and displayed in **Litres** (or 'L'), NEVER in Kilograms (KG/kg).
+     - **Field Log vs Commercial Sales Ground Truth:** The morning and evening figures recorded by Kamandau in his daily log represent the volume of milk **sold/dispatched** for commercial sale (`Commercial Sales`).
+     - **Internal Farm Allocations:** Routine disbursements (e.g., 1.0L Goat Kids Ration [0.5L morning + 0.5L evening], 0.5L Gladys staff allocation, 0.5L Maasai security allocation = 2.0L total) are distributed directly on-farm in addition to commercial sales.
+     - **Gross Cow Milk Harvest Formula:** Total milk produced is calculated by adding commercial sales to internal farm allocations:
+       $$\text{Total Gross Milk Harvested} = \text{Morning Sold} + \text{Evening Sold} + \text{Internal Farm Allocations}$$
+       *(Example: 2.5L morning sold + 2.5L evening sold + 2.0L internal allocations = **7.0L Total Gross Milk Harvested**).*
+     - **Ledger Structure:** Daily Dairy Milking tables must clearly distinguish:
+       1. **Commercial Milk Sales (Dispatched):** Morning session, evening session, and daily sales total.
+       2. **Internal Farm Allocations:** Goat kids, Gladys, Maasai allocations.
+       3. **Total Gross Milk Harvested:** Total sales + total farm allocations (100% accounted for, zero discrepancy).
    - **Supervisors:** Willy (Canine & Plumbing), Kamandau (Milking), Margaret & Monica (Gardens & Compound).
    - **Visual Theme:** Farm Amber (`#d97706`).
 
@@ -52,10 +66,14 @@ The reporting workflow covers four primary sites. Ensure tasks, updates, and ass
 
 ---
 
-## 2. Strict Factual Accuracy & Anti-Hallucination Rule
+## 2. Strict Factual Accuracy & Simple Plain Language
 
 - **Never Assume or Invent Unmentioned Activities:** AI assistants MUST NEVER hallucinate, assume, fabricate, or insert routine activities, maintenance tasks, cleanings, or logs that were not explicitly provided in the user's prompt or daily field notes.
 - **Strict Grounding:** If an activity (e.g. cowshed/goat shed wash, garden sweeping, plumbing repair) is not mentioned in the daily brief, **DO NOT add it or assume it took place**. Every bullet point, narrative log, and activity card must be strictly grounded in verified user updates, uploaded media, or explicit daily instructions.
+- **Simple & Clear Vocabulary Rule (No Unnecessary Heavy Technical Terms):**
+  - Use simple, straightforward language across the entire report (narratives, status ledgers, photo captions, and summaries).
+  - Strictly avoid unnecessary, pretentious, or heavy technical jargon (e.g., replace "agronomic profile feathering" with "spreading red soil to level surrounds", replace "geomembrane polyethylene anchor trench backfill" with "tucking dam liner into anchor trench and covering with soil").
+  - Plain, clear, professional English communicates progress far more effectively than complicated technical terms.
 
 ---
 
@@ -77,6 +95,12 @@ The reporting workflow covers four primary sites. Ensure tasks, updates, and ass
    - **Stop putting images into groups.** AI assistants MUST NEVER divide a site's photos into separate thematic cards, sub-groups, or multiple fragmented gallery cards with custom thematic headings (e.g., dividing photos into distinct cards like "Fairway Clearing" vs "Green Foundation", or "Structural Works" vs "Fireplace Excavation").
    - All photographic field evidence for a given project site must be presented in **one single continuous photo gallery card** titled `📸 Photographic Field Evidence — [Site Name]`.
    - Within this unified gallery card, all verified site images must follow each other straight, flowing sequentially one after another in the standard 2-column grid layout (`grid-template-columns: repeat(2, 1fr)`).
+
+5. **Minimal Cropping Rule for Images in Cards (Preserve Main Subject)**
+   - When putting images in cards, there must be **minimal cropping** of the image.
+   - Images do not serve their purpose when the main subject (workers, heavy machinery, pets, construction elements, roofs, gates) is cropped off.
+   - Always display card images so the entire photograph is visible without slicing off the subject. Use `object-fit: contain; background-color: #f8fafc;` (or flexible containers) in both screen and print CSS.
+   - Never apply aggressive fixed-height `object-fit: cover` that chops off workers' heads, machine booms, animals, or building features.
 
 ---
 
@@ -150,7 +174,7 @@ When converting HTML reports to PDF using headless Edge/Chrome, you **MUST** inc
     body { background-color: #ffffff; padding: 0; }
     .container { box-shadow: none; border: none; max-width: 100%; }
     .gallery-grid, .video-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-    .gallery-item img { height: 155px; }
+    .gallery-item img { height: 165px; object-fit: contain; background-color: #f8fafc; }
 
     /* 5. STATUS TABLES & CHANGED ROW INDICATORS (ANTI-COMPRESSION SIZING) */
     .status-table { width: 100% !important; }
@@ -258,15 +282,30 @@ AI assistants must NEVER compress font sizes, shrink line heights, tighten bulle
 4. **Dedicated Spread for Canine Unit & Compound Maintenance**:
    - The Chaka Farms Canine Unit Care, Training & Routine Log and Compound Cleanliness Log MUST be given their own dedicated, spacious spread with individual supervisor badges (Willy for Canine, Margaret & Monica for Compound).
 
-5. **High-Impact Photo Galleries (Strictly 2 Columns & Continuous Flow)**:
+5. **High-Impact Photo Galleries (Strictly 2 Columns, Continuous Flow & Minimal Cropping)**:
    - Photo galleries MUST ALWAYS display in a **spacious 2-column grid** (`grid-template-columns: repeat(2, 1fr)`).
    - NEVER compress images into 3 columns or create a 3-column class (`gallery-grid-3col`).
    - **Continuous Straight Flow (No Grouping):** Do NOT group images or split them across multiple cards with thematic sub-headings. All photos for a project site must follow each other straight in a single continuous gallery card.
-   - Photo image height: `175px–185px`, object-fit `cover`.
+   - **Minimal Cropping Standard:** Use `object-fit: contain; background-color: #f8fafc;` with height `200px–260px` (print: `165px`) so the complete photo and its main subject (workers, equipment, pets, structural works) remain 100% visible and uncropped.
    - Info block padding: `11px 14px`, titles `13.5px`, captions `12px` (line-height `1.4`).
 
 6. **Page Count Integrity (Zero Artificial Compression)**:
    - There is NO arbitrary page limit. Never sacrifice visual comfort, font sizes, line heights, or image layout to meet an arbitrary page count.
    - If a daily or monthly report requires 14, 16, 18, 20+ pages to breathe properly and maintain executive presentation, let it span that full length naturally.
+
+---
+
+## 8. Direct HTML File Authoring & Prohibited Intermediate Scripts (Single Source of Truth)
+
+- **Direct Authoring of `index.html`:**
+  - `index.html` is the sole, authoritative source of truth for every daily operations report.
+  - AI assistants MUST ALWAYS create, edit, and update `index.html` directly using native file tools (`write_to_file` and surgical `replace_file_content`).
+- **Strictly Prohibited: Intermediate Python / Node Generator Scripts:**
+  - AI assistants MUST NEVER write intermediate generator scripts (e.g., `generate_report_[date].py`, Python template builders, or Node scripts) in scratch or workspace directories to generate or update `index.html`.
+  - Creating separate generator scripts introduces duplicate sources of truth, creates synchronization lag, litters the workspace with disposable scratch code, and adds an unnecessary layer of indirection.
+- **Strictly Permitted Uses of Python:**
+  - Python usage is strictly restricted to:
+    1. **Headless Microsoft Edge PDF Generation:** Executing `python -c "import subprocess; subprocess.run(['C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe', '--headless', '--print-to-pdf=...', '...'])"` (handles Windows file paths with spaces and commas without PowerShell quote-escaping bugs).
+    2. **Read-Only Pre-Flight / Post-Flight Validation:** Quick read-only verification scripts (e.g., verifying that all local image paths exist on disk, checking generated PDF file size, or verifying total PDF page count).
 
 

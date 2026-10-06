@@ -30,6 +30,7 @@ guest-flow/
 ~$*.docx
 *.tmp
 scratch*
+test_*.py
 
 # Operating System Caches
 Thumbs.db
