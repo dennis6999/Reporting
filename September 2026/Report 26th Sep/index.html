@@ -1,0 +1,2287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Operations Report — Saturday, 26th September 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-dark: #0f172a;
+            --accent: #059669;
+            --accent-light: #ecfdf5;
+            --golf-green: #15803d;
+            --golf-green-light: #f0fdf4;
+            --golf-green-border: #86efac;
+            --farm-amber: #d97706;
+            --farm-amber-light: #fffbeb;
+            --farm-amber-border: #fde68a;
+            --residence-purple: #6d28d9;
+            --residence-purple-light: #f5f3ff;
+            --residence-purple-border: #ddd6fe;
+            --apartment-rose: #be123c;
+            --apartment-rose-light: #fff1f2;
+            --apartment-rose-border: #fecdd3;
+            --cottage-teal: #0d9488;
+            --cottage-teal-light: #f0fdfa;
+            --cottage-teal-border: #99f6e4;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-300: #cbd5e1;
+            --slate-400: #94a3b8;
+            --slate-600: #475569;
+            --slate-700: #334155;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --radius-md: 12px;
+            --radius-lg: 16px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f4f6f9;
+            color: var(--slate-800);
+            line-height: 1.72;
+            font-size: 1.04rem;
+            padding: 40px 20px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            border: 1px solid var(--slate-200);
+        }
+
+        /* Header Block */
+        header {
+            background: #0f172a !important;
+            color: #ffffff !important;
+            padding: 46px 44px;
+            position: relative;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .badge-date {
+            background: rgba(255,255,255,0.18) !important;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.94rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(255,255,255,0.25);
+            color: #ffffff !important;
+        }
+        .report-tag {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #86efac !important;
+            font-weight: 700;
+        }
+        header h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            color: #ffffff !important;
+        }
+        header p.subtitle {
+            color: #cbd5e1 !important;
+            font-size: 1.05rem;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        /* Executive KPI Summary Bar */
+        .kpi-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            padding: 26px 44px;
+            background-color: var(--slate-50);
+            border-bottom: 1px solid var(--slate-200);
+        }
+        .kpi-card {
+            background: #ffffff;
+            padding: 20px 24px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--slate-200);
+            box-shadow: var(--shadow-sm);
+        }
+        .kpi-card .label {
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--slate-600);
+            letter-spacing: 0.5px;
+        }
+        .kpi-card .value {
+            font-size: 1.32rem;
+            font-weight: 800;
+            color: var(--slate-900);
+            margin-top: 4px;
+        }
+        .kpi-card .subtext {
+            font-size: 0.88rem;
+            color: var(--slate-600);
+            margin-top: 2px;
+        }
+
+        /* Executive Cover Overview Card */
+        .cover-overview-container {
+            padding: 28px 44px 0 44px;
+        }
+        .cover-overview-card {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--slate-200);
+            padding: 30px 34px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .main-content { padding: 38px 44px; }
+
+        /* Section Headers */
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--slate-200);
+            margin-bottom: 26px;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .section-title h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--slate-900);
+        }
+        .section-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: #ffffff !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .icon-golf { background-color: var(--golf-green) !important; }
+        .icon-farm { background-color: var(--farm-amber) !important; }
+        .icon-residence { background-color: var(--residence-purple) !important; }
+        .icon-apartment { background-color: var(--apartment-rose) !important; }
+        .icon-cottage { background-color: var(--cottage-teal) !important; }
+
+        .supervisor-badges-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .supervisor-badge {
+            background-color: var(--slate-100) !important;
+            color: var(--slate-700) !important;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            border: 1px solid var(--slate-200);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .supervisor-badge span {
+            color: var(--primary) !important;
+            font-weight: 700;
+        }
+
+        /* Standard Cards */
+        .card {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--slate-200);
+            padding: 34px 38px;
+            margin-bottom: 28px;
+            box-shadow: var(--shadow-sm);
+        }
+        .card-header, .card-heading {
+            font-size: 1.28rem;
+            font-weight: 800;
+            color: var(--slate-900);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .editorial-text {
+            font-size: 1.04rem;
+            color: var(--slate-700);
+            line-height: 1.72;
+            margin-bottom: 18px;
+        }
+
+        .highlight-list { list-style: none; }
+        .highlight-list li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 15px;
+            color: var(--slate-700);
+            font-size: 1rem;
+            line-height: 1.68;
+        }
+        .highlight-list li::before {
+            content: '•';
+            position: absolute;
+            left: 6px;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.45rem;
+        }
+        .highlight-list li strong {
+            color: var(--slate-900);
+            font-weight: 700;
+        }
+
+        /* Tables */
+        .data-table, .milk-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 18px;
+            font-size: 0.96rem;
+        }
+        .data-table th, .data-table td,
+        .milk-table th, .milk-table td {
+            padding: 14px 18px;
+            text-align: left;
+            border: 1px solid var(--slate-200);
+        }
+        .data-table th, .milk-table th {
+            background-color: var(--slate-100) !important;
+            font-weight: 700;
+            color: var(--slate-800);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .data-table td, .milk-table td {
+            color: var(--slate-700);
+            font-weight: 500;
+        }
+        .data-table tfoot td, .milk-table tfoot td {
+            background-color: var(--slate-100) !important;
+            font-weight: 800;
+            color: var(--slate-900);
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .milk-table .total-cell {
+            font-weight: 800;
+            color: var(--golf-green) !important;
+            font-size: 1.08rem;
+            text-align: center;
+        }
+        .milk-table .deduction-cell {
+            font-weight: 700;
+            color: #b91c1c !important;
+            text-align: center;
+        }
+        .milk-table .balance-cell {
+            font-weight: 800;
+            color: var(--primary) !important;
+            font-size: 1.08rem;
+            text-align: center;
+        }
+        .milk-table tfoot tr.balance-row td {
+            background-color: #eff6ff !important;
+            color: #1e3a8a !important;
+        }
+
+        /* Course Engineering & Agronomy Status Tables */
+        .status-table-wrapper {
+            margin-top: 12px;
+            margin-bottom: 24px;
+        }
+        .status-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border: 1px solid var(--slate-200);
+            border-radius: 8px;
+            overflow: hidden;
+            font-size: 0.92rem;
+        }
+        .status-table thead {
+            background-color: var(--slate-100);
+        }
+        .status-table th {
+            padding: 10px 14px;
+            text-align: left;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--slate-600);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid var(--slate-200);
+        }
+        .status-table td {
+            padding: 9px 14px;
+            vertical-align: top;
+            border-bottom: 1px solid var(--slate-100);
+            line-height: 1.48;
+            color: var(--slate-700);
+        }
+        .status-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        .status-table tbody tr:nth-child(even) {
+            background-color: #fafbfd;
+        }
+        .status-table tr.row-changed {
+            background-color: #f0fdf4 !important;
+        }
+        .status-table tr.row-changed td:first-child {
+            border-left: 3.5px solid var(--golf-green) !important;
+            font-weight: 800;
+        }
+        .col-id {
+            width: 95px;
+            font-weight: 700;
+            color: var(--slate-900);
+            white-space: nowrap;
+        }
+        .col-status {
+            color: var(--slate-700);
+        }
+        .col-tag {
+            width: 185px;
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        /* Status Badges */
+        .tag {
+            display: inline-block;
+            font-size: 0.76rem;
+            font-weight: 600;
+            padding: 2.5px 8px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .tag-ready {
+            color: #14532d;
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+        }
+        .tag-sand {
+            color: #78350f;
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+        }
+        .tag-trenched {
+            color: #1e40af;
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+        }
+        .tag-neutral {
+            color: var(--slate-700);
+            background: var(--slate-100);
+            border: 1px solid var(--slate-200);
+        }
+        .tag-pending {
+            color: #991b1b;
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+        }
+        .badge-today {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--golf-green);
+            background-color: #dcfce7;
+            border: 1px solid #86efac;
+            padding: 1px 6px;
+            border-radius: 8px;
+            margin-left: 5px;
+            letter-spacing: 0.02em;
+        }
+
+        /* Summary Card Callout */
+        .summary-card {
+            background: var(--slate-50);
+            border: 1px solid var(--slate-200);
+            border-radius: var(--radius-md);
+            padding: 18px 22px;
+            margin-top: 18px;
+            margin-bottom: 20px;
+        }
+        .summary-card h4 {
+            font-size: 0.94rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--slate-900);
+            margin-bottom: 6px;
+        }
+        .summary-card p {
+            font-size: 0.92rem;
+            color: var(--slate-700);
+            line-height: 1.55;
+        }
+
+        /* Video Card Component */
+        .video-card {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--slate-200);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 28px;
+            overflow: hidden;
+        }
+        .video-card .card-header {
+            margin-bottom: 0;
+            border-bottom: 1px solid var(--slate-200);
+            padding: 16px 22px;
+        }
+        .video-media-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #0f172a;
+        }
+        .video-media-wrapper iframe, .video-media-wrapper video {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+        .video-card-body {
+            padding: 18px 22px;
+            background: #ffffff;
+        }
+        .video-desc {
+            font-size: 0.94rem;
+            color: var(--slate-600);
+            line-height: 1.55;
+            margin-bottom: 14px;
+        }
+        .video-action-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--slate-100);
+        }
+        .youtube-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fef2f2;
+            color: #dc2626 !important;
+            border: 1px solid #fecaca;
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.15s ease;
+        }
+        .youtube-btn:hover {
+            background: #dc2626;
+            color: #ffffff !important;
+            border-color: #dc2626;
+        }
+        .video-link-text {
+            font-size: 0.85rem;
+            color: var(--slate-500);
+            font-family: monospace;
+        }
+
+        /* Photo Gallery Grid - Strictly 2 Columns Straight Flow (Rule 3 & 7) */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+            margin-top: 20px;
+        }
+        .gallery-item {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--slate-200);
+            background: #ffffff;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .gallery-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+        .gallery-caption {
+            padding: 16px 18px;
+            background: #ffffff;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .gallery-caption h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--slate-900);
+            margin-bottom: 5px;
+        }
+        .gallery-caption p {
+            font-size: 0.9rem;
+            color: var(--slate-600);
+            line-height: 1.5;
+        }
+
+        /* Callout Boxes */
+        .success-box {
+            background-color: #ecfdf5 !important;
+            border-left: 4px solid #10b981 !important;
+            padding: 18px 22px;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin-top: 18px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .success-box h4 { color: #065f46 !important; font-size: 1.02rem; font-weight: 700; margin-bottom: 5px; }
+        .success-box p { color: #064e3b !important; font-size: 0.94rem; line-height: 1.55; }
+
+        .info-box {
+            background-color: #eff6ff !important;
+            border-left: 4px solid #3b82f6 !important;
+            padding: 18px 22px;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin-top: 18px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .info-box h4 { color: #1e40af !important; font-size: 1.02rem; font-weight: 700; margin-bottom: 5px; }
+        .info-box p { color: #1e3a8a !important; font-size: 0.94rem; line-height: 1.55; }
+
+        .amber-box {
+            background-color: #fffbeb !important;
+            border-left: 4px solid #f59e0b !important;
+            padding: 18px 22px;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin-top: 18px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .amber-box h4 { color: #92400e !important; font-size: 1.02rem; font-weight: 700; margin-bottom: 5px; }
+        .amber-box p { color: #78350f !important; font-size: 0.94rem; line-height: 1.55; }
+
+        /* Footer */
+        footer {
+            background-color: var(--slate-50) !important;
+            padding: 28px 44px;
+            border-top: 1px solid var(--slate-200);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .signature-block { display: flex; align-items: center; gap: 14px; }
+        .signature-avatar {
+            width: 46px; height: 46px;
+            border-radius: 50%;
+            background: var(--primary) !important;
+            color: #ffffff !important;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 1.1rem;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .signature-details h3 { font-size: 1.08rem; font-weight: 700; color: var(--slate-900); }
+
+        /* Page Breaks */
+        .page-break-before {
+            page-break-before: always;
+            break-before: page;
+        }
+
+        /* ========================================================================= */
+        /* PRINT STYLING RULES — STRICT COMPLIANCE WITH AGENTS.MD SECTION 5 & 7      */
+        /* ========================================================================= */
+        @media print {
+            @page { 
+                size: A4; 
+                margin: 8mm 10mm; 
+            }
+            
+            body { 
+                background-color: #ffffff !important; 
+                padding: 0 !important; 
+                font-size: 0.98rem !important;
+            }
+            
+            .container { 
+                box-shadow: none !important; 
+                border: none !important; 
+                border-radius: 0 !important; 
+                max-width: 100% !important; 
+                overflow: visible !important; 
+            }
+            
+            header { 
+                padding: 20px 24px !important; 
+                border-radius: 8px !important; 
+            }
+            
+            header h1 { 
+                font-size: 2rem !important; 
+                margin-bottom: 4px !important; 
+            }
+            
+            header p.subtitle { 
+                font-size: 0.92rem !important; 
+                line-height: 1.4 !important; 
+            }
+            
+            .kpi-bar { 
+                padding: 12px 0 !important; 
+                background: transparent !important; 
+                grid-template-columns: repeat(4, 1fr) !important; 
+                gap: 8px !important; 
+                border-bottom: 1px solid #e2e8f0 !important;
+            }
+            
+            .kpi-card { 
+                padding: 8px 10px !important; 
+                border: 1px solid #cbd5e1 !important; 
+                box-shadow: none !important; 
+            }
+            .kpi-card .value { font-size: 1.12rem !important; }
+            .kpi-card .label { font-size: 0.7rem !important; }
+            .kpi-card .subtext { font-size: 0.75rem !important; }
+
+            .cover-overview-container {
+                padding: 0 !important;
+            }
+            
+            .cover-overview-card {
+                padding: 16px 20px !important;
+                margin-top: 12px !important;
+                margin-bottom: 0 !important;
+                border: 1px solid #cbd5e1 !important;
+                box-shadow: none !important;
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+            .cover-overview-card .card-header {
+                font-size: 16px !important;
+                margin-bottom: 8px !important;
+            }
+            .cover-overview-card .editorial-text {
+                font-size: 13.5px !important;
+                line-height: 1.48 !important;
+                margin-bottom: 8px !important;
+            }
+            .cover-overview-card .highlight-list li {
+                font-size: 13px !important;
+                line-height: 1.45 !important;
+                margin-bottom: 6px !important;
+                padding-left: 18px !important;
+            }
+            .cover-overview-card .success-box {
+                padding: 9px 12px !important;
+                margin-top: 8px !important;
+            }
+            .cover-overview-card .success-box h4 {
+                font-size: 0.85rem !important;
+                margin-bottom: 2px !important;
+            }
+            .cover-overview-card .success-box p {
+                font-size: 0.78rem !important;
+                line-height: 1.38 !important;
+            }
+            
+            .main-content { padding: 12px 0 !important; }
+            
+            main > section {
+                break-before: page !important;
+                page-break-before: always !important;
+            }
+
+            .card { 
+                padding: 18px 22px !important; 
+                margin-bottom: 14px !important; 
+                border: 1px solid #cbd5e1 !important; 
+                box-shadow: none !important; 
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            .card.gallery-card {
+                padding: 16px 20px !important;
+                margin-bottom: 0 !important;
+                break-inside: auto !important;
+                page-break-inside: auto !important;
+            }
+            .card.gallery-card .card-header {
+                margin-bottom: 8px !important;
+            }
+            .card.gallery-card .editorial-text {
+                margin-bottom: 10px !important;
+                font-size: 13.5px !important;
+                line-height: 1.45 !important;
+            }
+            
+            .card-header, .card-heading { 
+                font-size: 17.5px !important; 
+                font-weight: 800 !important;
+                margin-bottom: 10px !important; 
+            }
+
+            .editorial-text { 
+                font-size: 13.8px !important; 
+                line-height: 1.52 !important; 
+                margin-bottom: 10px !important; 
+            }
+
+            .highlight-list li { 
+                font-size: 13px !important; 
+                line-height: 1.48 !important; 
+                margin-bottom: 7px !important; 
+                padding-left: 20px !important; 
+            }
+            
+            .section-header { 
+                margin-bottom: 10px !important; 
+                padding-bottom: 8px !important; 
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+                break-after: avoid !important; 
+                page-break-after: avoid !important; 
+            }
+
+            .supervisor-badge { 
+                font-size: 0.84rem !important; 
+                padding: 4px 12px !important; 
+            }
+            
+            .section-title h2 { font-size: 1.38rem !important; }
+            
+            /* Photo Galleries: 2 Columns with seamless page-break flow */
+            .gallery-grid { 
+                display: flex !important;
+                flex-wrap: wrap !important;
+                justify-content: space-between !important;
+                gap: 10px !important; 
+                margin-top: 10px !important; 
+            }
+            
+            .gallery-item { 
+                width: calc(50% - 6px) !important;
+                box-shadow: none !important; 
+                border: 1px solid #cbd5e1 !important; 
+                break-inside: avoid !important; 
+                page-break-inside: avoid !important; 
+            }
+            .gallery-item img { 
+                height: 155px !important; 
+                object-fit: cover !important; 
+            }
+            .gallery-caption { 
+                padding: 8px 12px !important; 
+            }
+            .gallery-caption h4 { font-size: 12.8px !important; margin-bottom: 2px !important; }
+            .gallery-caption p { font-size: 11.2px !important; line-height: 1.35 !important; }
+
+            .data-table th, .data-table td,
+            .milk-table th, .milk-table td { 
+                padding: 6px 10px !important; 
+                font-size: 12px !important; 
+            }
+
+            /* Status Table Print Styling */
+            .status-table-wrapper {
+                margin-top: 6px !important;
+                margin-bottom: 8px !important;
+            }
+            .status-table {
+                width: 100% !important;
+            }
+            .status-table tr {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+            .status-table tr.row-changed { 
+                background-color: #f0fdf4 !important; 
+            }
+            .status-table tr.row-changed td:first-child { 
+                border-left: 3.5px solid #15803d !important; 
+                font-weight: 800 !important;
+            }
+            .badge-today {
+                display: inline-block !important; 
+                font-size: 7.5px !important; 
+                font-weight: 700 !important;
+                text-transform: uppercase !important; 
+                color: #15803d !important; 
+                background-color: #dcfce7 !important;
+                border: 1px solid #86efac !important; 
+                padding: 0.5px 4px !important; 
+                border-radius: 6px !important; 
+                margin-left: 4px !important;
+            }
+
+            /* Dedicated Putting Greens Card (#greens-ledger-card) */
+            #greens-ledger-card { 
+                padding: 14px 18px !important; 
+                margin-bottom: 0 !important; 
+                break-inside: avoid !important; 
+                page-break-inside: avoid !important; 
+            }
+            #greens-ledger-card .card-header { 
+                font-size: 15.5px !important; 
+                margin-bottom: 6px !important; 
+            }
+            #greens-ledger-card .editorial-text { 
+                font-size: 12.5px !important; 
+                line-height: 1.4 !important; 
+                margin-bottom: 6px !important; 
+            }
+            #greens-ledger-card .status-table { 
+                font-size: 9.4px !important; 
+            }
+            #greens-ledger-card .status-table th { 
+                padding: 4.5px 8px !important; 
+                font-size: 9px !important; 
+            }
+            #greens-ledger-card .status-table td { 
+                padding: 4.2px 8px !important; 
+                font-size: 9.4px !important; 
+                line-height: 1.3 !important; 
+            }
+            #greens-ledger-card .col-id { 
+                width: 74px !important; 
+            }
+            #greens-ledger-card .col-tag { 
+                width: 160px !important; 
+            }
+            #greens-ledger-card .tag { 
+                font-size: 8.2px !important; 
+                padding: 1.2px 4.5px !important; 
+            }
+
+            /* Dedicated Championship Teeboxes Card (#tees-ledger-card) */
+            #tees-ledger-card { 
+                padding: 16px 20px !important; 
+                margin-bottom: 0 !important; 
+                break-inside: avoid !important; 
+                page-break-inside: avoid !important; 
+            }
+            #tees-ledger-card .card-header { 
+                font-size: 16px !important; 
+                margin-bottom: 8px !important; 
+            }
+            #tees-ledger-card .editorial-text { 
+                font-size: 12.5px !important; 
+                line-height: 1.4 !important; 
+                margin-bottom: 8px !important; 
+            }
+            #tees-ledger-card .status-table { 
+                font-size: 9.6px !important; 
+            }
+            #tees-ledger-card .status-table th { 
+                padding: 5px 8px !important; 
+                font-size: 9.2px !important; 
+            }
+            #tees-ledger-card .status-table td { 
+                padding: 4.5px 8px !important; 
+                font-size: 9.6px !important; 
+                line-height: 1.32 !important; 
+            }
+            #tees-ledger-card .col-id { 
+                width: 72px !important; 
+            }
+            #tees-ledger-card .col-tag { 
+                width: 155px !important; 
+            }
+            #tees-ledger-card .tag { 
+                font-size: 8.2px !important; 
+                padding: 1.2px 4.5px !important; 
+            }
+            #tees-ledger-card .summary-card { 
+                padding: 9px 12px !important; 
+                margin-top: 8px !important; 
+                margin-bottom: 0 !important; 
+            }
+            #tees-ledger-card .summary-card h4 { 
+                font-size: 10.5px !important; 
+                margin-bottom: 2px !important; 
+            }
+            #tees-ledger-card .summary-card p { 
+                font-size: 9.5px !important; 
+                line-height: 1.35 !important; 
+            }
+
+            /* Video Card Print Rules — Hide video controls & show clean header ribbon */
+            .video-card {
+                padding: 14px 18px !important;
+                margin-bottom: 0 !important;
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+                border: 1px solid #cbd5e1 !important;
+                box-shadow: none !important;
+            }
+            .video-card .card-header {
+                padding: 0 !important;
+                border-bottom: none !important;
+                margin-bottom: 6px !important;
+                font-size: 13.5px !important;
+            }
+            .video-media-wrapper iframe, .video-media-wrapper video, video { 
+                display: none !important; 
+            }
+            .video-media-wrapper { 
+                aspect-ratio: auto !important; 
+                height: 36px !important; 
+                background: #f1f5f9 !important; 
+                border-bottom: 1px solid #cbd5e1 !important; 
+                display: flex !important; 
+                align-items: center !important; 
+                padding: 0 14px !important; 
+            }
+            .video-media-wrapper::before { 
+                content: "🎥 Video Recording" !important; 
+                font-size: 0.78rem !important; 
+                font-weight: 700 !important; 
+                color: #334155 !important; 
+                text-transform: uppercase !important; 
+            }
+            .video-card-body {
+                padding: 0 !important;
+            }
+            .video-desc {
+                font-size: 0.84rem !important;
+                color: #475569 !important;
+                line-height: 1.4 !important;
+                margin-bottom: 8px !important;
+            }
+            .video-action-row {
+                padding-top: 8px !important;
+                border-top: 1px solid #e2e8f0 !important;
+            }
+            .youtube-btn {
+                padding: 4px 10px !important;
+                font-size: 0.78rem !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .video-link-text {
+                font-size: 0.76rem !important;
+            }
+
+            footer { 
+                padding: 14px 18px !important; 
+                margin-top: 14px !important; 
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+            .signature-avatar { width: 34px !important; height: 34px !important; font-size: 0.95rem !important; }
+            .signature-details h3 { font-size: 0.95rem !important; }
+
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header Block -->
+    <header>
+        <div class="header-top">
+            <span class="report-tag">Daily Operations Progress Report</span>
+            <span class="badge-date">Saturday, 26th September 2026</span>
+        </div>
+        <h1>Daily Operations Report</h1>
+        <p class="subtitle">Multi-site operations update covering Mucheru World of Golf (Green 7 herringbone drainage installation, ballast cover &amp; red soil leveling, Dam 1 liner placement &amp; thermal seam welding, Dam 3 liner placement along channel yet to be connected, course-wide red loam deliveries, palm tree replenishment, and drainage outlet markings), Chaka Farms (backhoe septic tank excavation, tractor soil haulage &amp; soil spreading, perimeter flower uprooting, dairy yield reconciliation, compound maintenance, and canine routines), Kabete Residence (ground-level column rebar cages &amp; floor screeding, domestic pet care), Rose Park Apartment (interior painting progress across 6 areas), and Amani Cottage (entrance balcony &amp; compound sweeping).</p>
+    </header>
+
+    <!-- Executive KPI Summary Bar -->
+    <div class="kpi-bar">
+        <div class="kpi-card">
+            <div class="label">Mucheru Engineering</div>
+            <div class="value">Green 7 &amp; Dam Liners</div>
+            <div class="subtext">PVC drainage &amp; ballast &bull; 6 lorries red soil &bull; Dam 1 welded &amp; Dam 3 placed</div>
+        </div>
+        <div class="kpi-card">
+            <div class="label">Course Materials &amp; Drainage</div>
+            <div class="value">36+ Lorries Loam</div>
+            <div class="subtext">Drainage outlet marked &bull; Palms refilled &bull; Backhoe 3.0 hrs</div>
+        </div>
+        <div class="kpi-card">
+            <div class="label">Chaka Septic &amp; Grounds</div>
+            <div class="value">Pit Dug &amp; Soil Spread</div>
+            <div class="subtext">Perimeter flowers uprooted &bull; 5.0L gross &bull; 3.0L net reserve</div>
+        </div>
+        <div class="kpi-card">
+            <div class="label">Kabete &amp; Rose Park</div>
+            <div class="value">Rebar &amp; 6 Rooms</div>
+            <div class="subtext">Ground column cages placed &bull; Screeding &bull; Interior painting</div>
+        </div>
+    </div>
+
+    <!-- Executive Cover Overview Card -->
+    <div class="cover-overview-container">
+        <div class="cover-overview-card">
+            <div class="card-header">
+                <span>Executive Summary &bull; 26th September 2026</span>
+            </div>
+            <p class="editorial-text">
+                Summary of operations and key progress across active project sites for Saturday, 26th September 2026:
+            </p>
+            <ul class="highlight-list">
+                <li><strong>Mucheru World of Golf:</strong> Under Mr. Gichuhi and Ken, with active site supervision by Joe Kamanu and Peter Githinji, operations achieved significant engineering milestones across course drainage, green foundations, dam infrastructure, and landscaping. A massive course-wide logistics operation delivered 1 lorry load of red loam topsoil to every putting green (Greens 1 – 18) and every championship teebox (Tees 1 – 18). Green 7 reached major structural milestones: the farm tractor hauled hardcore rocks to the green bed, a heavy-duty polythene membrane was installed along the foundation base, slit PVC drainage pipes wrapped in filter net were fitted into the subgrade trenches, and clean ballast stones were applied over the pipes. Green 7 received 6 dedicated lorries of red soil, with 3 lorries spread and precision-leveled across the foundation bed. In water infrastructure, Dam 1 was fitted with heavy-duty dam liners with site technicians welding adjacent sheets by heating/burning the polythene edges, successfully connecting the entire basin floor, while Dam 3 liners were positioned and laid out along the channel bed and side slopes awaiting seam connection. The women's crew refilled red soil around planted palm trees, and drainage crews marked the outlet drainage alignments with chalk across all greens except Green 7 and Green 5. The Backhoe Loader logged 3.0 operational hours supporting earthmoving and site logistics.</li>
+                <li><strong>Chaka Farms:</strong> Under Dennis and Ken, the backhoe loader was deployed at the washroom next to the farm office to dig out the old tank and excavate extra space for installing the new septic tank. The excavated soil was loaded directly onto the farm tractor trailer, which hauled it away to a designated dumping location on the farm, where the backhoe loader subsequently spread out the dumped soil. The backhoe loader was also deployed along the farm boundary to cleanly uproot perimeter flowers left on the outside following gate repositioning. Dairy milking under Kamandau yielded 5.0 Litres gross production (2.5L morning, 2.5L evening). Deductions drawn out of total yield totaled 2.0 Litres (1.0L for goat kids, 0.5L for Gladys, and 0.5L for Maasai), leaving a net farm reserve balance of 3.0 Litres. Willy completed kennel cleaning, manners training, the "paw" command drill, and dog cleaning, reporting that cleaning disinfectant and dog shampoo are depleted. Margaret and Monica maintained general compound cleanliness.</li>
+                <li><strong>Kabete Residence:</strong> Construction activities overseen and shared by Njoki advanced with column reinforcement bars and floor screeding. Steel fixers set and secured vertical column rebar cages at ground level on the foundation concrete pad, while the civil crew completed surface screeding on the upper platform. Domestic pets were cared for on site, with Ajabu the Golden Retriever fed on the veranda walkway and resident cats Reo and Aiko fed together.</li>
+                <li><strong>Rose Park Apartment:</strong> Painting works progressed steadily across six designated areas of the apartment, including the main entrance, living room TV area, laundry area wall, kitchen shelves, bedroom, and back door area.</li>
+                <li><strong>Amani Cottage:</strong> Grounds maintenance under Edwin focused on compound sweeping and washing down the entrance door balcony.</li>
+            </ul>
+            <div class="success-box">
+                <h4>Operations Highlights &bull; Key Milestones Achieved</h4>
+                <p>Key achievements today include Green 7 subgrade drainage pipe and ballast installation with 3 lorries of red soil leveled, Dam 1 liner rollout, placement, and thermal seam welding alongside Dam 3 liner placement along the channel bed, course-wide 1-lorry red soil deliveries to all 36 greens and teeboxes, complete backhoe excavation, soil spreading, and flower uprooting at Chaka Farms, starter column rebar cage placement at Kabete Residence, and 6 active painting areas at Rose Park Apartment.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <main>
+        <!-- ========================================================================= -->
+        <!-- SECTION 1: MUCHERU WORLD OF GOLF                                          -->
+        <!-- ========================================================================= -->
+        <section id="mucheru-golf">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon icon-golf">⛳</div>
+                    <h2>Mucheru World of Golf</h2>
+                </div>
+                <div class="supervisor-badges-wrapper">
+                    <div class="supervisor-badge">
+                        <span>Overseen by:</span> Mr. Gichuhi &amp; Ken
+                    </div>
+                    <div class="supervisor-badge">
+                        <span>Site Supervision:</span> Joe Kamanu &amp; Peter Githinji
+                    </div>
+                </div>
+            </div>
+
+            <!-- Narrative Card -->
+            <div class="card">
+                <div class="card-header">
+                    <span>Course Drainage, Green 7 Engineering, Dam Liners &amp; Site Logistics</span>
+                </div>
+                <p class="editorial-text">
+                    Extensive civil engineering, material logistics, water storage infrastructure, and course landscaping were executed at Mucheru World of Golf on Saturday, 26th September 2026 under the oversight of Mr. Gichuhi and Ken, with dedicated on-site supervision by Joe Kamanu and Peter Githinji:
+                </p>
+                <ul class="highlight-list">
+                    <li><strong>Green 7 Subgrade Drainage &amp; Foundation Engineering (Joe Kamanu):</strong> Green 7 reached major structural milestones today. Yesterday's unreported preparation involved slitting PVC drainage pipes with precision longitudinal perforations to facilitate subgrade water collection. Today, the farm tractor hauled hardcore rocks directly to the green bed, where they were tipped and integrated. A heavy-duty black polythene membrane was laid along the foundation perimeter base. Slit PVC drainage pipes wrapped in geotextile filter netting were positioned and aligned inside the excavated herringbone trenches. Clean ballast stones were then backfilled directly over the pipes to anchor and cushion the drainage lines. Green 7 subsequently received 6 separate tipper lorry deliveries of red loam soil, from which site laborers applied and precision-leveled 3 lorries worth of red soil across the green bed.</li>
+                    <li><strong>Course-Wide Red Soil Material Deliveries:</strong> A massive logistics operation was completed across the entire golf facility, delivering 1 commercial tipper lorry load of high-quality red loam topsoil to every single green (Greens 1 – 18) and every single championship teebox (Tees 1 – 18). This supply provides the essential agronomic topsoil and structural fill needed for platform contouring, apron shaping, and foundation build-ups across all 36 playing complexes, with Green 7 receiving an additional 6 dedicated lorry loads.</li>
+                    <li><strong>Dam 1 &amp; Dam 3 Polythene Liner Installation &amp; Seam Welding (Peter Githinji):</strong> Significant water storage infrastructure milestones were accomplished across the dams. Heavy-duty black polythene dam liners were rolled out and positioned across the cleared basin floor and slopes of Dam 1. Site technicians connected adjacent liner sheets through thermal welding, heating and burning the overlapping polythene edges to create robust, watertight bonded seams across the entire reservoir basin. At Dam 3, heavy-duty liner panels were laid out across the excavated channel bed and side slopes, positioned and staged for subsequent seam joining and connection.</li>
+                    <li><strong>Agronomy &amp; Landscape Maintenance — Palm Tree Red Soil Refilling:</strong> The women's site crew conducted targeted agronomic maintenance, backfilling and refilling rich red loam soil around the root collars of newly planted palm trees positioned along the course boundary corridors to encourage healthy establishment.</li>
+                    <li><strong>Course-Wide Outlet Drainage Alignment &amp; Marking:</strong> Specialized drainage crews surveyed and marked out the alignment lines for all greens outlet drainage channels using high-visibility white chalk/lime markings. Drainage outlet alignments were established across the entire golf course, excluding Green 7 (actively undergoing pipe and ballast installation) and Green 5 (outlet line already excavated and tied into Dam 2).</li>
+                    <li><strong>Heavy Machinery &amp; Tractor Fleet Utilization:</strong> In strict compliance with equipment consolidation rules, the Backhoe Loader operated for a total of 3.0 machine hours at KES 6,500/hr (KES 19,500.00), supporting site earthmoving, spreading dumped septic soil at Chaka Farms, uprooting boundary flowers, and material logistics. The red farm tractor and trailer operated full shift hauling hardcore rocks to Green 7 and supporting site haulage.</li>
+                </ul>
+
+                <div class="success-box">
+                    <h4>Mucheru Engineering Milestone Summary</h4>
+                    <p>Green 7 achieved major structural progression with tractor hardcore haulage, polythene membrane lining, slit PVC pipes and filter netting installed in trenches, ballast stone backfill, 6 lorries of red soil delivered, and 3 lorries leveled. Dam 1 liners were applied with thermally welded and connected seams, Dam 3 liners were laid out along the channel bed, 1 lorry of red loam was delivered to all 18 greens and 18 teeboxes, and greens outlet drainage was systematically marked across the course.</p>
+                </div>
+            </div>
+
+            <!-- Heavy Machinery Utilization Log Spread -->
+            <div class="card page-break-before">
+                <div class="card-header">
+                    <span>🚜 Heavy Machinery Utilization &amp; Operational Hours Log</span>
+                </div>
+                <div class="supervisor-badge" style="margin-bottom: 14px; width: fit-content;">
+                    <span>Site Supervisors:</span> Mr. Gichuhi &amp; Ken
+                </div>
+                <p class="editorial-text">
+                    Operational equipment hours and financial summary for Saturday, 26th September 2026. Consolidated in strict compliance with the single Backhoe Loader reporting standard:
+                </p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Equipment Description</th>
+                            <th>Operating Hours</th>
+                            <th>Hourly Billing Rate</th>
+                            <th>Total Cost (KES)</th>
+                            <th>Specific Operational Scope &amp; Activities Conducted</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Backhoe Loader (XGMA)</strong></td>
+                            <td>3.00 Machine Hrs</td>
+                            <td>KES 6,500.00 / hr</td>
+                            <td>19,500.00</td>
+                            <td>Spreading out excavated dumped soil from septic tank hole at Chaka Farms dumping area; uprooting perimeter flower bushes outside gate; site logistics and earthwork support at golf site.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Farm Tractor &amp; Trailer</strong></td>
+                            <td>Full Shift</td>
+                            <td>Internal Farm Asset</td>
+                            <td>—</td>
+                            <td>Hauling hardcore rocks to Green 7 foundation bed; hauling excavated soil from septic tank excavation at Chaka Farms to farm dumping site.</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td><strong>Total Operational Cost</strong></td>
+                            <td><strong>3.00 Machine Hrs</strong></td>
+                            <td colspan="2"><strong>KES 19,500.00</strong></td>
+                            <td><strong>Active Site Fleet</strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <div class="info-box" style="margin-top: 18px;">
+                    <h4>Equipment Utilization Note</h4>
+                    <p>In accordance with site reporting directives, the Backhoe Loader (XGMA) operational hours are strictly consolidated under a single entry (3.0 hrs @ KES 6,500/hr = KES 19,500.00), covering tasks across both Chaka Farms and Mucheru World of Golf. The farm tractor operated as an internal logistics asset supporting haulage of hardcore rocks and excavated earth.</p>
+                </div>
+            </div>
+
+            <!-- Material Deliveries & Resource Inflow Spread -->
+            <div class="card page-break-before">
+                <div class="card-header">
+                    <span>📦 Material Deliveries &amp; Resource Inflow</span>
+                </div>
+                <p class="editorial-text">
+                    Logistics and material inventory received and distributed across construction zones at Mucheru World of Golf on Saturday, 26th September 2026:
+                </p>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Material Type</th>
+                            <th>Quantity Received</th>
+                            <th>Source / Supplier</th>
+                            <th>Placement / Application Zone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Red Loam Topsoil</strong></td>
+                            <td>42+ Tipper Lorries (1 lorry each to all 18 greens &amp; 18 tees, plus 6 lorries to Green 7)</td>
+                            <td>Commercial Quarry Delivery</td>
+                            <td>Distributed across all 18 greens and 18 championship teeboxes; Green 7 received 6 lorries, with 3 lorries spread and precision-leveled</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hardcore Rocks</strong></td>
+                            <td>Tractor Trailer Loads</td>
+                            <td>Internal Site Borrow Area</td>
+                            <td>Hauled via farm tractor and integrated into Green 7 foundation bed</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ballast Stones</strong></td>
+                            <td>Consignment Delivery</td>
+                            <td>Quarry Supplier</td>
+                            <td>Applied across Green 7 herringbone trenches directly atop slit PVC pipes</td>
+                        </tr>
+                        <tr>
+                            <td><strong>PVC Drainage Pipes &amp; Netting</strong></td>
+                            <td>Perforated Slit Pipes &amp; Filter Netting</td>
+                            <td>Plumbing Supplier Delivery</td>
+                            <td>Installed inside subgrade herringbone trenches across Green 7 foundation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Polythene Membrane &amp; Dam Liners</strong></td>
+                            <td>Heavy-Duty Polythene Rolls</td>
+                            <td>Specialized Materials Supplier</td>
+                            <td>Installed along Green 7 base perimeter; deployed across Dam 1 (seams thermally welded and connected) and Dam 3 channel bed</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Video Recording Card -->
+            <div class="video-card">
+                <div class="card-header">
+                    <span>🎥 Video Field Footage — Mucheru World of Golf Progress</span>
+                </div>
+                <div class="video-media-wrapper">
+                    <iframe src="https://www.youtube.com/embed/mn5wD-ZCWdw" title="Mucheru World of Golf - 26th Sep Operations Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-card-body">
+                    <p class="video-desc">Comprehensive ground video capturing Saturday, 26th September operations: tractor hauling hardcore to Green 7, polythene membrane positioning, crew setting up slit PVC pipes and filter net inside trenches, ballast stones applied over pipes, tipper lorries dumping red soil, and laborers applying and leveling 3 lorries worth of red loam across Green 7; Dam 1 liner rollout, placement, and thermal seam welding; Dam 3 liner placement along the channel bed; palm tree red soil refilling; and chalk marking of greens drainage outlets.</p>
+                    <div class="video-action-row">
+                        <a href="https://youtu.be/mn5wD-ZCWdw" target="_blank" rel="noopener noreferrer" class="youtube-btn">
+                            <span>▶ Watch on YouTube</span>
+                        </a>
+                        <span class="video-link-text">Direct Link: https://youtu.be/mn5wD-ZCWdw</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========================================================================= -->
+            <!-- MANDATORY STATUS LEDGER: PUTTING GREENS (GREENS 1 - 18)                   -->
+            <!-- Dedicated Full-Page Spread (AGENTS.MD Section 1 & 7)                      -->
+            <!-- ========================================================================= -->
+            <div id="greens-ledger-card" class="card status-ledger-card page-break-before">
+                <div class="card-header">
+                    <span>⛳ Course Engineering &amp; Agronomy Status Audit — Putting Greens (1 – 18)</span>
+                </div>
+                <div class="supervisor-badge" style="margin-bottom: 14px; width: fit-content;">
+                    <span>Audited by:</span> Dennis
+                </div>
+                <p class="editorial-text" style="font-size: 0.95rem; margin-bottom: 14px;">
+                    Comprehensive 18-hole putting green status ledger tracking foundation bases, pumice compaction, riversand spreading, contouring, and drainage connections. Highlighting incremental updates on September 26, 2026:
+                </p>
+
+                <div class="status-table-wrapper">
+                    <table class="status-table">
+                        <thead>
+                            <tr>
+                                <th class="col-id">Green</th>
+                                <th class="col-status">Current Technical &amp; Agronomic State</th>
+                                <th class="col-tag">Milestone Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="col-id">Green 1</td>
+                                <td class="col-status">Clean riversand hauled and 100% fully applied across entire foundation bed over compacted volcanic pumice sub-base ready for final leveling (Sep 25); received 1 lorry red soil delivery (Sep 26); drainage outlet alignment marked with chalk (Sep 26).</td>
+                                <td class="col-tag"><span class="tag tag-sand">Riversand Fully Applied</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Green 2</td>
+                                <td class="col-status">Clean riversand applied and spread across the entire green bed over compacted volcanic pumice sub-base (Sep 23); received 1 lorry red soil delivery (Sep 26); drainage outlet alignment marked with chalk (Sep 26).</td>
+                                <td class="col-tag"><span class="tag tag-sand">Riversand Applied</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Green 3</td>
+                                <td class="col-status">Clean riversand hauled and actively applied across green foundation surface ready for leveling (Sep 22); received 1 lorry red soil delivery (Sep 26); drainage outlet alignment marked with chalk (Sep 26).</td>
+                                <td class="col-tag"><span class="tag tag-sand">Riversand Applied</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Green 4</td>
+                                <td class="col-status">Surrounding soil around Green 4 leveled to ground level using Backhoe Loader (Sep 24); clean riversand spread (Sep 22); received 1 lorry red soil delivery (Sep 26); drainage outlet alignment marked with chalk (Sep 26).</td>
+                                <td class="col-tag"><span class="tag tag-sand">Surrounds Leveled</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Green 5</td>
+                                <td class="col-status">Subgrade drainage trenching line fully connected into Dam 2 outfall (Sep 21); ready; fully established mature championship putting green turfgrass under active sprinkler irrigation; received 1 lorry red soil delivery (Sep 26).</td>
+                                <td class="col-tag"><span class="tag tag-ready">Turf Ready &bull; Drainage Tied</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Green 6</td>
+                                <td class="col-status">Received 1 lorry red soil delivery on green surrounds (Sep 26); drainage outlet alignment marked with chalk (Sep 26); palm planting advanced to Green 6 (Sep 23); raised soil barrier berm pushed back (Sep 21).</td>
+                                <td class="col-tag"><span class="tag tag-ready">Red Soil In &bull; Palms Placed</span></td>
+                            </tr>
+                            <tr class="row-changed">
+                                <td class="col-id">Green 7 <span class="badge-today">Today</span></td>
+                                <td class="col-status">Farm tractor hauled hardcore rocks to green bed; heavy-duty polythene membrane installed; slit PVC drainage pipes wrapped in filter net laid in trenches and buried under clean ballast stone infill; received 6 dedicated lorries of red soil, with 3 lorries spread and precision-leveled across green foundation bed (Sep 26); drone survey verified complete herringbone drainage network and red soil surrounds; hardcore rock infill complete (Sep 25); subgrade drainage trenched.</td>
+                                <td class="col-tag"><span class="tag tag-ready">Pipes, Ballast &amp; Red Soil Applied</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Green 8</td>
+                                <td class="col-status">Riversand applied earlier remains unleveled (Sep 20); received 1 lorry red soil delivery (Sep 26); drainage outlet alignment marked with chalk (Sep 26); subgrade drainage trenches excavated.</td>
+                                <td class="col-tag"><span class="tag tag-sand">Riversand Unleveled</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Green 9</td>
+                                <td class="col-status">Clean riversand application completed across the entire green surface ready for final leveling (Sep 23); received 1 lorry red soil delivery (Sep 26); drainage outlet alignment marked with chalk (Sep 26).</td>
+                                <td class="col-tag"><span class="tag tag-sand">Riversand Applied</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Green 10</td>
+                                <td class="col-status">Stockpiled soil hill near Green 10 cut into and reshaped using Backhoe Loader (Sep 24); volcanic pumice sub-base compacted with roller (Sep 20); received 1 lorry red soil delivery (Sep 26); drainage outlet alignment marked with chalk (Sep 26).</td>
+                                <td class="col-tag"><span class="tag tag-ready">Soil Reshaped &bull; Compacted</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Green 11</td>
+                                <td class="col-status">Volcanic pumice sub-base compacted with vibratory roller compactor (Sep 20); received 1 lorry red soil delivery (Sep 26); drainage outlet alignment marked with chalk (Sep 26); membrane placed; drainage cut.</td>
+                                <td class="col-tag"><span class="tag tag-ready">Pumice Compacted</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Green 12</td>
+                                <td class="col-status">Volcanic pumice sub-base compacted with vibratory roller compactor (Sep 20); received 1 lorry red soil delivery (Sep 26); drainage outlet alignment marked with chalk (Sep 26); membrane placed; drainage cut.</td>
+                                <td class="col-tag"><span class="tag tag-ready">Pumice Compacted</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Green 13</td>
+                                <td class="col-status">Red soil apron surrounds precision leveled and graded by site crew following additional red loam filling (Sep 25); received 1 lorry red soil delivery (Sep 26); drainage outlet alignment marked with chalk (Sep 26); pumice compacted (Sep 20).</td>
+                                <td class="col-tag"><span class="tag tag-ready">Apron Leveled &bull; Pumice Compacted</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Green 14</td>
+                                <td class="col-status">Earthen barrier berm raised and reshaped along green boundary using Backhoe Loader (Sep 23); received 1 lorry red soil delivery (Sep 26); drainage outlet alignment marked with chalk (Sep 26); pumice compacted (Sep 20).</td>
+                                <td class="col-tag"><span class="tag tag-ready">Barrier Berm Raised</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Green 15</td>
+                                <td class="col-status">Boundary with Green 10 reshaped; volcanic pumice compacted with vibratory roller (Sep 20); outfall drainage connected to Dam 1 (Sep 17); received 1 lorry red soil delivery (Sep 26); drainage outlet alignment marked with chalk (Sep 26).</td>
+                                <td class="col-tag"><span class="tag tag-ready">Boundary Reshaped &bull; Compacted</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Green 16</td>
+                                <td class="col-status">Protective earthen barrier berm between Tee 16 and Green 16 reworked, graded, and reinforced using Backhoe Loader (Sep 25); received 1 lorry red soil delivery (Sep 26); drainage outlet alignment marked with chalk (Sep 26); pumice compacted (Sep 20).</td>
+                                <td class="col-tag"><span class="tag tag-ready">Tee-Green Barrier Reworked</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Green 17</td>
+                                <td class="col-status">Red soil apron surrounds precision leveled and graded by site crew following additional red loam filling (Sep 25); protective barrier berm reshaped (Sep 25); received 1 lorry red soil delivery (Sep 26); drainage outlet alignment marked with chalk (Sep 26).</td>
+                                <td class="col-tag"><span class="tag tag-ready">Apron Leveled &bull; Berm Reshaped</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Green 18</td>
+                                <td class="col-status">Backhoe moved adjacent protective barrier and dumped soil onto nearby hill, designing and reshaping the contoured mound (Sep 25); received 1 lorry red soil delivery (Sep 26); drainage outlet alignment marked with chalk (Sep 26); pumice compacted (Sep 20).</td>
+                                <td class="col-tag"><span class="tag tag-ready">Mound Reshaped &bull; Compacted</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ========================================================================= -->
+            <!-- MANDATORY STATUS LEDGER: CHAMPIONSHIP TEEBOXES (TEES 1 - 18)              -->
+            <!-- Dedicated Full-Page Spread (AGENTS.MD Section 1 & 7)                      -->
+            <!-- ========================================================================= -->
+            <div id="tees-ledger-card" class="card status-ledger-card page-break-before">
+                <div class="card-header">
+                    <span>🏌️ Course Engineering Status Audit — Championship Teeboxes (1 – 18)</span>
+                </div>
+                <div class="supervisor-badge" style="margin-bottom: 14px; width: fit-content;">
+                    <span>Audited by:</span> Dennis
+                </div>
+                <p class="editorial-text" style="font-size: 0.95rem; margin-bottom: 14px;">
+                    Comprehensive 18-hole championship teebox platform audit tracking earthwork leveling, structural embankments, and playing corridor alignments. Preserved day-to-day continuity as of September 26, 2026:
+                </p>
+
+                <div class="status-table-wrapper">
+                    <table class="status-table">
+                        <thead>
+                            <tr>
+                                <th class="col-id">Teebox</th>
+                                <th class="col-status">Current Technical &amp; Earthwork State</th>
+                                <th class="col-tag">Platform Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="col-id">Tee 1</td>
+                                <td class="col-status">Championship launch platform completely reshaped, cut, and graded to design elevation using Backhoe Loader (Sep 24); received 1 lorry red soil delivery (Sep 26).</td>
+                                <td class="col-tag"><span class="tag tag-ready">Platform Reshaped</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Tee 2</td>
+                                <td class="col-status">Playing launch platform completely reshaped, contoured, and graded using Backhoe Loader (Sep 24); received 1 lorry red soil delivery (Sep 26).</td>
+                                <td class="col-tag"><span class="tag tag-ready">Platform Reshaped</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Tee 3</td>
+                                <td class="col-status">Playing launch platform completely reshaped, contoured, and graded using Backhoe Loader (Sep 24); received 1 lorry red soil delivery (Sep 26).</td>
+                                <td class="col-tag"><span class="tag tag-ready">Platform Reshaped</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Tee 4</td>
+                                <td class="col-status">Championship launch platform completely reshaped, cut, and graded using Backhoe Loader (Sep 23); received 1 lorry red soil delivery (Sep 26).</td>
+                                <td class="col-tag"><span class="tag tag-ready">Platform Reshaped</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Tee 5</td>
+                                <td class="col-status">Launch platform completely reshaped, cut, and graded using Backhoe Loader (Sep 22); received 1 lorry red soil delivery (Sep 26); palm trees planted along boundary corridor.</td>
+                                <td class="col-tag"><span class="tag tag-ready">Platform Reshaped</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Tee 6</td>
+                                <td class="col-status">Precision leveling and compaction completed; fresh delivery of 1 lorry red loam topsoil unloaded at platform surrounds (Sep 26).</td>
+                                <td class="col-tag"><span class="tag tag-ready">Red Soil In &bull; Leveled</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Tee 7</td>
+                                <td class="col-status">Dual launch platforms completely reshaped and precision contour-leveled using XGMA backhoe loader (Sep 20); received 1 lorry red soil delivery (Sep 26).</td>
+                                <td class="col-tag"><span class="tag tag-ready">Dual Platforms Reshaped</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Tee 8</td>
+                                <td class="col-status">Graded, leveled, and contour-adjusted; fresh delivery of 1 lorry red loam topsoil unloaded directly on platform (Sep 26).</td>
+                                <td class="col-tag"><span class="tag tag-ready">Red Soil In &bull; Graded</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Tee 9</td>
+                                <td class="col-status">Playing platform leveled and surrounding perimeter ground graded (Sep 1); received 1 lorry red soil delivery (Sep 26).</td>
+                                <td class="col-tag"><span class="tag tag-neutral">Platform Leveled</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Tee 10</td>
+                                <td class="col-status">Graded and compacted platform serving the start of the back-nine playing corridor; received 1 lorry red soil delivery (Sep 26).</td>
+                                <td class="col-tag"><span class="tag tag-neutral">Platform Compacted</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Tee 11</td>
+                                <td class="col-status">Rough shaping, elevation grading, and Backhoe subsoil leveling completed (Sep 7); received 1 lorry red soil delivery (Sep 26).</td>
+                                <td class="col-tag"><span class="tag tag-neutral">Shaped &amp; Graded</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Tee 12</td>
+                                <td class="col-status">Dual platforms established: primary championship tee resized; new forward Ladies' Tee platform constructed (Sep 5); received 1 lorry red soil delivery (Sep 26).</td>
+                                <td class="col-tag"><span class="tag tag-ready">Dual Platforms Complete</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Tee 13</td>
+                                <td class="col-status">Playing platform completely reshaped, contour-cut, and precision leveled to design elevations using Backhoe Loader (Sep 25); received 1 lorry red soil delivery (Sep 26).</td>
+                                <td class="col-tag"><span class="tag tag-ready">Platform Reshaped</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Tee 14</td>
+                                <td class="col-status">Playing platform reshaped, elevation precision-leveled, and protective boundary embankment reinforced (Sep 16); received 1 lorry red soil delivery (Sep 26).</td>
+                                <td class="col-tag"><span class="tag tag-ready">Reshaped &amp; Leveled</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Tee 15</td>
+                                <td class="col-status">Playing platform completely shaped and contour-leveled with backhoe loader (Sep 19); received 1 lorry red soil delivery (Sep 26); main HDPE waterline laid in boundary trench (Sep 15).</td>
+                                <td class="col-tag"><span class="tag tag-ready">Shaped &amp; Leveled</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Tee 16</td>
+                                <td class="col-status">Protective earthen boundary barrier between Tee 16 and Green 16 reshaped, graded, and reinforced using Backhoe Loader (Sep 25); received 1 lorry red soil delivery (Sep 26); platform leveled (Sep 20).</td>
+                                <td class="col-tag"><span class="tag tag-ready">Barrier Berm Reworked</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Tee 17</td>
+                                <td class="col-status">Championship launch platform completely reshaped, contour-cut, and precision-graded to design elevation using Backhoe Loader (Sep 25); received 1 lorry red soil delivery (Sep 26).</td>
+                                <td class="col-tag"><span class="tag tag-ready">Platform Reshaped</span></td>
+                            </tr>
+                            <tr>
+                                <td class="col-id">Tee 18</td>
+                                <td class="col-status">Championship tee platform leveled; perimeter approach cleared and graded (Sep 1); received 1 lorry red soil delivery (Sep 26).</td>
+                                <td class="col-tag"><span class="tag tag-neutral">Platform Leveled</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Operations Synthesis Summary Card -->
+                <div class="summary-card">
+                    <h4>Operations Synthesis &bull; Course Progress Rates</h4>
+                    <p>
+                        <strong>Greens Status (18 Holes):</strong> 1 green (Green 5) has established turfgrass under active sprinkler irrigation with drainage tied to Dam 2. 6 greens (Greens 1, 2, 3, 4, 8, 9) have clean riversand applied, with Green 1 reaching 100% full coverage. 10 greens (Greens 10 – 18, and Green 1) have completed compacted volcanic pumice sub-bases. Green 7 achieved major structural progression today with tractor hardcore haulage, polythene membrane lining, slit PVC pipes and filter netting installed in trenches, ballast stone backfill, 6 dedicated lorries of red soil delivered, and 3 lorries leveled. All 18 greens received 1 lorry load of red soil, and outlet drainage alignments were marked across the course.<br>
+                        <strong>Teebox Status (18 Holes):</strong> All 18 playing platforms received 1 lorry load of red loam topsoil today to build up foundations and fine-grade surfaces. 12 playing platforms (Tees 1, 2, 3, 4, 5, 7, 12, 13, 14, 15, 16, 17) are fully reshaped and precision graded, with Tees 6 and 8 receiving specific delivery staging today. The remaining platforms (Tees 9, 10, 11, 18) remain leveled and compacted in bulk earthworks.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Unified Continuous Photo Gallery Card (Mucheru World of Golf) -->
+            <!-- Strict Rule 3 & 7: One single continuous card, 2-column grid, no grouping, chronological flow -->
+            <div class="card gallery-card page-break-before">
+                <div class="card-header">
+                    <span>📸 Photographic Field Evidence — Mucheru World of Golf</span>
+                </div>
+                <p class="editorial-text" style="font-size: 0.95rem; margin-bottom: 14px;">
+                    Comprehensive sequential field photography documenting Green 7 hardcore haulage, PVC pipe and ballast trench installation, red soil deliveries and leveling, outlet drainage marking, and dam liner deployment:
+                </p>
+
+                <div class="gallery-grid">
+                    <!-- Photo 1 -->
+                    <div class="gallery-item">
+                        <img src="Crew%20loading%20hardcore%20rocks%20to%20be%20hauled%20to%20green%207.jpeg" alt="Crew loading hardcore rocks to be hauled to Green 7">
+                        <div class="gallery-caption">
+                            <h4>Green 7 Sub-Base — Loading Hardcore Rocks</h4>
+                            <p>Farm labor crew loading heavy hardcore rocks onto the red tractor trailer for haulage to the Green 7 foundation bed.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 2 -->
+                    <div class="gallery-item">
+                        <img src="Moving%20hardcore%20to%20green%207.jpeg" alt="Tractor tipping hardcore rocks on Green 7">
+                        <div class="gallery-caption">
+                            <h4>Green 7 Foundation — Hardcore Rock Delivery</h4>
+                            <p>Red farm tractor tipping a trailer load of hardcore rocks directly onto the Green 7 foundation base for placement and leveling.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 3 -->
+                    <div class="gallery-item">
+                        <img src="PVC%20pipes%20Slit.jpeg" alt="Perforated slit PVC drainage pipes prepared for Green 7">
+                        <div class="gallery-caption">
+                            <h4>Drainage Preparation — Slit PVC Pipes</h4>
+                            <p>Detailed close-up of perforated orange PVC drainage pipes with precision-cut slits to permit rapid subsurface water infiltration.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 4 -->
+                    <div class="gallery-item">
+                        <img src="PVC%20pipes%20ready%20to%20be%20installed%20in%20green%207.jpeg" alt="Slit PVC pipes and netting staged at Green 7">
+                        <div class="gallery-caption">
+                            <h4>Drainage Materials — Pipes &amp; Protective Netting</h4>
+                            <p>Slit PVC drainage pipes and rolls of green protective filter netting staged adjacent to Green 7 ready for trench installation.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 5 -->
+                    <div class="gallery-item">
+                        <img src="Setting%20up%20polythene%20membrane%20on%20green%207.jpeg" alt="Setting up polythene membrane on Green 7">
+                        <div class="gallery-caption">
+                            <h4>Green 7 Base — Polythene Membrane Setup</h4>
+                            <p>Site laborers unrolling and positioning heavy-duty black polythene membrane along the Green 7 foundation perimeter.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 6 -->
+                    <div class="gallery-item">
+                        <img src="Crew%20installing%20PVC%20pipes.jpeg" alt="Crew installing PVC pipes in Green 7 trenches">
+                        <div class="gallery-caption">
+                            <h4>Subgrade Drainage — Crew Setting PVC Pipes</h4>
+                            <p>Civil drainage crew positioning and aligning perforated PVC pipes within excavated herringbone trenches across Green 7.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 7 -->
+                    <div class="gallery-item">
+                        <img src="Placing%20PVC%20pipes%20in%20green%207%20trenches.jpeg" alt="Placing PVC pipes and netting in Green 7 trenches">
+                        <div class="gallery-caption">
+                            <h4>Herringbone Drainage — Pipe &amp; Net Alignment</h4>
+                            <p>Laborers fitting orange drainage pipes wrapped in filter netting into the rock-bordered subgrade trench lines on Green 7.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 8 -->
+                    <div class="gallery-item">
+                        <img src="PVC%20pipes%20burried%20under%20ballast.jpeg" alt="PVC pipe buried under ballast stone cushioning">
+                        <div class="gallery-caption">
+                            <h4>Drainage Infill — Pipe Buried Under Ballast</h4>
+                            <p>Close-up view of perforated PVC drainage pipe enveloped in protective netting and backfilled under clean ballast stone aggregate.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 9 -->
+                    <div class="gallery-item">
+                        <img src="Ballast%20applied%20atop%20PVC%20pipes.jpeg" alt="Ballast stones applied atop PVC pipes across Green 7">
+                        <div class="gallery-caption">
+                            <h4>Green 7 Infill — Ballast Atop Drainage Pipes</h4>
+                            <p>Overview of the Green 7 foundation bed showing ballast stones applied over the drainage pipe trench network, with polythene lining along perimeter.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 10 -->
+                    <div class="gallery-item">
+                        <img src="Ballast%20applied%20on%20green%207.jpeg" alt="Ballast stones applied across Green 7 trenches">
+                        <div class="gallery-caption">
+                            <h4>Foundation Sub-Base — Completed Ballast Layer</h4>
+                            <p>Clean ballast aggregate backfilled and leveled across Green 7 drainage trenches, providing permeable cushioning over pipes.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 11 -->
+                    <div class="gallery-item">
+                        <img src="Redoil%20Delivery.jpeg" alt="Tipper truck tipping red soil delivery">
+                        <div class="gallery-caption">
+                            <h4>Course Deliveries — Red Loam Tipper Delivery</h4>
+                            <p>Commercial heavy tipper truck discharging a fresh load of screened red loam soil on site during the course-wide delivery campaign.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 12 -->
+                    <div class="gallery-item">
+                        <img src="Redsoil%20delivery.jpeg" alt="Yellow tipper lorry unloading red soil">
+                        <div class="gallery-caption">
+                            <h4>Materials Logistics — Commercial Red Soil Inflow</h4>
+                            <p>Yellow commercial tipper lorry unloading red topsoil on site, providing 1 lorry load to each green and teebox across the course.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 13 -->
+                    <div class="gallery-item">
+                        <img src="Red%20soil%20delivery%20at%20teebox%206%20%26%208.jpeg" alt="Red soil delivery at Teebox 6 and 8 zone">
+                        <div class="gallery-caption">
+                            <h4>Teebox Logistics — Red Soil Delivery at Tees 6 &amp; 8</h4>
+                            <p>Tipper lorry discharging a dedicated load of red loam topsoil at the Teebox 6 and Teebox 8 sector for platform grading.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 14 -->
+                    <div class="gallery-item">
+                        <img src="Red%20soil%20delivered%20on%20green%206.jpeg" alt="Red soil delivered on Green 6 surrounds">
+                        <div class="gallery-caption">
+                            <h4>Green Logistics — Red Soil Stockpile at Green 6</h4>
+                            <p>Fresh stockpile of red loam topsoil unloaded adjacent to Green 6 for surround contouring and agronomic dressing.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 15 -->
+                    <div class="gallery-item">
+                        <img src="Redsoil%20delivery%20at%20green%207.jpeg" alt="Tipper truck delivering red soil directly at Green 7">
+                        <div class="gallery-caption">
+                            <h4>Green 7 Supply — Tipper Delivery at Bed Edge</h4>
+                            <p>Commercial tipper lorry discharging one of 6 dedicated red soil loads directly along the perimeter edge of Green 7.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 16 -->
+                    <div class="gallery-item">
+                        <img src="Redsoil%20at%20green%207.jpeg" alt="Stockpiled red soil heaps adjacent to Green 7">
+                        <div class="gallery-caption">
+                            <h4>Green 7 Logistics — Red Loam Stockpiles Staged</h4>
+                            <p>Generous stockpiles of delivered red soil staged alongside the Green 7 foundation bed ready for wheelbarrow transport and spreading.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 17 -->
+                    <div class="gallery-item">
+                        <img src="Applying%20red%20soil%20on%20green%207%20before%20levelling.jpeg" alt="Applying red soil on Green 7 before leveling">
+                        <div class="gallery-caption">
+                            <h4>Green 7 Agronomy — Wheelbarrowing Red Soil</h4>
+                            <p>Laborers wheelbarrowing and distributing fresh red loam soil across the Green 7 hardcore and ballast foundation base.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 18 -->
+                    <div class="gallery-item">
+                        <img src="Applied%20%26%20Levelling%20of%203%20lorries%20worth%20of%20redoil%20on%20green%207.jpeg" alt="Spreading and leveling 3 lorries worth of red soil on Green 7">
+                        <div class="gallery-caption">
+                            <h4>Green 7 Milestone — Leveling 3 Lorries of Red Soil</h4>
+                            <p>Civil crew with rakes and shovels actively spreading and precision-leveling 3 lorries worth of red loam soil across Green 7.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 19 -->
+                    <div class="gallery-item">
+                        <img src="Marking%20green%20drainage%20outlet.jpeg" alt="Worker measuring and marking green drainage outlet line">
+                        <div class="gallery-caption">
+                            <h4>Drainage Survey — Setting Drainage Outlet Pegs</h4>
+                            <p>Site drainage technician establishing line pegs and measuring grade alignment for a green outlet drainage channel.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 20 -->
+                    <div class="gallery-item">
+                        <img src="Marking%20of%20greens%20outlet%20drainage.jpeg" alt="Chalk alignment marking for greens outlet drainage">
+                        <div class="gallery-caption">
+                            <h4>Drainage Layout — Chalk Marking Outlet Channel</h4>
+                            <p>High-visibility white chalk line marked across the fairway terrain delineating the path for the green subsurface outlet drain.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 21 -->
+                    <div class="gallery-item">
+                        <img src="Initial%20stages%20of%20setting%20up%20dam%201%20liner.jpeg" alt="Initial stages of setting up Dam 1 liner">
+                        <div class="gallery-caption">
+                            <h4>Dam 1 Infrastructure — Initial Liner Rollout</h4>
+                            <p>Initial stages of deploying heavy-duty black polythene liner sheets along the excavated floor and slope transitions of Dam 1.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 22 -->
+                    <div class="gallery-item">
+                        <img src="Dam%201%20liner%20setting%20up.jpeg" alt="Dam 1 liner being stretched along embankment slope">
+                        <div class="gallery-caption">
+                            <h4>Dam 1 Construction — Embankment Liner Placement</h4>
+                            <p>Large site crew positioning and stretching black polythene liner sheets up the steep embankment shoulder of Dam 1.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 23 -->
+                    <div class="gallery-item">
+                        <img src="Dam%201%20was%20applied%20dam%20liners.jpeg" alt="Dam 1 basin floor completely lined with polythene membrane">
+                        <div class="gallery-caption">
+                            <h4>Dam 1 Milestone — Liner Applied Across Basin</h4>
+                            <p>Dam 1 basin floor fully covered with heavy-duty black polythene liner membrane, staged for thermal seam sealing.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 24 -->
+                    <div class="gallery-item">
+                        <img src="Dam%201%20was%20applied%20dam%20liners_01.jpeg" alt="Thermal welding and burning polythene edges on Dam 1 liner">
+                        <div class="gallery-caption">
+                            <h4>Dam 1 Seam Sealing — Thermal Polythene Welding</h4>
+                            <p>Technicians heating and burning polythene edges to weld overlapping sheets together into seamless, watertight bonded joints.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 25 -->
+                    <div class="gallery-item">
+                        <img src="Laying%20down%20dam%20liners%20on%20Dam%203.jpeg" alt="Site crew deploying dam liner sheets across Dam 3 channel">
+                        <div class="gallery-caption">
+                            <h4>Dam 3 Infrastructure — Liner Deployment Along Channel</h4>
+                            <p>Large site crew unrolling and positioning heavy-duty polythene liner sheets across the excavated channel bed and side slopes of Dam 3, awaiting seam connection.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 26 (Drone) -->
+                    <div class="gallery-item">
+                        <img src="Dam%203%20Liners%20placed%20yet%20to%20be%20connected.JPG" alt="Aerial drone view of Dam 3 liners placed along channel bed yet to be connected">
+                        <div class="gallery-caption">
+                            <h4>Dam 3 Drone Survey — Liners Placed, Awaiting Connection</h4>
+                            <p>High-altitude aerial drone photograph capturing multiple heavy-duty black polythene liner panels laid out sequentially along the Dam 3 excavated channel bed and embankment slopes, positioned and awaiting thermal seam welding to connect adjacent sheets.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 27 (Drone) -->
+                    <div class="gallery-item">
+                        <img src="Green%207.JPG" alt="Aerial drone survey of Green 7 showing ballast-covered drainage network and red soil surrounds">
+                        <div class="gallery-caption">
+                            <h4>Green 7 Drone Survey — Completed Ballast &amp; Red Soil Foundation</h4>
+                            <p>Aerial drone overview of Green 7 revealing the full extent of the completed herringbone drainage network covered in clean ballast stone aggregate, surrounded by fresh red loam topsoil fill and bordered by established fairway turf.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 28 (Drone) -->
+                    <div class="gallery-item">
+                        <img src="Dam%201%20Liner%20placed%20and%20connected.JPG" alt="Aerial drone view of Dam 1 liner fully placed and thermally welded across entire basin">
+                        <div class="gallery-caption">
+                            <h4>Dam 1 Drone Survey — Liner Placed &amp; Seams Connected</h4>
+                            <p>Aerial drone photograph showing Dam 1 basin floor fully covered with thermally welded polythene liner membrane, with site technicians visible on the surface completing final seam connections and edge anchoring.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 29 (Drone) -->
+                    <div class="gallery-item">
+                        <img src="Dam%201%20liner.JPG" alt="Wide aerial drone view of Dam 1 complete liner coverage across reservoir basin">
+                        <div class="gallery-caption">
+                            <h4>Dam 1 Aerial Overview — Full Reservoir Liner Coverage</h4>
+                            <p>Wide-angle aerial drone survey of Dam 1 showing the entire reservoir basin floor and slopes uniformly covered with connected heavy-duty polythene liner membrane, with orange HDPE drainage pipes visible at the embankment edge.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- SECTION 2: CHAKA FARMS                                                    -->
+        <!-- ========================================================================= -->
+        <section id="chaka-farms" class="page-break-before">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon icon-farm">🌾</div>
+                    <h2>Chaka Farms</h2>
+                </div>
+                <div class="supervisor-badges-wrapper">
+                    <div class="supervisor-badge">
+                        <span>Septic &amp; Earthwork:</span> Dennis &amp; Ken
+                    </div>
+                    <div class="supervisor-badge">
+                        <span>Milking:</span> Kamandau
+                    </div>
+                    <div class="supervisor-badge">
+                        <span>Canine Unit:</span> Willy
+                    </div>
+                    <div class="supervisor-badge">
+                        <span>Compound:</span> Margaret &amp; Monica
+                    </div>
+                </div>
+            </div>
+
+            <!-- Narrative Card -->
+            <div class="card">
+                <div class="card-header">
+                    <span>Septic Tank Excavation, Tractor Haulage, Soil Spreading, Flower Uprooting &amp; Farm Routines</span>
+                </div>
+                <p class="editorial-text">
+                    Field operations conducted at Chaka Farms on Saturday, 26th September 2026 covered heavy equipment excavation, farm tractor logistics, backhoe earthwork, boundary maintenance, dairy milking reconciliation, working dog unit care, and compound cleanliness:
+                </p>
+                <ul class="highlight-list">
+                    <li><strong>Septic Tank Excavation &amp; Tractor Haulage (Dennis &amp; Ken):</strong> Dennis and Ken oversaw the excavation of the old tank at the washroom next to the farm office using the backhoe loader. The machine dug out the old structure and excavated additional space required for installing the new septic tank. The excavated soil was dumped directly onto the farm tractor trailer, which hauled it away to a designated dumping location on the farm.</li>
+                    <li><strong>Soil Spreading at Dumping Site (Dennis &amp; Ken):</strong> Following tractor haulage, the backhoe loader was deployed at the farm dumping location to spread out and level the excavated soil heaps dumped from the septic tank hole, ensuring clean, orderly terrain management.</li>
+                    <li><strong>Perimeter Flower Uprooting (Dennis &amp; Ken):</strong> Along the Chaka Farms boundary near the gate entrance, the backhoe loader was utilized to cleanly uproot the old perimeter flower bushes and root clumps that were left outside following the recent gate repositioning, clearing the entryway perimeter.</li>
+                    <li><strong>Dairy Milking Yield &amp; Utilization (Kamandau):</strong> Total gross dairy cow milk yield recorded 5.0 Litres (2.5L morning, 2.5L evening). Deductions drawn out of total yield included 1.0L for goat kids (0.5L morning and 0.5L evening), 0.5L allocated to Gladys, and 0.5L allocated to Maasai, resulting in a net farm reserve balance of 3.0 Litres.</li>
+                    <li><strong>Canine Unit Care, Training &amp; Supply Status (Willy):</strong> Willy carried out daily kennel cleaning and reinforced kennel manners. Obedience training focused on practicing the "paw" command, and dog cleaning was completed. Willy reported that cleaning disinfectant and dog shampoo are finished and require replenishment.</li>
+                    <li><strong>Compound Maintenance (Margaret &amp; Monica):</strong> Margaret and Monica carried out routine sweeping and cleaning across the farm compound and walkways, maintaining general cleanliness.</li>
+                </ul>
+
+                <div class="success-box">
+                    <h4>Chaka Farms Operations Summary</h4>
+                    <p>The old tank near the office washroom was successfully dug out and the pit expanded for the new septic tank, with all excavated soil hauled away and spread out by the backhoe. Boundary perimeter flowers were uprooted, milking yielded 5.0L gross with 3.0L net farm reserve, canine training and cleaning were conducted, and the compound remained neat.</p>
+                </div>
+            </div>
+
+            <!-- Quantitative Dairy Milking Yield Ledger Spread -->
+            <div class="card page-break-before">
+                <div class="card-header">
+                    <span>📊 Dairy Milking Yield &amp; Utilization Ledger</span>
+                </div>
+                <div class="supervisor-badge" style="margin-bottom: 14px; width: fit-content;">
+                    <span>Milking Supervisor:</span> Kamandau
+                </div>
+                <p class="editorial-text">
+                    Quantitative breakdown of gross dairy production, scheduled nutrition disbursements, and net farm inventory for Saturday, 26th September 2026:
+                </p>
+
+                <table class="milk-table">
+                    <thead>
+                        <tr>
+                            <th>Production / Allocation Category</th>
+                            <th>Morning Session</th>
+                            <th>Evening Session</th>
+                            <th>Daily Total</th>
+                            <th>Accounting Impact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Gross Dairy Cow Milk Production</strong></td>
+                            <td>2.5 L</td>
+                            <td>2.5 L</td>
+                            <td class="total-cell">5.0 L</td>
+                            <td>Gross Inflow (Total Harvested)</td>
+                        </tr>
+                        <tr>
+                            <td>Goat Kids Milk Ration</td>
+                            <td>0.5 L</td>
+                            <td>0.5 L</td>
+                            <td class="deduction-cell">- 1.0 L</td>
+                            <td>Disbursement (Nutrition Ration)</td>
+                        </tr>
+                        <tr>
+                            <td>Gladys Allocation</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td class="deduction-cell">- 0.5 L</td>
+                            <td>Disbursement (Staff Allocation)</td>
+                        </tr>
+                        <tr>
+                            <td>Maasai Allocation</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td class="deduction-cell">- 0.5 L</td>
+                            <td>Disbursement (Staff Allocation)</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3"><strong>Total Allocations &amp; Disbursements Deducted</strong></td>
+                            <td class="deduction-cell"><strong>- 2.0 L</strong></td>
+                            <td><strong>Total Outflow</strong></td>
+                        </tr>
+                        <tr class="balance-row">
+                            <td colspan="3"><strong>Net Remaining Farm Reserve Balance</strong></td>
+                            <td class="balance-cell"><strong>3.0 L</strong></td>
+                            <td><strong>Net Farm Inventory</strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <div class="info-box">
+                    <h4>📌 Dairy Ledger Reconciliation Note</h4>
+                    <p>
+                        In strict compliance with farm accounting standards, all milk yields are recorded in Litres (L). Allocations and staff disbursements (2.0L total) are deducted directly from the gross harvest (5.0L), yielding an exact net farm reserve balance of 3.0 Litres.
+                    </p>
+                </div>
+
+                <div class="amber-box">
+                    <h4>⚠️ Supply Restock Alert &bull; Canine Unit</h4>
+                    <p>
+                        Willy reported that on-site supplies of pet cleaning disinfectant spray and dog shampoo are completely finished. Restocking is required to support upcoming kennel sanitation and dog grooming schedules.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Unified Continuous Photo Gallery Card (Chaka Farms) -->
+            <!-- Strict Rule 3 & 7: One single continuous card, 2-column grid, no grouping -->
+            <div class="card gallery-card page-break-before">
+                <div class="card-header">
+                    <span>📸 Photographic Field Evidence — Chaka Farms</span>
+                </div>
+                <p class="editorial-text" style="font-size: 0.95rem; margin-bottom: 14px;">
+                    Photographic documentation of septic tank excavation, tractor soil haulage, soil spreading, perimeter flower uprooting, and canine supplies at Chaka Farms:
+                </p>
+
+                <div class="gallery-grid">
+                    <!-- Photo 1 -->
+                    <div class="gallery-item">
+                        <img src="Digging%20out%20old%20tank%20at%20the%20washroom%20next%20to%20the%20office%20and%20digging%20some%20more%20space%20for%20setting%20up%20new%20septic%20tank.jpeg" alt="Backhoe loader digging out old tank next to office washroom">
+                        <div class="gallery-caption">
+                            <h4>Septic Tank Excavation — Backhoe Digging</h4>
+                            <p>Backhoe loader excavating the old tank pit next to the office washroom and expanding the area for the new septic tank.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 2 -->
+                    <div class="gallery-item">
+                        <img src="Digging%20out%20old%20tank%20at%20the%20washroom%20next%20to%20the%20office%20and%20digging%20some%20more%20space%20for%20setting%20up%20new%20septic%20tank_01.jpeg" alt="Backhoe dumping excavated soil onto tractor trailer">
+                        <div class="gallery-caption">
+                            <h4>Soil Logistics — Loading Farm Tractor</h4>
+                            <p>Excavated soil being loaded directly onto the red farm tractor trailer for haulage to the farm dumping site.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 3 -->
+                    <div class="gallery-item">
+                        <img src="Septic%20tank%20fully%20dug.jpeg" alt="Completed excavation pit for new septic tank">
+                        <div class="gallery-caption">
+                            <h4>Excavation Complete — New Septic Pit</h4>
+                            <p>Deep excavated pit fully prepared and cleared, ready for the installation of the new septic tank.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 4 -->
+                    <div class="gallery-item">
+                        <img src="Spread%20out%20the%20excavated%20dumped%20soil%20from%20the%20septic%20tank%20hole%20using%20the%20backhoe.jpeg" alt="Backhoe spreading dumped soil at dumping area">
+                        <div class="gallery-caption">
+                            <h4>Earthwork — Spreading Dumped Soil</h4>
+                            <p>Backhoe loader front bucket spreading out and leveling the dumped soil piles hauled from the septic tank excavation.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 5 -->
+                    <div class="gallery-item">
+                        <img src="The%20chakafarms%20perimeter%20flowers%20that%20were%20left%20on%20the%20outside%20after%20gate%20repositioning%20were%20uprooted.jpeg" alt="Uprooted perimeter flowers outside gate">
+                        <div class="gallery-caption">
+                            <h4>Perimeter Clearance — Flowers Uprooted Outside Gate</h4>
+                            <p>Excavated root clumps of perimeter flowers outside the fence line following recent gate repositioning.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 6 -->
+                    <div class="gallery-item">
+                        <img src="The%20chakafarms%20perimeter%20flowers%20that%20were%20left%20on%20the%20outside%20after%20gate%20repositioning%20were%20uprooted_01.jpeg" alt="Backhoe uprooting flowers outside gate">
+                        <div class="gallery-caption">
+                            <h4>Boundary Maintenance — Backhoe Uprooting Flowers</h4>
+                            <p>Backhoe loader backhoe boom cleanly clearing and uprooting remaining perimeter shrubs along the farm entryway.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 7 -->
+                    <div class="gallery-item">
+                        <img src="Dog%20shampoo%20and%20disinfenctant.jpeg" alt="Depleted bottles of dog shampoo and disinfectant">
+                        <div class="gallery-caption">
+                            <h4>Canine Supplies — Depleted Inventory</h4>
+                            <p>Empty bottles of pet disinfectant spray and dog shampoo photographed after kennel cleaning and dog washing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- SECTION 3: KABETE RESIDENCE                                               -->
+        <!-- ========================================================================= -->
+        <section id="kabete-residence" class="page-break-before">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon icon-residence">🏡</div>
+                    <h2>Kabete Residence</h2>
+                </div>
+                <div class="supervisor-badges-wrapper">
+                    <div class="supervisor-badge">
+                        <span>Operations Overseen &amp; Shared by:</span> Njoki
+                    </div>
+                </div>
+            </div>
+
+            <!-- Narrative Card -->
+            <div class="card">
+                <div class="card-header">
+                    <span>Column Rebar Ground-Level Setting, Floor Screeding &amp; Domestic Pet Care</span>
+                </div>
+                <p class="editorial-text">
+                    Civil works and domestic pet care were carried out at Kabete Residence on Saturday, 26th September 2026, with updates overseen and shared by Njoki:
+                </p>
+                <ul class="highlight-list">
+                    <li><strong>Column Rebar Ground-Level Setting:</strong> Construction workers positioned and secured vertical column reinforcement bars at ground level inside the excavated pit, anchoring them properly on the concrete foundation pad.</li>
+                    <li><strong>Platform Concrete Screeding:</strong> Workers mixed and laid concrete screeding across the upper platform slab to achieve a smooth, uniform surface finish.</li>
+                    <li><strong>Domestic Pet Care &amp; Feeding:</strong> Domestic pet routines were maintained throughout the day; Ajabu the Golden Retriever was fed from his food bowl along the veranda walkway, and resident cats Reo and Aiko were fed side-by-side on the veranda floor.</li>
+                </ul>
+
+                <div class="success-box">
+                    <h4>Kabete Milestone Summary</h4>
+                    <p>Vertical column reinforcement bars were set and secured at ground level in the foundation pit, platform screeding was completed smoothly, and domestic pets were fed and cared for.</p>
+                </div>
+            </div>
+
+            <!-- Unified Continuous Photo Gallery Card (Kabete Residence) -->
+            <!-- Strict Rule 3 & 7: One single continuous card, 2-column grid, no grouping -->
+            <div class="card gallery-card page-break-before">
+                <div class="card-header">
+                    <span>📸 Photographic Field Evidence — Kabete Residence</span>
+                </div>
+                <p class="editorial-text" style="font-size: 0.95rem; margin-bottom: 14px;">
+                    Photographic documentation of column rebar placement, concrete screeding, and domestic pet care at Kabete Residence:
+                </p>
+
+                <div class="gallery-grid">
+                    <!-- Photo 1 -->
+                    <div class="gallery-item">
+                        <img src="Columns%20bars%20and%20screeding.jpeg" alt="Overview of screeding work and column rebar in excavation pit">
+                        <div class="gallery-caption">
+                            <h4>Civil Works — Screeding &amp; Column Rebar</h4>
+                            <p>Overhead view showing workers applying concrete screed on the upper deck while column rebar cages are set in the pit below.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 2 -->
+                    <div class="gallery-item">
+                        <img src="Columns%20bars%20set%20at%20the%20ground%20level.jpeg" alt="Worker leveling foundation around column rebar cages">
+                        <div class="gallery-caption">
+                            <h4>Foundation Pit — Ground-Level Column Bars</h4>
+                            <p>Worker leveling the foundation base around vertical steel column rebar cages set in place inside the excavated area.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 3 -->
+                    <div class="gallery-item">
+                        <img src="Columns%20bars%20set.jpeg" alt="Close-up of column bars set in foundation pit">
+                        <div class="gallery-caption">
+                            <h4>Substructure — Column Bars Positioned</h4>
+                            <p>Close-up view of column rebar cages positioned and tied at the ground level of the foundation pit.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 4 -->
+                    <div class="gallery-item">
+                        <img src="WhatsApp%20Image%202026-09-26%20at%2016.50.05.jpeg" alt="Active screeding work on upper platform with column bars below">
+                        <div class="gallery-caption">
+                            <h4>Upper Platform — Concrete Screeding</h4>
+                            <p>Civil crew working on screeding the upper platform floor slab while the foundation column cages stand below.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 5 -->
+                    <div class="gallery-item">
+                        <img src="WhatsApp%20Image%202026-09-26%20at%2016.50.07.jpeg" alt="Vertical view of column rebar cages tied on footing">
+                        <div class="gallery-caption">
+                            <h4>Rebar Placement — Foundation Level</h4>
+                            <p>Vertical perspective of steel column rebar cages tied securely on the concrete foundation footing pad.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 6 -->
+                    <div class="gallery-item">
+                        <img src="WhatsApp%20Image.jpeg" alt="Site progress showing concrete screeding and column steel setup">
+                        <div class="gallery-caption">
+                            <h4>Construction Progress — Deck &amp; Foundation</h4>
+                            <p>Wide angle of the ongoing platform screeding and vertical column reinforcement installation.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 7 -->
+                    <div class="gallery-item">
+                        <img src="Ajabu.jpeg" alt="Ajabu the Golden Retriever feeding on the veranda walkway">
+                        <div class="gallery-caption">
+                            <h4>Domestic Pet Care — Ajabu</h4>
+                            <p>Ajabu the Golden Retriever enjoying his meal from a food bowl on the tiled veranda walkway.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 8 -->
+                    <div class="gallery-item">
+                        <img src="Aiko%20and%20Reo.jpeg" alt="Resident cats Reo and Aiko eating together on veranda floor">
+                        <div class="gallery-caption">
+                            <h4>Domestic Pet Care — Reo &amp; Aiko</h4>
+                            <p>Resident cats Reo and Aiko feeding side-by-side from their food bowls on the veranda floor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- SECTION 4: ROSE PARK APARTMENT                                            -->
+        <!-- ========================================================================= -->
+        <section id="rose-park" class="page-break-before">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon icon-apartment">🏢</div>
+                    <h2>Rose Park Apartment</h2>
+                </div>
+                <div class="supervisor-badges-wrapper">
+                    <div class="supervisor-badge">
+                        <span>Maintenance &amp; Painting:</span> Operations Team
+                    </div>
+                </div>
+            </div>
+
+            <!-- Narrative Card -->
+            <div class="card">
+                <div class="card-header">
+                    <span>Interior Painting Progress Across Multiple Rooms</span>
+                </div>
+                <p class="editorial-text">
+                    Following wall surface preparations, painting works made steady progress across six key areas at Rose Park Apartment on Saturday, 26th September 2026:
+                </p>
+                <ul class="highlight-list">
+                    <li><strong>Main Entrance:</strong> Painting works underway on the walls around the main entrance to restore a clean, fresh finish.</li>
+                    <li><strong>Living Room TV Area:</strong> Painting in progress on the living room wall behind the television mounting bracket.</li>
+                    <li><strong>Laundry Area:</strong> Paint application progressing smoothly along the laundry room partition wall.</li>
+                    <li><strong>Kitchen Area Shelves:</strong> Applying clean white paint to the kitchen pantry shelving units.</li>
+                    <li><strong>Back Door Area:</strong> Painting walls in the walkway leading to the back door.</li>
+                    <li><strong>Bedroom:</strong> Wall painting in progress across the bedroom surfaces.</li>
+                </ul>
+
+                <div class="success-box">
+                    <h4>Painting Milestone Summary</h4>
+                    <p>Paint application progressed steadily across six distinct areas of the apartment, providing fresh coats to the entrance, TV wall, laundry wall, kitchen shelves, back door area, and bedroom.</p>
+                </div>
+            </div>
+
+            <!-- Unified Continuous Photo Gallery Card (Rose Park Apartment) -->
+            <!-- Strict Rule 3 & 7: One single continuous card, 2-column grid, no grouping -->
+            <div class="card gallery-card page-break-before">
+                <div class="card-header">
+                    <span>📸 Photographic Field Evidence — Rose Park Apartment</span>
+                </div>
+                <p class="editorial-text" style="font-size: 0.95rem; margin-bottom: 14px;">
+                    Photographic documentation of interior painting works across six active areas at Rose Park Apartment:
+                </p>
+
+                <div class="gallery-grid">
+                    <!-- Photo 1 -->
+                    <div class="gallery-item">
+                        <img src="Paints%20work%20at%20Rose%20park%20apartment%20on%20progress%20at%20the%20main%20entrance.jpeg" alt="Paint work in progress at the main entrance">
+                        <div class="gallery-caption">
+                            <h4>Main Entrance — Wall Painting</h4>
+                            <p>Fresh paint being applied to the walls at the main entrance area.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 2 -->
+                    <div class="gallery-item">
+                        <img src="Paints%20works%20on%20progress%20at%20the%20tv%20area%20at%20Rose%20park%20apartment.jpeg" alt="Paint work in progress at the TV area">
+                        <div class="gallery-caption">
+                            <h4>Living Room — TV Wall Painting</h4>
+                            <p>Wall paint application in progress around the television mounting frame.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 3 -->
+                    <div class="gallery-item">
+                        <img src="Paints%20works%20on%20the%20progress%20at%20laundry%20area%20at%20Rose%20park%20apartment.jpeg" alt="Paint work in progress at the laundry area">
+                        <div class="gallery-caption">
+                            <h4>Laundry Area — Partition Wall Painting</h4>
+                            <p>Painting the lower partition wall in the laundry area.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 4 -->
+                    <div class="gallery-item">
+                        <img src="Paints%20works%20on%20the%20progress%20at%20the%20Rose%20park%20apartment%20kitchen%20area%20shelves.jpeg" alt="Paint work on kitchen area shelves">
+                        <div class="gallery-caption">
+                            <h4>Kitchen Storage — Shelf Painting</h4>
+                            <p>Applying fresh paint coats to the built-in kitchen storage shelves.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 5 -->
+                    <div class="gallery-item">
+                        <img src="Paints%20works%20on%20the%20progress%20at%20the%20back%20door%20at%20Rose%20park%20apartment.jpeg" alt="Paint work in progress at the back door">
+                        <div class="gallery-caption">
+                            <h4>Back Door Area — Wall Painting</h4>
+                            <p>Paint application in progress on the walls and reveals leading to the back door.</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo 6 -->
+                    <div class="gallery-item">
+                        <img src="Paints%20works%20on%20the%20progress%20at%20the%20bedroom%20at%20Rose%20park%20apartment.jpeg" alt="Paint work in progress at the bedroom">
+                        <div class="gallery-caption">
+                            <h4>Bedroom — Wall Painting</h4>
+                            <p>Fresh paint coats applied across the bedroom walls.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- SECTION 5: AMANI COTTAGE                                                  -->
+        <!-- ========================================================================= -->
+        <section id="amani-cottage" class="page-break-before">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon icon-cottage">🏡</div>
+                    <h2>Amani Cottage</h2>
+                </div>
+                <div class="supervisor-badges-wrapper">
+                    <div class="supervisor-badge">
+                        <span>Grounds:</span> Edwin
+                    </div>
+                </div>
+            </div>
+
+            <!-- Narrative Card -->
+            <div class="card">
+                <div class="card-header">
+                    <span>Compound Sweeping &amp; Entrance Balcony Cleaning</span>
+                </div>
+                <p class="editorial-text">
+                    Grounds maintenance and entryway care were conducted at Amani Cottage on Saturday, 26th September 2026 under Edwin:
+                </p>
+                <ul class="highlight-list">
+                    <li><strong>Compound Sweeping:</strong> Edwin carried out sweeping across the compound grounds, clearing fallen leaves and debris to maintain neat outdoor spaces.</li>
+                    <li><strong>Entrance Door Balcony Cleaning:</strong> Thorough cleaning and sweeping of the entrance door balcony, keeping the front entryway tidy and presentable.</li>
+                </ul>
+
+                <div class="info-box">
+                    <h4>Grounds Maintenance Summary</h4>
+                    <p>Compound sweeping and front entrance door balcony cleaning were completed, maintaining an orderly and clean environment around Amani Cottage.</p>
+                </div>
+            </div>
+        </section>
+        </main>
+    </div>
+
+    <!-- Footer Signature Block (Strict AGENTS.MD Rule: No invented titles) -->
+    <footer>
+        <div class="signature-block">
+            <div class="signature-avatar">D</div>
+            <div class="signature-details">
+                <h3>Compiled by Dennis</h3>
+            </div>
+        </div>
+        <div style="font-size: 0.88rem; color: var(--slate-600);">
+            Daily Operations Report &bull; Saturday, 26th September 2026
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>
