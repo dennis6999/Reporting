@@ -1,0 +1,2240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Operations Report — Wednesday, 7th October 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-dark: #0f172a;
+            --accent: #059669;
+            --accent-light: #ecfdf5;
+            --golf-green: #15803d;
+            --golf-green-light: #f0fdf4;
+            --golf-green-border: #86efac;
+            --farm-amber: #d97706;
+            --farm-amber-light: #fffbeb;
+            --farm-amber-border: #fde68a;
+            --residence-purple: #6d28d9;
+            --residence-purple-light: #f5f3ff;
+            --residence-purple-border: #ddd6fe;
+            --cottage-teal: #0d9488;
+            --cottage-teal-light: #f0fdfa;
+            --cottage-teal-border: #99f6e4;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-300: #cbd5e1;
+            --slate-400: #94a3b8;
+            --slate-600: #475569;
+            --slate-700: #334155;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --radius-md: 12px;
+            --radius-lg: 16px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f4f6f9;
+            color: var(--slate-800);
+            line-height: 1.7;
+            font-size: 1.02rem;
+            padding: 40px 20px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            border: 1px solid var(--slate-200);
+        }
+
+        /* Header Block */
+        header {
+            background: #0f172a !important;
+            color: #ffffff !important;
+            padding: 44px 44px;
+            position: relative;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .badge-date {
+            background: rgba(255,255,255,0.18) !important;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.94rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(255,255,255,0.25);
+            color: #ffffff !important;
+        }
+        .report-tag {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #86efac !important;
+            font-weight: 700;
+        }
+        header h1 {
+            font-size: 2.3rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            color: #ffffff !important;
+        }
+        header p.subtitle {
+            color: #cbd5e1 !important;
+            font-size: 1.02rem;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        /* Executive KPI Summary Bar */
+        .kpi-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            padding: 24px 44px;
+            background-color: var(--slate-50);
+            border-bottom: 1px solid var(--slate-200);
+        }
+        .kpi-card {
+            background: #ffffff;
+            padding: 18px 22px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--slate-200);
+            box-shadow: var(--shadow-sm);
+        }
+        .kpi-card .label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--slate-600);
+            letter-spacing: 0.5px;
+        }
+        .kpi-card .value {
+            font-size: 1.28rem;
+            font-weight: 800;
+            color: var(--slate-900);
+            margin-top: 4px;
+        }
+        .kpi-card .subtext {
+            font-size: 0.86rem;
+            color: var(--slate-600);
+            margin-top: 2px;
+        }
+
+        /* Executive Cover Overview Card */
+        .cover-overview-container {
+            padding: 28px 44px 0 44px;
+        }
+        .cover-overview-card {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--slate-200);
+            padding: 30px 34px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .main-content { padding: 36px 44px; }
+
+        /* Section Headers */
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--slate-200);
+            margin-bottom: 26px;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .section-title h2 {
+            font-size: 1.55rem;
+            font-weight: 800;
+            color: var(--slate-900);
+        }
+        .section-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+            color: #ffffff !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .icon-golf { background-color: var(--golf-green) !important; }
+        .icon-farm { background-color: var(--farm-amber) !important; }
+        .icon-residence { background-color: var(--residence-purple) !important; }
+        .icon-cottage { background-color: var(--cottage-teal) !important; }
+
+        .supervisor-badges-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .supervisor-badge {
+            background-color: var(--slate-100);
+            color: var(--slate-700);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            border: 1px solid var(--slate-300);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .supervisor-badge span {
+            color: var(--slate-500);
+            font-weight: 500;
+        }
+
+        /* Narrative Cards */
+        .card {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--slate-200);
+            padding: 30px 34px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-sm);
+        }
+        .card-header {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--slate-900);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .editorial-text {
+            font-size: 1.02rem;
+            color: var(--slate-700);
+            line-height: 1.75;
+            margin-bottom: 18px;
+        }
+        .highlight-list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 18px;
+        }
+        .highlight-list li {
+            position: relative;
+            padding-left: 26px;
+            margin-bottom: 12px;
+            font-size: 0.98rem;
+            color: var(--slate-700);
+            line-height: 1.65;
+        }
+        .highlight-list li::before {
+            content: "■";
+            position: absolute;
+            left: 6px;
+            top: 1px;
+            font-size: 0.75rem;
+            color: var(--accent);
+        }
+
+        /* Callout Boxes */
+        .success-box {
+            background-color: var(--golf-green-light);
+            border-left: 4.5px solid var(--golf-green);
+            padding: 16px 20px;
+            border-radius: 0 10px 10px 0;
+            margin-top: 18px;
+            margin-bottom: 18px;
+        }
+        .success-box h4 {
+            color: var(--golf-green);
+            font-size: 0.96rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .success-box p {
+            color: var(--slate-700);
+            font-size: 0.94rem;
+            line-height: 1.6;
+        }
+
+        .amber-box {
+            background-color: var(--farm-amber-light);
+            border-left: 4.5px solid var(--farm-amber);
+            padding: 16px 20px;
+            border-radius: 0 10px 10px 0;
+            margin-top: 18px;
+            margin-bottom: 18px;
+        }
+        .amber-box h4 {
+            color: var(--farm-amber);
+            font-size: 0.96rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .amber-box p {
+            color: var(--slate-700);
+            font-size: 0.94rem;
+            line-height: 1.6;
+        }
+
+        .purple-box {
+            background-color: var(--residence-purple-light);
+            border-left: 4.5px solid var(--residence-purple);
+            padding: 16px 20px;
+            border-radius: 0 10px 10px 0;
+            margin-top: 18px;
+            margin-bottom: 18px;
+        }
+        .purple-box h4 {
+            color: var(--residence-purple);
+            font-size: 0.96rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .purple-box p {
+            color: var(--slate-700);
+            font-size: 0.94rem;
+            line-height: 1.6;
+        }
+
+        .teal-box {
+            background-color: var(--cottage-teal-light);
+            border-left: 4.5px solid var(--cottage-teal);
+            padding: 16px 20px;
+            border-radius: 0 10px 10px 0;
+            margin-top: 18px;
+            margin-bottom: 18px;
+        }
+        .teal-box h4 {
+            color: var(--cottage-teal);
+            font-size: 0.96rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .teal-box p {
+            color: var(--slate-700);
+            font-size: 0.94rem;
+            line-height: 1.6;
+        }
+
+        .info-box {
+            background-color: var(--slate-100);
+            border-left: 4.5px solid var(--slate-600);
+            padding: 16px 20px;
+            border-radius: 0 10px 10px 0;
+            margin-top: 18px;
+            margin-bottom: 18px;
+        }
+        .info-box h4 {
+            color: var(--slate-800);
+            font-size: 0.96rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .info-box p {
+            color: var(--slate-700);
+            font-size: 0.94rem;
+            line-height: 1.6;
+        }
+
+        /* Quantitative Tables */
+        .milk-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+        }
+        .milk-table th {
+            background-color: var(--slate-100);
+            color: var(--slate-800);
+            font-weight: 700;
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 2px solid var(--slate-300);
+        }
+        .milk-table td {
+            padding: 11px 16px;
+            border-bottom: 1px solid var(--slate-200);
+            color: var(--slate-700);
+        }
+        .milk-table tr:hover { background-color: var(--slate-50); }
+        .milk-table .total-cell {
+            font-weight: 700;
+            color: var(--farm-amber);
+        }
+        .milk-table .deduction-cell {
+            color: #dc2626;
+            font-weight: 600;
+        }
+        .milk-table .balance-cell {
+            font-weight: 800;
+            color: var(--accent);
+            font-size: 1.02rem;
+        }
+        .milk-table .balance-row {
+            background-color: var(--accent-light) !important;
+            border-top: 2px solid var(--accent);
+        }
+
+        /* Status Tables (Putting Greens & Championship Teeboxes) */
+        .status-table-wrapper {
+            margin-top: 14px;
+            margin-bottom: 14px;
+            overflow-x: auto;
+        }
+        .status-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+            text-align: left;
+        }
+        .status-table th {
+            background-color: #f1f5f9;
+            color: var(--slate-800);
+            font-weight: 700;
+            padding: 8px 12px;
+            border-top: 1px solid var(--slate-300);
+            border-bottom: 2px solid var(--slate-300);
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+        .status-table td {
+            padding: 7px 12px;
+            border-bottom: 1px solid var(--slate-200);
+            color: var(--slate-700);
+            vertical-align: middle;
+        }
+        .status-table tbody tr:nth-child(even) { background-color: #fafbfd; }
+        .status-table .col-id {
+            font-weight: 700;
+            color: var(--slate-900);
+            white-space: nowrap;
+        }
+        .status-table .col-status { line-height: 1.45; }
+        .status-table .col-tag {
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        /* Incremental Row Highlighting & Micro-Badges */
+        .status-table tr.row-changed {
+            background-color: #f0fdf4 !important;
+        }
+        .status-table tr.row-changed td:first-child {
+            border-left: 3.5px solid #15803d !important;
+            font-weight: 800;
+        }
+        .badge-today {
+            display: inline-block;
+            font-size: 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #15803d;
+            background-color: #dcfce7;
+            border: 1px solid #86efac;
+            padding: 1px 5px;
+            border-radius: 8px;
+            margin-left: 6px;
+            vertical-align: middle;
+            letter-spacing: 0.3px;
+        }
+
+        /* Milestone Badges */
+        .tag {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+        }
+        .tag-ready {
+            background-color: #dcfce7;
+            color: #15803d;
+            border: 1px solid #86efac;
+        }
+        .tag-sand {
+            background-color: #fef3c7;
+            color: #b45309;
+            border: 1px solid #fde68a;
+        }
+        .tag-trenched {
+            background-color: #e0f2fe;
+            color: #0369a1;
+            border: 1px solid #bae6fd;
+        }
+        .tag-neutral {
+            background-color: #f1f5f9;
+            color: #475569;
+            border: 1px solid #cbd5e1;
+        }
+        .tag-pending {
+            background-color: #fef2f2;
+            color: #b91c1c;
+            border: 1px solid #fecaca;
+        }
+
+        /* Operations Synthesis Summary Card */
+        .summary-card {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-left: 4.5px solid var(--primary);
+            border-radius: 0 10px 10px 0;
+            padding: 14px 18px;
+            margin-top: 14px;
+        }
+        .summary-card h4 {
+            color: var(--primary);
+            font-size: 0.96rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .summary-card p {
+            color: var(--slate-700);
+            font-size: 0.92rem;
+            line-height: 1.5;
+        }
+
+        /* Video Card Component */
+        .video-card {
+            padding: 0;
+            overflow: hidden;
+        }
+        .video-card .card-header {
+            margin-bottom: 0;
+            border-bottom: 1px solid var(--slate-200);
+            padding: 16px 22px;
+        }
+        .video-media-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #0f172a;
+        }
+        .video-media-wrapper iframe, .video-media-wrapper video {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+        .video-card-body {
+            padding: 18px 22px;
+            background: #ffffff;
+        }
+        .video-desc {
+            font-size: 0.94rem;
+            color: var(--slate-600);
+            line-height: 1.55;
+            margin-bottom: 14px;
+        }
+        .video-action-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--slate-100);
+        }
+        .youtube-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fef2f2;
+            color: #dc2626 !important;
+            border: 1px solid #fecaca;
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.15s ease;
+        }
+        .youtube-btn:hover {
+            background: #dc2626;
+            color: #ffffff !important;
+            border-color: #dc2626;
+        }
+        .video-drive-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #f0fdf4;
+            color: #15803d !important;
+            border: 1px solid #86efac;
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.15s ease;
+        }
+        .video-drive-btn:hover {
+            background: #15803d;
+            color: #ffffff !important;
+            border-color: #15803d;
+        }
+        .drive-album-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fffbeb;
+            color: #b45309 !important;
+            border: 1px solid #fde68a;
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.15s ease;
+        }
+        .drive-album-btn:hover {
+            background: #d97706;
+            color: #ffffff !important;
+            border-color: #d97706;
+        }
+        .video-link-text {
+            font-size: 0.85rem;
+            color: var(--slate-500);
+            font-family: monospace;
+        }
+
+        /* Photo Galleries: Spacious 2-Column Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-top: 18px;
+        }
+        .gallery-item {
+            background: #ffffff;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--slate-200);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 240px;
+            object-fit: contain;
+            background-color: #f8fafc;
+            display: block;
+        }
+        .gallery-caption {
+            padding: 12px 16px;
+            background: #ffffff;
+            border-top: 1px solid var(--slate-200);
+            flex-grow: 1;
+        }
+        .gallery-caption h4 {
+            font-size: 0.94rem;
+            font-weight: 700;
+            color: var(--slate-900);
+            margin-bottom: 4px;
+            line-height: 1.4;
+        }
+        .gallery-caption p {
+            font-size: 0.86rem;
+            color: var(--slate-600);
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            background: #f8fafc;
+            border-top: 1px solid var(--slate-200);
+            padding: 30px 44px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .signature-block {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .signature-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #0f172a;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+        .signature-details h3 {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--slate-900);
+        }
+
+        .page-break-before {
+            page-break-before: always;
+            break-before: page;
+        }
+
+        /* ========================================================================= */
+        /* PRINT STYLING RULES — STRICT COMPLIANCE WITH AGENTS.MD SECTION 5 & 7      */
+        /* ANTI-COMPRESSION STANDARD & GENEROUS BREATHABLE TYPOGRAPHY               */
+        /* ========================================================================= */
+        @media print {
+            @page { 
+                size: A4; 
+                margin: 8mm 10mm; 
+            }
+            
+            body { 
+                background-color: #ffffff !important; 
+                padding: 0 !important; 
+                font-size: 0.98rem !important;
+            }
+            
+            .container { 
+                box-shadow: none !important; 
+                border: none !important; 
+                border-radius: 0 !important; 
+                max-width: 100% !important; 
+                overflow: visible !important; 
+            }
+            
+            header { 
+                padding: 22px 28px !important; 
+                border-radius: 8px !important; 
+            }
+            
+            header h1 { 
+                font-size: 2.1rem !important; 
+                margin-bottom: 6px !important; 
+            }
+            
+            header p.subtitle { 
+                font-size: 0.94rem !important; 
+                line-height: 1.5 !important; 
+            }
+            
+            .kpi-bar { 
+                padding: 14px 0 !important; 
+                background: transparent !important; 
+                grid-template-columns: repeat(4, 1fr) !important; 
+                gap: 10px !important; 
+                border-bottom: 1px solid #e2e8f0 !important;
+            }
+            
+            .kpi-card { 
+                padding: 10px 12px !important; 
+                border: 1px solid #cbd5e1 !important; 
+                box-shadow: none !important; 
+            }
+            .kpi-card .value { font-size: 1.15rem !important; }
+            .kpi-card .label { font-size: 0.72rem !important; }
+            .kpi-card .subtext { font-size: 0.78rem !important; }
+
+            .cover-overview-container {
+                padding: 0 !important;
+                page-break-before: always !important;
+                break-before: page !important;
+                page-break-after: always !important;
+                break-after: page !important;
+            }
+            
+            .cover-overview-card { 
+                padding: 18px 24px !important; 
+                margin: 0 !important;
+                border: 1px solid #cbd5e1 !important; 
+                box-shadow: none !important; 
+                break-inside: avoid !important; 
+                page-break-inside: avoid !important; 
+            }
+            .cover-overview-card .card-header { 
+                font-size: 17px !important; 
+                font-weight: 800 !important; 
+                margin-bottom: 8px !important; 
+            }
+            .cover-overview-card .editorial-text { 
+                font-size: 13.2px !important; 
+                line-height: 1.48 !important; 
+                margin-bottom: 8px !important; 
+            }
+            .cover-overview-card .highlight-list li { 
+                font-size: 12.5px !important; 
+                line-height: 1.42 !important; 
+                margin-bottom: 6px !important; 
+                padding-left: 20px !important; 
+            }
+            .cover-overview-card .success-box { 
+                padding: 10px 14px !important; 
+                margin-top: 10px !important; 
+                break-inside: avoid !important; 
+                page-break-inside: avoid !important; 
+            }
+            .cover-overview-card .success-box h4 { 
+                font-size: 0.90rem !important; 
+                margin-bottom: 2px !important; 
+            }
+            .cover-overview-card .success-box p { 
+                font-size: 0.84rem !important; 
+                line-height: 1.38 !important; 
+            }
+            
+            .main-content { padding: 12px 0 !important; }
+            
+            main > section, section {
+                break-before: page !important;
+                page-break-before: always !important;
+            }
+
+            .card { 
+                padding: 20px 24px !important; 
+                margin-bottom: 14px !important; 
+                border: 1px solid #cbd5e1 !important; 
+                box-shadow: none !important; 
+                break-inside: avoid !important; 
+                page-break-inside: avoid !important; 
+            }
+
+            /* Dedicated Narrative Spreads per AGENTS.MD Section 7 Rule 1 */
+            #mucheru-golf > .card:first-of-type,
+            #chaka-farms > .card:first-of-type,
+            #kabete-residence > .card:first-of-type,
+            #amani-cottage > .card:first-of-type {
+                padding: 22px 26px !important;
+                margin-bottom: 0 !important;
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            /* Section Header in Print */
+            .section-header { 
+                margin-bottom: 10px !important; 
+                padding-bottom: 8px !important; 
+                break-inside: avoid !important; 
+                page-break-inside: avoid !important; 
+                break-after: avoid !important; 
+                page-break-after: avoid !important; 
+            }
+            .section-icon {
+                width: 38px !important;
+                height: 38px !important;
+                font-size: 1.2rem !important;
+            }
+            .section-title h2 { font-size: 1.38rem !important; }
+            .supervisor-badges-wrapper { gap: 8px !important; }
+            .supervisor-badge { 
+                font-size: 0.82rem !important; 
+                padding: 4px 10px !important; 
+            }
+
+            /* Narrative Typography in Print (Section 7 Anti-Compression) */
+            .card-header, .card-heading { 
+                font-size: 18px !important; 
+                font-weight: 800 !important; 
+                margin-bottom: 10px !important; 
+            }
+            .editorial-text { 
+                font-size: 14px !important; 
+                line-height: 1.58 !important; 
+                margin-bottom: 10px !important; 
+            }
+            .highlight-list li { 
+                font-size: 13.5px !important; 
+                line-height: 1.52 !important; 
+                margin-bottom: 8px !important; 
+                padding-left: 22px !important; 
+            }
+
+            .success-box, .amber-box, .purple-box, .teal-box {
+                padding: 12px 16px !important;
+                margin-top: 13px !important;
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+            .success-box h4, .amber-box h4, .purple-box h4, .teal-box h4 {
+                font-size: 0.95rem !important;
+                margin-bottom: 3px !important;
+            }
+            .success-box p, .amber-box p, .purple-box p, .teal-box p {
+                font-size: 0.86rem !important;
+                line-height: 1.45 !important;
+            }
+
+            /* HIDE VIDEO PLAYER CONTROLS IN PDF OUTPUT & RENDER CLEAN CARD HEADER */
+            .video-media-wrapper video, .video-media-wrapper iframe, video, iframe { 
+                display: none !important; 
+            }
+            .video-media-wrapper { 
+                aspect-ratio: auto !important; 
+                height: 36px !important; 
+                background: #f1f5f9 !important; 
+                border-bottom: 1px solid #cbd5e1 !important; 
+                display: flex !important; 
+                align-items: center !important; 
+                padding: 0 14px !important; 
+            }
+            .video-media-wrapper::before { 
+                content: "🎥 Video Recording" !important; 
+                font-size: 0.78rem !important; 
+                font-weight: 700 !important; 
+                color: #334155 !important; 
+                text-transform: uppercase !important; 
+            }
+            .video-card {
+                border: 1px solid #cbd5e1 !important;
+                box-shadow: none !important;
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+                margin-bottom: 0 !important;
+                page-break-before: always !important;
+                break-before: page !important;
+            }
+            .video-card .card-header {
+                padding: 14px 18px !important;
+                font-size: 15px !important;
+                font-weight: 800 !important;
+            }
+            .video-card-body {
+                padding: 16px 20px !important;
+            }
+            .video-desc {
+                font-size: 13px !important;
+                line-height: 1.55 !important;
+                margin-bottom: 12px !important;
+            }
+            .video-action-row {
+                padding-top: 10px !important;
+            }
+            .youtube-btn, .video-drive-btn, .drive-album-btn {
+                padding: 6px 16px !important;
+                font-size: 0.82rem !important;
+            }
+            .video-link-text {
+                font-size: 0.78rem !important;
+            }
+
+            .video-grid {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                justify-content: space-between !important;
+                gap: 12px !important;
+            }
+            .video-grid .video-card {
+                width: calc(50% - 6px) !important;
+                page-break-before: auto !important;
+                break-before: auto !important;
+            }
+
+            /* Photo Galleries: 2 Columns with seamless page-break flow */
+            .card.gallery-card {
+                padding: 14px 18px !important;
+                margin-bottom: 0 !important;
+                break-inside: auto !important;
+                page-break-inside: auto !important;
+            }
+            .card.gallery-card .card-header {
+                margin-bottom: 6px !important;
+                font-size: 15.5px !important;
+            }
+            .card.gallery-card .editorial-text {
+                margin-bottom: 8px !important;
+                font-size: 12.5px !important;
+                line-height: 1.4 !important;
+            }
+            .gallery-grid { 
+                display: flex !important;
+                flex-wrap: wrap !important;
+                justify-content: space-between !important;
+                gap: 10px !important; 
+                margin-top: 8px !important; 
+            }
+            .gallery-item { 
+                width: calc(50% - 5px) !important; 
+                box-shadow: none !important; 
+                border: 1px solid #cbd5e1 !important; 
+                break-inside: avoid !important; 
+                page-break-inside: avoid !important; 
+                margin-bottom: 2px !important;
+            }
+            .gallery-item img { 
+                height: 146px !important; 
+                object-fit: contain !important; 
+                background-color: #f8fafc !important; 
+            }
+            .gallery-caption { 
+                padding: 6px 10px !important; 
+            }
+            .gallery-caption h4 { font-size: 11.5px !important; margin-bottom: 2px !important; line-height: 1.3 !important; }
+            .gallery-caption p { font-size: 10.2px !important; line-height: 1.3 !important; }
+
+            /* Quantitative Tables (Section 7 Rule 2) */
+            .milk-table th, .milk-table td { 
+                padding: 8px 12px !important; 
+                font-size: 12.5px !important; 
+            }
+            .info-box {
+                padding: 12px 16px !important;
+                margin-top: 14px !important;
+            }
+            .info-box h4 {
+                font-size: 0.95rem !important;
+                margin-bottom: 3px !important;
+            }
+            .info-box p {
+                font-size: 0.86rem !important;
+                line-height: 1.45 !important;
+            }
+
+            /* Status Table Print Styling (Section 5 & 7 Exact Formula) */
+            .status-table-wrapper {
+                margin-top: 4px !important;
+                margin-bottom: 6px !important;
+            }
+            .status-table {
+                width: 100% !important;
+            }
+            .status-table tr {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+            .status-table tr.row-changed { 
+                background-color: #f0fdf4 !important; 
+            }
+            .status-table tr.row-changed td:first-child { 
+                border-left: 3.5px solid #15803d !important; 
+                font-weight: 800 !important; 
+            }
+            .badge-today {
+                display: inline-block !important; 
+                font-size: 7.5px !important; 
+                font-weight: 700 !important;
+                text-transform: uppercase !important; 
+                color: #15803d !important; 
+                background-color: #dcfce7 !important;
+                border: 1px solid #86efac !important; 
+                padding: 0.5px 4px !important; 
+                border-radius: 6px !important; 
+                margin-left: 4px !important;
+            }
+
+            /* Dedicated Putting Greens Card (#greens-ledger-card) — Exact Formula */
+            #greens-ledger-card { 
+                padding: 14px 18px !important; 
+                margin-bottom: 0 !important; 
+                break-inside: avoid !important; 
+                page-break-inside: avoid !important; 
+            }
+            #greens-ledger-card .card-header { 
+                font-size: 15.5px !important; 
+                margin-bottom: 6px !important; 
+            }
+            #greens-ledger-card .editorial-text { 
+                font-size: 12.5px !important; 
+                line-height: 1.4 !important; 
+                margin-bottom: 6px !important; 
+            }
+            #greens-ledger-card .status-table { 
+                font-size: 9.4px !important; 
+            }
+            #greens-ledger-card .status-table th { 
+                padding: 4.5px 8px !important; 
+                font-size: 9px !important; 
+            }
+            #greens-ledger-card .status-table td { 
+                padding: 4.2px 8px !important; 
+                font-size: 9.4px !important; 
+                line-height: 1.3 !important; 
+            }
+            #greens-ledger-card .col-id { 
+                width: 74px !important; 
+            }
+            #greens-ledger-card .col-tag { 
+                width: 160px !important; 
+            }
+            #greens-ledger-card .tag { 
+                font-size: 8.2px !important; 
+                padding: 1.2px 4.5px !important; 
+            }
+
+            /* Dedicated Championship Teeboxes Card (#tees-ledger-card) — Exact Formula */
+            #tees-ledger-card { 
+                padding: 16px 20px !important; 
+                margin-bottom: 0 !important; 
+                break-inside: avoid !important; 
+                page-break-inside: avoid !important; 
+            }
+            #tees-ledger-card .card-header { 
+                font-size: 16px !important; 
+                margin-bottom: 8px !important; 
+            }
+            #tees-ledger-card .editorial-text { 
+                font-size: 12.5px !important; 
+                line-height: 1.4 !important; 
+                margin-bottom: 8px !important; 
+            }
+            #tees-ledger-card .status-table { 
+                font-size: 9.6px !important; 
+            }
+            #tees-ledger-card .status-table th { 
+                padding: 5px 8px !important; 
+                font-size: 9.2px !important; 
+            }
+            #tees-ledger-card .status-table td { 
+                padding: 4.5px 8px !important; 
+                font-size: 9.6px !important; 
+                line-height: 1.32 !important; 
+            }
+            #tees-ledger-card .col-id { 
+                width: 72px !important; 
+            }
+            #tees-ledger-card .col-tag { 
+                width: 155px !important; 
+            }
+            #tees-ledger-card .tag { 
+                font-size: 8.2px !important; 
+                padding: 1.2px 4.5px !important; 
+            }
+            #tees-ledger-card .summary-card { 
+                padding: 9px 12px !important; 
+                margin-top: 8px !important; 
+                margin-bottom: 0 !important; 
+            }
+            #tees-ledger-card .summary-card h4 { 
+                font-size: 10.5px !important; 
+                margin-bottom: 2px !important; 
+            }
+            #tees-ledger-card .summary-card p { 
+                font-size: 9.5px !important; 
+                line-height: 1.35 !important; 
+            }
+
+            footer { 
+                padding: 14px 20px !important; 
+                break-inside: avoid !important; 
+                page-break-inside: avoid !important; 
+                margin-top: 14px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Executive Header -->
+        <header>
+            <div class="header-top">
+                <span class="report-tag">Daily Operations Report</span>
+                <span class="badge-date">Wednesday, 7th October 2026</span>
+            </div>
+            <h1>Daily Operations Progress Report</h1>
+            <p class="subtitle">Comprehensive field operational briefing covering hydraulic dam lining &amp; thermal seam welding, teebox playing platform refinement, dairy production &amp; 100% milk reconciliation, canine unit behavioral conditioning &amp; woodland exercise, greenhouse structural maintenance, forest retaining wall rebar &amp; column fabrication, stone wall water curing, patio furniture restoration, domestic pet care, and cottage grounds housekeeping across Mucheru World of Golf, Chaka Farms, Kabete Residence, and Amani Cottage.</p>
+        </header>
+
+        <!-- Executive KPI Summary Bar -->
+        <div class="kpi-bar">
+            <div class="kpi-card">
+                <div class="label">Hydraulic Engineering</div>
+                <div class="value" style="color: var(--golf-green);">Dam 2 90% Welded</div>
+                <div class="subtext">Edges Tucked in Trench &bull; Rain Protected</div>
+            </div>
+            <div class="kpi-card">
+                <div class="label">Teebox Architecture</div>
+                <div class="value" style="color: var(--primary);">Tees 13 &amp; 14 Done</div>
+                <div class="subtext">Tee 12 Ladies Refined &bull; Men's Underway</div>
+            </div>
+            <div class="kpi-card">
+                <div class="label">Reconciled Milk Yield</div>
+                <div class="value" style="color: var(--farm-amber);">7.0 Litres</div>
+                <div class="subtext">6.0L Sold &bull; 1.0L Staff &bull; Kids Weaned</div>
+            </div>
+            <div class="kpi-card">
+                <div class="label">Active Project Sites</div>
+                <div class="value" style="color: var(--slate-900);">4 Active Sites</div>
+                <div class="subtext">Golf &bull; Farm &bull; Residence &bull; Cottage</div>
+            </div>
+        </div>
+
+        <!-- Executive Cover Overview Card -->
+        <div class="cover-overview-container">
+            <div class="cover-overview-card">
+                <div class="card-header">
+                    <span>Executive Summary &amp; Multi-Site Operational Synthesis</span>
+                </div>
+                <p class="editorial-text">
+                    Field operations for Wednesday, 7th October 2026 achieved significant engineering and operational milestones across all four active project locations. At Mucheru World of Golf, Dam 2 polythene liner deployment reached 90% completion on connecting thermal heat-welded seams across the basin floor, with liner edges safely tucked into perimeter anchor trenches protecting the reservoir against rainfall erosion. Teeboxes 13 and 14 platforms were completely finished and refined to design contours, while Teebox 12 forward women's platform was fully shaped and refined, with the men's tee actively progressing. At Chaka Farms, dairy production achieved 100% volume reconciliation at 7.0 Litres gross harvest (6.0L commercial sales, 1.0L staff rations, with goat kids officially weaned), the canine unit completed morning goat socialization and an afternoon off-leash pine plantation pack walk, planting holes were manured for maize seedlings, and greenhouse structural repairs were carried out. At Kabete Residence, civil artisans fabricated rebar stirrup rings and column cages along the forest slope retaining wall, drenched stone masonry walls with water hose curing, washed patio seating, and provided complete domestic pet care for Ajabu and resident cats. At Amani Cottage, compound sweeping and grounds upkeep maintained pristine estate hygiene.
+                </p>
+                <ul class="highlight-list">
+                    <li><strong>Mucheru World of Golf:</strong> Dam 2 polythene liner installation reached 90% welding completion across connecting seams, with liner edges safely tucked into perimeter anchor trenches protecting the basin from rainfall; Teebox 13 and Teebox 14 platforms were completely finished and refined; Teebox 12 women's platform was fully shaped and refined, with men's platform nearing completion; Dam 1 and Dam 3 water levels actively monitored.</li>
+                    <li><strong>Chaka Farms:</strong> Perfect 100% milk reconciliation achieved at 7.0L gross yield (5.0L morning harvest yielding 4.0L sold and 1.0L staff rations; 2.0L evening harvest yielding 2.0L sold; goat kids officially weaned); Willy conducted kennel manners drills and patience/obedience training, morning goat walking and socialization, and an afternoon off-leash pack walk across the farm pine plantation; greenhouse structural repairs completed; planting holes excavated and fertilized with organic manure for maize seedlings.</li>
+                    <li><strong>Kabete Residence:</strong> Artisans bent and tied steel reinforcement stirrups along the forest retaining wall stone foundation, assembled and positioned vertical steel column rebar cages in basement compartments, and cured stone masonry walls with water hose spraying. Finalized washing of all-weather woven patio wicker armchairs. Domestic pet care completed for Ajabu (guided walk and cooked meal) and resident cats Reo, Mocha, and Aiko. Operational updates overseen and shared by Njoki.</li>
+                    <li><strong>Amani Cottage:</strong> Grounds swept and garden litter collected; circular stone stepping paths, manicured lawns, and flowering timber pergola maintained in pristine order; interior housekeeping executed upstairs and downstairs; guest accommodations kept tidy.</li>
+                </ul>
+                <div class="success-box">
+                    <h4>🌟 Key Operational Milestones Achieved Today</h4>
+                    <p>
+                        Dam 2 reservoir liner welding is 90% complete with edges safely anchored against rainfall; Teeboxes 13 &amp; 14 are 100% finished and refined; Chaka Farms dairy achieved perfect 100% reconciliation at 7.0L; forest retaining wall reinforcement cages are positioned at Kabete; and grounds across all properties remain in pristine executive order.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <!-- ========================================================================= -->
+            <!-- SECTION 1: MUCHERU WORLD OF GOLF                                          -->
+            <!-- Dedicated Narrative Spread (AGENTS.MD Section 1 & 7 Rule 1)               -->
+            <!-- ========================================================================= -->
+            <section id="mucheru-golf">
+                <div class="section-header">
+                    <div class="section-title">
+                        <div class="section-icon icon-golf">⛳</div>
+                        <h2>Mucheru World of Golf</h2>
+                    </div>
+                    <div class="supervisor-badges-wrapper">
+                        <div class="supervisor-badge">
+                            <span>Overseen by:</span> Mr. Gichuhi &amp; Ken
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Primary Narrative Overview Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <span>⛳ Dam 2 Liner Seam Welding (90%), Anchor Tucking, Teebox Refinement &amp; Dam Water Storage</span>
+                    </div>
+                    <p class="editorial-text">
+                        Operations on Wednesday, 7th October 2026 concentrated on critical hydraulic reservoir lining, perimeter anchor trench securing, and teebox playing platform refinement across the championship course:
+                    </p>
+                    <div class="success-box">
+                        <h4>Mucheru World of Golf Operations Summary</h4>
+                        <p>Dam 2 connecting liner welding reached 90% completion, leaving only the upper embankment sections, with liner edges safely tucked into perimeter anchor trenches to secure the basin against rain; Teeboxes 13 and 14 were completely finished and refined; Teebox 12 women's platform was fully shaped and refined, with the men's tee actively progressing; and stored water volumes across Dam 1 and Dam 3 were actively verified.</p>
+                    </div>
+                    <ul class="highlight-list">
+                        <li><strong>Dam 2 Polythene Liner Welding (90% Completed):</strong> Early morning inspection observed dirty runoff water pooled across the bare unlined earthen basin floor following overnight rains. During the day, the specialized liner crew deployed the heavy-duty polythene dam liner sheets and made massive headway joining seams across the basin floor. Thermal seam welding is now 90% complete across the reservoir floor, with only the upper embankment sections remaining. With liner edges tucked into the anchor trenches and 90% of seams welded, there is no more worry about rain on Dam 2.</li>
+                        <li><strong>Dam 2 Perimeter Anchor Trench Tucking:</strong> Manual labor crews systematically tucked the edges of the polythene liner into the perimeter anchor trenches dug along the top circumference of Dam 2. Tucking the liner into the trench anchors the sheets firmly against wind displacement and locks the liner securely prior to soil backfill.</li>
+                        <li><strong>Teebox 14 Platform Finished &amp; Refined:</strong> Earthworks on Teebox 14 were brought to 100% completion today. Field crews finished cutting, grading, shaping, and precision refining the launch platform to its final architectural contours and playing elevation.</li>
+                        <li><strong>Teebox 13 Platform Finished &amp; Refined:</strong> Teebox 13 playing platform was thoroughly fine-tuned and refined. Embankments and playing surfaces were leveled to exact specifications, completing the platform earthwork phase.</li>
+                        <li><strong>Teebox 12 Dual Platform Progression:</strong> On Teebox 12, the forward women's teebox platform was completely shaped and refined to finished grade. Work on the primary men's championship platform is actively underway and nearing completion.</li>
+                        <li><strong>Dam 1 &amp; Dam 3 Hydraulic Water Reserves:</strong> Dam 1 and Dam 3 reservoirs continue to securely store accumulated water inflow from recent rains, confirming sound containment integrity across the completed lined reservoirs.</li>
+                    </ul>
+                </div>
+
+                <!-- YouTube Video Card Component -->
+                <div class="card video-card page-break-before">
+                    <div class="card-header">
+                        <span>🎬 Video Documentation — Mucheru World of Golf Daily Operations</span>
+                    </div>
+                    <div class="video-media-wrapper">
+                        <iframe src="https://www.youtube.com/embed/pb2ISWr1Z1o" title="Mucheru World of Golf Daily Operations Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card-body">
+                        <p class="video-desc">
+                            Field video documentation capturing Wednesday's operations at Mucheru World of Golf: thermal heat welding of polythene dam liner sheets across Dam 2 (90% complete), manual perimeter anchor trench tucking along the embankment circumference, water storage in Dam 1 and Dam 3 reservoirs, and finished platform shaping on Teeboxes 12, 13, and 14.
+                        </p>
+                        <div class="video-action-row">
+                            <a href="https://youtu.be/pb2ISWr1Z1o" target="_blank" rel="noopener noreferrer" class="youtube-btn">
+                                <span>▶ Watch on YouTube</span>
+                            </a>
+                            <span class="video-link-text">URL: https://youtu.be/pb2ISWr1Z1o</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================================================= -->
+                <!-- MANDATORY STATUS LEDGER: PUTTING GREENS (GREENS 1 - 18)                   -->
+                <!-- Dedicated Full-Page Spread — Uncompressed, Breathable Sizing              -->
+                <!-- ========================================================================= -->
+                <div id="greens-ledger-card" class="card status-ledger-card page-break-before">
+                    <div class="card-header">
+                        <span>⛳ Course Agronomy &amp; Engineering Status Audit — Putting Greens (1 – 18)</span>
+                    </div>
+                    <div class="supervisor-badge">
+                        <span>Audited by:</span> Dennis
+                    </div>
+                    <p class="editorial-text">
+                        18-hole putting green status audit showing the latest work completed and current condition for each green as of October 7, 2026:
+                    </p>
+
+                    <div class="status-table-wrapper">
+                        <table class="status-table">
+                            <thead>
+                                <tr>
+                                    <th class="col-id">Green</th>
+                                    <th class="col-status">Current Technical &amp; Agronomic State</th>
+                                    <th class="col-tag">Milestone Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-id">Green 1</td>
+                                    <td class="col-status">Surplus red soil (from 1 truck delivery) applied and leveled around collar and surrounds (Oct 2).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Surplus Red Soil Applied</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Green 2</td>
+                                    <td class="col-status">Surplus red soil (from 1 truck delivery) applied and leveled around collar and surrounds (Oct 2).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Surplus Red Soil Applied</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Green 3</td>
+                                    <td class="col-status">Surplus red soil (from 1 truck delivery) applied and leveled around collar and surrounds (Oct 2).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Surplus Red Soil Applied</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Green 4</td>
+                                    <td class="col-status">Outlet drainage trench excavated across fairway corridor to safely discharge runoff (Oct 5).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Outlet Drainage Dug</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Green 5</td>
+                                    <td class="col-status">Sprinklers turned on for active turf irrigation over 100% established grass (Oct 4).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Sprinklers Running</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Green 6</td>
+                                    <td class="col-status">Surplus red soil applied to raise and level surrounds (Sep 28).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Apron Raised &bull; Palms Placed</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Green 7</td>
+                                    <td class="col-status">Shape designed and contoured with pumice bed per Joe Kamau's layout; sand delivered (Oct 4).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Shape Designed &bull; Pumice Leveled</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Green 8</td>
+                                    <td class="col-status">Surplus red soil spread and leveled around surrounds per Joe's instructions (Oct 1).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Surplus Red Soil Applied</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Green 9</td>
+                                    <td class="col-status">Surplus red soil (from 1 truck delivery) applied and leveled around collar and surrounds (Oct 2).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Surplus Red Soil Applied</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Green 10</td>
+                                    <td class="col-status">Surplus red soil (from 1 truck delivery) applied and leveled around collar and surrounds (Oct 2).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Surplus Red Soil Applied</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Green 11</td>
+                                    <td class="col-status">Riversand application in progress over pumice bed; partial coverage completed (Oct 3).</td>
+                                    <td class="col-tag"><span class="tag tag-sand">Riversand in Progress</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Green 12</td>
+                                    <td class="col-status">Surplus red soil (from 1 truck delivery) applied and leveled around collar and surrounds (Oct 2).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Surplus Red Soil Applied</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Green 13</td>
+                                    <td class="col-status">Surplus red soil spread around surrounds to raise and match green level (Sep 29).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Surplus Red Soil Applied</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Green 14</td>
+                                    <td class="col-status">Surplus red soil spread around surrounds to build up perimeter level (Sep 29).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Surplus Red Soil Applied</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Green 15</td>
+                                    <td class="col-status">Riversand applied over pumice bed across most part of green (Oct 3).</td>
+                                    <td class="col-tag"><span class="tag tag-sand">Riversand Applied (Most Part)</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Green 16</td>
+                                    <td class="col-status">Surplus red soil spread around surrounds to blend with fairway (Sep 29).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Surplus Red Soil Applied</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Green 17</td>
+                                    <td class="col-status">Surplus red soil spread around surrounds to raise and align levels (Sep 29).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Surplus Red Soil Applied</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Green 18</td>
+                                    <td class="col-status">Surplus red soil spread and leveled around collar and surrounds (Sep 30).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Surplus Red Soil Applied</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- ========================================================================= -->
+                <!-- MANDATORY STATUS LEDGER: CHAMPIONSHIP TEEBOXES (TEES 1 - 18)              -->
+                <!-- Dedicated Full-Page Spread (AGENTS.MD Section 1 & 7)                      -->
+                <!-- ========================================================================= -->
+                <div id="tees-ledger-card" class="card status-ledger-card page-break-before">
+                    <div class="card-header">
+                        <span>🏌️ Course Engineering Status Audit — Championship Teeboxes (1 – 18)</span>
+                    </div>
+                    <div class="supervisor-badge">
+                        <span>Audited by:</span> Dennis
+                    </div>
+                    <p class="editorial-text">
+                        Comprehensive 18-hole championship teebox platform audit tracking earthwork leveling, structural embankments, and playing corridor alignments as of October 7, 2026:
+                    </p>
+
+                    <div class="status-table-wrapper">
+                        <table class="status-table">
+                            <thead>
+                                <tr>
+                                    <th class="col-id">Teebox</th>
+                                    <th class="col-status">Current Technical &amp; Earthwork State</th>
+                                    <th class="col-tag">Platform Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-id">Tee 1</td>
+                                    <td class="col-status">Championship launch platform completely reshaped, cut, and graded to design elevation using Backhoe Loader (Sep 24); received 1 lorry red soil delivery (Sep 26).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Platform Reshaped</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Tee 2</td>
+                                    <td class="col-status">Playing launch platform completely reshaped, contoured, and graded using Backhoe Loader (Sep 24); received 1 lorry red soil delivery (Sep 26).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Platform Reshaped</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Tee 3</td>
+                                    <td class="col-status">Playing launch platform completely reshaped, contoured, and graded using Backhoe Loader (Sep 24); received 1 lorry red soil delivery (Sep 26).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Platform Reshaped</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Tee 4</td>
+                                    <td class="col-status">Championship launch platform completely reshaped, cut, and graded using Backhoe Loader (Sep 23); received 1 lorry red soil delivery (Sep 26).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Platform Reshaped</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Tee 5</td>
+                                    <td class="col-status">Main perimeter drainage pipeline backfilled all the way past Maina's place (Oct 2).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Drainage Backfilled</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Tee 6</td>
+                                    <td class="col-status">Precision leveling and compaction completed; fresh delivery of 1 lorry red loam topsoil unloaded at platform surrounds (Sep 26).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Red Soil In &bull; Leveled</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Tee 7</td>
+                                    <td class="col-status">Both number 7 teebox platforms actively reshaped, cut, and leveled by crew under Joe Kamau and supervisors (Oct 4).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Both Platforms Reshaped</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Tee 8</td>
+                                    <td class="col-status">Graded, leveled, and contour-adjusted; fresh delivery of 1 lorry red loam topsoil unloaded directly on platform (Sep 26).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Red Soil In &bull; Graded</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Tee 9</td>
+                                    <td class="col-status">Playing platform leveled and surrounding perimeter ground graded (Sep 1); received 1 lorry red soil delivery (Sep 26).</td>
+                                    <td class="col-tag"><span class="tag tag-neutral">Platform Leveled</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Tee 10</td>
+                                    <td class="col-status">Graded and compacted platform serving the start of the back-nine playing corridor; received 1 lorry red soil delivery (Sep 26).</td>
+                                    <td class="col-tag"><span class="tag tag-neutral">Platform Compacted</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Tee 11</td>
+                                    <td class="col-status">Rough shaping, elevation grading, and Backhoe subsoil leveling completed (Sep 7); received 1 lorry red soil delivery (Sep 26).</td>
+                                    <td class="col-tag"><span class="tag tag-neutral">Shaped &amp; Graded</span></td>
+                                </tr>
+                                <tr class="row-changed">
+                                    <td class="col-id">Tee 12 <span class="badge-today">Today</span></td>
+                                    <td class="col-status">Women's forward teebox platform shaped and refined fully; men's platform shaping actively underway and nearing completion (Oct 7).</td>
+                                    <td class="col-tag"><span class="tag tag-sand">Women's Done &bull; Men's in Progress</span></td>
+                                </tr>
+                                <tr class="row-changed">
+                                    <td class="col-id">Tee 13 <span class="badge-today">Today</span></td>
+                                    <td class="col-status">Playing platform earthworks completely finished, shaped, and refined to final design elevation and contours (Oct 7).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Finished &amp; Refined</span></td>
+                                </tr>
+                                <tr class="row-changed">
+                                    <td class="col-id">Tee 14 <span class="badge-today">Today</span></td>
+                                    <td class="col-status">Launch platform earthworks completely finished, shaped, and refined to final playing contour (Oct 7).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Finished &amp; Refined</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Tee 15</td>
+                                    <td class="col-status">Launch platform shaping completely finished; terrace cut to design elevation and precision leveled (Oct 6).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Platform Reshaped</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Tee 16</td>
+                                    <td class="col-status">Surplus red soil moved onto platform; launch terrace completely reshaped and leveled (Oct 5).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Platform Reshaped</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Tee 17</td>
+                                    <td class="col-status">Launch platform reshaped, cleared of brush, and graded to playing corridor alignment (Oct 6).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Platform Reshaped</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Tee 18</td>
+                                    <td class="col-status">Championship tee platform leveled; perimeter approach cleared and graded (Sep 1); received 1 lorry red soil delivery (Sep 26).</td>
+                                    <td class="col-tag"><span class="tag tag-neutral">Platform Leveled</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Operations Synthesis Summary Card -->
+                    <div class="summary-card">
+                        <h4>Operations Agronomy &amp; Engineering Synthesis</h4>
+                        <p><strong>Putting Greens &amp; Hydraulic Progress:</strong> 18 of 18 greens (100%) have subgrade foundations excavated and membrane lined; 18 of 18 (100%) have volcanic pumice layers compacted; all 18 greens (100%) have completed surplus red soil application; Dam 2 geomembrane liner thermal heat welding reached <strong>90% completion</strong> with perimeter anchor trench tucking securing the basin against rain; Dam 1 and Dam 3 actively hold and preserve water reserves.<br>
+                        <strong>Championship Teebox Platforms:</strong> <strong>Teebox 13 and Teebox 14 platforms are 100% finished and refined</strong>; <strong>Teebox 12 women's platform is fully shaped and refined</strong> with the men's platform actively progressing; Teeboxes 15, 16, and 17 platforms previously reshaped and contoured.</p>
+                    </div>
+                </div>
+
+                <!-- Unified Continuous Photo Gallery Card (Mucheru World of Golf) -->
+                <!-- Strict Rule 3 & 7: One single continuous card, 2-column grid, no grouping, continuous flow -->
+                <div class="card gallery-card page-break-before">
+                    <div class="card-header">
+                        <span>📸 Photographic Field Evidence — Mucheru World of Golf</span>
+                    </div>
+                    <p class="editorial-text">
+                        Sequential photographic field documentation covering Dam 2 polythene liner placement, thermal seam welding, perimeter anchor trench tucking, Dam 1 and Dam 3 water status, and finished shaping on Teeboxes 12, 13, and 14:
+                    </p>
+
+                    <div class="gallery-grid">
+                        <!-- Photo 1 -->
+                        <div class="gallery-item">
+                            <img src="Dam%202%20liner%20placed.JPG" alt="Dam 2 Lining — Deployed Polythene Liner Across Reservoir Basin">
+                            <div class="gallery-caption">
+                                <h4>Dam 2 Hydraulic Works — Liner Deployment Across Basin</h4>
+                                <p>Aerial perspective of Dam 2 showing deployed heavy-duty black polythene liner sheets smoothly covering the excavated reservoir floor and sloping banks.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 2 -->
+                        <div class="gallery-item">
+                            <img src="Dam%202%20liner%20edges%20tucked%20in%20perimeter%20trench.JPG" alt="Dam 2 Lining — Perimeter Liner Edges Tucked into Anchor Trench">
+                            <div class="gallery-caption">
+                                <h4>Dam 2 Hydraulic Works — Liner Edges Tucked in Perimeter Trench</h4>
+                                <p>High aerial perspective capturing the top circumference of Dam 2, where the polythene liner edges are neatly tucked into the dug perimeter anchor trench.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 3 -->
+                        <div class="gallery-item">
+                            <img src="crew%20welding%20polythene%20liners%20together.jpeg" alt="Dam 2 Lining — Crew Operating Thermal Heat Welder on Liner Seam">
+                            <div class="gallery-caption">
+                                <h4>Dam 2 Lining — Thermal Hot-Air Seam Welding</h4>
+                                <p>Installation technician kneeling on the polythene sheet operating the electric thermal hot-air welding machine to fuse overlapping liner seams into a watertight barrier.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 4 -->
+                        <div class="gallery-item">
+                            <img src="dam%202%20liners%20connections.JPG" alt="Dam 2 Lining — High-Angle Aerial of Seam Connections and Basin Coverage">
+                            <div class="gallery-caption">
+                                <h4>Dam 2 Lining — Seam Connections &amp; Reservoir Coverage</h4>
+                                <p>Wide high-angle aerial view of Dam 2 highlighting the extensive seam welding progress across the expansive basin floor, advancing toward 90% completion.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 5 -->
+                        <div class="gallery-item">
+                            <img src="dam%202%20tucking%20polythene%20into%20edge%20trench%2C%20with%202%20crewmen%20in%20the%20dam%20connecting%20the%20liners.JPG" alt="Dam 2 Works — Tucking Liner Edges & Crew Connecting Seams in Basin">
+                            <div class="gallery-caption">
+                                <h4>Dam 2 Works — Edge Tucking &amp; In-Basin Liner Connection</h4>
+                                <p>Drone overview capturing the perimeter crew tucking liner edges into the top trench while two crewmen work down inside the basin connecting and aligning liner sheets.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 6 -->
+                        <div class="gallery-item">
+                            <img src="Polythene%20liner%20welde%20at%20dam%202.jpeg" alt="Dam 2 Liner — Welded Liner Seams Across Curved Reservoir Bank">
+                            <div class="gallery-caption">
+                                <h4>Dam 2 Liner — Welded Seams Along Embankment</h4>
+                                <p>Close-up view of the smoothly welded polythene membrane extending up the curved embankment of Dam 2, showing excellent joint continuity.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 7 -->
+                        <div class="gallery-item">
+                            <img src="How%20dam%202%20looked%20like%20in%20the%20morning%20post%20nigh%20rains.jpeg" alt="Dam 2 Morning Condition — Dirty Rainwater Pooled Prior to Liner Placement">
+                            <div class="gallery-caption">
+                                <h4>Dam 2 Morning Condition — Dirty Rainwater Pooled Prior to Liner Placement</h4>
+                                <p>Morning field view of Dam 2 following overnight rainfall, showing dirty runoff water pooled across the bare unlined earthen basin floor before the polythene dam liner was deployed, tucked, and welded later in the day.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 8 -->
+                        <div class="gallery-item">
+                            <img src="Dam%202%20progress.jpeg" alt="Dam 2 Progress — Crew Coordinating Liner Alignment on Slopes">
+                            <div class="gallery-caption">
+                                <h4>Dam 2 Progress — Coordinating Liner Alignment</h4>
+                                <p>Field view of Dam 2 basin with workers coordinating liner placement and joint alignment across the base and lower slopes.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 9 -->
+                        <div class="gallery-item">
+                            <img src="Dam%201%20status.JPG" alt="Dam 1 Hydraulic Status — Aerial View of Impounded Water Body">
+                            <div class="gallery-caption">
+                                <h4>Dam 1 Hydraulic Status — Substantial Water Retention</h4>
+                                <p>Expansive aerial survey of Dam 1 displaying a large volume of impounded rainwater safely contained within the geomembrane lined reservoir.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 10 -->
+                        <div class="gallery-item">
+                            <img src="Dam%201%20water%20status.jpeg" alt="Dam 1 Reservoir — Water Level and Surface View">
+                            <div class="gallery-caption">
+                                <h4>Dam 1 Reservoir — Surface Water Storage</h4>
+                                <p>Water-level perspective across Dam 1 showing stable stored water reserves surrounded by manicured course fairways and green surrounds.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 11 -->
+                        <div class="gallery-item">
+                            <img src="Dam%203%20water%20status.JPG" alt="Dam 3 Aerial Status — Lined Reservoir Water Impoundment">
+                            <div class="gallery-caption">
+                                <h4>Dam 3 Aerial Status — Impounded Water Reserves</h4>
+                                <p>Elevated aerial survey of Dam 3 capturing the steady accumulation of irrigation water across its lined basin framed by native woodland.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 12 -->
+                        <div class="gallery-item">
+                            <img src="Teebox%2014%20done.JPG" alt="Teebox 14 — Finished and Refined Launch Platform">
+                            <div class="gallery-caption">
+                                <h4>Teebox 14 Platform — Finished &amp; Precision Refined</h4>
+                                <p>Aerial view of Teebox 14 showing the completely finished launch platform with cleanly contoured perimeter batters and leveled playing surface.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 13 -->
+                        <div class="gallery-item">
+                            <img src="Finishing%20up%20shaping%20and%20refining%20eebox%2014.jpeg" alt="Teebox 14 Earthworks — Crew Finishing Platform Contours">
+                            <div class="gallery-caption">
+                                <h4>Teebox 14 Earthworks — Final Platform Shaping</h4>
+                                <p>Ground perspective of manual workers finishing up the shaping and edge refinement of Teebox 14 alongside boundary trees.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 14 -->
+                        <div class="gallery-item">
+                            <img src="Teebox%2013%20refined.JPG" alt="Teebox 13 Platform — Finished and Refined Elevation">
+                            <div class="gallery-caption">
+                                <h4>Teebox 13 Platform — Finished &amp; Refined Elevation</h4>
+                                <p>Elevated drone view of Teebox 13 displaying the fully finished and refined teebox platform, aligned precisely with the fairway playing corridor.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 15 -->
+                        <div class="gallery-item">
+                            <img src="Teebox%2012%20refined.JPG" alt="Teebox 12 — Fully Refined Forward Platform and Shaping Works">
+                            <div class="gallery-caption">
+                                <h4>Teebox 12 — Women's Platform Fully Shaped &amp; Refined</h4>
+                                <p>Aerial view of Teebox 12 showing the fully shaped and refined women's launch platform, with the men's platform actively progressing nearby.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 16 -->
+                        <div class="gallery-item">
+                            <img src="Shaping%20and%20refining%20edges%20on%20teebox%2012.jpeg" alt="Teebox 12 Shaping — Crew Refining Edges on Platform">
+                            <div class="gallery-caption">
+                                <h4>Teebox 12 Shaping — Edge Contouring &amp; Refinement</h4>
+                                <p>Field workers using hand tools to shape and refine the sloping embankment edges of Teebox 12 to ensure smooth transition to fairway surrounds.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 17 -->
+                        <div class="gallery-item">
+                            <img src="Refining%20and%20shaping%20teebox.jpeg" alt="Course Architecture — Teebox Platform Hand Trimming and Precision Leveling">
+                            <div class="gallery-caption">
+                                <h4>Course Architecture — Precision Teebox Hand Trimming</h4>
+                                <p>Artisans with jembes and shovels meticulously trimming, shaving, and leveling the playing platform terrace to ensure flawless drainage slope and flat launch lie.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========================================================================= -->
+            <!-- SECTION 2: CHAKA FARMS                                                    -->
+            <!-- Dedicated Narrative Spread (AGENTS.MD Section 1 & 7 Rule 1)               -->
+            <!-- ========================================================================= -->
+            <section id="chaka-farms">
+                <div class="section-header">
+                    <div class="section-title">
+                        <div class="section-icon icon-farm">🌾</div>
+                        <h2>Chaka Farms</h2>
+                    </div>
+                    <div class="supervisor-badges-wrapper">
+                        <div class="supervisor-badge">
+                            <span>Dairy &amp; Husbandry:</span> Kamandau
+                        </div>
+                        <div class="supervisor-badge">
+                            <span>Canine Supervisor:</span> Willy
+                        </div>
+                        <div class="supervisor-badge">
+                            <span>Gardens &amp; Compound:</span> Margaret &amp; Monica
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Primary Narrative Overview Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <span>🌾 Dairy Milking (100% Reconciled), Canine Unit Training, Greenhouse Upkeep &amp; Maize Prep</span>
+                    </div>
+                    <p class="editorial-text">
+                        Operations at Chaka Farms on Wednesday, 7th October 2026 maintained high agronomic and livestock productivity, featuring reconciled milk production, canine behavioral conditioning, greenhouse structural maintenance, and field crop preparations:
+                    </p>
+                    <div class="amber-box">
+                        <h4>Chaka Farms Operations Summary</h4>
+                        <p>Dairy milking yielded 7.0 Litres gross with 100% mathematical reconciliation (6.0L commercial sales, 1.0L internal staff allocations; goat kids fully weaned); Willy conducted kennel manners, patience and obedience drills, morning goat socialization walks, and an afternoon off-leash pine plantation pack walk; Margaret and Monica maintained compound cleanliness and dug planting holes with manure for maize seedlings; and greenhouse structural repairs were carried out.</p>
+                    </div>
+                    <ul class="highlight-list">
+                        <li><strong>Reconciled Dairy Production (Kamandau):</strong> Morning milking yielded 5.0 Litres and evening milking yielded 2.0 Litres, totaling 7.0 Litres gross harvest. Commercial sales dispatches stood at 4.0L morning and 2.0L evening (6.0L daily total sold). Routine internal farm disbursements accounted for 1.0L (0.5L Gladys staff ration + 0.5L Maasai security ration), resulting in 100% accounting fidelity with zero discrepancy. Goat kids remain officially weaned (0.0L allocation).</li>
+                        <li><strong>Canine Behavioral Conditioning &amp; Livestock Socialization (Willy):</strong> Willy conducted structured training sessions with the Canine Unit. Morning routines focused on kennel manners (gate boundary control and calm threshold waiting) and patience/obedience drills. The working dogs completed a socialization and exercise walk alongside farm goats, reinforcing calm temperament around livestock. In the afternoon, Willy led the pack on an off-leash walk through the farm's pine plantation, where all five White Swiss Shepherds demonstrated excellent pack manners, down-stays, and sitting control.</li>
+                        <li><strong>Greenhouse Structural Maintenance:</strong> Farm workers carried out structural repairs on the curved tunnel greenhouse, using scaffolding pipe staging and an aluminum extension ladder to secure, tension, and fix the heavy-duty translucent polyethylene covering film.</li>
+                        <li><strong>Field Agronomy &amp; Planting Preparation (Margaret &amp; Monica):</strong> Margaret and Monica performed thorough compound cleaning and sweeping routines. In the agricultural plots, workers dug additional planting holes for maize seedlings and applied organic farm manure into each hole before planting to enrich soil fertility.</li>
+                    </ul>
+                </div>
+
+                <!-- Quantitative Dairy Milking Yield Ledger Spread (Dedicated Spread per AGENTS.MD Rule 2 & Oct 1 Reconciliation Rule) -->
+                <div class="card page-break-before">
+                    <div class="card-header">
+                        <span>📊 Dairy Milking Yield &amp; Utilization Ledger</span>
+                    </div>
+                    <div class="supervisor-badge" style="margin-bottom: 14px; width: fit-content;">
+                        <span>Milking Supervisor:</span> Kamandau
+                    </div>
+                    <p class="editorial-text">
+                        Quantitative reconciliation of gross dairy harvest, commercial sales dispatches, and internal farm allocations for Wednesday, 7th October 2026:
+                    </p>
+
+                    <table class="milk-table">
+                        <thead>
+                            <tr>
+                                <th>Production &amp; Allocation Category</th>
+                                <th>Morning Session</th>
+                                <th>Evening Session</th>
+                                <th>Daily Total</th>
+                                <th>Accounting Classification</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Commercial Milk Sales (Dispatched)</strong></td>
+                                <td>4.0 L</td>
+                                <td>2.0 L</td>
+                                <td class="total-cell">6.0 L</td>
+                                <td>Commercial Sales Outflow</td>
+                            </tr>
+                            <tr>
+                                <td>Goat Kids Milk Ration</td>
+                                <td>0.0 L</td>
+                                <td>—</td>
+                                <td class="deduction-cell">0.0 L</td>
+                                <td>Weaned (Fully Grown &amp; Independent)</td>
+                            </tr>
+                            <tr>
+                                <td>Gladys Allocation (Staff)</td>
+                                <td>0.5 L</td>
+                                <td>—</td>
+                                <td class="deduction-cell">0.5 L</td>
+                                <td>Internal Farm Allocation (Staff)</td>
+                            </tr>
+                            <tr>
+                                <td>Maasai Allocation (Security)</td>
+                                <td>0.5 L</td>
+                                <td>—</td>
+                                <td class="deduction-cell">0.5 L</td>
+                                <td>Internal Farm Allocation (Security)</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3"><strong>Total Internal Farm Allocations</strong></td>
+                                <td class="deduction-cell"><strong>1.0 L</strong></td>
+                                <td><strong>Total Internal Outflow</strong></td>
+                            </tr>
+                            <tr class="balance-row">
+                                <td colspan="3"><strong>Total Gross Cow Milk Harvested (Sales + Allocations)</strong></td>
+                                <td class="balance-cell"><strong>7.0 L</strong></td>
+                                <td><strong>100% Accounted Production (5.0L AM / 2.0L PM)</strong></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                    <div class="info-box">
+                        <h4>📌 Ground Truth Accounting Note</h4>
+                        <p>
+                            In accordance with the estate milk reconciliation standard established on October 1st, Kamandau's recorded dispatches of 4.0L morning and 2.0L evening represent commercial milk sold (6.0L total). Internal disbursements comprise 0.5L morning staff ration for Gladys and 0.5L morning security ration for Maasai (1.0L total internal allocations). The goat kids are fully weaned and graze independently (0.0L allocation). Total gross cow milk harvested is exactly 7.0 Litres (5.0L morning harvest + 2.0L evening harvest) with 100% accounting fidelity and zero discrepancy.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Dedicated Spread: Canine Unit Care, Training & Videos (AGENTS.MD Section 7 Rule 4) -->
+                <div class="card page-break-before">
+                    <div class="card-header">
+                        <span>🐕 Canine Unit Training, Behavioral Conditioning &amp; Cloud Video Log</span>
+                    </div>
+                    <div class="supervisor-badge" style="margin-bottom: 14px; width: fit-content;">
+                        <span>Canine Supervisor:</span> Willy
+                    </div>
+                    <p class="editorial-text">
+                        Daily behavioral conditioning, impulse-control drills, livestock socialization, and woodland pack exercise conducted on Wednesday, 7th October 2026:
+                    </p>
+                    <ul class="highlight-list">
+                        <li><strong>Kennel Manners &amp; Gate Control:</strong> Working dogs underwent focused behavioral conditioning reinforcing kennel patience, boundary manners, and calm waiting behavior at stall gates before release.</li>
+                        <li><strong>Patience, Focus &amp; Obedience Conditioning:</strong> Impulse-control drills testing down-stay endurance, handler eye contact, and prompt release execution under handler cues.</li>
+                        <li><strong>Livestock Socialization Walk with Goats:</strong> Morning walk conducted alongside farm goats to habituate the dogs to farm livestock, ensuring calm, neutral demeanor without chasing or agitation.</li>
+                        <li><strong>Afternoon Off-Leash Woodland Pack Exercise:</strong> Off-leash pack walk across the farm pine plantation, reinforcing synchronized down-stays, alert sitting formations, and trail recall.</li>
+                    </ul>
+
+                    <div class="video-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 18px;">
+                        <!-- Video 1: Kennel Manners -->
+                        <div class="video-card">
+                            <div class="card-header">
+                                <span>Kennel Manners Drill</span>
+                            </div>
+                            <div class="video-media-wrapper">
+                                <video controls preload="metadata">
+                                    <source src="Kennel%20manners.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="video-card-body">
+                                <p class="video-desc">Willy conducting kennel manners, boundary respect, and structured entry drills with the Canine Unit, reinforcing calm demeanor and handler attentiveness.</p>
+                                <div class="video-action-row">
+                                    <a href="https://drive.google.com/file/d/1dfPYTyOYg4hbYYtlA6_CUsrfL1kQdxSr/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="video-drive-btn">
+                                        📁 Access on Google Drive
+                                    </a>
+                                    <span class="video-link-text">Kennel manners.mp4 (10.1 MB)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Video 2: Patience and Obedience -->
+                        <div class="video-card">
+                            <div class="card-header">
+                                <span>Patience &amp; Obedience</span>
+                            </div>
+                            <div class="video-media-wrapper">
+                                <video controls preload="metadata">
+                                    <source src="Patience%20and%20obedience.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="video-card-body">
+                                <p class="video-desc">Impulse-control and focus training overseen by Willy, testing down-stay endurance, handler eye contact, and prompt release execution.</p>
+                                <div class="video-action-row">
+                                    <a href="https://drive.google.com/file/d/1bJUW1rPMcjmOY7N4zpqx9HaIHjz4DOCT/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="video-drive-btn">
+                                        📁 Access on Google Drive
+                                    </a>
+                                    <span class="video-link-text">Patience and obedience.mp4 (7.8 MB)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="video-action-row" style="margin-top: 16px; padding: 12px 16px; background-color: var(--farm-amber-light); border: 1px solid var(--farm-amber-border); border-radius: 8px;">
+                        <div>
+                            <strong style="color: var(--farm-amber); font-size: 0.95rem;">📸 High-Resolution Dog Album:</strong>
+                            <span style="color: var(--slate-700); font-size: 0.88rem; margin-left: 6px;">View complete photo set from the afternoon pine forest exercise.</span>
+                        </div>
+                        <a href="https://drive.google.com/drive/folders/1nYta_HvPxhxIpCt_taN-EkeLUUopgcXp?usp=drive_link" target="_blank" rel="noopener noreferrer" class="drive-album-btn">
+                            📂 Open Google Drive Album
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Unified Continuous Photo Gallery Card (Chaka Farms) -->
+                <!-- Strict Rule 3 & 7: One single continuous card, 2-column grid, no grouping, continuous flow -->
+                <div class="card gallery-card page-break-before">
+                    <div class="card-header">
+                        <span>📸 Photographic Field Evidence — Chaka Farms</span>
+                    </div>
+                    <p class="editorial-text">
+                        Sequential photographic field documentation covering the Canine Unit's afternoon off-leash pine plantation exercise and tunnel greenhouse structural maintenance:
+                    </p>
+
+                    <div class="gallery-grid">
+                        <!-- Photo 1 -->
+                        <div class="gallery-item">
+                            <img src="Dog%20Album/WhatsApp%20Image%202026-10-07%20at%2015.40.33.jpeg" alt="Canine Unit Pack — Synchronized Down-Stay in Pine Grove">
+                            <div class="gallery-caption">
+                                <h4>Canine Unit Training — Synchronized Down-Stay in Pine Grove</h4>
+                                <p>All five White Swiss Shepherds holding a calm, synchronized down-stay position along the needle-strewn forest path during afternoon exercise.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 2 -->
+                        <div class="gallery-item">
+                            <img src="Dog%20Album/WhatsApp%20Image%202026-10-07%20at%2015.40.34%20(1).jpeg" alt="Pack Discipline — Attentive Sitting Command Formation">
+                            <div class="gallery-caption">
+                                <h4>Pack Discipline — Attentive Sitting Command Formation</h4>
+                                <p>The Canine Unit pack sitting alertly in formation along the pine tree corridor with leashes placed loosely on the ground under Willy's supervision.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 3 -->
+                        <div class="gallery-item">
+                            <img src="Dog%20Album/WhatsApp%20Image%202026-10-07%20at%2015.40.34%20(2).jpeg" alt="Woodland Field Drill — Alert Posture and Forward Focus">
+                            <div class="gallery-caption">
+                                <h4>Woodland Field Drill — Alert Posture &amp; Forward Focus</h4>
+                                <p>Close cluster of the five White Swiss Shepherds exhibiting calm demeanor, erect ears, and keen handler responsiveness during the farm trail walk.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 4 -->
+                        <div class="gallery-item">
+                            <img src="Dog%20Album/WhatsApp%20Image%202026-10-07%20at%2015.40.34.jpeg" alt="White Swiss Shepherd Pack — Forest Trail Group Portrait">
+                            <div class="gallery-caption">
+                                <h4>Afternoon Woodland Exercise — Pack Conditioning</h4>
+                                <p>Vertical perspective of the Canine Unit resting calmly in a unified group along the shaded pine avenue following obedience and walking exercises.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 5 -->
+                        <div class="gallery-item">
+                            <img src="Fixing%20green%20house.jpeg" alt="Greenhouse Structural Maintenance — Polyethylene Sheeting and Scaffolding">
+                            <div class="gallery-caption">
+                                <h4>Greenhouse Maintenance — Polyethylene Sheeting &amp; Scaffolding</h4>
+                                <p>Farm worker in a branded Chaka Farms cap standing by scaffolding pipe staging and an aluminum ladder, securing and fixing the tunnel greenhouse sheeting.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 6 -->
+                        <div class="gallery-item">
+                            <img src="Fixing%20green%20house_01.jpeg" alt="Facility Infrastructure — Tunnel Greenhouse Elevation">
+                            <div class="gallery-caption">
+                                <h4>Facility Infrastructure — Tunnel Greenhouse Elevation</h4>
+                                <p>Vertical view of the curved tunnel greenhouse entrance, structural roll-up framing, and staging area set against the pine tree boundary.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========================================================================= -->
+            <!-- SECTION 3: KABETE RESIDENCE                                               -->
+            <!-- Dedicated Narrative Spread (AGENTS.MD Section 1 & 7 Rule 1)               -->
+            <!-- ========================================================================= -->
+            <section id="kabete-residence">
+                <div class="section-header">
+                    <div class="section-title">
+                        <div class="section-icon icon-residence">🏡</div>
+                        <h2>Kabete Residence</h2>
+                    </div>
+                    <div class="supervisor-badges-wrapper">
+                        <div class="supervisor-badge">
+                            <span>Updates shared by:</span> Njoki
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Narrative Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <span>Civil Engineering, Retaining Wall Rebar, Column Cages, Stone Wall Curing &amp; Pet Care</span>
+                    </div>
+                    <p class="editorial-text">
+                        Field operations at Kabete Residence on Wednesday, 7th October 2026 registered major progress across civil structural works down in the forest corridor, property maintenance, and domestic pet welfare. Daily operational updates were overseen and shared by Njoki:
+                    </p>
+                    <div class="purple-box">
+                        <h4>Kabete Residence Progress Summary</h4>
+                        <p>Steel artisans shaped and bent reinforcement stirrup rings along the forest slope retaining wall stone footing; column rebar cages were assembled and positioned in basement compartments; stone masonry walls were water-cured; outdoor patio wicker seating was scrubbed and dried; and complete pet care was provided for Ajabu and resident cats.</p>
+                    </div>
+                    <ul class="highlight-list">
+                        <li><strong>Forest Retaining Wall Rebar Stirrup Fabrication:</strong> Down along the steep forest slope descending toward the river corridor, steel artisans actively shaped, bent, and tied heavy steel reinforcement bars and stirrup rings directly along the top edge of the stone foundation footing. These stirrups and longitudinal bars reinforce the structural retaining wall designed to permanently stabilize the excavated earthen cut.</li>
+                        <li><strong>Column Rebar Cage Fabrication &amp; Positioning:</strong> Artisans prefabricated and assembled rectangular steel rebar column cages with tied stirrups on site. The vertical cages were hoisted into position at structural wall corners and compartment junctions within the excavated forest basement masonry structure, preparing the columns for concrete encasement.</li>
+                        <li><strong>Quarry Stone Masonry Water Curing:</strong> To ensure high structural integrity and complete mortar hydration, artisans conducted continuous water curing on the freshly constructed quarry stone masonry walls using a garden hose line, thoroughly saturating the stone joints.</li>
+                        <li><strong>Outdoor Furniture Restoration &amp; Cleaning:</strong> General property maintenance included the complete washing of outdoor living furniture. Remaining black woven all-weather wicker armchairs were thoroughly scrubbed, washed, and inverted on the garden terrace to air dry.</li>
+                        <li><strong>Domestic Pet Care &amp; Exercise (Ajabu &amp; Resident Cats):</strong> Complete daily pet care routines were executed for Kabete’s domestic pets. Ajabu the Golden Retriever enjoyed a wholesome cooked meal on the terracotta tiled floor and was guided on daily on-leash exercise along the estate’s brick-paved driveway, exploring garden borders. Resident cats (Reo, Mocha, and Aiko) were fed together from their individual stainless steel dishes alongside fresh water.</li>
+                    </ul>
+                </div>
+
+                <!-- Unified Continuous Photo Gallery Card (Kabete Residence) -->
+                <!-- Strict Rule 3 & 7: One single continuous card, 2-column grid, no grouping, continuous flow -->
+                <div class="card gallery-card page-break-before">
+                    <div class="card-header">
+                        <span>📸 Photographic Field Evidence — Kabete Residence</span>
+                    </div>
+                    <p class="editorial-text">
+                        Sequential photographic field documentation covering retaining wall rebar stirrup fabrication, column cage positioning, stone masonry water curing, patio seat cleaning, and domestic pet care:
+                    </p>
+
+                    <div class="gallery-grid">
+                        <!-- Photo 1 -->
+                        <div class="gallery-item">
+                            <img src="Bending%20of%20the%20Reinforcement%20bars%20and%20rings%20in%20progress%20for%20the%20retaining%20wall%20in%20the%20forest.jpeg" alt="Rebar Stirrup Rings Bending Along Forest Retaining Wall Footing">
+                            <div class="gallery-caption">
+                                <h4>Forest Retaining Wall — Stirrup Rings &amp; Rebar Bending</h4>
+                                <p>Artisans in high-vis vests and overalls bending and tying steel stirrup rings along the top of the masonry retaining wall footing against the steep red soil cut.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 2 -->
+                        <div class="gallery-item">
+                            <img src="Bending%20of%20the%20Reinforcement%20bars%20in%20progress%20in%20the%20forest.jpeg" alt="Detailed Rebar Stirrup Rings Along Masonry Footing">
+                            <div class="gallery-caption">
+                                <h4>Structural Steel Detail — Retaining Wall Stirrups &amp; Bars</h4>
+                                <p>Close-up view of tied steel stirrup rings and longitudinal reinforcement bars seated along the stone foundation wall to permanently stabilize the river forest embankment.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 3 -->
+                        <div class="gallery-item">
+                            <img src="Bending%20of%20the%20columns%20bars.jpeg" alt="Prefabricated Column Rebar Cages Stacked on Site">
+                            <div class="gallery-caption">
+                                <h4>Civil Structural Works — Stacked Column Rebar Cages</h4>
+                                <p>Prefabricated rectangular steel rebar column cages with tied stirrups neatly stacked on site ground near safety railings, ready for structural installation.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 4 -->
+                        <div class="gallery-item">
+                            <img src="Bending%20of%20the%20columns%20bars_01.jpeg" alt="Vertical Column Rebar Cage Erected at Wall Junction">
+                            <div class="gallery-caption">
+                                <h4>Basement Structure — Column Rebar Cage at Wall Junction</h4>
+                                <p>Vertical steel rebar column cage positioned plumb at a quarry stone masonry wall corner under the concrete upper slab overhang.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 5 -->
+                        <div class="gallery-item">
+                            <img src="Bending%20of%20the%20columns%20bars_02.jpeg" alt="Elevated View of Forest Basement Excavation Pit and Masonry">
+                            <div class="gallery-caption">
+                                <h4>Basement Foundation Pit — Masonry Compartments &amp; Columns</h4>
+                                <p>Elevated perspective into the excavated forest basement pit showing masons inside stone wall compartments, with vertical rebar column cages aligned at intersections.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 6 -->
+                        <div class="gallery-item">
+                            <img src="Bending%20of%20the%20columns%20bars_03.jpeg" alt="Wide Angle of Forest Retaining Wall and Basement Masonry">
+                            <div class="gallery-caption">
+                                <h4>Site Overview — Forest Retaining Wall &amp; Basement Framing</h4>
+                                <p>Wide elevated angle of the basement foundation and retaining masonry structure nestled in the forest slope, with work crews coordinating column steel placements.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 7 -->
+                        <div class="gallery-item">
+                            <img src="Curing%20of%20the%20walls%20in%20progress.jpeg" alt="Artisan Water Curing Quarry Stone Masonry Walls">
+                            <div class="gallery-caption">
+                                <h4>Masonry Curing — Water Hose Spraying on Stone Walls</h4>
+                                <p>Artisan in an orange jumpsuit using a garden hose to thoroughly drench and cure freshly constructed quarry stone walls, while a mason lays stone courses in background.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 8 -->
+                        <div class="gallery-item">
+                            <img src="Curing%20of%20the%20walls%20in%20progress_01.jpeg" alt="Saturated Stone Masonry Walls Following Water Curing">
+                            <div class="gallery-caption">
+                                <h4>Structural Hydration — Saturated Quarry Stone Masonry</h4>
+                                <p>Quarry stone masonry walls showing thorough water saturation from ongoing curing, with mason, mortar pans, and vertical rebar ties visible in the pit.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 9 -->
+                        <div class="gallery-item">
+                            <img src="Cleaning%20of%20the%20remaining%20seats%20done.jpeg" alt="Wicker Outdoor Patio Seat Drying in Garden Area">
+                            <div class="gallery-caption">
+                                <h4>Estate Maintenance — Patio Wicker Seat Washed &amp; Drying</h4>
+                                <p>All-weather black woven wicker armchair inverted on the garden terrace to air dry following thorough cleaning and washing.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 10 -->
+                        <div class="gallery-item">
+                            <img src="Ajabu%20on%20a%20walk.jpeg" alt="Ajabu the Golden Retriever Walking On-Leash">
+                            <div class="gallery-caption">
+                                <h4>Canine Wellness — Ajabu On-Leash Driveway Exercise</h4>
+                                <p>Ajabu the Golden Retriever on a patterned lead walking forward calmly along the estate's brick-paved driveway.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 11 -->
+                        <div class="gallery-item">
+                            <img src="Ajabu%20on%20a%20walk_01.jpeg" alt="Ajabu Sniffing Garden Shrubbery During Guided Walk">
+                            <div class="gallery-caption">
+                                <h4>Daily Conditioning — Ajabu Exploring Garden Borders</h4>
+                                <p>Ajabu exploring perimeter garden shrubbery during his guided on-leash walk, maintaining excellent manners and outdoor enrichment.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 12 -->
+                        <div class="gallery-item">
+                            <img src="Ajabu.jpeg" alt="Ajabu Feeding on Terracotta Floor">
+                            <div class="gallery-caption">
+                                <h4>Domestic Pet Care — Ajabu Enjoying Wholesome Meal</h4>
+                                <p>Ajabu enjoying a nutritious cooked meal served on a plate on the indoor terracotta tiled floor at Kabete Residence.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 13 -->
+                        <div class="gallery-item">
+                            <img src="Reo%20mocha%20%26%20Aiko.jpeg" alt="Resident Cats Reo, Mocha and Aiko Feeding Together">
+                            <div class="gallery-caption">
+                                <h4>Feline Nutrition — Resident Cats Reo, Mocha &amp; Aiko Feeding</h4>
+                                <p>All three resident cats (Reo, Mocha, and Aiko) feeding simultaneously from individual stainless steel dishes beside fresh water on the terracotta tiled floor.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========================================================================= -->
+            <!-- SECTION 4: AMANI COTTAGE                                                  -->
+            <!-- Dedicated Narrative Spread (AGENTS.MD Section 1 & 7 Rule 1)               -->
+            <!-- ========================================================================= -->
+            <section id="amani-cottage">
+                <div class="section-header">
+                    <div class="section-title">
+                        <div class="section-icon icon-cottage">🌿</div>
+                        <h2>Amani Cottage</h2>
+                    </div>
+                    <div class="supervisor-badges-wrapper">
+                        <div class="supervisor-badge">
+                            <span>Grounds &amp; Lawn:</span> Edwin
+                        </div>
+                        <div class="supervisor-badge">
+                            <span>Housekeeping:</span> Domestic Housekeeper
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Primary Narrative Overview Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <span>Grounds Sanitation, Housekeeping, Arboriculture &amp; Landscape Upkeep</span>
+                    </div>
+                    <p class="editorial-text">
+                        Daily property care and upkeep at Amani Cottage on Wednesday, 7th October 2026 maintained pristine standards across outdoor garden grounds, flowering pergolas, and indoor accommodations:
+                    </p>
+                    <div class="teal-box">
+                        <h4>Amani Cottage Progress Summary</h4>
+                        <p>Edwin swept entrance driveways, circular stone stepping paths, and lawns; tree protective netting was maintained; climbing orange flowering trumpet creepers on the timber pergola were checked; and domestic interior housekeeping kept accommodations guest-ready.</p>
+                    </div>
+                    <ul class="highlight-list">
+                        <li><strong>Grounds Sanitation &amp; Lawn Care (Edwin):</strong> Edwin thoroughly swept the cottage entrance driveways, stepping stone pathways, and perimeter garden lawns. Fallen leaves, twigs, and loose litter were cleared to maintain spotless landscaping.</li>
+                        <li><strong>Arboriculture &amp; Pergola Care:</strong> Garden trees with protective trunk netting were inspected, and the timber pergola supporting vibrant orange flowering trumpet vines over the paved parking/patio court was maintained in excellent order.</li>
+                        <li><strong>Domestic Interior Housekeeping:</strong> Routine housekeeping was executed inside the cottage, covering surface dusting, floor sweeping, and maintaining tidy guest accommodations.</li>
+                    </ul>
+                </div>
+
+                <!-- Unified Continuous Photo Gallery Card (Amani Cottage) -->
+                <!-- Strict Rule 3 & 7: One single continuous card, 2-column grid, no grouping, continuous flow -->
+                <div class="card gallery-card page-break-before">
+                    <div class="card-header">
+                        <span>📸 Photographic Field Evidence — Amani Cottage</span>
+                    </div>
+                    <p class="editorial-text">
+                        Sequential photographic field documentation showing the pristine manicured grounds, stepping stone paths, rustic stone-and-timber cottage facade, and flowering timber pergola:
+                    </p>
+
+                    <div class="gallery-grid">
+                        <!-- Photo 1 -->
+                        <div class="gallery-item">
+                            <img src="(Amani%20cottage).jpeg" alt="Amani Cottage Grounds — Mature Trees and Stepping Stone Pathway">
+                            <div class="gallery-caption">
+                                <h4>Estate Grounds — Manicured Lawn &amp; Stepping Stones</h4>
+                                <p>Shaded perspective through mature garden trees showing the cleanly swept green lawn and circular stone stepping path traversing the cottage grounds.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 2 -->
+                        <div class="gallery-item">
+                            <img src="(Amani%20cottage)_01.jpeg" alt="Amani Cottage Facade — Rustic Stone and Timber Architecture">
+                            <div class="gallery-caption">
+                                <h4>Cottage Facade — Stone Chimney &amp; Garden Terrace</h4>
+                                <p>Vertical frontal view of Amani Cottage highlighting the stone fireplace chimney, upper timber balcony, ground patio with hanging wicker egg chairs, and rockery garden.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 3 -->
+                        <div class="gallery-item">
+                            <img src="(Amani%20cottage)_02.jpeg" alt="Amani Cottage Lawn — Tree Canopy Shadows Across Manicured Grass">
+                            <div class="gallery-caption">
+                                <h4>Landscape Care — Tree Canopy &amp; Lawn Perimeter</h4>
+                                <p>Tree canopy shadows cast across the manicured turfgrass lawn along the side garden boundary, showing protective tree trunk mesh and clean garden verges.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 4 -->
+                        <div class="gallery-item">
+                            <img src="(Amani%20cottage)_03.jpeg" alt="Timber Pergola — Flowering Orange Trumpet Creepers Over Paved Court">
+                            <div class="gallery-caption">
+                                <h4>Garden Feature — Flowering Timber Pergola</h4>
+                                <p>Rustic log pergola with green shade netting and blooming orange flowering trumpet creepers shading the green-tinted stone-paved patio parking area.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 5 -->
+                        <div class="gallery-item">
+                            <img src="(Amani%20cottage)_04.jpeg" alt="Cottage Landscape — Expansive Lawn and Stone Walkway Leading to Facade">
+                            <div class="gallery-caption">
+                                <h4>Grounds Perspective — Stepping Pathway to Cottage</h4>
+                                <p>Long perspective capturing the circular stepping stone path leading across the sunlit lawn toward the entrance veranda of Amani Cottage.</p>
+                            </div>
+                        </div>
+
+                        <!-- Photo 6 -->
+                        <div class="gallery-item">
+                            <img src="(Amani%20cottage)_05.jpeg" alt="Garden Vista — Sunlit Lawn Bordered by Woodland and Flowering Shrubs">
+                            <div class="gallery-caption">
+                                <h4>Garden Vista — Swept Lawn &amp; Ornamental Borders</h4>
+                                <p>Wide view of the immaculately swept lawn framed by mature indigenous trees, manicured shrubs, and lush natural woodland surrounds.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="signature-block">
+                <div class="signature-avatar">D</div>
+                <div class="signature-details">
+                    <h3>Compiled by Dennis</h3>
+                </div>
+            </div>
+            <div class="footer-meta">
+                <span style="font-size: 0.88rem; color: var(--slate-500);">Wednesday, 7th October 2026 &bull; Operations Reporting</span>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
