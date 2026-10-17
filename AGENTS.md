@@ -42,7 +42,8 @@ The reporting workflow covers four primary sites. Ensure tasks, updates, and ass
    - **Milk Units & Reconciliation Rule (Effective October 1st, 2026 Onwards):**
      - **Units:** Milk volume MUST ALWAYS be recorded and displayed in **Litres** (or 'L'), NEVER in Kilograms (KG/kg).
      - **Field Log vs Commercial Sales Ground Truth:** The morning and evening figures recorded by Kamandau in his daily log represent the volume of milk **sold/dispatched** for commercial sale (`Commercial Sales`).
-     - **Internal Farm Allocations:** Routine disbursements (e.g., 1.0L Goat Kids Ration [0.5L morning + 0.5L evening], 0.5L Gladys staff allocation, 0.5L Maasai security allocation = 2.0L total) are distributed directly on-farm in addition to commercial sales.
+     - **Internal Farm Allocations:** Routine disbursements (e.g., 1.0L Goat Kids Ration [0.5L morning + 0.5L evening], 0.5L Gladys staff allocation, 0.5L Maasai allocation = 2.0L total) are distributed directly on-farm in addition to commercial sales.
+     - **Maasai Allocation Rule:** Maasai is strictly **Maasai**—NOT security. NEVER assume, hallucinate, or refer to Maasai as security, and NEVER write "Maasai security" or "security allocation". Always list simply as "Maasai" or "Internal Farm Allocation — Maasai".
      - **Gross Cow Milk Harvest Formula:** Total milk produced is calculated by adding commercial sales to internal farm allocations:
        $$\text{Total Gross Milk Harvested} = \text{Morning Sold} + \text{Evening Sold} + \text{Internal Farm Allocations}$$
        *(Example: 2.5L morning sold + 2.5L evening sold + 2.0L internal allocations = **7.0L Total Gross Milk Harvested**).*
