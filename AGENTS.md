@@ -71,6 +71,10 @@ The reporting workflow covers four primary sites. Ensure tasks, updates, and ass
 
 - **Never Assume or Invent Unmentioned Activities:** AI assistants MUST NEVER hallucinate, assume, fabricate, or insert routine activities, maintenance tasks, cleanings, or logs that were not explicitly provided in the user's prompt or daily field notes.
 - **Strict Grounding:** If an activity (e.g. cowshed/goat shed wash, garden sweeping, plumbing repair) is not mentioned in the daily brief, **DO NOT add it or assume it took place**. Every bullet point, narrative log, and activity card must be strictly grounded in verified user updates, uploaded media, or explicit daily instructions.
+- **Strict Zero-Identifier-Guessing Rule (Never Guess Green Numbers, Teebox Numbers, or Background Features):**
+  - **Zero Guessing of Green or Teebox Numbers:** If a specific Green number (e.g., "Green 17", "Green 14") or Teebox number is NOT explicitly stated in the user prompt, daily field log, or raw filename, **NEVER GUESS, INVENT, OR DEDUCE IT**.
+  - **No Background Deductions in Photo Captions:** When analyzing an image, if an unidentified green, teebox, canal, or bunker appears in the background, **DO NOT guess which hole it is** based on course memory or past maps. Describe it strictly using generic factual language (e.g., *"with an adjacent putting green and surrounding terrain visible in the background"*, *"along the adjoining playing corridor"*). NEVER write *"with Green 17 in the background"* unless the user explicitly specified it.
+  - **No Speculative Storytelling:** Do NOT guess what background materials are "staged for", assume future construction steps, or guess equipment operational hours. Describe strictly what is physically verified.
 - **Simple & Clear Vocabulary Rule (No Unnecessary Heavy Technical Terms):**
   - Use simple, straightforward language across the entire report (narratives, status ledgers, photo captions, and summaries).
   - Strictly avoid unnecessary, pretentious, or heavy technical jargon (e.g., replace "agronomic profile feathering" with "spreading red soil to level surrounds", replace "geomembrane polyethylene anchor trench backfill" with "tucking dam liner into anchor trench and covering with soil").
@@ -88,9 +92,10 @@ The reporting workflow covers four primary sites. Ensure tasks, updates, and ass
    - Analyze the visual contents (e.g., excavator excavating soil vs. painter on ladder vs. dog inside kennel stall vs. fertilizer bucket).
    - Assign each image to its exact section, card component, and activity.
 
-3. **Rich & Descriptive Captions**
+3. **Rich, Factual & Non-Speculative Captions**
    - Provide clear, factual titles (`<h4>`) and descriptive visual captions (`<p>`).
-   - Describe specific visual evidence (e.g., equipment model, terrain condition, progress stage, materials depicted, animal behavior).
+   - Describe ONLY verified visual evidence (e.g., equipment model, terrain condition, progress stage, materials depicted, animal behavior).
+   - **Strict Ban on Guessing Identifiers in Captions:** NEVER speculate or guess Green numbers, Teebox numbers, or background activity. If a number was not stated in the daily brief or filename, refer to it simply as *"the adjoining green"*, *"the nearby teebox"*, or *"the surrounding fairway"*. NEVER invent *"Green 17"* or *"Teebox 4"*.
 
 4. **No Image Grouping Rule (Continuous Straight Photo Flow)**
    - **Stop putting images into groups.** AI assistants MUST NEVER divide a site's photos into separate thematic cards, sub-groups, or multiple fragmented gallery cards with custom thematic headings (e.g., dividing photos into distinct cards like "Fairway Clearing" vs "Green Foundation", or "Structural Works" vs "Fireplace Excavation").
@@ -171,11 +176,41 @@ When converting HTML reports to PDF using headless Edge/Chrome, you **MUST** inc
         print-color-adjust: exact !important;
     }
     
-    /* 4. PRINT LAYOUT OPTIMIZATIONS */
-    body { background-color: #ffffff; padding: 0; }
-    .container { box-shadow: none; border: none; max-width: 100%; }
-    .gallery-grid, .video-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-    .gallery-item img { height: 165px; object-fit: contain; background-color: #f8fafc; }
+    /* 4. PRINT LAYOUT & PHOTO GALLERIES (BENCHMARK 2-COLUMN FLOW) */
+    body { background-color: #ffffff !important; padding: 0 !important; }
+    .container { box-shadow: none !important; border: none !important; max-width: 100% !important; }
+    
+    /* Strict Ban on Manual Gallery Breaks: NEVER put page-break-before on .gallery-item */
+    .card.gallery-card { 
+        padding: 16px 20px !important; 
+        margin-bottom: 0 !important; 
+        break-inside: auto !important; 
+        page-break-inside: auto !important; 
+    }
+    .card.gallery-card .card-header { margin-bottom: 8px !important; font-size: 16px !important; }
+    .card.gallery-card .editorial-text { margin-bottom: 10px !important; font-size: 13px !important; line-height: 1.45 !important; }
+    .gallery-grid { 
+        display: flex !important; 
+        flex-wrap: wrap !important; 
+        justify-content: space-between !important; 
+        gap: 12px !important; 
+        margin-top: 10px !important; 
+    }
+    .gallery-item { 
+        width: calc(50% - 6px) !important; 
+        box-shadow: none !important; 
+        border: 1px solid #cbd5e1 !important; 
+        break-inside: avoid !important; 
+        page-break-inside: avoid !important; 
+    }
+    .gallery-item img { 
+        height: 165px !important; 
+        object-fit: contain !important; 
+        background-color: #f8fafc !important; 
+    }
+    .gallery-caption { padding: 8px 12px !important; }
+    .gallery-caption h4 { font-size: 12.5px !important; margin-bottom: 2px !important; }
+    .gallery-caption p { font-size: 11px !important; line-height: 1.35 !important; }
 
     /* 5. STATUS TABLES & CHANGED ROW INDICATORS (ANTI-COMPRESSION SIZING) */
     .status-table { width: 100% !important; }
@@ -245,15 +280,20 @@ After generating a report:
 AI assistants must NEVER compress font sizes, shrink line heights, tighten bullet gaps, or jam narratives and data tables onto a single page to achieve an arbitrary page count. Every page in an executive report must feel generous, breathable, and visually balanced.
 
 ### Core Rules:
-1. **Dedicated Narrative Spread**:
+1. **Dedicated Narrative Spread & Length Budgeting**:
    - Each project site's primary narrative overview card MUST occupy its own dedicated full page.
    - **Print Typography Standard**:
      - Card padding: `20px 24px` (print) / `32px 36px` (screen).
      - Heading (`.card-heading`): `17.5px–18.5px`, bold (`800`).
      - Body text (`.editorial-text`): `14.5px–15.5px` (`0.95rem`), line-height `1.6–1.65`.
      - Bullet points (`.highlight-list li`): `14px` (`0.92rem`), line-height `1.55–1.6`, bottom margin `9px–12px`, left padding `22px–24px`.
-     - Milestone callout box (`.callout-box` / `.success-box`): `11px 15px` padding, margin-top `13px`, `break-inside: avoid; page-break-inside: avoid;`.
-   - The narrative card should fill **~75%–85% of the page** naturally.
+     - Milestone callout box (`.callout-box` / `.success-box` / `.amber-box` / `.purple-box`): `12px 16px` padding, margin-top `13px`, `break-inside: avoid; page-break-inside: avoid;`.
+   - **Strict Narrative Card Length Budget (Guaranteed 1-Page Fit):**
+     - Section Header: Compact 1–2 lines with supervisor badges.
+     - Highlight Callout Box: Exactly **3 to 4 lines** of executive synthesis. Never dump the entire detailed story into the callout box.
+     - Bullet Points: Exactly **5 to 7 bullets**, 2 to 3 lines each.
+     - Zero Redundancy: Do NOT duplicate cross-site items (e.g. tractor haulage belongs under Chaka Farms, not repeated as a bullet under Golf), and eliminate generic filler bullets like "Site Oversight".
+     - Total Card Lines: **35–42 lines total**. The narrative card MUST fill **~75%–85% of Page 1** naturally without spilling 1–2 orphan lines onto a second page.
 
 2. **Dedicated Spread for Major Data Tables**:
    - Complex or multi-row data tables (e.g., *Dairy Milking Yield Ledger*, *Heavy Machinery Utilization Log*) MUST NOT be squeezed under narrative cards. Place a dedicated page break before them to grant them a dedicated page.
@@ -287,8 +327,9 @@ AI assistants must NEVER compress font sizes, shrink line heights, tighten bulle
    - Photo galleries MUST ALWAYS display in a **spacious 2-column grid** (`grid-template-columns: repeat(2, 1fr)`).
    - NEVER compress images into 3 columns or create a 3-column class (`gallery-grid-3col`).
    - **Continuous Straight Flow (No Grouping):** Do NOT group images or split them across multiple cards with thematic sub-headings. All photos for a project site must follow each other straight in a single continuous gallery card.
-   - **Minimal Cropping Standard:** Use `object-fit: contain; background-color: #f8fafc;` with height `200px–260px` (print: `165px`) so the complete photo and its main subject (workers, equipment, pets, structural works) remain 100% visible and uncropped.
-   - Info block padding: `11px 14px`, titles `13.5px`, captions `12px` (line-height `1.4`).
+   - **STRICT BAN ON MANUAL GALLERY BREAKS:** AI assistants MUST NEVER apply `class="page-break-before"` or `break-before: page` to individual `.gallery-item` elements. Every gallery item must simply be `<div class="gallery-item">`. The benchmark 2-column flex grid naturally flows **6 images (3 rows of 2) per full page** without leaving artificial blank voids.
+   - **Minimal Cropping Standard:** Use `object-fit: contain; background-color: #f8fafc;` with height `240px` (screen) / `165px` (print) so the complete photo and its main subject (workers, equipment, pets, structural works) remain 100% visible and uncropped.
+   - Caption Typography: padding `8px 12px` (print) / `12px 16px` (screen), titles `12.5px` (print) / `0.94rem` (screen), captions `11px` (print, line-height 1.35) / `0.86rem` (screen).
 
 6. **Page Count Integrity (Zero Artificial Compression)**:
    - There is NO arbitrary page limit. Never sacrifice visual comfort, font sizes, line heights, or image layout to meet an arbitrary page count.
@@ -308,5 +349,22 @@ AI assistants must NEVER compress font sizes, shrink line heights, tighten bulle
   - Python usage is strictly restricted to:
     1. **Headless Microsoft Edge PDF Generation:** Executing `python -c "import subprocess; subprocess.run(['C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe', '--headless', '--print-to-pdf=...', '...'])"` (handles Windows file paths with spaces and commas without PowerShell quote-escaping bugs).
     2. **Read-Only Pre-Flight / Post-Flight Validation:** Quick read-only verification scripts (e.g., verifying that all local image paths exist on disk, checking generated PDF file size, or verifying total PDF page count).
+
+---
+
+## 9. Mandatory Pre-Delivery PDF Spread & Quality Assurance Protocol
+
+Before concluding any daily operations report generation task, the AI assistant MUST run the following automated Python verification script against the compiled PDF:
+
+```powershell
+python -c "import pypdf; reader = pypdf.PdfReader('Daily_Operations_Report_[Date].pdf'); [print(f'⚠️ WARNING: Page {i+1} has only {len(lines)} lines! Broken spread detected: {lines[0][:50]}') for i, page in enumerate(reader.pages) for lines in [[l.strip() for l in (page.extract_text() or '').split('\n') if l.strip()]] if len(lines) < 6]"
+```
+
+### Pre-Delivery Quality Checklist:
+1. **Zero Orphaned Lines:** No page contains fewer than 6 lines of text (which indicates an orphaned section header or a 1–2 line bullet overflow spill).
+2. **Zero Inferred/Guessed Hole Numbers:** Ensure no green numbers (e.g. "Green 17") or teebox numbers were guessed in captions or narratives unless explicitly confirmed in the daily prompt or raw filenames.
+3. **Gallery Flow Integrity:** Confirm no `.gallery-item` has `page-break-before`. Full gallery pages must display 6 images (3 rows of 2).
+4. **Dedicated Single Spreads:** Every site narrative card occupies its own single dedicated page at ~80% coverage.
+5. **Quantitative Accounting:** Milk volumes strictly in Litres; Maasai labeled strictly as Maasai; Backhoe Loader consolidated as single vehicle.
 
 
