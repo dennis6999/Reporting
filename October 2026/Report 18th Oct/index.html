@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Operations Report — Sunday, 18th October 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-dark: #0f172a;
+            --accent: #059669;
+            --accent-light: #ecfdf5;
+            --golf-green: #15803d;
+            --golf-green-light: #f0fdf4;
+            --golf-green-border: #86efac;
+            --farm-amber: #d97706;
+            --farm-amber-light: #fffbeb;
+            --farm-amber-border: #fde68a;
+            --residence-purple: #6d28d9;
+            --residence-purple-light: #f5f3ff;
+            --residence-purple-border: #ddd6fe;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-300: #cbd5e1;
+            --slate-400: #94a3b8;
+            --slate-600: #475569;
+            --slate-700: #334155;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --radius-md: 12px;
+            --radius-lg: 16px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f4f6f9;
+            color: var(--slate-800);
+            line-height: 1.7;
+            font-size: 1.02rem;
+            padding: 40px 20px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            border: 1px solid var(--slate-200);
+        }
+
+        /* Header Block */
+        header {
+            background: #0f172a !important;
+            color: #ffffff !important;
+            padding: 44px 44px;
+            position: relative;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .badge-date {
+            background: rgba(255,255,255,0.18) !important;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.94rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(255,255,255,0.25);
+            color: #ffffff !important;
+        }
+        .report-tag {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #86efac !important;
+            font-weight: 700;
+        }
+        header h1 {
+            font-size: 2.3rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            color: #ffffff !important;
+        }
+        header p.subtitle {
+            color: #cbd5e1 !important;
+            font-size: 1.02rem;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        /* Executive KPI Summary Bar */
+        .kpi-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            padding: 24px 44px;
+            background-color: var(--slate-50);
+            border-bottom: 1px solid var(--slate-200);
+        }
+        .kpi-card {
+            background: #ffffff;
+            padding: 18px 22px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--slate-200);
+            box-shadow: var(--shadow-sm);
+        }
+        .kpi-card .label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--slate-600);
+            letter-spacing: 0.5px;
+        }
+        .kpi-card .value {
+            font-size: 1.28rem;
+            font-weight: 800;
+            color: var(--slate-900);
+            margin-top: 4px;
+        }
+        .kpi-card .subtext {
+            font-size: 0.86rem;
+            color: var(--slate-600);
+            margin-top: 2px;
+        }
+
+        /* Executive Cover Overview Card */
+        .cover-overview-container {
+            padding: 28px 44px 0 44px;
+        }
+        .cover-overview-card {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--slate-200);
+            padding: 30px 34px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .main-content { padding: 36px 44px; }
+
+        /* Section Headers */
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--slate-200);
+            margin-bottom: 26px;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .section-title h2 {
+            font-size: 1.55rem;
+            font-weight: 800;
+            color: var(--slate-900);
+        }
+        .section-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+            color: #ffffff !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .icon-golf { background-color: var(--golf-green) !important; }
+        .icon-farm { background-color: var(--farm-amber) !important; }
+        .icon-residence { background-color: var(--residence-purple) !important; }
+
+        .supervisor-badges-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .supervisor-badge {
+            background-color: var(--slate-100);
+            color: var(--slate-700);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            border: 1px solid var(--slate-300);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .supervisor-badge span {
+            color: var(--slate-500);
+            font-weight: 500;
+        }
+
+        /* Narrative Cards */
+        .card {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--slate-200);
+            padding: 30px 34px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-sm);
+        }
+        .card-header {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--slate-900);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .editorial-text {
+            font-size: 1.02rem;
+            color: var(--slate-700);
+            line-height: 1.75;
+            margin-bottom: 18px;
+        }
+        .highlight-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        .highlight-list li {
+            position: relative;
+            padding-left: 26px;
+            margin-bottom: 12px;
+            color: var(--slate-700);
+            font-size: 0.98rem;
+            line-height: 1.65;
+        }
+        .highlight-list li::before {
+            content: "•";
+            position: absolute;
+            left: 8px;
+            top: -1px;
+            color: var(--primary);
+            font-size: 1.35rem;
+        }
+        #mucheru-golf .highlight-list li::before { color: var(--golf-green); }
+        #chaka-farms .highlight-list li::before { color: var(--farm-amber); }
+        #kabete-residence .highlight-list li::before { color: var(--residence-purple); }
+
+        /* Callout Boxes */
+        .callout-box {
+            padding: 16px 20px;
+            border-radius: var(--radius-md);
+            margin-top: 18px;
+        }
+        .success-box {
+            background-color: var(--golf-green-light);
+            border-left: 4px solid var(--golf-green);
+        }
+        .success-box h4 {
+            color: #14532d;
+            font-size: 1.02rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .success-box p {
+            color: #166534;
+            font-size: 0.94rem;
+            line-height: 1.55;
+        }
+        .amber-box {
+            background-color: var(--farm-amber-light);
+            border-left: 4px solid var(--farm-amber);
+        }
+        .amber-box h4 {
+            color: #78350f;
+            font-size: 1.02rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .amber-box p {
+            color: #92400e;
+            font-size: 0.94rem;
+            line-height: 1.55;
+        }
+        .purple-box {
+            background-color: var(--residence-purple-light);
+            border-left: 4px solid var(--residence-purple);
+        }
+        .purple-box h4 {
+            color: #4c1d95;
+            font-size: 1.02rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .purple-box p {
+            color: #5b21b6;
+            font-size: 0.94rem;
+            line-height: 1.55;
+        }
+
+        /* Quantitative Tables */
+        .milk-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 14px;
+            margin-bottom: 16px;
+        }
+        .milk-table th {
+            background-color: var(--slate-100);
+            color: var(--slate-800);
+            text-align: left;
+            padding: 12px 16px;
+            font-size: 0.92rem;
+            font-weight: 700;
+            border-bottom: 2px solid var(--slate-300);
+        }
+        .milk-table td {
+            padding: 12px 16px;
+            font-size: 0.95rem;
+            border-bottom: 1px solid var(--slate-200);
+            color: var(--slate-700);
+        }
+        .milk-table tr:hover td {
+            background-color: var(--slate-50);
+        }
+        .total-cell {
+            font-weight: 800;
+            color: var(--farm-amber) !important;
+        }
+        .deduction-cell {
+            font-weight: 600;
+            color: var(--slate-600);
+        }
+        .balance-row td {
+            font-weight: 800;
+            background-color: #fefce8 !important;
+            border-top: 2px solid #ca8a04;
+            border-bottom: 2px solid #ca8a04;
+            color: #854d0e !important;
+        }
+        .balance-cell {
+            color: #15803d !important;
+            font-weight: 800;
+        }
+
+        .info-box {
+            background-color: var(--slate-50);
+            border-left: 4px solid var(--slate-400);
+            padding: 16px 20px;
+            border-radius: var(--radius-md);
+            margin-top: 18px;
+        }
+        .info-box h4 {
+            color: var(--slate-800);
+            font-size: 0.98rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .info-box p {
+            color: var(--slate-600);
+            font-size: 0.92rem;
+            line-height: 1.55;
+        }
+
+        /* Status Ledgers (Greens & Tees) */
+        .status-ledger-card {
+            padding: 24px 28px;
+        }
+        .status-table-wrapper {
+            margin-top: 12px;
+            margin-bottom: 14px;
+            overflow-x: auto;
+        }
+        .status-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+        }
+        .status-table th {
+            background-color: var(--slate-100);
+            color: var(--slate-800);
+            font-weight: 700;
+            text-align: left;
+            padding: 8px 12px;
+            border-bottom: 2px solid var(--slate-300);
+            font-size: 0.88rem;
+        }
+        .status-table td {
+            padding: 8px 12px;
+            border-bottom: 1px solid var(--slate-200);
+            color: var(--slate-700);
+            vertical-align: middle;
+        }
+        .status-table tr:nth-child(even) {
+            background-color: #fafbfd;
+        }
+        .status-table tr.row-changed {
+            background-color: #f0fdf4 !important;
+        }
+        .status-table tr.row-changed td:first-child {
+            border-left: 3.5px solid #15803d !important;
+            font-weight: 800;
+            color: #14532d;
+        }
+        .col-id {
+            width: 110px;
+            font-weight: 700;
+            color: var(--slate-800);
+            white-space: nowrap;
+        }
+        .col-status {
+            line-height: 1.45;
+        }
+        .col-tag {
+            width: 180px;
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        /* Status Badges */
+        .tag {
+            display: inline-block;
+            font-size: 0.76rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+        .tag-ready {
+            background-color: #dcfce7;
+            color: #15803d;
+            border: 1px solid #86efac;
+        }
+        .tag-sand {
+            background-color: #fef3c7;
+            color: #b45309;
+            border: 1px solid #fcd34d;
+        }
+        .tag-trenched {
+            background-color: #e0f2fe;
+            color: #0369a1;
+            border: 1px solid #7dd3fc;
+        }
+        .tag-neutral {
+            background-color: #f1f5f9;
+            color: #475569;
+            border: 1px solid #cbd5e1;
+        }
+        .tag-pending {
+            background-color: #fef2f2;
+            color: #b91c1c;
+            border: 1px solid #fecaca;
+        }
+        .badge-today {
+            display: inline-block;
+            font-size: 7.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #15803d;
+            background-color: #dcfce7;
+            border: 1px solid #86efac;
+            padding: 0.5px 4px;
+            border-radius: 6px;
+            margin-left: 4px;
+        }
+
+        /* Operations Synthesis Summary Card */
+        .summary-card {
+            background-color: #f0fdf4;
+            border-left: 4px solid var(--golf-green);
+            padding: 14px 18px;
+            border-radius: var(--radius-md);
+            margin-top: 16px;
+        }
+        .summary-card h4 {
+            color: #14532d;
+            font-size: 0.98rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .summary-card p {
+            color: #166534;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Photo Galleries (AGENTS.MD Section 3 & 4) */
+        .gallery-card {
+            padding: 28px 32px;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .gallery-item {
+            background: #ffffff;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--slate-200);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 240px;
+            object-fit: contain;
+            background-color: #f8fafc;
+            border-bottom: 1px solid var(--slate-200);
+            display: block;
+        }
+        .gallery-caption {
+            padding: 12px 16px;
+            flex-grow: 1;
+        }
+        .gallery-caption h4 {
+            font-size: 0.96rem;
+            font-weight: 700;
+            color: var(--slate-900);
+            margin-bottom: 4px;
+            line-height: 1.35;
+        }
+        .gallery-caption p {
+            font-size: 0.86rem;
+            color: var(--slate-600);
+            line-height: 1.45;
+        }
+
+        /* Footer Signature Block */
+        footer {
+            padding: 28px 44px;
+            background-color: var(--slate-50);
+            border-top: 1px solid var(--slate-200);
+            text-align: center;
+        }
+        footer h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--slate-800);
+            letter-spacing: 0.3px;
+        }
+
+        /* ========================================================================= */
+        /* PRINT STYLING & PAGE BUDGETING (AGENTS.MD SECTION 5 & 7)                  */
+        /* ========================================================================= */
+        @media print {
+            @page { 
+                size: A4; 
+                margin: 8mm 10mm; 
+            }
+            
+            body { 
+                background-color: #ffffff !important; 
+                padding: 0 !important; 
+                font-size: 0.98rem !important;
+            }
+            
+            .container { 
+                box-shadow: none !important; 
+                border: none !important; 
+                border-radius: 0 !important; 
+                max-width: 100% !important; 
+                overflow: visible !important; 
+            }
+            
+            header { 
+                padding: 22px 28px !important; 
+                border-radius: 8px !important; 
+            }
+            
+            header h1 { 
+                font-size: 2.1rem !important; 
+                margin-bottom: 6px !important; 
+            }
+            
+            header p.subtitle { 
+                font-size: 0.94rem !important; 
+                line-height: 1.5 !important; 
+            }
+            
+            .kpi-bar { 
+                padding: 14px 0 !important; 
+                background: transparent !important; 
+                grid-template-columns: repeat(4, 1fr) !important; 
+                gap: 10px !important; 
+                border-bottom: 1px solid #e2e8f0 !important;
+            }
+            
+            .kpi-card { 
+                padding: 10px 12px !important; 
+                border: 1px solid #cbd5e1 !important; 
+                box-shadow: none !important; 
+            }
+            .kpi-card .value { font-size: 1.15rem !important; }
+            .kpi-card .label { font-size: 0.72rem !important; }
+            .kpi-card .subtext { font-size: 0.78rem !important; }
+
+            /* Page 2: Dedicated Single-Page Executive Summary Spread */
+            .cover-overview-container {
+                padding: 0 !important;
+                page-break-before: always !important;
+                break-before: page !important;
+                page-break-after: always !important;
+                break-after: page !important;
+            }
+            
+            .cover-overview-card { 
+                padding: 18px 24px !important; 
+                margin-top: 0 !important;
+                margin-bottom: 0 !important; 
+                border: 1px solid #cbd5e1 !important; 
+                box-shadow: none !important; 
+                break-inside: avoid !important; 
+                page-break-inside: avoid !important; 
+            }
+            .cover-overview-card .card-header { 
+                font-size: 16px !important; 
+                font-weight: 800 !important; 
+                margin-bottom: 8px !important; 
+            }
+            .cover-overview-card .editorial-text { 
+                font-size: 13px !important; 
+                line-height: 1.46 !important; 
+                margin-bottom: 8px !important; 
+            }
+            .cover-overview-card .success-box { 
+                padding: 8px 12px !important; 
+                margin-top: 8px !important; 
+                margin-bottom: 10px !important; 
+            }
+            .cover-overview-card .success-box h4 { 
+                font-size: 12.5px !important; 
+                margin-bottom: 2px !important; 
+            }
+            .cover-overview-card .success-box p { 
+                font-size: 11.5px !important; 
+                line-height: 1.38 !important; 
+            }
+            .cover-overview-card .highlight-list li { 
+                font-size: 12px !important; 
+                line-height: 1.42 !important; 
+                margin-bottom: 6px !important; 
+                padding-left: 18px !important; 
+            }
+            
+            .main-content { padding: 12px 0 !important; }
+            
+            main > section, section {
+                break-before: page !important;
+                page-break-before: always !important;
+            }
+
+            .card { 
+                padding: 20px 24px !important; 
+                margin-bottom: 14px !important; 
+                border: 1px solid #cbd5e1 !important; 
+                box-shadow: none !important; 
+                break-inside: avoid !important; 
+                page-break-inside: avoid !important; 
+            }
+
+            /* Dedicated Narrative Spreads per AGENTS.MD Section 7 Rule 1 */
+            #mucheru-golf > .card:first-of-type,
+            #chaka-farms > .card:first-of-type,
+            #kabete-residence > .card:first-of-type {
+                padding: 22px 26px !important;
+                margin-bottom: 0 !important;
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            /* Section Header in Print */
+            .section-header { 
+                margin-bottom: 10px !important; 
+                padding-bottom: 8px !important; 
+                break-inside: avoid !important; 
+                page-break-inside: avoid !important; 
+                break-after: avoid !important; 
+                page-break-after: avoid !important; 
+            }
+            .section-icon {
+                width: 38px !important;
+                height: 38px !important;
+                font-size: 1.2rem !important;
+            }
+            .section-title h2 { font-size: 1.38rem !important; }
+            .supervisor-badges-wrapper { gap: 8px !important; }
+            .supervisor-badge { 
+                font-size: 0.82rem !important; 
+                padding: 4px 10px !important; 
+            }
+
+            /* Narrative Typography in Print (Section 7 Anti-Compression) */
+            .card-header, .card-heading { 
+                font-size: 18px !important; 
+                font-weight: 800 !important; 
+                margin-bottom: 10px !important; 
+            }
+            .editorial-text { 
+                font-size: 14px !important; 
+                line-height: 1.58 !important; 
+                margin-bottom: 10px !important; 
+            }
+            .highlight-list li { 
+                font-size: 13.5px !important; 
+                line-height: 1.52 !important; 
+                margin-bottom: 8px !important; 
+                padding-left: 22px !important; 
+            }
+
+            .success-box, .amber-box, .purple-box {
+                padding: 12px 16px !important;
+                margin-top: 13px !important;
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+            .success-box h4, .amber-box h4, .purple-box h4 {
+                font-size: 0.95rem !important;
+                margin-bottom: 3px !important;
+            }
+            .success-box p, .amber-box p, .purple-box p {
+                font-size: 0.86rem !important;
+                line-height: 1.45 !important;
+            }
+
+            /* Prevent Page Breaks for Dedicated Tables */
+            .page-break-before {
+                break-before: page !important;
+                page-break-before: always !important;
+            }
+
+            /* Photo Galleries: Exact 2-Column Print Flow */
+            .card.gallery-card {
+                padding: 16px 20px !important;
+                margin-bottom: 0 !important;
+                break-inside: auto !important;
+                page-break-inside: auto !important;
+            }
+            .card.gallery-card .card-header {
+                margin-bottom: 8px !important;
+                font-size: 16px !important;
+            }
+            .card.gallery-card .editorial-text {
+                margin-bottom: 10px !important;
+                font-size: 13px !important;
+                line-height: 1.45 !important;
+            }
+            .gallery-grid { 
+                display: flex !important; 
+                flex-wrap: wrap !important; 
+                justify-content: space-between !important; 
+                gap: 12px !important; 
+                margin-top: 10px !important; 
+            }
+            .gallery-item { 
+                width: calc(50% - 6px) !important; 
+                box-shadow: none !important; 
+                border: 1px solid #cbd5e1 !important; 
+                break-inside: avoid !important; 
+                page-break-inside: avoid !important; 
+            }
+            .gallery-item img { 
+                height: 165px !important; 
+                object-fit: contain !important; 
+                background-color: #f8fafc !important; 
+            }
+            .gallery-caption { 
+                padding: 8px 12px !important; 
+            }
+            .gallery-caption h4 { font-size: 12.5px !important; margin-bottom: 2px !important; }
+            .gallery-caption p { font-size: 11px !important; line-height: 1.35 !important; }
+
+            /* Quantitative Tables (Section 7 Rule 2) */
+            .milk-table th, .milk-table td { 
+                padding: 8px 12px !important; 
+                font-size: 12.5px !important; 
+            }
+            .info-box {
+                padding: 12px 16px !important;
+                margin-top: 14px !important;
+            }
+            .info-box h4 {
+                font-size: 0.95rem !important;
+                margin-bottom: 3px !important;
+            }
+            .info-box p {
+                font-size: 0.86rem !important;
+                line-height: 1.45 !important;
+            }
+
+            /* Status Table Print Styling (Section 5 & 7 Exact Formula) */
+            .status-table-wrapper {
+                margin-top: 4px !important;
+                margin-bottom: 6px !important;
+            }
+            .status-table { 
+                width: 100% !important; 
+            }
+            .status-table tr { 
+                page-break-inside: avoid !important; 
+                break-inside: avoid !important; 
+            }
+            .status-table tr.row-changed { 
+                background-color: #f0fdf4 !important; 
+            }
+            .status-table tr.row-changed td:first-child { 
+                border-left: 3.5px solid #15803d !important; 
+                font-weight: 800 !important; 
+            }
+            .badge-today {
+                display: inline-block !important; 
+                font-size: 7.5px !important; 
+                font-weight: 700 !important; 
+                text-transform: uppercase !important; 
+                color: #15803d !important; 
+                background-color: #dcfce7 !important; 
+                border: 1px solid #86efac !important; 
+                padding: 0.5px 4px !important; 
+                border-radius: 6px !important; 
+                margin-left: 4px !important; 
+            }
+
+            /* Dedicated Putting Greens Card (#greens-ledger-card) — Exact Formula */
+            #greens-ledger-card { 
+                padding: 14px 18px !important; 
+                margin-bottom: 0 !important; 
+                break-inside: avoid !important; 
+                page-break-inside: avoid !important; 
+            }
+            #greens-ledger-card .card-header { 
+                font-size: 15.5px !important; 
+                margin-bottom: 6px !important; 
+            }
+            #greens-ledger-card .editorial-text { 
+                font-size: 12.5px !important; 
+                line-height: 1.4 !important; 
+                margin-bottom: 6px !important; 
+            }
+            #greens-ledger-card .status-table { 
+                font-size: 9.4px !important; 
+            }
+            #greens-ledger-card .status-table th { 
+                padding: 4.5px 8px !important; 
+                font-size: 9px !important; 
+            }
+            #greens-ledger-card .status-table td { 
+                padding: 4.2px 8px !important; 
+                font-size: 9.4px !important; 
+                line-height: 1.3 !important; 
+            }
+            #greens-ledger-card .col-id { 
+                width: 74px !important; 
+            }
+            #greens-ledger-card .col-tag { 
+                width: 160px !important; 
+            }
+            #greens-ledger-card .tag { 
+                font-size: 8.2px !important; 
+                padding: 1.2px 4.5px !important; 
+            }
+
+            /* Dedicated Championship Teeboxes Card (#tees-ledger-card) — Exact Formula */
+            #tees-ledger-card { 
+                padding: 16px 20px !important; 
+                margin-bottom: 0 !important; 
+                break-inside: avoid !important; 
+                page-break-inside: avoid !important; 
+            }
+            #tees-ledger-card .card-header { 
+                font-size: 16px !important; 
+                margin-bottom: 8px !important; 
+            }
+            #tees-ledger-card .editorial-text { 
+                font-size: 12.5px !important; 
+                line-height: 1.4 !important; 
+                margin-bottom: 8px !important; 
+            }
+            #tees-ledger-card .status-table { 
+                font-size: 9.6px !important; 
+            }
+            #tees-ledger-card .status-table th { 
+                padding: 5px 8px !important; 
+                font-size: 9.2px !important; 
+            }
+            #tees-ledger-card .status-table td { 
+                padding: 4.5px 8px !important; 
+                font-size: 9.6px !important; 
+                line-height: 1.32 !important; 
+            }
+            #tees-ledger-card .col-id { 
+                width: 72px !important; 
+            }
+            #tees-ledger-card .col-tag { 
+                width: 155px !important; 
+            }
+            #tees-ledger-card .tag { 
+                font-size: 8.2px !important; 
+                padding: 1.2px 4.5px !important; 
+            }
+            #tees-ledger-card .summary-card { 
+                padding: 9px 12px !important; 
+                margin-top: 8px !important; 
+                margin-bottom: 0 !important; 
+            }
+            #tees-ledger-card .summary-card h4 { 
+                font-size: 10.5px !important; 
+                margin-bottom: 2px !important; 
+            }
+            #tees-ledger-card .summary-card p { 
+                font-size: 9.5px !important; 
+                line-height: 1.35 !important; 
+            }
+
+            /* Footer in Print */
+            footer { 
+                padding: 14px 20px !important; 
+                border-top: 1px solid #cbd5e1 !important; 
+                background: transparent !important; 
+                break-inside: avoid !important; 
+                page-break-inside: avoid !important; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="header-top">
+                <span class="report-tag">Operations Executive Record</span>
+                <span class="badge-date">Sunday, 18th October 2026</span>
+            </div>
+            <h1>Daily Operations Progress Report</h1>
+            <p class="subtitle">Multi-site operational record documenting putting green river sand application and leveling, HDPE sprinkler pipe hauling and trench installation, teebox platform earthwork grading, livestock dairy production reconciliation, canine unit care, and resident pet husbandry.</p>
+        </header>
+
+        <!-- Executive KPI Bar -->
+        <div class="kpi-bar">
+            <div class="kpi-card">
+                <div class="label">Course Irrigation &amp; Materials</div>
+                <div class="value">HDPE Pipes &amp; Sand</div>
+                <div class="subtext">HDPE pipes laid on Greens 1, 2, 3; 1 lorry river sand delivered</div>
+            </div>
+            <div class="kpi-card">
+                <div class="label">Putting Green Agronomy</div>
+                <div class="value">Green 14 Sanded</div>
+                <div class="subtext">Green 14 leveled with river sand; Green 17 spreading underway</div>
+            </div>
+            <div class="kpi-card">
+                <div class="label">Daily Milk Harvest</div>
+                <div class="value">7.0 Litres</div>
+                <div class="subtext">6.0L Commercial Sales + 1.0L Internal Allocations (100% Reconciled)</div>
+            </div>
+            <div class="kpi-card">
+                <div class="label">Teebox Earthworks &amp; Estate</div>
+                <div class="value" style="color: var(--residence-purple);">Tees 6 &amp; 8 Grading</div>
+                <div class="subtext">Tees 6 &amp; 8 grading continued; pet meals cooked; Mocha monitored</div>
+            </div>
+        </div>
+
+        <!-- Cover Overview Spread (Strictly 1 Page in Print) -->
+        <div class="cover-overview-container">
+            <div class="cover-overview-card">
+                <div class="card-header">
+                    <span>Executive Summary &amp; Multi-Site Operations Synthesis</span>
+                </div>
+                <p class="editorial-text">
+                    Field operations on Sunday, 18th October 2026 registered substantial progress across civil irrigation installation, golf green rootzone preparation, teebox platform contouring, dairy production volume reconciliation, canine unit management, and domestic pet welfare across three active project sites:
+                </p>
+                <div class="success-box">
+                    <h4>Key Milestone Accomplishments Across Active Sites</h4>
+                    <p><strong>Mucheru World of Golf:</strong> 1 lorry load of fresh river sand was delivered to site; river sand application and precision leveling on Green 14 was fully completed; river sand application on Green 17 commenced over the stone sub-base with spreading actively underway; Mr. Gichuhi's pickup was utilized to haul coils of black HDPE piping from Chaka Farms to the golf course; ground crew uncoiled and placed HDPE sprinkler pipes inside the perimeter trenches on Greens 1, 2, and 3; platform grading and surface refinement on Teeboxes 6 and 8 actively continued; on-site technical supervision was provided by Joe Kamau and Peter Githinji alongside Mr. Gichuhi and Ken.<br>
+                    <strong>Chaka Farms:</strong> Daily dairy harvest reached 7.0 Litres gross production (4.5L morning + 2.5L evening), with 6.0 Litres dispatched for commercial sales and 1.0 Litre distributed for routine farm allocations (0.5L Gladys + 0.5L Maasai), completely reconciled strictly in Litres with zero discrepancy; Mwangi oversaw canine unit care including thorough kennel cleaning, cooking meals for the dogs, and walking on leash.<br>
+                    <strong>Kabete Residence:</strong> Operations overseen and shared by Njoki; fresh dinner meals were cooked and portioned on the stove for resident pets (Ajabu the Golden Retriever and cats Reo, Aiko, and Mocha); Ajabu, Reo, and Aiko were fed their dinner portions; staff noted Mocha was absent at dinner service and are actively keeping watch for her return.</p>
+                </div>
+                <ul class="highlight-list">
+                    <li><strong>Course Irrigation Pipe Installation:</strong> Substantial step forward in irrigation infrastructure as coils of HDPE piping were transferred from Chaka Farms using Gichuhi's pickup and laid directly into the pre-dug perimeter sprinkler trenches serving Greens 1, 2, and 3.</li>
+                    <li><strong>Rootzone Agronomy &amp; Sand Spreading:</strong> Delivery of 1 lorry of river sand supported the full leveling of Green 14, establishing a clean, smooth agronomic surface, while spreading commenced over the ballast stone sub-base on Green 17.</li>
+                    <li><strong>Continuous Platform Refinement on Tees 6 &amp; 8:</strong> Ground crews maintained focused earthwork shaping and surface grading across the launch platforms of Teebox 6 and Teebox 8 using stockpiled red soil.</li>
+                    <li><strong>Dairy Reconciliation &amp; Animal Welfare:</strong> Zero-variance dairy reconciliation achieved for all 7.0 Litres harvested; kennel sanitation and leash walking executed at Chaka Farms; domestic pet meals cooked and served at Kabete Residence.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content Body -->
+        <main class="main-content">
+
+            <!-- ========================================================================= -->
+            <!-- SECTION 1: MUCHERU WORLD OF GOLF                                          -->
+            <!-- Dedicated Narrative Spread (AGENTS.MD Section 1 & 7 Rule 1)               -->
+            <!-- ========================================================================= -->
+            <section id="mucheru-golf">
+                <div class="section-header">
+                    <div class="section-title">
+                        <div class="section-icon icon-golf">⛳</div>
+                        <h2>Mucheru World of Golf</h2>
+                    </div>
+                    <div class="supervisor-badges-wrapper">
+                        <div class="supervisor-badge">
+                            <span>Site Oversight:</span> Mr. Gichuhi &amp; Ken
+                        </div>
+                        <div class="supervisor-badge">
+                            <span>Technical Supervision:</span> Joe Kamau &amp; Peter Githinji
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span>Golf Course Irrigation, Green Sanding, and Teebox Grading Progress Brief</span>
+                    </div>
+                    <p class="editorial-text">
+                        Operations at Mucheru World of Golf on Sunday, 18th October 2026 focused on advancing irrigation pipeline infrastructure, putting green agronomic rootzone preparation, material logistics, and teebox platform contouring under the active supervision of Mr. Gichuhi, Ken, Joe Kamau, and Peter Githinji:
+                    </p>
+                    <div class="success-box">
+                        <h4>Golf Course Operational Highlights</h4>
+                        <p>1 lorry load of clean river sand was delivered to site. River sand application and surface leveling on Green 14 was fully completed to design contours. River sand application on Green 17 commenced over the sub-base, with sand spreading underway. Mr. Gichuhi's pickup was used to haul coils of black HDPE pipe from Chaka Farms to the golf site, and the crew installed the HDPE pipes directly into the sprinkler trenches on Greens 1, 2, and 3. Earthwork grading and surface refinement on Teeboxes 6 and 8 actively continued.</p>
+                    </div>
+                    <ul class="highlight-list">
+                        <li><strong>Delivery of River Sand (1 Lorry Load):</strong> 1 commercial lorry delivered clean river sand to the golf course, stockpiling it directly adjacent to active putting greens to support immediate rootzone surface leveling and agronomic bedding.</li>
+                        <li><strong>Green 14 River Sand Application &amp; Leveling Completed:</strong> Ground crews utilized wheelbarrows and rakes to evenly spread and level river sand across the entire surface of Green 14 over its prepared sub-base, achieving a smooth, uniform finish ready for subsequent agronomic profile layers.</li>
+                        <li><strong>Green 17 River Sand Application Commenced:</strong> River sand spreading commenced over the pumice and ballast gravel foundation on Green 17. Wheelbarrows distributed sand piles across the rear portion of the green where spreading is underway; works will continue to cover the remaining sub-base in the next operational session.</li>
+                        <li><strong>HDPE Pipe Haulage from Chaka Farms:</strong> Mr. Gichuhi's pickup truck (KAY 655F) was deployed to transport heavy coils of black HDPE piping from storage at Chaka Farms directly to the golf course construction area for pop-up sprinkler installation.</li>
+                        <li><strong>Sprinkler Pipe Installation on Greens 1, 2, and 3:</strong> Ground technicians uncoiled and laid the black HDPE piping directly into the pre-dug perimeter sprinkler trenches encircling Greens 1, 2, and 3, fitting the line neatly along trench curves and marking connections with survey pegs.</li>
+                        <li><strong>Continuation of Teebox 6 and 8 Platform Grading:</strong> Manual crews continued surface grading, cutting, and contour refinement on Teebox 6 and Teebox 8, spreading and packing red soil mounds across the launch areas to establish uniform playing platforms. Works are actively progressing and not yet completed.</li>
+                        <li><strong>On-Site Technical Supervision:</strong> Joe Kamau and Peter Githinji were present on site throughout the day alongside Mr. Gichuhi and Ken, verifying pipe laying depths, green surface leveling tolerances, and teebox alignment contours.</li>
+                    </ul>
+                </div>
+
+                <!-- ========================================================================= -->
+                <!-- MANDATORY STATUS LEDGER: PUTTING GREENS (GREENS 1 - 18)                   -->
+                <!-- Dedicated Full-Page Spread (AGENTS.MD Section 1 & 7)                      -->
+                <!-- ========================================================================= -->
+                <div id="greens-ledger-card" class="card status-ledger-card page-break-before">
+                    <div class="card-header">
+                        <span>⛳ Course Agronomy &amp; Engineering Status Audit — Putting Greens (1 – 18)</span>
+                    </div>
+                    <div class="supervisor-badge">
+                        <span>Audited by:</span> Dennis
+                    </div>
+                    <p class="editorial-text">
+                        18-hole putting green status audit showing the latest work completed and current condition for each green as of October 18, 2026:
+                    </p>
+
+                    <div class="status-table-wrapper">
+                        <table class="status-table">
+                            <thead>
+                                <tr>
+                                    <th class="col-id">Green</th>
+                                    <th class="col-status">Current Technical &amp; Agronomic State</th>
+                                    <th class="col-tag">Milestone Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="row-changed">
+                                    <td class="col-id">Green 1 <span class="badge-today">Today</span></td>
+                                    <td class="col-status">HDPE irrigation pipes laid and fitted inside perimeter sprinkler trenches (Oct 18).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Sprinkler Pipes Laid</span></td>
+                                </tr>
+                                <tr class="row-changed">
+                                    <td class="col-id">Green 2 <span class="badge-today">Today</span></td>
+                                    <td class="col-status">HDPE irrigation pipes laid and fitted inside perimeter sprinkler trenches (Oct 18).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Sprinkler Pipes Laid</span></td>
+                                </tr>
+                                <tr class="row-changed">
+                                    <td class="col-id">Green 3 <span class="badge-today">Today</span></td>
+                                    <td class="col-status">HDPE irrigation pipes laid and fitted inside perimeter sprinkler trenches (Oct 18).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Sprinkler Pipes Laid</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Green 4</td>
+                                    <td class="col-status">Pop-up sprinkler and irrigation perimeter trenches dug along marked chalk line (Oct 14).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Sprinkler Trenches Complete</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Green 5</td>
+                                    <td class="col-status">Ready. Fully established mature championship putting green turfgrass under active pop-up sprinkler irrigation conditioning.</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Ready &bull; Established Turf</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Green 6</td>
+                                    <td class="col-status">Pop-up sprinkler trenches digging completed around green perimeter collar (Oct 15).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Sprinkler Trenches Complete</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Green 7</td>
+                                    <td class="col-status">Drainage outlet trench connecting green 7 to main canal dug and leveled by manual crew (Oct 15).</td>
+                                    <td class="col-tag"><span class="tag tag-trenched">Outlet Trench Dug &bull; Leveled</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Green 8</td>
+                                    <td class="col-status">Pop-up sprinkler trenches digging completed around green perimeter (Oct 15).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Sprinkler Trenches Complete</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Green 9</td>
+                                    <td class="col-status">Orange drainage PVC pipe connected and outlet trench leveled leading to main canal (Oct 15).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">PVC Connected &bull; Trench Done</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Green 10</td>
+                                    <td class="col-status">Pop-up sprinkler trenches digging completed around collar and surrounds (Oct 15).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Sprinkler Trenches Complete</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Green 11</td>
+                                    <td class="col-status">Pop-up sprinkler trenches digging completed around green perimeter (Oct 15).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Sprinkler Trenches Complete</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Green 12</td>
+                                    <td class="col-status">Pop-up sprinkler trenches digging completed around perimeter collar (Oct 15).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Sprinkler Trenches Complete</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Green 13</td>
+                                    <td class="col-status">Pop-up sprinkler trenches digging completed along marked green perimeter (Oct 15).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Sprinkler Trenches Complete</span></td>
+                                </tr>
+                                <tr class="row-changed">
+                                    <td class="col-id">Green 14 <span class="badge-today">Today</span></td>
+                                    <td class="col-status">Riversand application and surface leveling completed across the foundation (Oct 18).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Riversand Leveled</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Green 15</td>
+                                    <td class="col-status">Pop-up sprinkler trenches digging completed around outer collar surrounds (Oct 15).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Sprinkler Trenches Complete</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Green 16</td>
+                                    <td class="col-status">Pop-up sprinkler trenches digging completed around green perimeter collar (Oct 15).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Sprinkler Trenches Complete</span></td>
+                                </tr>
+                                <tr class="row-changed">
+                                    <td class="col-id">Green 17 <span class="badge-today">Today</span></td>
+                                    <td class="col-status">Riversand application commenced over pumice sub-base; spreading underway across back section (Oct 18).</td>
+                                    <td class="col-tag"><span class="tag tag-sand">Riversand Spreading</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Green 18</td>
+                                    <td class="col-status">Pop-up sprinkler trenches dug; riversand applied and leveled across green surface (Oct 14).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Riversand &bull; Sprinkler Trench</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- ========================================================================= -->
+                <!-- MANDATORY STATUS LEDGER: CHAMPIONSHIP TEEBOXES (TEES 1 - 18)              -->
+                <!-- Dedicated Full-Page Spread (AGENTS.MD Section 1 & 7)                      -->
+                <!-- ========================================================================= -->
+                <div id="tees-ledger-card" class="card status-ledger-card page-break-before">
+                    <div class="card-header">
+                        <span>🏌️ Course Engineering Status Audit — Championship Teeboxes (1 – 18)</span>
+                    </div>
+                    <div class="supervisor-badge">
+                        <span>Audited by:</span> Dennis
+                    </div>
+                    <p class="editorial-text">
+                        Comprehensive 18-hole championship teebox platform audit tracking earthwork leveling, structural embankments, and playing corridor alignments as of October 18, 2026:
+                    </p>
+
+                    <div class="status-table-wrapper">
+                        <table class="status-table">
+                            <thead>
+                                <tr>
+                                    <th class="col-id">Teebox</th>
+                                    <th class="col-status">Current Technical &amp; Earthwork State</th>
+                                    <th class="col-tag">Platform Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="col-id">Tee 1</td>
+                                    <td class="col-status">Playing launch platform fully refined, contoured, and graded to final design elevation (Oct 14).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Refined &amp; Graded</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Tee 2</td>
+                                    <td class="col-status">Platform earthwork grading and surface refinement completely finished (Oct 15).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Refined &amp; Graded</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Tee 3</td>
+                                    <td class="col-status">Playing launch platform completely graded, leveled, and refined to final elevation (Oct 15).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Refined &amp; Graded</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Tee 4</td>
+                                    <td class="col-status">Championship launch platform completely graded, leveled, and refined to final elevation (Oct 15).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Refined &amp; Graded</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Tee 5</td>
+                                    <td class="col-status">Playing platform actively graded and refined with red soil next to 2nd main drainage trench (Oct 16).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Grading &amp; Refining</span></td>
+                                </tr>
+                                <tr class="row-changed">
+                                    <td class="col-id">Tee 6 <span class="badge-today">Today</span></td>
+                                    <td class="col-status">Platform surface grading and contour refinement actively continued by ground crew (Oct 18).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Grading &amp; Refining</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Tee 7</td>
+                                    <td class="col-status">Both number 7 teebox platforms actively reshaped, cut, and leveled by crew under Joe Kamau and supervisors (Oct 4).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Both Platforms Reshaped</span></td>
+                                </tr>
+                                <tr class="row-changed">
+                                    <td class="col-id">Tee 8 <span class="badge-today">Today</span></td>
+                                    <td class="col-status">Championship launch platform surface grading and contour refinement actively continued (Oct 18).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Grading &amp; Refining</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Tee 9</td>
+                                    <td class="col-status">Playing launch platform grading and surface refinement actively continued by manual crew (Oct 16).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Refinement in Progress</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Tee 10</td>
+                                    <td class="col-status">Playing launch platform shaping and surface refinement completely finished (Oct 13).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Platform Refined</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Tee 11</td>
+                                    <td class="col-status">Playing launch platform grading and contour refinement completely finished (Oct 13).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Refinement Complete</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Tee 12</td>
+                                    <td class="col-status">Both championship and forward platforms actively shaped, leveled, and refined to finished design elevation (Oct 8).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Shaped &amp; Refined</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Tee 13</td>
+                                    <td class="col-status">Playing platform earthworks completely finished, shaped, and refined to final design elevation and contours (Oct 7).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Finished &amp; Refined</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Tee 14</td>
+                                    <td class="col-status">Launch platform earthworks completely finished, shaped, and refined to final playing contour (Oct 7).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Finished &amp; Refined</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Tee 15</td>
+                                    <td class="col-status">Launch platform shaping completely finished; terrace cut to design elevation and precision leveled (Oct 6).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Platform Reshaped</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Tee 16</td>
+                                    <td class="col-status">Surplus red soil moved onto platform; launch terrace completely reshaped and leveled (Oct 5).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Platform Reshaped</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Tee 17</td>
+                                    <td class="col-status">Launch platform reshaped, cleared of brush, and graded to playing corridor alignment (Oct 6).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Platform Reshaped</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-id">Tee 18</td>
+                                    <td class="col-status">Championship launch platform surface grading, red soil leveling, and refinement underway (Oct 16).</td>
+                                    <td class="col-tag"><span class="tag tag-ready">Grading &amp; Refining</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Operations Synthesis Summary Card -->
+                    <div class="summary-card">
+                        <h4>Operations Agronomy &amp; Engineering Synthesis</h4>
+                        <p><strong>Putting Greens &amp; Irrigation Milestones:</strong> 1 lorry load of river sand was delivered and applied to Green 14, where surface leveling was fully completed; Green 17 commenced river sand spreading over the ballast stone sub-base with back area spreading underway; HDPE irrigation pipes were successfully hauled from Chaka Farms via pickup and installed directly into perimeter sprinkler trenches on Greens 1, 2, and 3.<br>
+                        <strong>Championship Teebox Platforms:</strong> Teeboxes 6 and 8 actively continued earthwork grading and red soil contour refinement; Teeboxes 1, 2, 3, 4, 5, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17, and 18 maintain established design grades.</p>
+                    </div>
+                </div>
+
+                <!-- Photographic Field Evidence — Mucheru World of Golf (Continuous 2-Column Grid) -->
+                <div class="card gallery-card page-break-before">
+                    <div class="card-header">
+                        <span>📸 Photographic Field Evidence — Mucheru World of Golf</span>
+                    </div>
+                    <p class="editorial-text">
+                        Sequential photographic field documentation capturing sand delivery, green leveling, HDPE pipe haulage and installation, and teebox platform grading at Mucheru World of Golf:
+                    </p>
+
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="Delivery%20of%20sand%20-%201%20lorry.jpeg" alt="Commercial Lorry Delivery of Clean River Sand Stockpiled on Site">
+                            <div class="gallery-caption">
+                                <h4>Commercial River Sand Delivery (1 Lorry Load)</h4>
+                                <p>A fresh delivery of 1 commercial lorry load of clean river sand stockpiled on site, providing essential rootzone material for putting green surface leveling and preparation.</p>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item">
+                            <img src="hauled%20HDPE%20pipes%20from%20chaka%20farms%20to%20golf%20site.jpeg" alt="Gichuhi Pickup Truck Hauling HDPE Irrigation Pipes to Golf Site">
+                            <div class="gallery-caption">
+                                <h4>HDPE Pipe Haulage via Pickup from Chaka Farms</h4>
+                                <p>Mr. Gichuhi's pickup truck on site after hauling coils of black HDPE piping from Chaka Farms to the golf site, with a technician preparing pipe sections with a handsaw.</p>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item">
+                            <img src="Placing%20the%20HDPE%20pipes%20in%20the%20sprinkler%20trenches%20on%20green.jpeg" alt="Technicians Installing HDPE Sprinkler Pipes in Green Perimeter Trench">
+                            <div class="gallery-caption">
+                                <h4>HDPE Sprinkler Pipe Trench Installation</h4>
+                                <p>Technicians placing and fitting black HDPE irrigation pipes inside the curved perimeter sprinkler trench around the green, securing alignment with grade pegs and battery tools.</p>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item">
+                            <img src="Green%2014%20riversand%20before%20levelling.jpeg" alt="River Sand Spread Across Green 14 Foundation Prior to Leveling">
+                            <div class="gallery-caption">
+                                <h4>Green 14 River Sand Before Surface Leveling</h4>
+                                <p>Wide perspective of Green 14 displaying a substantial layer of freshly dumped river sand spread across the red soil foundation prior to detailed rake leveling.</p>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item">
+                            <img src="Riversand%20application%20on%20green%2014.jpeg" alt="Ground Crew Actively Raking and Leveling River Sand on Green 14">
+                            <div class="gallery-caption">
+                                <h4>Green 14 River Sand Leveling Completed</h4>
+                                <p>Ground crew utilizing landscape rakes to smooth and level river sand across the entire surface of Green 14, establishing a uniform and consistent rootzone surface.</p>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item">
+                            <img src="Riversand%20application%20on%20green.jpeg" alt="Workers Loading River Sand into Wheelbarrows from Stockpile">
+                            <div class="gallery-caption">
+                                <h4>Wheelbarrow River Sand Transport &amp; Distribution</h4>
+                                <p>Manual crew members loading river sand from the delivery stockpile into wheelbarrows to transport and distribute across the stone foundation of the putting green.</p>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item">
+                            <img src="Riversand%20application%20on%20green%2017%20initial%20stages.jpeg" alt="Initial Stages of River Sand Application on Green 17 Over Pumice Foundation">
+                            <div class="gallery-caption">
+                                <h4>Green 17 River Sand Application — Initial Stage</h4>
+                                <p>Close-up view of Green 17 showing river sand mounds deposited across the rear perimeter, resting on top of the graded stone sub-base foundation layer.</p>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item">
+                            <img src="Riversand%20application%20on%20green%2017%20started%20but%20didn't%20finish.jpeg" alt="Wider View of Green 17 with River Sand Partially Spread Across Back Section">
+                            <div class="gallery-caption">
+                                <h4>Green 17 River Sand Spreading Underway</h4>
+                                <p>Comprehensive view of Green 17 showing river sand partially spread and leveled across the back crescent, with the foreground stone layer awaiting subsequent sand application.</p>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item">
+                            <img src="Refining%20and%20grading%20teebox%208%20and%206.jpeg" alt="Earthwork Grading and Refining with Red Soil Mounds on Teeboxes 6 and 8">
+                            <div class="gallery-caption">
+                                <h4>Teeboxes 6 &amp; 8 Platform Grading in Progress</h4>
+                                <p>Ground preparation on Teeboxes 6 and 8 showing red soil mounds positioned across the playing surface for spreading, grading, and contour refinement.</p>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item">
+                            <img src="Refining%20and%20grading%20teebox.jpeg" alt="Close-Up Perspective of Teebox Platform Grading and Earthwork Refinement">
+                            <div class="gallery-caption">
+                                <h4>Teebox Surface Earthwork Refinement</h4>
+                                <p>Detailed view of the teebox platform undergoing manual grading, surface leveling, and subsoil consolidation to achieve finished championship design elevations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========================================================================= -->
+            <!-- SECTION 2: CHAKA FARMS                                                    -->
+            <!-- Dedicated Narrative Spread (AGENTS.MD Section 1 & 7 Rule 1)               -->
+            <!-- ========================================================================= -->
+            <section id="chaka-farms">
+                <div class="section-header">
+                    <div class="section-title">
+                        <div class="section-icon icon-farm">🌾</div>
+                        <h2>Chaka Farms</h2>
+                    </div>
+                    <div class="supervisor-badges-wrapper">
+                        <div class="supervisor-badge">
+                            <span>Dairy Operations:</span> Kamandau
+                        </div>
+                        <div class="supervisor-badge">
+                            <span>Canine Unit:</span> Mwangi
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span>Dairy Harvest Reconciliation, Canine Husbandry, and Kennel Maintenance Brief</span>
+                    </div>
+                    <p class="editorial-text">
+                        Operations across Chaka Farms on Sunday, 18th October 2026 maintained rigorous dairy volume accounting and attentive canine unit management under the direct supervision of Kamandau and Mwangi:
+                    </p>
+                    <div class="amber-box">
+                        <h4>Farm Operational Highlights</h4>
+                        <p>Dairy production yielded 7.0 Litres gross harvest (4.5L morning + 2.5L evening), with 6.0 Litres dispatched for commercial sales and 1.0 Litre distributed for routine internal farm allocations (0.5L Gladys + 0.5L Maasai), fully reconciled strictly in Litres with zero discrepancy. Mwangi oversaw canine unit care including thorough kennel cleaning, cooking fresh meals for the dogs, and walking on leash.</p>
+                    </div>
+                    <ul class="highlight-list">
+                        <li><strong>100% Reconciled Dairy Harvest (7.0 Litres):</strong> Kamandau recorded 7.0 Litres gross milk yield across daily milking operations (4.5L morning session + 2.5L evening session). Commercial dispatches totaled 6.0 Litres (3.5L morning + 2.5L evening). Routine internal farm allocations accounted for 1.0 Litre (0.5L Gladys staff ration + 0.5L Maasai), ensuring 100% quantitative accounting reconciliation strictly in Litres with zero discrepancy.</li>
+                        <li><strong>Canine Unit Kennel Sanitation:</strong> Mwangi conducted a comprehensive cleaning and sanitation of the kennel stalls, washing down floor surfaces and sleeping bays to maintain high hygienic living standards for the farm dogs.</li>
+                        <li><strong>Canine Nutrition &amp; Food Preparation:</strong> Fresh meals were prepared and cooked specifically for the farm dogs, providing balanced nutrition to support health, stamina, and coat condition.</li>
+                        <li><strong>Structured Leash Walking &amp; Exercise:</strong> Mwangi carried out structured on-leash walking routines across the farm perimeter, reinforcing leash manners, physical fitness, and handlership control.</li>
+                    </ul>
+                </div>
+
+                <!-- Quantitative Dairy Milking Table (AGENTS.MD Section 1 & 7 Rule 2) -->
+                <div class="card page-break-before">
+                    <div class="card-header">
+                        <span>🥛 Daily Dairy Milking Yield &amp; Reconciliation Ledger (Litres)</span>
+                    </div>
+                    <div class="supervisor-badge">
+                        <span>Logged by:</span> Kamandau
+                    </div>
+                    <p class="editorial-text">
+                        Official quantitative dairy milking harvest and sales ledger for Sunday, 18th October 2026, recording gross yields, commercial dispatches, and internal farm disbursements strictly in Litres:
+                    </p>
+
+                    <table class="milk-table">
+                        <thead>
+                            <tr>
+                                <th>Category / Transaction</th>
+                                <th>Morning Session</th>
+                                <th>Evening Session</th>
+                                <th>Daily Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Gross Milk Harvested</strong></td>
+                                <td>4.5 Litres</td>
+                                <td>2.5 Litres</td>
+                                <td class="total-cell">7.0 Litres</td>
+                            </tr>
+                            <tr>
+                                <td>Commercial Milk Sales (Dispatched)</td>
+                                <td>3.5 Litres</td>
+                                <td>2.5 Litres</td>
+                                <td><strong>6.0 Litres</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Internal Farm Allocation — Gladys (Staff)</td>
+                                <td>0.5 Litres</td>
+                                <td>—</td>
+                                <td class="deduction-cell">0.5 Litres</td>
+                            </tr>
+                            <tr>
+                                <td>Internal Farm Allocation — Maasai</td>
+                                <td>0.5 Litres</td>
+                                <td>—</td>
+                                <td class="deduction-cell">0.5 Litres</td>
+                            </tr>
+                            <tr>
+                                <td>Internal Farm Allocation — Goat Kids (Weaned)</td>
+                                <td>0.0 Litres</td>
+                                <td>0.0 Litres</td>
+                                <td>0.0 Litres</td>
+                            </tr>
+                            <tr class="balance-row">
+                                <td><strong>Total Volume Accounted For</strong></td>
+                                <td><strong>4.5 Litres</strong></td>
+                                <td><strong>2.5 Litres</strong></td>
+                                <td class="balance-cell">7.0 Litres (100% Reconciled)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="info-box">
+                        <h4>Dairy Accounting &amp; Canine Husbandry Note</h4>
+                        <p>Total gross milk harvested of 7.0 Litres is fully accounted for by 6.0 Litres sold commercially and 1.0 Litre in routine farm allocations (0.5L Gladys + 0.5L Maasai). All milk figures are recorded strictly in Litres. In the canine section, kennel cleaning, food preparation, and leash walking were carried out under Mwangi.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========================================================================= -->
+            <!-- SECTION 3: KABETE RESIDENCE                                               -->
+            <!-- Dedicated Narrative Spread (AGENTS.MD Section 1 & 7 Rule 1)               -->
+            <!-- ========================================================================= -->
+            <section id="kabete-residence">
+                <div class="section-header">
+                    <div class="section-title">
+                        <div class="section-icon icon-residence">🏡</div>
+                        <h2>Kabete Residence</h2>
+                    </div>
+                    <div class="supervisor-badges-wrapper">
+                        <div class="supervisor-badge">
+                            <span>Operations Oversight:</span> Njoki
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span>Domestic Pet Care, Nutrition Preparation, and Household Monitoring Brief</span>
+                    </div>
+                    <p class="editorial-text">
+                        Operations and daily updates at Kabete Residence on Sunday, 18th October 2026 were overseen and shared by Njoki, focusing on domestic pet nutrition, evening feeding routines, and resident pet tracking:
+                    </p>
+                    <div class="purple-box">
+                        <h4>Domestic Pet Care &amp; Nutrition Highlights</h4>
+                        <p>Fresh, warm meals were prepared and portioned on the stovetop for the resident pets. Ajabu the Golden Retriever was fed his portion inside the residence, while resident cats Reo and Aiko received their evening bowls. One resident cat, Mocha, was noted absent at dinner service, and staff are maintaining an active watch for her return.</p>
+                    </div>
+                    <ul class="highlight-list">
+                        <li><strong>Fresh Meal Preparation on Stovetop:</strong> Four nutritious meal portions were cooked and prepared on the kitchen stove—one large dish for Ajabu the Golden Retriever and three stainless steel feeding bowls for the resident cats (Reo, Aiko, and Mocha).</li>
+                        <li><strong>Ajabu the Golden Retriever Dinner Service:</strong> Ajabu was served his prepared dinner inside the residence kitchen, finishing his meal contentedly.</li>
+                        <li><strong>Cat Dinner Feeding (Reo &amp; Aiko):</strong> Resident cats Reo and Aiko were fed side-by-side from their stainless steel bowls alongside a clean bowl of fresh water.</li>
+                        <li><strong>Mocha Absence Tracking &amp; Monitoring:</strong> Mocha did not appear for the evening dinner service. Household staff noted her absence and are actively monitoring the grounds and entry points for her return.</li>
+                    </ul>
+                </div>
+
+                <!-- Photographic Field Evidence — Kabete Residence (Continuous 2-Column Grid) -->
+                <div class="card gallery-card page-break-before">
+                    <div class="card-header">
+                        <span>📸 Photographic Field Evidence — Kabete Residence</span>
+                    </div>
+                    <p class="editorial-text">
+                        Photographic field documentation capturing meal preparation and dinner feeding for resident pets at Kabete Residence:
+                    </p>
+
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="Dog%20and%20cats%20food%20prepared.jpeg" alt="Cooked Meals Portioned for Ajabu and Resident Cats on Stovetop">
+                            <div class="gallery-caption">
+                                <h4>Pet Meal Preparation on Kitchen Stovetop</h4>
+                                <p>Four portions of freshly cooked food prepared on the kitchen stove—a yellow dish for Ajabu and three stainless steel bowls for resident cats Reo, Aiko, and Mocha.</p>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item">
+                            <img src="Ajabu.jpeg" alt="Ajabu the Golden Retriever Eating Dinner Inside Residence">
+                            <div class="gallery-caption">
+                                <h4>Ajabu the Golden Retriever Dinner Feeding</h4>
+                                <p>Ajabu the Golden Retriever eating his prepared meal inside the house on tiled kitchen flooring, enjoying attentive daily domestic pet care.</p>
+                            </div>
+                        </div>
+
+                        <div class="gallery-item">
+                            <img src="reo%20and%20aiko.jpeg" alt="Resident Cats Reo and Aiko Eating Evening Meal Side by Side">
+                            <div class="gallery-caption">
+                                <h4>Reo &amp; Aiko Dinner Feeding (Mocha Absent)</h4>
+                                <p>Resident cats Reo and Aiko feeding side-by-side from their stainless steel bowls with a fresh water dish nearby; Mocha was absent from dinner and is being monitored.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer Signature -->
+        <footer>
+            <h3>Compiled by Dennis</h3>
+        </footer>
+    </div>
+</body>
+</html>
