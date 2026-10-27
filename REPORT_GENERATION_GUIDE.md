@@ -91,10 +91,20 @@ flowchart TD
 - **Video Cards & Direct Drive Links:** Present each video in a dedicated `.video-card` component with an embedded `<video>` player, title, concise description, and an elegant styled button linking directly to Google Drive (`.video-drive-btn`). Never group multiple unrelated videos into one player.
 - **Single Source of Truth (Direct Authoring):** AI assistants must ALWAYS create, edit, and maintain `index.html` directly using native file tools (`write_to_file`, `replace_file_content`). NEVER write separate Python or Node generator scripts to assemble or update HTML reports.
 - **Footer Signature:** Every report MUST always conclude with: `<h3>Compiled by Dennis</h3>`. Do NOT add or invent unmentioned job titles or subtitles.
+- **Mandatory Centralized Master Stylesheet (`shared/report-master.css`):**
+  - Daily reports must link directly to `../../shared/report-master.css`:
+    ```html
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../shared/report-master.css">
+    ```
+  - Prohibits embedding raw 1,000-line `<style>` blocks in `index.html`.
+  - Prohibits altering or shrinking typography to fit arbitrary overflows. Solve overflows via concise prose budgeting.
 
 ---
 
-## 4. PDF Print Rules & Execution
+## 4. PDF Print Rules & Master Stylesheet Architecture (`shared/report-master.css`)
 
 ### Print CSS Rules (`@media print`)
 ```css
@@ -172,6 +182,7 @@ python -c "import subprocess; subprocess.run(['C:\\Program Files (x86)\\Microsof
 - [x] Headless Edge PDF generated cleanly without errors.
 - [x] PDF file size verified (5 MB – 40 MB).
 - [x] Video players hidden in PDF while clickable Drive buttons remain clean and functional.
+- [x] Video cards from the same section grouped in 2-column `.video-grid` (never split across separate near-empty pages).
 - [x] Follows the **Anti-Compression & Dedicated Page Budgeting Standard** (Section 5).
 
 ---
@@ -192,7 +203,9 @@ Executive reports MUST maintain generous breathing room, large readable fonts, a
    - Field photos MUST ALWAYS display in a spacious **2-column grid** (`repeat(2, 1fr)`). Never compress photos into 3 columns.
    - **Continuous Flow (No Image Grouping):** Stop putting images into groups or multiple fragmented cards. All photos for each location must follow each other straight in a single continuous photo gallery card.
    - **Minimal Cropping Standard:** Use `object-fit: contain; background-color: #f8fafc;` with generous height (`200px–260px`, print: `165px`) so the complete photo and its main subject (workers, machinery, pets, construction elements) are 100% visible and uncropped.
-5. **Natural Page Count (Zero Artificial Compression)**:
-   - Reports must expand naturally to whatever page count is required (e.g., 14, 16, 18, 20+ pages). Readability, generous breathing room, and executive aesthetic excellence always take precedence over any arbitrary page target.
+5. **Same-Section Video Documentation (2-Column `.video-grid`)**:
+   - Video link cards from the same section must NEVER be forced onto separate pages with individual `page-break-before` classes. Always group them in a 2-column layout (`.video-grid`). When space allows, embed them directly within the section narrative card; otherwise, place them together inside a unified video card sharing a single page side-by-side.
+6. **Natural Page Count (Zero Artificial Compression)**:
+   - Reports must expand naturally to whatever page count is required (e.g., 14, 16, 17, 18, 20+ pages). Readability, generous breathing room, and executive aesthetic excellence always take precedence over any arbitrary page target.
 
 

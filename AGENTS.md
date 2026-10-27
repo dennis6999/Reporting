@@ -125,16 +125,36 @@ Every report must be crafted with high aesthetic standards:
 - **Key Accomplishment Highlight Callouts:** Use green callout boxes (`.success-box`) to celebrate key accomplishments and completed objectives (e.g., 100% main house roof painting complete).
 - **Responsive Photo Galleries:** Display images in a grid layout (`grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))`).
 - **Video Cards & Action Buttons:** Present each video in a dedicated `.video-card` component with an embedded 16:9 `<video>` element for browser playback, descriptive title and summary, and an elegant styled action button linking directly to Google Drive (`.video-drive-btn`). Never group multiple unrelated videos inside a single video player or stack raw hyperlink text.
+- **Same-Section Video Grouping Rule (2-Column `.video-grid`):** Video documentation cards from the same project section MUST NEVER be split onto separate blank pages with individual `page-break-before` classes. Always group them together using `<div class="video-grid">` (2-column layout). When space permits, embed them directly within the section narrative card (e.g., following the bulleted list); otherwise, house them together inside a unified video card so they share a single page side-by-side without creating near-empty pages.
 - **Footer Signature:** Every report MUST always end with the signature block: `<h3>Compiled by Dennis</h3>`. Do NOT invent, assume, or append any job titles or designations (e.g., "Operations Lead", "Reporting Coordinator", etc.) below the name.
+- **Mandatory Centralized Master Stylesheet (`shared/report-master.css`):**
+  - AI assistants MUST NEVER embed 700–1,000 lines of inline CSS in the `<head>` of `index.html`.
+  - Every daily report `index.html` must link to the centralized master stylesheet:
+    ```html
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../shared/report-master.css">
+    ```
+  - `shared/report-master.css` is the **immutable single source of truth** for all visual tokens, component styling, status table proportions, and `@media print` rules.
+  - Assistants are STRICTLY FORBIDDEN from overriding or altering typography (`font-size`, `line-height`, `padding`) with ad-hoc inline `<style>` tags to force content onto a page.
 
 ---
 
 ## 5. PDF Generation & Print Styling Guidelines
 
-### Critical PDF Print CSS Rules
-When converting HTML reports to PDF using headless Edge/Chrome, you **MUST** include print-specific CSS rules to ensure clean, professional output:
+### Master Stylesheet Architecture (`shared/report-master.css`)
+All critical print and screen layout standards are permanently locked inside `shared/report-master.css`. This prevents "generational CSS drift" where reports gradually compress font sizes over time.
+
+Key rules defined in the master stylesheet include:
+1. **Clean Video Player Headers:** HTML `<video>` elements are hidden in print and styled with a clean header ribbon (`🎥 Video Recording`) and Google Drive action buttons.
+2. **2-Column Continuous Photo Galleries:** Grid flexes 2 columns (`calc(50% - 6px)`) with `165px` contained images, eliminating manual gallery page breaks and awkward whitespace voids.
+3. **Golf Greens & Teeboxes Status Table Proportions:** Rigidly sized cells (`4.2px` padding on greens, `4.5px` on tees) and typography (`9.4px` on greens, `9.6px` on tees) to guarantee 18 rows fit exactly on their dedicated page.
+4. **Prose Budgeting (Never Shrink Fonts):** If a narrative overflows its 1-page allocation, edit the prose to be concise (5–7 punchy bullets). NEVER modify font sizes or line heights.
+5. **2-Column Video Documentation Grid (`.video-grid`):** Videos from the same section flow side-by-side in a 2-column layout (`calc(50% - 6px)` in print), preventing single video cards from taking up entire blank A4 pages.
 
 ```css
+/* Reference excerpt from shared/report-master.css */
 @media print {
     @page { 
         size: A4; 
@@ -278,6 +298,11 @@ After generating a report:
 ## 7. Mandatory Page Budgeting, Typography & Spacing Standard (Anti-Compression Rule)
 
 AI assistants must NEVER compress font sizes, shrink line heights, tighten bullet gaps, or jam narratives and data tables onto a single page to achieve an arbitrary page count. Every page in an executive report must feel generous, breathable, and visually balanced.
+
+### The Golden Rule: Prose Budgeting Over Font Shrinking
+- **Fix Overflows in the Writing, Never in the CSS:** If an overflow or broken spread occurs (e.g., a card spilling 1–2 bullet lines onto an extra page), the AI assistant MUST **shorten, condense, or edit the written prose**.
+- Reduce verbose sentences and condense the list down to **5 to 6 crisp, punchy bullets**.
+- **STRICT PROHIBITION:** AI assistants are strictly forbidden from decreasing font sizes (e.g. shrinking body text from 14.5px to 12.5px), cutting line-heights, or reducing container paddings. The centralized styles in `shared/report-master.css` are immutable.
 
 ### Core Rules:
 1. **Dedicated Narrative Spread & Length Budgeting**:
