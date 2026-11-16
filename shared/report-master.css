@@ -22,6 +22,8 @@
     --honi-red-light: #fef2f2;
     --honi-red-border: #fecaca;
     --cottage-teal: #0d9488;
+    --cottage-teal-light: #f0fdfa;
+    --cottage-teal-border: #99f6e4;
     --slate-50: #f8fafc;
     --slate-100: #f1f5f9;
     --slate-200: #e2e8f0;
@@ -359,6 +361,26 @@ header p.subtitle {
     margin-bottom: 4px;
 }
 .red-box p {
+    color: var(--slate-700);
+    font-size: 0.94rem;
+    line-height: 1.6;
+}
+
+.teal-box {
+    background-color: var(--cottage-teal-light);
+    border-left: 4.5px solid var(--cottage-teal);
+    padding: 16px 20px;
+    border-radius: 0 10px 10px 0;
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+.teal-box h4 {
+    color: var(--cottage-teal);
+    font-size: 0.96rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+.teal-box p {
     color: var(--slate-700);
     font-size: 0.94rem;
     line-height: 1.6;
@@ -912,17 +934,17 @@ footer {
         padding-left: 22px !important; 
     }
 
-    .success-box, .amber-box, .purple-box, .red-box {
+    .success-box, .amber-box, .purple-box, .red-box, .teal-box {
         padding: 12px 16px !important;
         margin-top: 13px !important;
         break-inside: avoid !important;
         page-break-inside: avoid !important;
     }
-    .success-box h4, .amber-box h4, .purple-box h4, .red-box h4 {
+    .success-box h4, .amber-box h4, .purple-box h4, .red-box h4, .teal-box h4 {
         font-size: 0.95rem !important;
         margin-bottom: 3px !important;
     }
-    .success-box p, .amber-box p, .purple-box p, .red-box p {
+    .success-box p, .amber-box p, .purple-box p, .red-box p, .teal-box p {
         font-size: 0.86rem !important;
         line-height: 1.45 !important;
     }
